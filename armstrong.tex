@@ -1,0 +1,1816 @@
+\documentclass{amsart}[12pt]
+
+
+\usepackage{tikz}
+\usepackage[sc]{mathpazo}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{tikz}
+\usetikzlibrary{snakes, arrows}
+\linespread{1.2}
+
+
+
+\theoremstyle{definition}
+\newtheorem{dummy}{}[section]
+\newtheorem{theorem}[dummy]{Theorem}
+\newtheorem{lemma}[dummy]{Lemma}
+\newtheorem{example}[dummy]{Example}
+\newtheorem{corollary}[dummy]{Corollary}
+\newtheorem{definition}[dummy]{Definition}
+\newtheorem{remark}[dummy]{Remark}
+\newtheorem{proposition}[dummy]{Proposition}
+\newtheorem{observation}{Observation}
+\newtheorem{question}{Question}
+\newtheorem{conjecture}[dummy]{Conjecture}
+
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\proj}{\mathbb{P}}
+\newcommand{\core}{\mathbf{core}}
+\newcommand{\DP}{\mathcal{DP}}
+\newcommand{\SC}{\mathcal{SC}}
+\newcommand{\Cat}{\mathbf{Cat}}
+\newcommand{\sk}{s\ell}
+\newcommand{\vac}{\mathbf{vac}}
+\newcommand{\inv}{\mathbf{inv}}
+\newcommand{\asm}{\mathbf{asm}}
+\newcommand{\aparts}{\mathbf{size}_a}
+\newcommand{\invsum}{\mathbf{invsum}}
+\newcommand{\INV}{\mathbf{INV}}
+\newcommand{\DES}{\mathbf{DES}}
+\newcommand{\des}{\mathbf{des}}
+\newcommand{\maj}{\mathbf{maj}}
+\newcommand{\siz}{\mathbf{siz}}
+
+\newcommand{\cone}{\mathfrak{c}}
+
+\DeclareMathOperator{\Sym}{Sym}
+
+\begin{document}
+\title{The lattice point geometry of simultaneous core partitions}
+\begin{abstract}
+We observe that for $(a,b)$-relatively prime, the space of $b$-cores is naturally a rational simplex in the space of $a$-cores, and that many statistics on $(a,b)$-cores are piecewise polynomial functions with respect to natural hyperplane arrangements in the space of $a$-cores.  Our thesis is that this structure should be useful in attacking many open questions in rational Catalan combinatorics.
+
+To illustrate our thesis, we use Ehrhart theory to reprove Anderson's result \cite{anderson} that there are $(a+b-1)!/a!b!$ $(a,b)$-cores, and to prove Armstrong's conjecture \cite{AHJ} about the average size of an $(a,b)$-core partition.
+
+  We also make some conjectures about how this structure might relate to $q$ and $(q,t)$-analogs; in particular, we prove $(q,t)$-symmetry when $a=3$, and outline a method of proof for the general case that would depend on a thorough understanding of the geometry of the Catalan hyperplane arrangement.
+\end{abstract}
+
+
+\author{Paul Johnson}
+\date{}
+\maketitle
+\section{Introduction}
+
+A \emph{partition of $n$} is a nonincreasing sequence $\lambda_1\geq \lambda_2\geq
+\lambda_{k}> 0$ of positive integers so that $\sum_{i=1}^k \lambda_i=n$.  We
+call $n$ the $\emph{size}$ of the partition and denote it $|\lambda|$; we call
+$k$ the \emph{length} of $\lambda$ and denote it $\ell(\lambda)$.
+
+\subsection{Hooks and Cores}
+
+
+We frequently identify $\lambda$ with its Young diagram, in
+English notation -- that is, we draw the parts of $\lambda$ as
+the columns of a series of boxes.
+
+\begin{definition}
+The \emph{arm} $a(\square)$ of a cell $\square$ is the number of cells contained in $\lambda$ and above  $\square$, and the \emph{leg} $l(\square)$ of a cell is the number of cells contained in $\lambda$ and to the right of $\square$.
+
+The \emph{hook length} $h(\square)$ of a cell is $a(\square)+l(\square)+1$
+\end{definition}
+
+\begin{example}
+The cell $(2,1)$ of $\lambda=3+2+2+1$ is marked $s$; the cells in the
+leg and arm of $s$ are labeled $a$ and $l$, respectively.
+\begin{center}
+\begin{tikzpicture}[scale=.5]
+\draw[thin, gray] (0,0) grid (1,3);
+\draw[thin, gray] (1,0) grid (3,2);
+
+\draw[thick] (0,0)--(0,3)--(1,3)--(1,2)--(3,2)--(3,1)--(4,1)--(4,0)--cycle;
+\draw (1.5,.5) node{$s$};
+\draw (1.5,1.5) node{$a$};
+\draw (2.5,.5) node{$l$};
+\draw (3.5,.5) node {$l$};
+\draw (8.5,1.5) node[align=left] {$a(s)=\# a=1$ \\ $l(s)=\# l=2$ \\ $h(s)=4$};
+
+\end{tikzpicture}
+\end{center}
+
+\end{example}
+
+\begin{definition}
+An $a$-\emph{core} is a partition that has no hook lengths of size $a$.  An $(a,b)$-\emph{core} is a partition that is simultaneous an $a$-core and a $b$-core.
+
+\end{definition}
+
+
+\begin{example}
+We have redrawn $\lambda=3+2+2+1$ with each cell $\square$ labeled by
+its hook length $h(\square)$.
+
+\begin{center}
+\begin{tikzpicture}[scale=.5]
+\draw[thin, gray] (0,0) grid (1,3);
+\draw[thin, gray] (1,0) grid (3,2);
+
+\draw[thick] (0,0)--(0,3)--(1,3)--(1,2)--(3,2)--(3,1)--(4,1)--(4,0)--cycle;
+\draw (.5,.5) node{$6$};
+\draw (1.5,.5) node{$4$};
+\draw (2.5,.5) node{$3$};
+\draw (3.5,.5) node{$1$};
+\draw (.5,1.5) node {$4$};
+\draw (1.5,1.5) node{$2$};
+\draw (2.5,1.5) node{$1$};
+\draw (.5,2.5) node{$1$};
+\end{tikzpicture}
+\end{center}
+We see that $\lambda$ is \emph{not} $a$-core for $a\in \{1,2,3,4,6\}$;
+but it \emph{is} $a$-core for all other $a$.
+\end{example}
+
+
+\begin{definition}
+The \emph{$(a,b)$ Catalan number} $\Cat_{a,b}$ is $\frac{1}{a+b}\binom{a+b}{a}$.
+\end{definition}
+
+\begin{theorem}[Anderson \cite{anderson}]
+If $a$ and $b$ are relatively prime, the number of
+$(a,b)$-core partitions is $\Cat_{a,b}$.
+\end{theorem}
+
+Anderson's study of simultaneous core partitions was motivated by
+modular representation and number theory; it has received much recent
+attention as the numbers $\frac{(a+b-1)!}{a!b!}$ are known as
+\emph{rational Catalan numbers}, and are a related to, among other things,
+Hecke Algebras and Jacobians of singular plane curves.
+
+\subsection{}
+
+Anderson's proof uses the ``abacus'' construction.  There are many ways to view this construction; we take a slightly different view than Anderson, and most of the simultaneous core partition literature, and view the abacus as a bijection between $a$-cores and lattice points in an $a-1$ dimensional lattice.  This view is not new to us; it is used, for instance, by Garvan, Kim, and Stanton in \cite{GKS} to develop the $t$-core crank.
+
+Our thesis is that the lattice point viewpoint is the ``right'' lens through which to investigate simultaneous cores and rational Catalan combinatorics.  Viewing $a$-cores as lattice points, the space of $(a,b)$-cores becomes a rational simplex, and many pertinent statistics such as the size, length, and skew length become highly symmetrical (piecewise) polynomial functions on the vector space inside the lattice.
+Then, there are many well developed tools -- Ehrhart theory, cone decompositions, hyperplane arrangements, theta functions -- that may be brought to bear upon lattice points and rational simple.
+
+We apply our general thesis in two concrete ways; first to give another proof of Anderson's theorem on the number of $(a,b)$-cores, and second, to prove the following theorem, conjectured by Armstrong in 2011, and first appearing in print in \cite{AHJ}:
+
+\begin{theorem}
+The average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.
+\end{theorem}
+
+\begin{remark} Stanley and Zanello recently proved the case $a=b+1$ case, by different methods, \cite{SZ}.
+\end{remark}
+
+In addition, we outline several speculative ways in which our thesis might be used to attack many conjectures about $q$ and $(q,t)$ analogs of $\Cat_{a,b}$.  We stress now that our extant results in this direction are modest, and much more work is to do be done before the full conjectures are proven, but we believe our viewpoint gives a potentially useful angle from which to attack them.
+
+\subsubsection{}
+
+
+
+
+It is well known, via the ``abacus'' construction, that $a$-cores are
+in bijection with points in a lattice $\Z^{a-1}$ we call the
+``charge lattice''.  Our main observation is that if $b$ is relatively
+prime to $a$, then the space of $(a,b)$ cores inside the charge
+lattice are the lattice points in a rational simplex $\SC_a(b)$.
+
+For $k\in\N$, let $\delta_{a-1}$ denote the
+standard $a-1$ dimensional simplex $\sum a_i=k$.  Then $\SC_a(b)$ is
+linearly equivalent to $b\Delta_a$; however, the charge lattice
+$\Lambda_c$ is not equivalent to the usual lattice, but rather an
+index $a$ sublattice.
+
+
+
+
+The general outline of the proof is as follows.  The abacus model of
+$a$ cores can be seen to give a bijection between $a$-cores and points
+in an $a-1$ dimensional lattice.   A simple computation shows
+that the $(a,b)$ cores are given by the lattice points in a simplex
+within this lattice, and scaling $b$ essentially scales the simplex.
+Then, Ehrhart/Euler-Maclaurin theory implies that for fixed $a$, the
+average size of an $(a,b)$-core is a quadratic polynomial in $b$.
+$(a, b)$ symmetry then implies the average size of any $(a,b)$ core is
+a polynomial in $a, b$.  Once polynomiality is known, it is relatively
+easy to pin down the exact polynomial.
+
+There are some technical complications to this method.  The most serious is that the simplex of $b$-cores inside $L_a$ is not integral,
+but only rational.  Ehrhart/Euler-Maclaurin theory for
+rational polytopes only produces quasipolynomial functions in general -- that
+is, functions that on $\Z$ that are polynomial when restricted to
+residue classes mod $p$, for some period $p$, but the polynomials for different residue classes are different in general.
+
+Identities between the polynomials for
+different residue classes are in general mysterious.  Perhaps the most studied aspect, \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial, is in some ways orthogonal to our situation.
+
+ However, in our case 
+there is a straightforward explanation -- the simplex of $b$-cores in
+$C_a$ will have a $\Z_a$ symmetry.  The lattice of $\Lambda_a$ of $a$-cores sits
+inside a larger lattice $\Lambda^\prime_a$, with 
+$[\Lambda_a:\Lambda^\prime_a]=a$.  Furthermore, $\Z_a$ acts on
+$V_a$, preserving the simplex $S_b$ and the quadratic form $B$, so
+that the orbits $g\Lambda_a, g\in \Z_a$ are exactly the cosets of
+$\Lambda_a$ inside $\Lambda^\prime_a$.
+
+
+\begin{tikzpicture}[scale=.8]
+
+\begin{scope}
+\clip (-3.5, -4*1.7320508/2)--(-3.5, 4*1.7320508/2)--(2.5,
+4*1.7320508/2)--(2.5, -4*1.7320508/2)--cycle;
+
+
+\fill[gray!50] (-3,0)--(2, 5/3*1.7320508)--(2, -5/3*1.7320508)--cycle;
+
+
+
+
+
+\foreach \x in {-7,-6,...,7}{% Two indices running over each
+    \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
+        \node[draw,circle,inner sep=1pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
+
+
+
+\draw[dashed] (2, 10*1.7320508/2)--(2, -5*1.7320508);
+\draw[dashed] (-15-3, 5*1.7320508)--(15-3, -5*1.7320508);
+\draw[dashed] (-15-3, -5*1.7320508)--(15-3, 5*1.7320508);
+\end{scope}
+
+\begin{scope}[xshift=9cm]
+\clip (-3.5, -4*1.7320508/2)--(-3.5, 4*1.7320508/2)--(2.5,
+4*1.7320508/2)--(2.5, -4*1.7320508/2)--cycle;
+
+
+\fill[gray!50] (-3,0)--(2, 5/3*1.7320508)--(2, -5/3*1.7320508)--cycle;
+
+
+\draw[thick, blue] (.333,0) circle(.08);
+
+
+\foreach \x in {-7,-6,...,7}{% Two indices running over each
+    \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
+        \node[draw,circle,inner sep=1pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
+
+
+\begin{scope}[green, xshift=.5cm, yshift=.2886751cm]
+\foreach \x in {-7,-6,...,7}{% Two indices running over each
+    \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
+        \node[draw,circle,inner sep=.7pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
+\end{scope}
+
+\begin{scope}[red, xshift=.5cm, yshift=-.2886751cm]
+\foreach \x in {-7,-6,...,7}{% Two indices running over each
+    \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
+        \node[draw,circle,inner sep=.7pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
+\end{scope}
+
+
+\draw[dashed] (2, 10*1.7320508/2)--(2, -5*1.7320508);
+\draw[dashed] (-15-3, 5*1.7320508)--(15-3, -5*1.7320508);
+\draw[dashed] (-15-3, -5*1.7320508)--(15-3, 5*1.7320508);
+\end{scope}
+
+
+
+
+\end{tikzpicture}
+
+
+
+
+To illustrate this, let us sketch the proof of Anderson's theorem:
+after a change of variables, the simplex $C_b$ becomes the simplex
+$\sum_{i=1}^a x_i=b$, the standard lattice $x_i\in\Z$ becomes the
+lattice $\Lambda^\prime_a$, and the lattice of cores $\Lambda_a$ becomes the index $a$ lattice given by $\sum ix_i=0\mod a$.
+
+Cyclicly permuting the coordinates by $x_i\mapsto x_{i+1}$ changes
+$\sum ix_i$ by $b\mod a$, and since $a$ and $b$ are relatively prime,
+we see that the conditions on $\Lambda_a, \Lambda^\prime_a$ and the
+$\Z_a$ action are satisfied.  Thus, we see that the number of $(a,b)$
+cores is $1/a$ of the number of lattice points in the $b$th dilate of
+the standard $a-1$ dimensional simplex.  By Ehrhart theory, this is a
+polynomial of degree $a-1$, with value $1$ when $b=0$, and by Ehrhart
+reciprocity vanishing at $b=-1,\dots, -(a-1)$ -- hence, it must be
+
+$$\frac{1}{a}\frac{(a+b-1)!}{(a-1)!b!}$$
+
+An attractive formulation of this is as follows: let $V_a$ be the
+regular representation of $Z_a$.  Then $\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}.$
+
+Another way of phrasing this is that the $(a,b)$ Catalan number is the number of degree $b$ polynomials in $p_1,\dots, p_a$ $p_1^{e_1}\cdots p_a^{e_a}$ with $\sum e_i=b$ and $\sum i e_i=0\mod a$.
+
+We now give an informal discussion of how $\core_a(\mathbf{x})$ depends on the chamber of $\mathcal{A}_a$.
+
+
+\begin{example}
+Consider the lattice path of a large random $a$-core.  At the start, every segment of the path slopes down; then there is a section where one out of every $a$ segments slopes up; then another large section where two out of every $a$ slope up, then 3 out of every $a$ steps slope up, until eventually the path hits the $x$-axis, from which point every step slopes up.
+
+In the first sections, all steps that slope up correspond to electrons on the same runner $i$ of the $a$-abacus.  The $i$ that occurs is the one with $x_i$ is minimum.  Similarly, in the second section, all of segments corresponding to electrons on runner $i$ slope up, but also the segments corresponding to electrons on runner $j$, where $x_j$ is the second smallest of all the $x_k$.
+
+The ordering of the $x_i$ tell us the ordering the up-steps on the $i$th abacus happen.
+
+\end{example}
+
+
+
+
+\subsection{Outline}
+In section \ref{ } we introduce standard notation and bijections about $a$-core partitions.  Section \ref{ } applies this to simultaneous core partitions and proves our main results.  Section \ref{ } describes some conjectural applications of these ideas to the $q$ and $(q,t)$ generalizations of $(a,b)$-Catalan numbers.
+
+
+\subsection{Acknowledgements}
+I learned about Armstrong's conjecture over dinner after speaking in the MIT combinatorics seminar.  I would like to thank Jon Novak for the invitation, Fabrizio Zanello for telling me about the conjecture, and funding agencies everywhere for supporting seminar dinners.
+
+
+
+
+
+%Once we have polynomiality, fixing the particular polynomial is not difficult: as the only $1$-core partition is the empty partition, we have that $(b-1)$ must be a factor of this polynomial.  Ehrhart-reciprocity will tell us that $(a+b+1)$ must also be a factor of the polynomial.  Together with the obvious $(a,b)$ symmetry, we have thus fixed the polynomial as $(a+b+1)(a-1)(b-1)$ times some constant, and so we only have to compute one more average value to get our main result.
+
+
+
+\section{Abaci and Electrons}
+
+In this section we recall the fermionic viewpoint of partitions and the abaci model of $a$-cores.  The main results are that $a$-cores are in bijection with points on the ``charge lattice'' $\Lambda_a$, and the size of a given $a$-core is given by a quadratic function on the lattice.
+
+
+%\begin{definition}
+%Let $$V_a=\{ \mathbf{c}=(c_0,\dots, c_{a-1}) | c_i\in \R; \quad \sum c_i=0\},$$
+%and the let the \emph{charge lattice} $\Lambda_a\subset V_a$ be
+% $$\Lambda_a=\{ \mathbf{c}=(c_0\dots, c_{a-1}) | \sum c_i=0;\quad c_i\in \Z\}$$
+%\end{definition}
+
+\subsection{The fermionic viewpoint}
+In this section, we introduce Dirac's electron sea and its relation to partitions and Frobenius notation.
+
+\subsubsection{} The following is a motivating fairy tale and should not be mistaken for an attempt at accurate physics or accurate history.
+
+
+According to quantum mechanics, the possible energies levels of an electron are quantized -- they can only be half integers.  The Dirac equation predicts that electrons can have negative energy, and hence the possible energy levels of an electron are half integers i.e., elements of $\Z_{1/2}=\{a+1/2|a,\in\Z\}$.  However, the physical meaning of a negative energy electron is elusive.
+
+Dirac's \emph{electron sea} solves the problem of negative energy electrons by redefining the vacuum state $\vac$.  The Pauli exclusion principle states that each possible energy state can have at most one electron in it; thus, we can view any set of electrons as a subset $S\subset \Z_{1/2}$.  Intuitively, the vacuum state $\vac$ should consist of empty space with no electrons at all, and hence correspond to the set $S=\emptyset\subset\Z_{1/2}$.
+
+Dirac suggested redefining $\vac$ to be an
+infinite ``sea'' of electrons; specifically, in the vacuum state every negative energy level should be filled with an electron, and none of the positive energy states filled.   Pauli's
+exclusion principle implies we cannot add a negative energy electron
+to $\vac$, but we can add any positive energy electron to $\vac$, and so Dirac's electron sea solves the problem of negative energy electrons.
+
+In addition, Dirac's electron sea predicts the positron, a particle
+that has the same energy levels as an electron, but positive charge.  Namely, a positron corresponds to a ``hole'' in the electron sea, that is, a negative
+energy level \emph{not} filled with an electron.  Removing a negative energy electron results in adding positive charge and positive energy, and hence can be interpreted as a having a positron.
+
+\subsubsection{} We are thus led to the following definitions:
+
+\begin{definition} Let $\Z_{1/2}^\pm$ denote the set of all positive/negative half integers, respectively.
+
+The vacuum $\vac\subset \Z_{1/2}$ is the set $\Z_{1/2}^-$.
+
+A \emph{state} $S$ is a set $S\subset\Z+1/2$ so that the symmetric
+difference $S\Delta \vac=(S\cap\Z_{1/2}^+)\cup (S^c\cap\Z_{1/2}^-)$ is finite.  States should be interpreted as a finite collection of electrons (the elements of $S\cap \Z^+_{1/2}$) and positrons (the elements of $S^c\cap \Z^-_{1/2}$).
+
+The \emph{charge} $c(S)$ of a state $S$ is the number of positrons minus the number of electrons:
+$$c(S)=\# S\cap Z^+_{1/2} - \# S^c\cap \Z^-_{1/2}$$
+
+The $\emph{energy}$ $e(S)$ of a state $S$ is the sum of all the energies of the positrons and the electrons:
+$$e(S)=\sum_{k\in\Z^+_{1/2}\cap S} k +\sum_{k\in\Z^-_{1/2}\cap S^c} -k$$
+
+\end{definition}
+
+\subsubsection{Maya Diagrams}
+
+It is convenient to represent states $S$ as
+\emph{Maya Diagrams}
+
+The Maya diagram of $S$ is an infinite line of circles,
+one for each element of $\Z_{1/2}$, with the positive circles extending to the left and
+the negative direction to the right.  A black ``stone'' is placed on the
+circle corresponding to $k\in\Z_{1/2}$ if and only if $k\in S$, that is, if the energy level $k$ is occupied by an electron.
+
+
+\begin{example}
+The Maya diagram corresponding to the vacuum vector $\vac$ is shown below.
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+\draw (-5.5,0) node{$\cdots$};
+\draw (-4.5,0) circle (.3) node[below=3pt]{$\frac{9}{2}$};
+\draw (-3.5,0) circle (.3) node[below=3pt]{$\frac{7}{2}$};
+\draw (-2.5,0) circle (.3) node[below=3pt]{$\frac{5}{2}$};
+\draw (-1.5,0) circle (.3) node[below=3pt]{$\frac{3}{2}$};
+\draw (-.5,0) circle (.3) node[below=3pt]{$\frac{1}{2}$};
+\filldraw (.5,0) circle (.3) node[below=3pt]{$\frac{-1}{2}$};
+\filldraw (1.5,0) circle (.3) node[below=3pt]{$\frac{-3}{2}$};
+\filldraw (2.5,0) circle (.3) node[below=3pt]{$\frac{-5}{2}$};
+\filldraw (3.5,0) circle (.3) node[below=3pt]{$\frac{-7}{2}$};
+\filldraw (4.5,0) circle (.3) node[below=3pt]{$\frac{-9}{2}$};
+\draw (5.5,0) node{$\cdots$};
+\draw (0,-.5) to (0,.5);
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+
+\begin{example} \label{ex:particles}
+The following Maya diagram illustrates the state $S$ consisting of an
+electron of energy $3/2$, and two positrons, of energy $1/2$ and
+$5/2$.
+
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+\draw (0,-.5) to (0,.5);
+\draw (-5.5,0) node{$\cdots$};
+\draw (-4.5,0) circle (.3) node[below=3pt]{$\frac{9}{2}$};
+\draw (-3.5,0) circle (.3) node[below=3pt]{$\frac{7}{2}$};
+\draw (-2.5,0) circle (.3) node[below=3pt]{$\frac{5}{2}$};
+\filldraw (-1.5,0) circle (.3) node[below=3pt]{$\frac{3}{2}$};
+\draw (-.5,0) circle (.3) node[below=3pt]{$\frac{1}{2}$};
+\draw (.5,0) circle (.3) node[below=3pt]{$\frac{-1}{2}$};
+\filldraw (1.5,0) circle (.3) node[below=3pt]{$\frac{-3}{2}$};
+\draw (2.5,0) circle (.3) node[below=3pt]{$\frac{-5}{2}$};
+\filldraw (3.5,0) circle (.3) node[below=3pt]{$\frac{-7}{2}$};
+\filldraw (4.5,0) circle (.3) node[below=3pt]{$\frac{-9}{2}$};
+\draw (5.5,0) node{$\cdots$};
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+
+\subsection{Paths}
+
+There is a bijection from the set of partitions $\mathcal{P}$ to the
+set of charge 0 states, that sends a partition
+$\lambda\in\mathcal{P}_n$ of size $n$ to a state $S_\lambda$ with
+energy $e(S_\lambda)=n$.  This bijection can be described in two ways:
+as recording the boundary path of $\lambda$, or recording the modified
+Frobenius coordinates of $lambda$.
+
+
+\subsubsection{}
+We draw partitions in ``Russian
+notation'' -- rotated $\pi/4$ radians counterclockwise and scaled up
+by a factor of $\sqrt{2}$, so that each segment of the border path of
+$\lambda$ is centered above a half integer.  For each segment of the border path, we place an electron in the corresponding energy level if that segment of the border slopes up, and we leave the energy state empty if that segment of border path slopes down.
+
+\begin{example}
+
+We illustrate the bijection in the case of $\lambda=3+2+2$.  The corresponding state $S_\lambda$ consists of two
+electrons with energy $5/2$ and $1/2$, and two positrons with energy
+$3/2$ and $5/2$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[gray, very thin, scale=.6]
+\clip (-5.5, 5.5) rectangle (5.5, -5);
+\draw[rotate=45, scale=1.412] (0,0) grid (6,6);
+\end{scope}
+
+\begin{scope}[rotate=45, very thick, scale=.6*1.412]
+\draw (0,5.5) -- (0, 3) -- (1,3) -- (1,2) -- (3,2) -- (3,0) -- (5.5,0);
+\end{scope}
+
+\begin{scope}[scale=.6, dotted]
+
+\draw (-4.5,0) -- (-4.5, 4.5);
+\draw (-3.5,0) -- (-3.5, 3.5);
+\draw (-2.5,0) -- (-2.5, 3.5);
+\draw (-1.5,0) -- (-1.5, 3.5);
+\draw (-.5,0) -- (-.5, 3.5);
+\draw (.5,0) -- (.5, 4.5);
+\draw (1.5,0) -- (1.5, 4.5);
+\draw (2.5,0) -- (2.5, 3.5);
+\draw (3.5,0) -- (3.5, 3.5);
+\draw (4.5,0) -- (4.5, 4.5);
+\end{scope}
+
+
+\begin{scope}[scale=.6, yshift=-.5cm]
+\draw[solid] (0,-.5) -- (0,.5);
+\draw (-5.5,0) node{$\cdots$};
+\draw (-4.5,0) circle (.3) node[below=3pt]{$\frac{9}{2}$};
+\draw (-3.5,0) circle (.3) node[below=3pt]{$\frac{7}{2}$};
+\filldraw (-2.5,0) circle (.3) node[below=3pt]{$\frac{5}{2}$};
+\draw (-1.5,0) circle (.3) node[below=3pt]{$\frac{3}{2}$};
+\filldraw (-.5,0) circle (.3) node[below=3pt]{$\frac{1}{2}$};
+\filldraw (.5,0) circle (.3) node[below=3pt]{$\frac{-1}{2}$};
+\draw (1.5,0) circle (.3) node[below=3pt]{$\frac{-3}{2}$};
+\draw (2.5,0) circle (.3) node[below=3pt]{$\frac{-5}{2}$};
+\filldraw (3.5,0) circle (.3) node[below=3pt]{$\frac{-7}{2}$};
+\filldraw (4.5,0) circle (.3) node[below=3pt]{$\frac{-9}{2}$};
+\draw (5.5,0) node{$\cdots$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\end{example}
+
+
+\subsubsection{Frobenius Coordinates}
+
+The energies $e_i$ of the electrons and the positrons of $\lambda$ are
+the \emph{modified Frobenius coordinates},
+
+Dissect the partition $\lambda$ with the vertical line through
+$0$.  The left side of $\lambda$ consists of $c$ rows, where $c$ is the number
+of electrons, and the length of the $i$th row will be the energy of
+the $i$th electron.  Similarly, the right side consists of $c$
+pieces, with lengths the energies of the positrons.
+
+\begin{example}
+
+
+\end{example}
+
+\subsubsection{Non-zero charge}
+
+The bijection between states of charge zero and partitions may be
+modified to give a bijection between the states of charge $c$ and
+partitions, for any $c\in\Z$: simply translate the the grid the
+partition is drawn on by $c$.
+
+
+
+\subsection{Abaci}
+
+Rather than view the Maya diagram as a series of stones in a line, we
+now view it as beads on the runner of an abacus.  Sliding the beads
+to be right justified allows the charge of the state to be read off,
+as it is easy to see how many electrons have been added or are missing
+from the vacuum state.
+
+In what follows, we mix our metaphors and talk about electrons and protons on runners of an abacus.
+
+\begin{example}
+Consider Example \ref{ex:particles}, where the Maya diagram consists of
+two positrons and an electron.  Pushing the beads to be right
+justified, we see the first bead is one step to the right of zero, and
+hence the original state had charge 1.
+
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+\draw (0,-.5) to (0,.5);
+\draw (-5.5,0) node{$\cdots$};
+\draw (-4.5,0) circle (.3) node[below=3pt]{$\frac{9}{2}$};
+\draw (-3.5,0) circle (.3) node[below=3pt]{$\frac{7}{2}$};
+\draw (-2.5,0) circle (.3) node[below=3pt]{$\frac{5}{2}$};
+\filldraw (-1.5,0) circle (.3) node[below=3pt]{$\frac{3}{2}$};
+\draw (-.5,0) circle (.3) node[below=3pt]{$\frac{1}{2}$};
+\draw (.5,0) circle (.3) node[below=3pt]{$\frac{-1}{2}$};
+\filldraw (1.5,0) circle (.3) node[below=3pt]{$\frac{-3}{2}$};
+\draw (2.5,0) circle (.3) node[below=3pt]{$\frac{-5}{2}$};
+\filldraw (3.5,0) circle (.3) node[below=3pt]{$\frac{-7}{2}$};
+\filldraw (4.5,0) circle (.3) node[below=3pt]{$\frac{-9}{2}$};
+\draw (5.5,0) node{$\cdots$};
+
+\begin{scope}[yshift=-2.5cm]
+\draw[-triangle 45, snake=snake,line after snake=1mm] (-4,0)--(4,0) node [above,  text centered,midway] {Push beads};
+
+\end{scope}
+
+\begin{scope}[yshift=-4cm]
+\draw (0,-.5) to (0,.5);
+\draw (-5.5,0) node{$\cdots$};
+\draw (-4.5,0) circle (.3) node[below=3pt]{$\frac{9}{2}$};
+\draw (-3.5,0) circle (.3) node[below=3pt]{$\frac{7}{2}$};
+\draw (-2.5,0) circle (.3) node[below=3pt]{$\frac{5}{2}$};
+\draw (-1.5,0) circle (.3) node[below=3pt]{$\frac{3}{2}$};
+\draw (-.5,0) circle (.3) node[below=3pt]{$\frac{1}{2}$};
+\draw (.5,0) circle (.3) node[below=3pt]{$\frac{-1}{2}$};
+\filldraw (1.5,0) circle (.3) node[below=3pt]{$\frac{-3}{2}$};
+\filldraw (2.5,0) circle (.3) node[below=3pt]{$\frac{-5}{2}$};
+\filldraw (3.5,0) circle (.3) node[below=3pt]{$\frac{-7}{2}$};
+\filldraw (4.5,0) circle (.3) node[below=3pt]{$\frac{-9}{2}$};
+\draw (5.5,0) node{$\cdots$};
+\end{scope}
+
+
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+\subsubsection{Cells and hook lengths}
+
+The cells $\square\in\lambda$ are in bijection with the
+\emph{inversions} of the boundary path; that is, by pairs of segments
+$(\text{step}_1, \text{step}_2)$, where $\text{step}_1$ occurs before $\text{step}_2$,
+but $\text{step}_1$ is traveling NE and $\text{step}_2$ is traveing SE.  The bijection
+sends $\lambda$ to the segments at the end of its arm and leg.
+
+In the fermionic viewpoint, cells of $\lambda$ are in
+bijection with pairs $(e, e-k), e\in\Z_{1/2}, k>0$ of a filled energy level $e$ and an
+empty energy level $e-k$ of lower energy; we call such a pair an \emph{inversion}.  The hook length
+$h(\square)$ of the corresponding cell is $k$.
+
+If $(e,e-k)$ is such a pair, reducing the energy of the electron from
+$e$ to $e-k$ changes $\lambda$ by removing the
+rim hook corresponding to the cell $\square$.  This rim-hook has
+length $k$.
+
+
+
+\begin{example}
+The cell $\square=(2,1)$ of $\lambda=3+3+2$ has hook length
+$h(\square)=3$, and corresponds to the electron in energy state $1/2$
+and the empty energy level $-5/2$; which are three apart.
+
+\end{example}
+
+\subsection{Bijections}
+
+Rather than place the electrons corresponding to $\lambda$ on one
+runner, place them on $a$ different runners, putting the energy
+levels $ka-i-1/2$ on runner $i$.
+
+If the hooklength $h(\square)=ka$ is divisible by $a$, then the two
+energy levels of $\textrm{inversion}(\square)$ lie on the same
+runner.  Similarly, any inversion of energy states on the same
+runner corresponds to a cell with hook length divisible by $a$.
+
+Thus, $\lambda$ is an $a$-core if and only if the beads on each runner of the $a$-abacus are right justified.  Although the total charge of all the runners must be zero, the charge need not be evenly divided among the runners.  Let
+$c_i$ be the charge on the $i$th runner; then we have $\sum c_i=0$, and the $c_i$ determine $\lambda$.
+
+Similarly, given any $\mathbf{c}=(c_0,\dots,c_{a-1})\in\Z^a$ with $\sum c_i=0$, there is a unique right justified abacus with charge  $c_i$ on the $i$th runner.  The coresponding partition is an $a$-core which we denote $\core_a(\mathbf{c})$.
+
+We have shown:
+
+\begin{lemma}
+There is a bijection $$\core_a:\{(c_0,\dots,c_{a-1}|c_i\in\Z, \sum c_i=0\}\to \{\lambda | \lambda \text{ is in $a$-core} \}$$
+\end{lemma}
+
+
+\begin{example}
+We illustrate that the $\core_3(0,3, -3)=7+5+3+3+2+2+1+1$.
+
+\begin{center}
+\begin{tikzpicture}
+
+\begin{scope}[gray, very thin, scale=.4]
+\clip (-11.5, 11.5) rectangle (11.5, -10);
+\draw[rotate=45, scale=1.412] (0,0) grid (12,12);
+\end{scope}
+
+\begin{scope}[rotate=45, ultra thick, scale=.4*1.412]
+\begin{scope}[red]
+\draw (0,11.5)--(0,11);
+\draw (0,9)--(0,8);
+\draw (1,7)--(1,6);
+\draw (2,5)--(2,4);
+\draw (3,3)--(4,3);
+\draw (5,2)--(6,2);
+\draw (7,1)--(8,1);
+\draw (9,0)--(10,0);
+\end{scope}
+\begin{scope}[blue]
+\draw (0,11)--(0,10);
+\draw (0,8)--(0,7);
+\draw (1,6)--(1,5);
+\draw (2,4)--(2,3);
+\draw (4,3)--(4,2);
+\draw (6,2)--(6,1);
+\draw (8,1)--(8,0);
+\draw (10,0)--(11,0);
+\end{scope}
+\begin{scope}[green]
+\draw (0,10)--(0,9);
+\draw (0,7)--(1,7);
+\draw (1,5)--(2,5);
+\draw (2,3)--(3,3);
+\draw (4,2)--(5,2);
+\draw (6,1) -- (7,1);
+\draw (8,0)--(9,0);
+\draw (11,0)--(11.5,0);
+\end{scope}
+
+\end{scope}
+
+
+
+
+
+
+\begin{scope}[scale=.4, yshift=-.5cm, red]
+\draw(-11.5,0) circle(.3);
+\draw(-8.5, 0)  circle (.3);
+\draw(-5.5,0)  circle (.3);
+\draw(-2.5,0)  circle (.3);
+\filldraw(.5,0)  circle (.3);
+\filldraw(3.5,0)  circle (.3);
+\filldraw(6.5,0)  circle (.3);
+\filldraw(9.5,0)  circle (.3);
+\end{scope}
+
+\begin{scope}[scale=.4, yshift=-1.5cm, blue]
+\draw(-10.5,0) circle(.3);
+\draw(-7.5, 0)  circle (.3);
+\draw(-4.5,0)  circle (.3);
+\draw(-1.5,0)  circle (.3);
+\draw(1.5,0)  circle (.3);
+\draw(4.5,0)  circle (.3);
+\draw(7.5,0)  circle (.3);
+\filldraw(10.5,0)  circle (.3);
+\end{scope}
+
+\begin{scope}[scale=.4, yshift=-2.5cm, green]
+\draw(-9.5,0) circle(.3);
+\filldraw(-6.5, 0)  circle (.3);
+\filldraw(-3.5,0)  circle (.3);
+\filldraw(-.5,0)  circle (.3);
+\filldraw(2.5,0)  circle (.3);
+\filldraw(5.5,0)  circle (.3);
+\filldraw(8.5,0)  circle (.3);
+\filldraw(11.5,0)  circle (.3);
+\end{scope}
+
+\begin{scope}[scale=.4]
+\draw (0,-2.5)--(0,.5);
+\end{scope}
+
+
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+
+
+
+\subsection{Size of an \texorpdfstring{$a$}{a}-core}
+
+
+\begin{theorem}
+$$|\core_a(\mathbf{c})|=\frac{a}{2}\sum_{k=0}^{a-1} c_k^2+ kc_k$$
+\end{theorem}
+
+We are not sure where exactly where this theorem originates; a stronger version is used in \cite{GKS} and \cite{DS}, to prove certain generating
+functions of partitions are modular forms.
+
+\begin{proof}
+ If  $c_k>0$ the $k$th runner has $c_k$ positrons, with
+ energies 
+\begin{align*}
+(k+1/2)&,\\
+(k+1/2)&+a, \\
+(k+1/2)&+2a,\\
+\vdots\quad &\quad \vdots \\
+ (k+1/2)&+(c_k-1)a
+\end{align*}
+ and so the
+ particles on the $k$th runner have total energy
+ $$\frac{a}{2}(c_k^2-c_k)+(k+1/2)c_k.$$
+
+ If $c_k<0$, the $k$th runner has $-c_k$ electrons, and a similar calculation shows they have a total energy of $$\frac{a}{2}(c_k^2+c_k)-c_k(a-k-1/2)=\frac{a}{2}(c_k^2-c_k)+(k+1/2)c_k.$$
+
+Since $\sum c_k=0$, the total energy of all particles simplifies to $\frac{a}{2}\sum (c_k^2+kc_k)$.
+\end{proof}
+
+
+\section{Simultaneous Cores}
+
+We now turn to studying the set of $b$-cores within the lattice
+$\Lambda_a$ of $a$-cores.
+\subsection{\texorpdfstring{$(a,b)$}{(a,b)}-cores form a simplex}
+
+First, some notation and conventions.
+
+Let $r_a(x)$ be the remainder when $x$ is divided by $a$, and $q_a(x)$ to be the integer part of $x/a$, so that $x=aq_a(x)+r_a(x)$ for all $x$.
+Furthermore, we use cyclic indexing for $\mathbf{c}\in\Lambda_a$;
+that is, for $k\in\Z$, we set $c_k=c_{r_a(k)}$.
+
+\begin{lemma}
+Within the lattice of $a$ cores, the set of $b$ cores are the
+lattice points satisfying the inequalities $$c_{i+b}-c_{i}\leq q_a(b+i)$$
+for $i\in\{0,\dots,a-1\}$.
+\end{lemma}
+
+\begin{proof}
+
+Fix $\mathbf{c}\in\Lambda_a$, and consider the corresponding
+$a$-abacus.
+
+Let $\lambda=\core_a(\mathbf{c})$ be an $a$ core, and let $e_i$ denote the energy of the highest electron the $i$th runner.  We claim that $\core_a(\mathbf{c})$ is a $b$-core if an only if for each $i$, the energy state $e_i-b$ is filled.
+
+Certainly this condition is necessary.  To see that it is sufficient, suppose that $\lambda$ is an $a$-core, and that $e_i-b$ are all filled.  To see $\lambda$ is a $b$ core, we must show that for any filled energy level $L$, that $L-b$ is filled.  
+
+Suppose that $L$ is on the $i$th runner; then $L=e_i-aw$ for some $w\geq 0$, and so $L-b=(e_i-b)-aw$.  But by supposition $e_i-b$ is a filled state, and $e_i-b-aw$ is to the right of it and on the same runner, and so it must be filled since $\lambda$ is an $a$-core.
+
+Now, the energy state $e_{i}-b$ is on runner $r_a(i+b)$, and so
+$\lambda$ is $b$-core if and only if $e_{i}-b\leq e_{i+b}$ (recall that we are using cyclic indexing).
+
+Substituting $e_k=-ac_k-r(k)-1/2$ and simplifying gives that our inequality is equivalent to
+\begin{align*}
+a(c_{i+b}-c_i)& \leq b+i-r_a(i+b)
+\end{align*}
+and hence to
+$$c_{i+b}-c_i \leq q_a(b+i).$$
+
+\end{proof}
+
+We have $a$ hyperplanes in an $a-1$ dimensional space; they either
+form a simplex or an unbounded polytope.
+
+
+
+\begin{remark}  The same analysis sheds light on the case when $a$ and
+  $b$ are not relatively prime, which has been studied in \cite{AKS}.
+
+Let $d=\gcd(a,b)$; then any $d$-core is also an $(a,b)$-core, and so
+there are no longer finitely many $(a,b)$-cores.
+
+The inequalities given for $\SC_a(b)$ still describe the space of
+$(a,b)$-cores when $a,b$ are no longer relatively prime, but these
+inequalities no longer describe a simplex.  The inequalities no longer
+relate all the $c_i$ to each other; rather, they decouple into $d$ sets of $a/d$ of variables
+
+\begin{align*}
+S_0 & =\{xc_0, c_d, c_{2d},\dots, c_{a-d}\} \\
+ S_1& =\{c_1,c_{d+1},\dots, c_{a-d+1}\} \\
+& \quad \quad \cdots \\
+S_{d-1}&=\{c_{d-1}, c_{2d-1},\dots, c_{a-1}\} \\
+\end{align*}
+The charges $c_i$ in a given group must be close together, but for any
+vector $(v_0,\dots, v_{d-1})$ with $\sum v_i=0$, we may shift each
+element of $S_i$ by $v_i$ and all inequalities will still be satisfied.
+
+In particular, the shifts of the zero vector are easily seen to be the
+$d$ core partitions, and we see the set of $(a,b)$-core partitions is
+finite number of translates of the lattice of $d$-cores within the
+lattice of $a$-cores.
+
+
+
+
+\end{remark}
+
+
+%\begin{remark}
+%The space of $(a,b)$-Dyck paths can also be viewed as the lattice points in a polytope $\DP_{a}(b)$.  We now describe this polytope and the geometry of a bijection between the lattice points in $\SC_a(b)$ and $\DP_a(b)$.
+
+%Again, we fix $a$, and a residue class $r\mod a$, and let $b=ak+r$, with $k$ variable.  Let $h_i$ be the furthest right position of the Dyck path on the $i$th runner from the top, and set $h_0=0$.  We have $h_{i-1}\leq h_i \leq ki+\delta_i$, where $0\leq \delta_i\leq r$ being.
+
+%The step of making the abacus ``flush'' in the bijection $(a,b)$-Dyck paths and $(a,b)$-cores can be seen as doing a case analysis depending on which of the $c_i$ is smallest; the shape of the polytope $\DP_a(b)$ is one of the $a$ pieces that the simplex of cores is cut into by the chambers .
+
+%In the other direction, the looking at number of boxes missing from the optimal statistic $\mod a$ determines an index $a$ coset of the lattice; the $a$ cosets correspond precisely to the $a$ chambers of which dependence of the $c_i$ are maximal.
+
+%PICTURE(S?)
+%\end{remark}
+
+
+
+
+
+
+\subsubsection{Coordinate shift}
+In the charge coordinates $\mathbf{c}$, neither the hyperplanes defining the set of $b$ cores nor the quadratic form $Q$ are symmetrical about the origin.  We shift coordintaes to remedy this.
+\begin{definition}
+Define $\mathbf{s}=(s_1,\dots, s_a)\in V_a$ by
+$$s_i=\frac{i}{a}-\frac{a-1}{2a}$$
+\end{definition}
+
+The $i/a$ term ensures $s_{i+1}-s_i=1/a$; subtracting $\frac{a-1}{2a}$ ensures that  $\mathbf{s}\in V_a$, i.e. $\sum s_i=0$.
+ 
+\begin{lemma}
+In the shifted charge coordinates
+$$x_i=c_i+s_i$$
+the inequalities defining the set of $b$ cores become
+$$x_{i+b}-x_{i}\leq b/a$$
+and the size of an $a$-core is given by
+$$Q(\mathbf{x})=-\frac{a^2-1}{24}+\frac{a}{2}\sum_{i=0}^{a-1} x_i^2$$
+\end{lemma}
+
+\begin{proof}
+That the linear term of $Q$ vanishes in the $\mathbf{x}$ coordinates follows immediately from the definition of $\mathbf{s}$.  The constant term of $Q$ in the $\mathbf{x}$ coordinates is $-\frac{a}{2}\sum_{i=0}^{a-1} s_i^2$, which a short computation shows is $\frac{a^2-1}{24}$.
+
+The statement about the set of $b$-cores follows from the computation
+
+\begin{align*}
+x_{i+b}-x_{i}&=c_{i+b}-c_i+s_{i+b}-s_i \\
+&\leq  q_a(i+b)+r_a(i+b)/a-i/a \\
+&=(b+i)/a-i/a \\
+&=b/a
+\end{align*}
+\end{proof}
+
+Another change of variables makes clear the shape these inequalities cut out.
+\begin{lemma} \label{lem-standardsimplex}
+If $a$ and $b$ are relatively prime, then after the change of variables
+$$y_{i}=x_{i}-x_{i+b}+\frac{b}{a}$$
+the simplex of $(a,b)$-cores becomes the scaled standard simplex
+$$b\Delta_{a-1}=\{(y_0,\dots, y_{a-1})\Big|\sum y_i=b\}$$
+and the shifted lattice $\Lambda+\mathbf{s}$ goes to the index $a$ lattice:
+$$\sum_{k=0}^{a-1} (a-k)y_{i+kb}=(i+a/2)\mod a$$
+\end{lemma}
+
+\begin{proof}
+It is immediate that the $y_i$ satisfy $\sum y_i=b$ and $y_i\geq 0$.  If $x_i\in\Lambda+s$, the fractional part of $y_i$ is the fractional part of $s_i-s_{i+b}$, which is negative the fractional part of $b/a$, and hence $y_i$ is an integer.
+
+To show which sublattice $\Lambda+s$ maps to, and to show the map is surjective onto the simplex, we invert it.  Note that $x_{i+b}=x_i-z_i+b/a$.
+
+\begin{align*}
+x_i&=x_i \\
+x_{i+b}&=x_i+b/a-z_i \\
+x_{i+2b}&=x_i+2b/a-z_i-z_{i+b} \\
+&\cdots \\
+x_{i+(a-1)b}&=x_i+(a-1)b/a-z_i-z_{i+b}-\cdots-z_{i+(a-2)b}
+\end{align*}
+Summing these equations, the left hand side is $\sum x_i=0$.  Thus, we have
+$$ax_i=(a-1)z_i+(a-2)z_{i+b}+\cdots+z_{i+(a-2)b}-b(a-1)/2$$
+and the map is invertible.
+
+Further noting that if $x_i\in \Lambda+s$, then $ax_i=ac_i+i-(a-1)/2$, and so
+$$\sum_{k=0}^{a-1} (a-1-k)z_{i+kb}=i+(a-1)(b-1)/2\mod a$$
+Thus, the images of $x_i\in\Lambda+s$ lie in an index $a$ sublattice of the standard lattice; it is a further easy check that this sublattice is equivalent to one of the cosets of the sublattice described in the introduction.
+
+
+\end{proof}
+
+
+\begin{corollary}[Anderson \cite{anderson}] \label{cor:anderson} The
+  number of simultaneous $(a,b)$-cores is $\Cat_{a,b}$.
+\end{corollary}
+
+\begin{proof} This follows quickly from Lemma \ref{lem-standardsimplex}.
+
+
+The scaled simplex $b\Delta_a$ has $\binom{a+b-1}{a-1}$
+  usual lattice points.  Cyclicly permuting the variables preserves
+  $b\Delta_a$ and the standard lattice, and cyclicly permutes the $a$
+  cosets of the charge lattice.   Thus the standard lattice points in
+  $b\Delta_a$ are equidistributed among the $a$-cosets of the
+  charge lattice, and hence each one contains $\frac{1}{a}\binom{a+b-1}{a-1}=\Cat_{a,b}$.
+
+
+\end{proof}
+
+\subsection{The size of simultaneous cores}
+
+We now have all the ingredients needed to prove Armstrong's conjecture.  We derive it as a consequence of:
+
+\begin{theorem} \label{thm-polynomial}
+For fixed $a$, and $b$ relatively prime to $a$,  the average size of an $(a,b)$-core is a polynomial of degree 2 in $b$.
+\end{theorem}
+
+\begin{proof}
+For fixed $a$, the number of $a$-cores is $1/a$ times the
+number of lattice points in $b\Delta_{a-1}$, which is a polynomial
+$F_a(b)$ of degree $a-1$.  In the $x$-coordinates $Q=\core_a$
+is invariant under $S_a$, and in particular rotation, we see that the sum of the sizes of all $(a,b)$-cores is $1/a$ times the sum of $Q$ over the lattice points in $b\Delta_{a-1}$.   By Euler-Maclaurin theory, the number of points in $b\Delta_{a-1}$ is a polynomial $G_a(b)$ of degree $a+1$.
+
+Thus, the average value of an $(a,b)$-core is $G_a(b)/F_a(b)$, the quotient of a polynomial of degree $a+1$ by a polynomial of degree $a-1$.  To show this is a polynomial of degree two in $b$, we need to show that every root of $F_a$ is a root of $G_a$.
+
+We already know from \ref{cor:anderson} that the roots of $F_a$ are $-1,
+-2,\dots, -(a-1)$.  We now give another derivation of this fact, using Ehrhart reciprocity, that will easily adapt to shown these are also roots of $G_a$. 
+
+Ehrhart reciprocity says that $F_a(-x)$ is, up to a sign, the number of
+points in the \emph{interior} of $x\Delta_{a-1}$.  The interior
+consists of the points in $x\Delta_{a-1}$ none of whose coordinates
+are zero, and so the first interior point in $x\Delta_{a-1}$ is  $(1,1,\dots,1)\in a\Delta_{a-1}$.   Thus, $F_a(b)$ vanishes at $b=-1,\dots, -(a-1)$, and as it has degree $a-1$ it has no other roots.
+
+Ehrhart reciprocity extends to Euler-Maclaurin theory, to say that up to a sign $Q_a(-x)$ is the sum of $F$ of the interior points of
+$x\Delta_{a-1}$. Thus $Q_a(-x)$ also vanishes at
+$b=-1,\dots,-(a-1)$, and so $P_a/Q_a$ is a polynomial of degree 2.
+
+\end{proof}
+
+
+\begin{corollary}
+When $(a,b)$ are relatively prime, the average size of an $(a,b)$ core is $(a+b+1)(a-1)(b-1)/24$
+\end{corollary}
+
+\begin{proof}
+
+Fix $a$, and let $P_a(b)=G_a(b)/F_a(b)$ be the degree two polynomial that
+gives the average value of the $(a,b)$-cores when $a$ and $b$ are
+relatively prime.  As we know $P_a(b)$ is a polynomial of degree 2, we can determine it by computing a few values by hand; together with $(a,b)$ symmetry of cores, $P_a(b)$ is also a polynomial of degree two in $a$, and hence we can compute the exact formula by calculating only a few values.
+
+
+
+This is essentially the route we take, but use Ehrhart reciprocity to minimize the computation needed.
+
+First, we find the two roots of $P_a(b)$.  As the only $1$ core is the empty partition, we have $F_a(1)=1$ and $G_a(1)=0$, and so
+$(b-1)$ is a factor of $P_a$.
+
+Ehrhart reciprocity gives that
+$G_a(-a-1)$ is, up to a sign, the sum of $Q$ over the lattice points in the
+interior of $(a+1)\Delta_a$, which are just the lattice points contained in $\Delta_a$, and hence equal to $G_a(1)=0$, and so $(b+a+1)$ is a factor of $G_a$.
+
+By symmetry between $a$ and $b$, we must have the average size for an $(a,b)$ core is $A(a-1)(b-1)(a+b+1)$ for some
+constant $A$ independent of $a$ and $b$.
+
+To see that $A=1/24$, note that although there are no points of $\Lambda_s$ in $\mathcal{S}_a(0)=0$, the standard simplex $\delta_{a-1}(0)$ contains the origin as a lattice point, and so $P_a(0)=Q(0)=-(a^2-1)/24$.
+\end{proof}
+
+
+
+\section{Toward \texorpdfstring{$q$}{q}-analogs}
+In this section, we apply our lattice point and simplex point of view on simultaneous cores to the $q$-analog of rational Catalan numbers; the next section approaches $(q,t)$-analogs.
+
+\subsection{\texorpdfstring{$q$}{q}-numbers}
+
+
+
+
+
+Recall the standard $q$ analogs of $n$, $n!$ and $\binom{n}{k}$:
+\begin{align*}
+[n]_q&=1+q+q^2+\cdots+q^{n-1}=\frac{1-q^n}{1-q} \\
+[n]_q!&=[n]_q[n-1]_q\cdots [2]_q[1]_q \\
+\binom{n}{k}_q&=\frac{[n]_q!}{[k]_q![n-k]_q!}
+\end{align*}
+These three functions are polynomials with positive integer coefficients, i.e., they are elements of $\N[q]$.
+
+The $q$ rational Catalan numbers are given by the obvious formula:
+\begin{definition}
+$$\Cat_{a,b}(q)=\frac{1}{[a+b]_q} \binom{a+b}{a}_q=
+\frac{(1-q^{b+1})(1-q^{b+2})\cdots (1-q^{b+a-1})}{(1-q^2)(1-q^3)\cdots (1-q^a)}$$
+\end{definition}
+
+
+\subsection{Graded vector spaces}
+
+One place $q$ analogs occur naturally is in graded vector spaces.
+\begin{definition}
+If $V$ is a graded vector space, with $V_k$ denoting the weight $k$ subspace of $V$, we define $$\dim_qV=\sum_{k\in \N} q^k\dim V_k.$$
+\end{definition}
+
+\begin{proposition}
+Let $p_i$ be a variable of weight $i$, then $\C[p_1,\dots, p_n]$ has
+finite dimensional graded pieces, and
+$$\dim_q \C[p_1,\dots, p_n]=\frac{1}{(1-q)(1-q^2)\cdots(1-q^n)}$$
+
+If $V$ is a vector space with $\dim_qV=[n]_q$, then
+$$\dim_q \Sym^b V=\binom{n+b-1}{n-1}_q$$
+\end{proposition}
+
+These statements can be interpretted geometrically in terms of lattice
+points   The monomials in $\C[p_1,\dots, p_n]$ correspond to the lattice points in an $n$ dimensional unimodular cone; the monomials in $\Sym^b V$ correspond to lattice points in the scaled standard simplex $b\Delta_{a-1}$; the $q$-analogs of the statements listed above are $q$ counting the lattice points, where the weights of the $i$th primitive lattice vector on the ray of the cone has weight $q^i$.
+
+\begin{example}
+
+The following diagram illustrates $\binom{b+a-1}{a-1}_q$ as $q$-counting
+  standard lattice points in $b\Delta_{a-1}$ in the case $a=3$ and
+  $b=4$.   Letting $b$ go to infinity corresponds to extending
+  the arrows and the lattice points between them infinitely far to the
+  upper right, showing that $\prod_{k=1}^{a-1} \frac{1}{1-q^k}$
+  $q$-counts the points in a standard cone.
+\begin{center}
+\begin{tikzpicture}
+
+
+
+\filldraw (0,0)  circle(.03) node[above] {$1$};
+\filldraw (1,0) circle(.03) node[above] {$q$};
+\filldraw (2,0) circle(.03) node[above] {$q^2$};
+\filldraw (3,0) circle(.03) node[above] {$q^3$};
+\filldraw (4,0) circle(.03) node[above] {$q^4$};
+
+\filldraw (.5, 1.732058/2) circle(.03) node[above] {$q^2$};
+\filldraw (1.5, 1.732058/2) circle(.03) node[above] {$q^3$};
+\filldraw (2.5, 1.732058/2) circle(.03) node[above] {$q^4$};
+\filldraw (3.5, 1.732058/2) circle(.03) node[above] {$q^5$};
+
+\filldraw (1, 1.732058) circle(.03) node[above] {$q^4$};
+\filldraw (2, 1.732058) circle(.03) node[above] {$q^5$};
+\filldraw (3, 1.732058) circle(.03) node[above] {$q^6$};
+
+\filldraw (1.5, 1.5*1.732058) circle(.03) node[above] {$q^6$};
+\filldraw (2.5, 1.5*1.732058) circle(.03) node[above] {$q^7$};
+
+\filldraw (2, 2*1.732058) circle(.03) node[above] {$q^8$};
+
+\draw[-triangle 45] (0,-.5)-- node[below] {$\cdot q$} (4, -.5);
+\draw[-triangle 45] (-.5, .25*1.732058)--node[above]{$\cdot
+  q^2$}  (1.5, 2.25*1.732058);
+
+
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+\subsection{A \texorpdfstring{$q$}{q}-version of cone decompositions}
+
+\subsubsection{Lawrence Varchenko}
+Recall the decomposition of a simplicial polytope $\mathcal{P}$ in a vector space $V$ of dimension $n$ as a signed sum of cones based at their vertices, called the Lawrence-Varchenko decomposition:
+
+
+\begin{center}
+  \begin{tikzpicture}
+  \draw[fill=blue!20] (0,0) node [below left] {$A$} --(1,0) node [below right] {$B$}--(2,1) node [above right] {$C$}--(0,1) node [above left] {$D$}--cycle;
+  \draw[->] (0,0)-- node [above] {$v$} (1.1,.7);
+
+
+\draw (2.5,.5) node {$=$};
+
+\begin{scope}[xshift=3cm]
+    \draw (0,0) node [below left] {$A$};
+    \draw[-triangle 45] (0,0)-- (0,1);
+    \draw[-triangle 45] (0,0)-- (1, 0);
+\end{scope}
+
+\begin{scope}[xshift=5cm]
+    \draw (-.6,.5) node {$-$};
+    \draw (0,0) node [below left] {$B$};
+    \draw[-triangle 45] (0,0)-- (1,0);
+    \draw[-triangle 45] (0,0)-- (1, 1);
+\end{scope}
+
+\begin{scope}[xshift=7cm]
+    \draw (-.6,.5) node {$+$};
+    \draw (0,0) node [below left] {$C$};
+    \draw[-triangle 45] (0,0)-- (1,0);
+    \draw[-triangle 45] (0,0)-- (1, 1);
+\end{scope}
+
+\begin{scope}[xshift=9cm]
+    \draw (-.6,.5) node {$-$};
+    \draw (0,0) node [below left] {$D$};
+    \draw[-triangle 45] (0,0)-- (1,0);
+    \draw[-triangle 45] (0,0)-- (0, 1);
+\end{scope}
+
+
+  \end{tikzpicture}
+
+
+
+
+\end{center}
+
+
+
+
+First, pick a generic direction vector $v\in V$.
+At each vertex $v_i$, $n$ facets of $\mathcal{P}$ meet; if we extend these
+facets to hyperplanes, they cut $V$ into orthants.  Let
+$\mathcal{C}_k$ be the orthant at $v_i$ that contains our direction
+vector $v$.  Let $f_i$ be the number of hyperplanes that must be crossed to get from $\mathcal{C}_i$ to $P$.
+
+
+Then:
+$$\mathcal{S}=\sum_{i=0}^{k} (-1)^{f_i} \mathcal{C}_i$$
+
+To deal correctly with the boundary of $P$, one must correctly include or exclude portions of the boundary of $\mathcal{C}_k$, but this subtlety won't matter to us.
+
+\subsubsection{}
+
+The algebraic structure of $\binom{b+a-1}{a-1}$ suggests  a refinement of the Lawrence-Varchenko decomposition of $b\Delta_{a-1}$ for $q$-counting the lattice points.
+
+Expanding the numerator of $\binom{a+b-1}{a-1}$ as $(1-q^{b+1})\cdots (1-q^{b+a-1})$ there are $\binom{a-1}{k}$ terms obtained from choosing $1$ from $n-k$ factors and $q^M$ from $k$ factors. Each such term has sign $(-1)^k$, and the exponent of $q$ is slightly larger than $kb$.  We will interpret these $\binom{a-1}{k}$ terms as making up the polarized tangent cone at the $k$th vertex.
+
+
+The polarized tangent cone at the $k$th vertex $v_k$ will not carry the standard $q$-grading.  However, it appears the cone at $v_k$ may be subdivided into $\binom{a-1}{k}$ smaller cones that do have the standard $q$-grading, essentially by intersecting with the $A_{a-1}$ hyperplane arrangement translated to $v_k$.
+
+\begin{example} We illustrate the decomposition of $b\Delta_2$ suggested by
+$$\binom{b+2}{2}_q=\frac{1}{(1-q)(1-q^2)}\left(1-q^{b+1}-q^{b+2}+q^{2b+3}\right)$$
+
+\begin{tikzpicture}
+
+\clip (-1.5, -2.5)--(-1.5, 8.5)--(8.5, 8.5)--(8.5, -2.5)--cycle;
+\fill[blue!20] (0,0)--(3.5,0)--(3.5/2,3.5*1.7320508/2)--cycle;
+\fill[red!20] (4,0)--(2,4*1.7320508/2)--(4.25,8.5*1.7320508/2)--(8.25, 8.5*1.732508/2)--cycle;
+\fill[orange!40] (5,0)--(8.5,0)--(8.5,7*1.7320508/2)--cycle;
+\fill[green!20]  (3/2,5*1.7320508/2)-- (3/2-3.5/2,8.5*1.7320508/2) --(3/2+3.5/2,8.5*1.7320508/2) --cycle;
+
+\foreach \x in {-7,-6,...,10}{% Two indices running over each
+    \foreach \y in {-7,-6,...,10}{% node on the grid we have drawn
+        \filldraw (\x+\y/2,1.7320508*\y/2) circle(.05);}}
+
+
+
+\draw[dashed] (0,0)--(3.5,0);
+\draw[dashed] (0,0)--(3.5/2,3.5*1.7320508/2);
+\draw (1/2, 1.7320508/6) node {$+$};
+\filldraw[blue] (0,0) circle(.05) node[below]{$1$};
+\draw[-triangle 45] (0,0)--(.5,0) node[below]{$\cdot q$};
+\draw[-triangle 45] (0,0)--(.25,1.7320508/4) node[left]{$\cdot q^2$};
+
+
+\draw[dashed] (4,0)--(4-3.5/2,3.5*1.7320508/2);
+\draw[dashed] (4,0)--(4+3.5/2,3.5*1.7320508/2);
+\draw (4,1.7320508/3) node {$-$};
+
+\draw[-triangle 45] (4,0)-- (4-.25,1.7320508/4) node[left]{$\cdot q$};
+\draw[-triangle 45] (4,0)--(4.25,1.7320508/4) node[right]{$\cdot q^2$};
+
+
+\filldraw (3,0) circle(.05) node[below]{$q^{b}$};
+\filldraw[red] (4,0) circle(.05) node[below]{$q^{b+1}$};
+
+
+\draw[dashed] (5,0)--(8.5,0);
+\draw[dashed] (5,0)--(5+3.5/2,3.5*1.7320508/2);
+\draw (5.5, 1.7320508/6) node {$-$};
+\draw[dashed, -triangle 45] (5,0)--(5.5,0) node[below]{$\cdot q$};
+\draw[dashed, -triangle 45] (5,0)--(5.25,1.7320508/4) node[above]{$\cdot q^2$};
+
+
+
+\filldraw[orange] (5,0) circle(.05) node[below]{$q^{b+2}$};
+
+\draw[dashed] (3/2,5*1.7320508/2)--(3/2-3.5/2,8.5*1.7320508/2);
+\draw[dashed] (3/2,5*1.7320508/2)--(3/2+3.5/2,8.5*1.7320508/2);
+
+\draw (3/2, 17*1.7320508/6) node {$+$};
+
+\draw[dashed, -triangle 45] (3/2,5*1.7320508/2)--(1.25,5.5*1.7320508/2) node[left]{$\cdot q$};
+\draw[dashed, -triangle 45] (3/2,5*1.7320508/2)--(1.75,5.5*1.7320508/2) node[right]{$\cdot q^2$};
+
+\filldraw (3/2,3*1.7320508/2) circle(.05) node[left]{$q^{2b}$};
+
+
+\filldraw[green] (3/2,5*1.7320508/2) circle(.05) node[below]{$q^{2b+3}$};
+
+
+\end{tikzpicture}
+
+\end{example}
+
+
+Together with $\Cat_{a,b}=\dim_\C(\Sym^b\C[\Z_a])^{\Z_a}$, one
+might hope that we could give $\C[\Z_a]$ a grading so that we have
+$$\Cat_{a,b}(q)=\dim_q(\Sym^b \C[\Z_a])^{\Z_a}$$
+This naive hope does not appear possible.  However, we now describe a
+conjectural weakening of it.
+
+\subsection{Sublattices and shifting}
+
+We begin by rewriting $\Cat_{a,b}(q)$.  Since $[a]_{q^k}=(1-q^{ak})/(1-q^k)$, we have
+
+\begin{align*}
+\Cat_{a,b}(q)&=\frac{(1-q^{b+1})(1-q^{b+2})\cdots (1-q^{b+a-1})}{(1-q^2)\cdots(1-q^a)} \cdot \frac{[a]_{q^2}[a]_{q^3}\cdots[a]_{q^{a-1}}}{[a]_{q^2}[a]_{q^3}\cdots[a]_{q^{a-1}}} \\
+&=\frac{(1-q^{b+1})(1-q^{b+2})\cdots (1-q^{b+a-1})}{[a-1]_{q^a}}[a]_{q^2}[a]_{q^3}\cdots[a]_{q^{a-1}}
+\end{align*}
+
+Observe that the fraction is similar to the $q^a$-count of the lattice
+points inside a simplex of size $b/a$, and that the product of $[a]_{q^i}$ is a $q$ analog of $a^{a-2}$.
+
+\subsubsection{}
+This algebraic expression is suggestive of the simplex of
+$(a,b)$-cores.  The lattice of $a$-cores is index $a$ within
+the standard lattice.  The sublattice $\Lambda_T=(a\Z)^{a-1}$, has index $a^{a-1}$ inside the standard lattice, and hence $a^{a-2}$ within the lattice of $a$-cores.
+
+The intersection of each coset $\mathfrak{c}$ of $\Lambda_T$ with the simplex of
+$(a,b)$-cores is a $k\Delta_{a-1}$, where $k$ is slightly smaller than $b/a$, and depends on $b$ and $\mathfrak{c}$.
+
+
+It appears that
+$\Cat_{a,b}(q)$ is $q^a$ counting the lattice points in each coset $\mathfrak{c}$,
+but then shifting the result by a factor of $q^{\iota(\mathfrak{c})}$ for some $\iota(\mathfrak{c})$.
+
+Algebraically, this suggests
+\begin{conjecture} \label{conj:cosets}
+There is an \emph{age} function $\iota$ on the cosets $\mathfrak{c}\in\Lambda/\Lambda_T$, so that
+$$\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c})}=[a]_{q^2}[a]_{q^2}\cdots[a]_{q^{a-1}}$$
+ and
+$$\Cat_{a,b}(q)=\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c}} \binom{b/a-s(\mathfrak{c},b)+a-1 }{a-1}_{q^a}$$
+where the $q^a$ binomial coefficient $q^a$-counts the points in $\mathfrak{c}\cap \mathcal{SC}_{a-1}(b)$.
+\end{conjecture}
+
+\begin{remark}
+We could not find an obvious candidate for an explicit form of $\iota$ in general.
+
+%It would be particular nice if the bijection $\iota$ between the cosets and the monomials were linear, but this does not appear possible.  That is, consider the standard fundamental domain of $\Lambda_T$ inside $\Lambda_c$; each class $\mathfrak{c}\in\Lambda/\Lambda_T$ will have a unique representative in this fundamental domain.  By asking for the bijection to be linear, we are asking for the shift amount $\iota(\mathfrak{c})$ to be a linear function on the fundamental domain.
+
+\end{remark}
+
+\begin{remark}
+Conjecture \ref{conj:cosets} was motivated in part by Chen-Ruan cohomology \cite{CR, ALR}, which has found applications to the Ehrhart theory of rational polytopes \cite{Stapledon}.  Chen-Ruan cohomology $H^*_{CR}(\mathcal{X})$ is a cohomology theory for an orbifold (or Deligne-Mumford stack) $\mathcal{X}$.   As a vector space, $H^*_{CR}(\mathcal{X})$ is the usual cohomology of a disconnected space $\mathcal{IX}$.  One component $C_0$ of $\mathcal{IX}$ is isomorphic to $\mathcal{X}$.  The other components $C_\alpha, \alpha\neq 0$ are called \emph{twisted sectors} and are (covers of) fixed point loci in $\mathcal{X}$.  The pertinent feature for us is that the grading of the cohomology of the twisted sectors are \emph{shifted} by rational numbers, $\iota(\alpha)$, that is
+$$H^k_{CR}(\mathcal{X})=\bigoplus_{\alpha} H^{k-\iota(\alpha)}(C_\alpha)$$
+The function $\iota$ is known as the ``degree shifting number'' or ``age''.
+
+
+Orbifolds could potentially be connected to our story through toric geometry, and the well known correspondence between lattice polytopes and polarized toric varieties.  When the polytope is only rational, in general the toric variety is an orbifold. The simplex of $(a,b)$-cores in $\Lambda_a$ corresponds  orbifold $[\proj^a/\Z_a]$.  More specifically, there is an torus equivariant orbifold line bundle $\mathcal{L}$ over $\proj^a/\Z_a$, so that the lattice points in $\SC(a,b)$ correspond to the torus equivariant sections of $\mathcal{L}^b$.
+
+In the fan point of view, the cosets of the lattice correspond exactly to group elements of isotropy groups, and hence to twisted sectors.  
+
+This discussion is rather vague, and at this point, there is no concrete connection between $\Cat_{a,b}(q)$ and the geometry of the orbifold $\proj^a/\Z_a$ it would be very interesting to find one.
+
+\end{remark}
+
+Note that if Conjecture \ref{conj:cosets} holds, it would give
+another proof, presumably more combinatorial, that $\Cat_{a,b}(q)$ are all positive.  Furthermore, with some control on $\iota(\mathfrak{c})$ and $s(\mathfrak{c},n)$, Conjecture \ref{conj:cosets} suggests:
+
+\begin{conjecture}
+For every residue class $r, 0\leq r< a$, the coefficients of $q^{ak+r}$ in $\Cat_{a,b}(q)$ are unimodal.
+\end{conjecture}
+
+\subsubsection{Examples}
+
+\begin{example}
+By expanding both sides, it is straightforward to check the identities
+\begin{align*}
+\Cat_{3,3k+1}(q) & =\binom{k+2}{2}_{q^3}
++q^2\binom{k+1}{2}_{q^3}
++q^4\binom{k+1}{2}_{q^3} \\
+\Cat_{3,3k+2}(q)&=
+\binom{k+2}{2}_{q^3}
++q^2\binom{k+2}{2}_{q^3}
++q^4\binom{k+1}{2}_{q^3}
+\end{align*}
+\end{example}
+
+\begin{example}
+When $a=4$ and $b=4k+1$,
+
+%\begin{equation*}
+\begin{align*}
+\Cat_{4, 4k+1}(q)=&
+\binom{k+3}{3}_{q^4}&+&q^4\binom{k+2}{3}_{q^4}&+&q^8\binom{k+2}{3}_{q^4}&+&q^{12}\binom{k+1}{3}_{q^4} \\
++&q^5\binom{k+2}{3}_{q^4}&+&q^9\binom{k+2}{3}_{q^4}&+&q^9\binom{k+1}{3}_{q^4}&+&q^{13}\binom{k}{3}_{q^4} \\
++&q^2\binom{k+2}{3}_{q^4}&+&q^6\binom{k+2}{3}_{q^4}&+&q^6\binom{k+1}{3}_{q^4}&+&q^{10}\binom{k+1}{3}_{q^4}\\
++&q^3\binom{k+2}{3}_{q^4}&+&q^7\binom{k+2}{3}_{q^4}&+&q^{11}\binom{k+1}{3}_{q^4}&+&q^{15}\binom{k+1}{3}_{q^4}
+\end{align*}
+%\end{equation*}
+Here, the terms have been grouped so that the coefficients on each line have the same residue mod 4, making it easy to verify the unimodality conjecture.
+
+
+
+
+
+
+
+\end{example}
+
+
+
+
+
+\section{Toward \texorpdfstring{$(q,t)$}{(q,t)}-analogs}
+
+The $(q,t)$-analog $\Cat_{a,b}(q,t)$ was original defined in terms of lattice paths.  Using Anderson's bijection, the pertinent statistics for lattice paths were translated to the length and skew length statistics for simultaneous core partitions by \cite{AHJ}.  Our main result here is that these statistics are piecewise linear functions on the simplex of $(a,b)$-cores, and the domains of linearity are essentially chambers of the Catalan arrangement. 
+
+
+
+
+\begin{definition}
+Let $a<b$ be relatively prime, and $\lambda$ an $(a,b)$-core.  The                  \emph{$b$-boundary} of $\lambda$ consists of all cells $\square\in\lambda$ with $h(\square)<b$.
+
+We can group the parts of $\lambda$ into $a$ classes by taking $\lambda_i-i\mod a$; (note, at least one class is empty since $\lambda$ is an $a$-core).  The \emph{$a$-parts of $\lambda$} consist of the maximal $\lambda_i$ among each of the $i$ residue classes.
+
+The \emph{skew length of $\lambda, \sk(\lambda)$} is the number of cells of $\lambda$ that are in an $a$-row of $\lambda$ and in the $b$-boundary of $\lambda$. The \emph{co-skew-length} $\sk^\prime(\lambda)$ is $(a-1)(b-1)/2-\sk(\lambda)$.
+
+\end{definition}
+
+
+\begin{definition}
+Let $a<b$ coprime.  The \emph{$(q,t)$-rational Catalan number} is
+$$\Cat_{a,b}(q,t)=\sum_\lambda q^{\ell(\lambda)}t^{\sk^\prime(\lambda)}$$
+\end{definition}
+
+\begin{conjecture}[Armstrong-Hanusa-Jones]
+$$\sum_{\lambda} q^{\ell(\lambda)+\sk(\lambda)}=q^{(a-1)(b-1)/2}\Cat_{a,b}(q,1/q)=\Cat_{a,b}(q)$$
+\end{conjecture}
+
+\begin{conjecture}[Armstrong-Hanusa-Jones]
+$$\Cat_{a,b}(q,t)=\Cat_{a,b}(t,q)$$
+\end{conjecture}
+
+
+
+\subsection{Chamber dependence of \texorpdfstring{$\core_a{c}$}{core(c)}}
+
+The lattice of charges $\Lambda_a$ is essentially the $A_{a-1}$ lattice.  Although we have given a uniform descirption of the partition corresponding to $\core_a(c)$ for any charge vector $c$, and shown the size $|\core_a(c)|$ is a global polynomial in $c$, in many ways $\core_a(c)$ has a chamber dependence on the $A_{a-1}$ hyperplane arrangement.  By this we mean that if we restrict to a given chamber of this hyperplane arrangement, then $\core_a(c)$ behaves nicely, but if $c$ crosses one of the walls of the hyperplane arrangement, then $\core_a(c)$ undergoes a qualitative change.
+
+
+We illustrate this now with an informal example.
+\begin{example}
+The boundary path of a large $a$-core can be decomposed into $a+1$ regions, labeled with $i\in\{0,1,\dots,a\}$.  On the $i$th region, $i$ out of every $a$ steps will be left, and $a-i$ will be down; thus on the $i$th region the path will have slope $-(a-i)/i$.  
+
+This description of $a$-cores is clear from the abacus description.  In the region zero, all the runners have unfilled energy states; we cross into the first region as soon as one of the runners start having filled energy states.  In general, the $i$th region is exactly those regions where $i$ of the runners have filled energy states.  
+
+We get a chamber structure on the space of $a$-cores by considering \emph{which} of the $i$ runners have filled or empty energy states.  
+
+
+
+\end{example}
+
+The main result of this section is that the statistics $\ell(\core_a(c))$ and $\sk^\prime(c)$ that take part in the conjectural description of $(q,t)$-rational Catalan numbers are piecewise linear.  The length $\ell$ is linear on the chambers of the $A_{a-1}$ arrangement, and the skew length $\sk^\prime$ is linear on chambers of the Catalan arrangement.
+
+As a consequence of this, we outline a strategy for proving $(q,t)$ symmetry.
+
+
+
+\begin{definition}
+The $A_{a-1}$ hyperplane arrangement is the set of the $\binom{a}{2}$ hyperplanes $x_i=x_j$ in the $a-1$ dimensional vector space $\sum x_i=0$.
+
+There are $n!$ regions of the $A_{a-i}$ region, which are indexed by partitions $\sigma$; the region indexed by $\sigma$ is where $x_{\sigma(0)}<z_{\sigma(1)}<\cdots<x_{\sigma(a)}$.
+\end{definition}
+
+Another hyperplane arrangment that is pertinent is the Catalan arrangement, which is a deformation of the $A_a$ arrangement.
+
+\begin{definition}
+A hyperplane arrangement $\mathcal{A}^\prime$ is a \emph{deformation} of an arrangement $\mathcal{A}$ if every hyperplane in $\mathcal{A}^\prime$ is parallel to one in $\mathcal{A}$.
+\end{definition}
+
+\begin{definition}
+The \emph{Catalan arrangement} $\mathcal{C}_a$ is the union of the $3\binom{a}{2}$ hyperplanes $x_i-x_j\in\{-1,0,1\}, i<j$.
+\end{definition}
+
+The name \emph{Catalan arrangement} comes from the fact that $\mathcal{C}_a$ has $n!C_n$ regions.
+
+We have already seen the hyperplanes in the Catalan arrangement appearing, if $b\mathcal{C}_n$ denotes the Catalan arrangement scaled by $b$ (so $x_i-x_j\in\{-b,0,b\}$), then the hyperplanes that define the simplex of $b$-cores are in $b\mathcal{C}_n$.
+
+
+
+
+
+
+\begin{lemma}
+Let $c_m$ be the maximum of the $c_i$.
+
+The length of an $a$ core is given by
+$$\ell(\core_a{\mathbf{c}})=\max_{i=0}^{a-1} a(c_i-1)+i+1$$
+and hence is piecewise linear on the chambers of the $A_{n-1}$ arrangement.
+
+In the $x$-coordinates, this becomes
+$$\ell(\core_a(x))=-(a-1)/2+a\max x_i$$,
+ which is invariant under the $S_a$ action.
+\end{lemma}
+
+\begin{proof}
+We first translate $\ell(\lambda^S)$ into fermionic language.
+Let $e$ be the lowest energy state of $S$ that is not occupied by an electron.  Then $\ell(\lambda^S)$ is the number of electrons with energy greater than $e$.
+
+For an $a$-core, $e=\min -ac_m-m-1/2$.  Let $m$ be the runner of the $a$-abacus that $e$ occurs on. For $i\neq m$, there are roughly $c_m-c_i\geq 0 $ electrons on the $i$th runner that have energy great than $e$.  The exact number depends  on which of $i$ and $m$ is bigger: if $i<m$, there are exactly $c_m-c_j$ such electrons, while if $i>m$, there are only $c_m-c_j-1$ such electrons.  There are $a-1-m$ runners with $i>m$, and hence we have
+
+\begin{align*}
+\ell(\core_a(\mathbf{c})) & =m-(a-1)+\sum_{i\neq m} c_m-c_i \\
+ &=-(a-1-i)+ac_m
+ \end{align*}
+ where the second line follows by adding $\sum c_i=0$ to the expression.
+
+In the $x$ coordinates, we see
+\begin{align*}
+-(a-1)/2+a\max x_i&=-(a-1)/2+ac_m+as_m\\
+&=m-(a-1)+ac_m\\
+&=\ell(\core_a(x)).
+\end{align*}
+
+\end{proof}
+
+
+
+\begin{example}
+The empty partition corresponds to the vector $s$.  The largest of the
+$s_i$ is $s_{a-1}=(a-1)/(2a)$, and indeed $a(a-1)/(2a)-(a-1)/2=0$.
+
+The largest $(a,b)$-core $\lambda^M$ is the one vertex of $\SC_a(b)$ that is in $\Lambda+s$.  Its coordinates are some permutation of
+$bs=(bs_0,bs_1,\cdots bs_{a-1})$, thus we see that
+$$\ell(\lambda^M)=-\frac{a-1}{2}+ab\frac{a-1}{2a}=\frac{(a-1)(b-1)}{2}$$
+
+\end{example}
+
+
+\subsection{Skew length}
+
+Let 
+$$\lfloor x \rfloor_0=\max \left(0, \lfloor x \rfloor\right)$$
+
+\begin{lemma}
+$$\sk^b(x)=\sum_{i,j}\lfloor x_i-x_j\rfloor_0-\lfloor x_i-x_j-b/a\rfloor_0$$
+
+\end{lemma}
+
+
+
+\subsubsection{}
+To calculate the skew length, we begin by first simply counting the number of cells on the $a$-parts of $\lambda$, without worrying about whether they are in the $b$-boundary or not.
+
+\begin{definition} Let $\lambda$ be an $a$-core.
+$\aparts(\lambda)$ is the total size of all the $a$-parts of $\lambda$.
+\end{definition}
+
+
+\begin{lemma}
+The skew length of an $a$ core is given
+ by
+$$sl(\core_a(\mathbf{c}))$$
+
+\end{lemma}
+
+\begin{proof}
+
+
+\end{proof}
+
+
+\begin{definition}
+Let $\sk_{i,j}(\lambda)$ be the number of cells in the $i$th $a$-part with unoccupied state on the $j$th runner, and $\sk_{i,j}^b(\lambda)$ be the number of such cells with hook length less than $b$, so that
+$$\aparts=\sum_{i,j} \sk_{i,j}(\lambda)$$
+and
+$$\sk(\lambda)=\sum^b_{i,j}(\lambda)$$
+\end{definition}
+
+\begin{lemma}
+\begin{align*}
+\sk_{i,j}(\core_a(\mathbf{c}))&=\max(c_j-c_i-\delta_{j<i},0) \\
+\sk^b_{i,j}(\core_a(\mathbf{c}))&=\min\left(\sk_{i,j}(\core_a(\mathbf{c})), q_a(b)+\delta(r_a(b)>r_a(i-j))\right)
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+%First, recall that the parts $\lambda_i$ of $\lambda=\core_a(\mathbf{c})$ correspond to electrons with energy larger than the lowest unoccupied state.  The class of $\lambda_i-i\mod a$ is exactly which runner the electron appears on; hence, the cells in the $a$-part of $\core_a(\mathbf{c})$ are exactly those cells whose occupied state corresponds to the highest energy electron on a runner.
+
+%How many cells are in the $i$-row?
+
+To find $\sk_{i,j}(\mathbf{c})$, recall that the highest energy electron on the $i$th runner has energy $e_i=-ac_i+i+1/2$, and hence the lowest unoccupied energy state on the $j$th runner has energy $-ac_j+j+1/2+a$.  Thus
+$$\sk_{i,j}=q_a(-ac_i+i+1/2-(-ac_j+j+1/2))=c_j-c_i+q_a(i-j)=c_j-c_i-\delta_{i<j}$$
+
+Note $\sk_{i,j}^b(\mathbf{c})$, will be similar, but it will be capped if the hooklengths of these cells get above $b$.
+
+If nonzero, the hooklength of the first of these has length $r_a(i-j)$, and, and the hooklength of the largest has length
+$e_i-e_j-a=a(c_j-c_i-1)+i-j$.  If the largest hooklength is less than $b$, then $\sk^b_{i,j}(\mathbf{c})=\sk_{i,j}(\mathbf{c})$.
+
+If this is greater than or equal to $b$, then instead $\sk^b_{i,j}(\mathbf{c})$ is equal to the $k$ so that $r_a(i-j)+(k-1)a<b$ but $r_a(i-j)+ka>b$.  A quick computation then gives that in this case:
+
+$$\sk_{i,j}^b=q_a(b)+\delta(r_a(b)>r_a(i-j))$$
+
+
+\end{proof}
+
+\subsubsection{Chambers of linearity} It is clear from the definitions that $\sk_{i,j}$ and $\sk_{i,j}^b$, and hence $\sk$ and $\sk^b$, are piecewise linear functions of $\mathbf{c}$.  We now examine chamber structure and dependence of these functions.
+
+
+Recall that the chambers of the $A_a$ arrangement are labeled by permutations $\sigma\in S_a$ that determine the ordering of the $\mathbf{c}_i$.  More explicitly, $\mathbf{c}$ is in the interior of chamber $\sigma$ if and only if $c_{\sigma(0)}<c_{\sigma(1)}<\cdots<c_{\sigma_{a-1}}$.
+
+Recall that for $\sigma\in S_a$, the number of \emph{inversions} of $\sigma$ is $$\inv(\sigma)=\#\{(i,j)|0\leq i<j\leq (a-1), \sigma(i)>\sigma(j)\}$$.
+
+Then for $\mathbf{c}$ in the interior of chamber $\sigma$, we have
+\begin{align*}
+\sk(\mathbf{c})&= \sum_{i,j=0}^{a-1}  \max(c_j-c_i-\delta_{j<i}, 0) \\
+ &=\sum_{0\leq i<j\leq a-1} (c_{\sigma(j)}-c_{\sigma(i)}-\delta_{\sigma(j)<\sigma(i)}) \\
+                &=-\inv(\sigma)+\sum_{i=0}^{a-1}(1-a+2i)c_{\sigma(i)}\\
+&=-\inv(\sigma)+2a\langle\mathbf{s},\sigma(\mathbf{c}\rangle
+\end{align*}
+
+Where the second equality follows because $i$ is greater than $i$ elements in $\{0,1,\dots,a-1\}$ and less than $(a-1-i)$ elements, and thus $c_{\sigma_i}$ appears with a positive sign $i$ times in $\sum c_{\sigma(j)}-c_{\sigma(i)}$ times and a negative sign $(a-1-i)$ times.
+
+
+
+\begin{lemma}
+In terms of the $x$-coordinates, we would expect this to be closely related to $\sum_{i<j}|x_i-x_j|$.
+
+If $\mathbf{x}\in \mathcal{C}_\sigma$, we compute
+\begin{align*}
+\sum_{i<j} |x_i-x_j|&=\sum_{i<j} x_{\sigma(j)}-x_{\sigma(i)}\\
+&=\sum_{i<j} c_{\sigma(j)}-c_{\sigma(i)}+\sum_{i<j}s_{\sigma(j)}-s_{\sigma(i)} \end{align*}
+
+The second term depends only on the partition $\sigma$.
+
+\begin{definition}[\cite{SU}] Let $$\INV(\sigma)=\{(i,j)|i<j,\sigma(i)>\sigma(j)\}$$ be the set of inversions of $\sigma$.
+
+Define the \emph{inversion sum} of $\invsum(\sigma)$ to be
+$$\invsum(\sigma)=\sum_{(i,j)\in\INV(\sigma)}
+\sigma(j)-\sigma(i)=\sum_{(i,j)\in\INV(\sigma)} (j-i)$$
+\end{definition}
+
+\begin{remark}
+That the two definitions of $\invsum(\sigma)$ are equal is Proposition 2.4 in \cite{SU}.
+
+This statistic is also on \url{http://www.findstat.org/} , in an
+unconnected manner, with the following description: the permutation
+matrix of $\sigma$ is also an alternating sign matrix (or ASM for
+short), which form a lattice.  The lattice of ASM is in some well
+defined sense the smallest lattice extending the Bruhat order.  The
+statistic $\invsum(\sigma)$ is the rank of $\sigma$ in the lattice of
+ASMs.  See \cite{}
+\end{remark}
+
+With this definition, we have
+\begin{align*}\sum_{i<j}s_{\sigma(j)}-s_{\sigma(i)} &=\frac{1}{s}\sum_{i<j}\sigma(j)-\sigma(i)\\
+&=\frac{1}{s}\frac{(s-1)s(2s-1)}{6}-\frac{2}{s}\invsum(\sigma)
+\end{align*}
+The first term in the second line is the sum of the first $(s-1)$
+squares, which
+
+
+
+Thus, we are lead to consider the sum of all inversions of $\sigma$.
+This statistic has appeared before, \cite{SU} introduce this stati
+
+
+
+
+
+
+Which leads us naturally to the partition statistic $i\sigma(i)$.  As written, this depends on the normalization of whether our group permute $\{0,\dots,a-1\}$ or $\{0,\dots,a\}$.  In any case, the sum is clearly at a maximum on the identity,  where it is the sum of squares.  It is more natural to have partition statistics be zero on the identity, and so we are lead to define the partition statistic:
+
+$$\asm(\sigma)=\frac{(a-1)a(2a-3)}{6}-\sum_{i=0}^{a-1}i\sigma(i)$$
+
+
+
+
+$$\sum_{i=0}^{a-1} (1-2a+2i)\frac{\sigma(i)}{a}=\frac{1-2a}{a}\sum\sigma(i)+2\sum_{i=0}^{a-1}i\sigma(i)$$
+
+The first term is independent of $\sigma$ and is equal to $(1-2a)(1-a)/2$; the second term, over
+
+
+\end{lemma}
+
+
+
+\subsection{}
+We now turn toward $\sk_a^b(x)$.  We saw that the number of cells
+having electron on the $i$ runner and positron anywhere on the $WHICH$
+runner is the $q_a(e_j-e_i)$.  However, once $e_j-e_ib/a$, these cells have hook lengths greater than $b$, and hence count in
+$\sk_a$ but not $\sk_a^b$.  Thus, though $\sk_a^b$ is locally linear, it changes every a wall $e_i-e_j=b/a$ is crossed.
+
+
+
+
+Their hook lengths have lengths $$j-i+a\delta_{j<i}, j-i+a\delta_{j<i}+a,\cdots+j-i+a\sk_{i,j}(\core_a(\mathbf{c}))-a$$
+
+\subsection{Toward \texorpdfstring{$(q,t)$}{(q,t)}-symmetry}
+
+
+
+\begin{definition}
+
+For $1\leq i\leq a-1$, let $$v_i=\left(\underbrace{\frac{i}{a}-1,\dots \frac{i}{a}-1}_{i \text{ times}},\underbrace{ \frac{i}{a},\dotsm\frac{i}{a}}_{a-i \text{ times}}\right)$$
+\end{definition}
+
+
+
+
+One can see that the $v_i$ generate the lattice $\Lambda$, and lie on the rays of the unimodular cone $\cone$.  
+
+Because the difference of two entries of $v_i$ is $0$ or $1$, we see that $\sk$ is a linear function on the lattice $V$ and its cosets, and for $x\in\cone$.
+
+At any point in $\cone$, we thus have
+$$\ell(x+v_i)=\ell(x)+i$$
+The dependence of $\sk$ on $v_i$ depends on which chamber of the Catalan arrangement we are in.  Near $0$, we have $\sk(x)=\sum_{i<j} x_j-x_i$, and so
+$$\sk(x+v_i) = \sk(x)+i(a-i)$$
+However, near $\infty$, we have that $x_j-x_i>b$ if $j\neq i+1$, and so $\sk(x)=\sum_i x_{i+1}-x_i=x_a-x_1$, and so
+$$\sk(x+v_i)=\sk(x)+1$$
+here.
+
+
+
+
+
+\subsubsection{Structure near 0}
+
+
+
+\begin{definition} \label{def:standardpermutations}
+For $\sigma\in S_n$, let 
+$$\DES(\sigma)=\left\{i\in [1, n-1] \Big | \sigma(i)>\sigma(i+1)\right\}$$
+We use $\des(\sigma)$ to denote $|\DES(\sigma)|$, and $\maj(\sigma)=\sum_{i\INV(\sigma)} i$.
+
+Recall that 
+$$\inv(\sigma)=\left|\left\{(i,J)\big| 1\leq i<j\leq n, \sigma(i)>\sigma(j)\right\}\right|$$
+\end{definition}
+
+\begin{definition} \label{def:sizepermutation}
+Define the partition statistic $\siz$ by
+$$\siz(\sigma)=\left(\sum_{i\in\DES(\sigma)} (n+1-i)i\right)-\inv(\sigma)$$
+\end{definition}
+
+Definitions \ref{def:standardpermutation} are standard; as far as we know, the statistic $\siz$ in Definition \ref{def:sizepermutation} is new.  It is motivated by the following two lemmas.
+
+\begin{lemma} \label{lem:sizmaj1}
+There is a labeling of the orbifold cosets by partitions $\sigma\in S_{a-1}$, so that if $v_\sigma$ be the minimum vector in the coset labeled by $\sigma$, then:
+\begin{align*}
+\ell(v_\sigma)&=\maj(\sigma) \\
+\sk(v_\sigma)&=\siz(\sigma)\\
+\end{align*}
+
+\end{lemma}
+
+\begin{lemma} \label{lem:sizmaj2}
+$$\sum_{\sigma\in S_n} q^{\siz(\sigma)} t^{\maj(\sigma)}=\prod_{k=1}^n [k]_{q^{n+1-k}t}$$
+\end{lemma}
+
+The proofs of the two lemmas occupy the next subsection.  We show now that our main result follows:
+
+\begin{corollary}[Low degree $(q,t)$-symmetry]
+
+\end{corollary}
+
+\subsection{Proof of Lemma \ref{sizmaj1}}
+
+\begin{proof}
+First, we determine a bijection between $S_{a-1}$ and the vectors orbifold cosets.  
+
+Suppose that $w=(w_1,\dots, w_n)$ is one of the generators of one of the $(a-1)!$ orbifold cosets; we list three properties that together characterize such $w$.
+
+\begin{enumerate}
+
+\item We must have $w\in S_a\cdot \Lambda_a$. This is equivalent to:
+$$\left\{ \langle w_i-\frac{a-1}{2}\Big| 1\leq i\leq a\right\}=\left\{0,\frac{1}{a},\frac{2}{a},\cdots,\frac{a-1}{a}\right\}$$
+
+\item We must have $w\in\cone$.  This is equivalent to 
+$$w_1\leq w_2 \leq w_3\cdots\leq w_a$$
+By Property 1, all the inequalities must be strict.
+
+\item We must have that $w$ is the minimal vector in its $\Lambda_a$  coset satisfying properties 1 and 2.  This is equivalent to
+$$w_i+1>w_{i+1},\quad 1\leq i\leq a-1$$
+because if $w_i+1<w_{i+1}$, then $w-v_i$ satisfies the first two properties but is smaller than $w$, but is in the same $\Lambda_a$ coset and still satisfies properties 1 and 2; similarly, if $w$ satisfies properties (1) and (2), then $w+v_i$ does not satisfy property 3.
+\end{enumerate}
+
+Let $w\in\Lambda_a\cap \cone$, define $\sigma$ by 
+$$\frac{\sigma_i}{a}=\langle w_{i}-w_a\rangle$$
+this defines a permutation $\sigma\in S_{a-1}$.
+
+Since the entires of the $v_i$ all have the same entries modulo $1$, we see that this permutation is constant on the orbifold cosets.  
+
+We now describe the minimal vector $v^\sigma$ in the orbifold coset corresponding to $\sigma$.  We will first define a vector $w^\sigma$ that has $w^\sigma_i<w^\sigma_{i+1}$ for all $i$, and gives rise to the permutation $\sigma$, but does not satisfy $\sum w_i^\sigma=0$; we will then subtract the approproiate multiple of $(1/a,\dots, 1/a)$ to get $v^\sigma$.
+
+We need $w^\sigma_{i+1}>w^\sigma_i$ and $\langle w^\sigma_{i+1}-w^\sigma_i\rangle=\langle\sigma_{i+1}/a-\sigma_i/a\rangle$, and so we set
+
+$$w^\sigma_{i+1}=w^\sigma_i+\frac{\sigma_{i+1}-\sigma_i}{a}+\delta(\sigma_i>\sigma_{i+1})$$
+where we have conventionally set $w^\sigma_0=\sigma_0=0, \sigma_a=a$.
+
+Define $$\des_{ij}(\sigma)=\left|\left\langle k\in\DES(\sigma)\big| i\leq k < j\right\}\right|$$
+
+Then we have $$w_j=\frac{\sigma_j}{a}+\des_{1,j}(\sigma)$$
+and so
+\begin{align*}
+\sum w_j &=\frac{1}{a}\sum_{i=1}^a \sigma_i +\sum_{i=1}^a \des_{1,i} \\
+ &=\frac{a+1}{2}+\sum_{i=1}^{a-2} (a-i)\des_i(\sigma)
+\end{align*}
+
+Thus, if we set
+
+$$v^\sigma_j=\frac{\sigma_j}{a}+\sum_{i=1}^{j-1} \des_j(\sigma)-\frac{a+1}{2a}-\frac{1}{a}\sum_{i=1}^{a-2} (a-i)\des_i(\sigma)$$
+then $w^\sigma$ is the vector we want.
+
+We compute (recalling the convention $\sigma_a=a$):
+
+\begin{align*}
+\ell(v^\sigma) &= a v^\sigma_a-\frac{a-1}{2} \\
+&=a+a\sum_{i=1}^{a-2} \des_i(\sigma)-\frac{a+1}{2}-\sum_{i=1}^{a-2} (a-i)\des_i(\sigma)-\frac{a-1}{2} \\
+&=\sum_{i=1}^{a-2} i\des_i(\sigma) \\
+&=\maj(\sigma)
+\end{align*}
+
+and
+\begin{align*}
+\sk (v^\sigma) &=\sum_{1\leq i <j \leq a} \left\langle v^\sigma_j-v^\sigma_i\right\rangle \\
+&=\sum_{1\leq i <j \leq a} \left\langle\frac{\sigma_j-\sigma_i}{a}+\des_{ij}(\sigma)\right\rangle \\
+&=\sum_{1\leq i<j\leq a} \des_{ij}(\sigma)-\delta(\sigma_j<\sigma_i)
+\end{align*}
+The result follows as
+$$\sum_{1\leq i<j\leq a} \des_{ij}(\sigma)=\sum_{k=1}^{a-2} k(a-k)\des_k(\sigma)$$
+because for $\des_k$ to appear in $\des_{ij}$ we need $1\leq i\leq k$ and $j<k\leq a$, and so $\des_i$ appears in $k(a-k)$ different $\des_{ij}$.
+
+And that $$\sum_{1\leq i<j\leq a} \delta(\sigma_j<\sigma_i)=\inv(\sigma).$$  
+
+
+
+\end{proof}
+
+\subsection{Proof of Lemma \ref{sizmaj2}}
+
+For $2\leq j\leq n$, Define $C_j\in S_n$ to be the permutation 
+
+$$c_j=\begin{pmatrix} 
+1 & 2 & 3 & \cdots & j-1 & j & j+1 & \cdots & n \\
+j & 1 & 2 & \cdots & j-2 & j-1 & j+1 & \cdots & n
+\end{pmatrix}$$
+Or, in cycle notation, $C_j=(j,j-1,j-2,\cdots, 2,1)$.
+
+Then any permutation can be written uniquely as a product,
+$$\sigma=C_n^{a_n}C_{n-1}^{a_{n-1}}\dots C_2^{a_2}$$
+with $0\leq a_k \leq k-1$, where the permutations further to the right act \emph{first}.
+
+Lemma \ref{sizmaj2} then reduces to showing:
+\begin{align*}
+\maj(\sigma)&=\sum a_i \\
+\siz(\sigma)&=\sum (n+1-i) a_i
+\end{align*}
+
+The proof will be inductive;  clearly it holds on the identity, and so we must show that in such a factorization, multiplying by $C_k$ raises $\maj$ by one and $\siz$ by $(n+1-k)$.
+
+First, observe what multiplication by $C_i$ does to the set $\DES$ of descents.  When multiplying by $C_k$, we have not yet permuted the elements $(k+1), (k+2),\dots, n$, and so $\DES\subset \{1,\dots, k-1\}$. As $C_j$ decreases $2,\dots, j$ by 1, any comparisons involving these elements will remain unchanged; hence, the only descents $C_j$ could change are those where the 1 has changed to a $j$.
+
+Suppose that in $\sigma$, the 1 is in position $k$; then $k-1$ will be a descent, and $k$ will not be a descent.  After we have multiplied by $c_j$, the 1 will change to a $j$, and so $k-1$ will not be a descent, and $k$ will be.
+
+Thus, multiplying by $C_j$ will either increase a descent by one, or create a new descent at 1.  In either case, the major index will 
+increase by one.
+
+We now investigate the effect of multipication by $C_j$ on $\siz$, supposing that 1 is in position $k$.  By the above analysis, the only change in descents will be that  if we change a descent at position $k-1$ to be at $k$, the first term will change from $(n+1-(k-1))(k-1)$ to $(n+1-k)(k)$, and so increase by $n-2k+2$.  How will $\inv$ change?  The only inversions that will change are those that were comparing $1$; before we multiply by $C_j$, there were $k-1$ inversions involving $1$ (all $ik$) after, there are $j-k$ inversions (of the form $ki$ with $i\leq j$), hence we have added $j-k-(-k-1)=j-2k+1$ inversions.  Thus, the total change in $\siz$ is $n-2k+2-(j-2k+1)=n-j+1$, as desired.
+
+
+
+
+  
+
+
+
+
+\subsubsection{Structure near $v_{\max}$}
+\begin{align*}
+\ell(y-v_i) &= \ell(x)-i  \\
+\sk(y-v_i) &= \sk(x)-1
+\end{align*}
+
+
+
+\bibliographystyle{plain}
+\bibliography{Armstrong}
+
+\end{document}
