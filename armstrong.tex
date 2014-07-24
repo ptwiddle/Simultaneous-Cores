@@ -306,6 +306,34 @@ regular representation of $Z_a$.  Then $\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}.
 
 Another way of phrasing this is that the $(a,b)$ Catalan number is the number of degree $b$ polynomials in $p_1,\dots, p_a$ $p_1^{e_1}\cdots p_a^{e_a}$ with $\sum e_i=b$ and $\sum i e_i=0\mod a$.
 
+
+
+\begin{definition}
+The $A_{a-1}$ hyperplane arrangement is the set of the $\binom{a}{2}$ hyperplanes $x_i=x_j$ in the $a-1$ dimensional vector space $\sum x_i=0$.
+
+There are $n!$ regions of the $A_{a-i}$ region, which are indexed by partitions $\sigma$; the region indexed by $\sigma$ is where $x_{\sigma(0)}<z_{\sigma(1)}<\cdots<x_{\sigma(a)}$.
+\end{definition}
+
+Another hyperplane arrangment that is pertinent is the Catalan arrangement, which is a deformation of the $A_a$ arrangement.
+
+\begin{definition}
+A hyperplane arrangement $\mathcal{A}^\prime$ is a \emph{deformation} of an arrangement $\mathcal{A}$ if every hyperplane in $\mathcal{A}^\prime$ is parallel to one in $\mathcal{A}$.
+\end{definition}
+
+\begin{definition} \label{def:arrangements}
+The \emph{Catalan arrangement} $\mathcal{C}_a$ is the union of the $3\binom{a}{2}$ hyperplanes $x_i-x_j\in\{-1,0,1\}, i<j$.
+\end{definition}
+
+The name \emph{Catalan arrangement} comes from the fact that $\mathcal{C}_a$ has $n!C_n$ regions.
+
+We have already seen the hyperplanes in the Catalan arrangement appearing, if $b\mathcal{C}_n$ denotes the Catalan arrangement scaled by $b$ (so $x_i-x_j\in\{-b,0,b\}$), then the hyperplanes that define the simplex of $b$-cores are in $b\mathcal{C}_n$.
+
+
+
+
+
+
+
 We now give an informal discussion of how $\core_a(\mathbf{x})$ depends on the chamber of $\mathcal{A}_a$.
 
 
@@ -315,6 +343,22 @@ Consider the lattice path of a large random $a$-core.  At the start, every segme
 In the first sections, all steps that slope up correspond to electrons on the same runner $i$ of the $a$-abacus.  The $i$ that occurs is the one with $x_i$ is minimum.  Similarly, in the second section, all of segments corresponding to electrons on runner $i$ slope up, but also the segments corresponding to electrons on runner $j$, where $x_j$ is the second smallest of all the $x_k$.
 
 The ordering of the $x_i$ tell us the ordering the up-steps on the $i$th abacus happen.
+
+\end{example}
+\subsection{Chamber dependence of \texorpdfstring{$\core_a{c}$}{core(c)}}
+
+The lattice of charges $\Lambda_a$ is essentially the $A_{a-1}$ lattice.  Although we have given a uniform descirption of the partition corresponding to $\core_a(c)$ for any charge vector $c$, and shown the size $|\core_a(c)|$ is a global polynomial in $c$, in many ways $\core_a(c)$ has a chamber dependence on the $A_{a-1}$ hyperplane arrangement.  By this we mean that if we restrict to a given chamber of this hyperplane arrangement, then $\core_a(c)$ behaves nicely, but if $c$ crosses one of the walls of the hyperplane arrangement, then $\core_a(c)$ undergoes a qualitative change.
+
+
+We illustrate this now with an informal example.
+\begin{example}
+The boundary path of a large $a$-core can be decomposed into $a+1$ regions, labeled with $i\in\{0,1,\dots,a\}$.  On the $i$th region, $i$ out of every $a$ steps will be left, and $a-i$ will be down; thus on the $i$th region the path will have slope $-(a-i)/i$.  
+
+This description of $a$-cores is clear from the abacus description.  In the region zero, all the runners have unfilled energy states; we cross into the first region as soon as one of the runners start having filled energy states.  In general, the $i$th region is exactly those regions where $i$ of the runners have filled energy states.  
+
+We get a chamber structure on the space of $a$-cores by considering \emph{which} of the $i$ runners have filled or empty energy states.  
+
+
 
 \end{example}
 
@@ -1340,9 +1384,13 @@ Here, the terms have been grouped so that the coefficients on each line have the
 
 \section{Toward \texorpdfstring{$(q,t)$}{(q,t)}-analogs}
 
-The $(q,t)$-analog $\Cat_{a,b}(q,t)$ was original defined in terms of lattice paths.  Using Anderson's bijection, the pertinent statistics for lattice paths were translated to the length and skew length statistics for simultaneous core partitions by \cite{AHJ}.  Our main result here is that these statistics are piecewise linear functions on the simplex of $(a,b)$-cores, and the domains of linearity are essentially chambers of the Catalan arrangement. 
+We now turn toward applying the lattice-point viewpoint toward $(q,t)$-analog $\Cat_{a,b}(q,t)$, original defined in terms of lattice points, and translated to simultaneous cores in \cite{AHJ}.  
 
+The $(q,t)$-rational catalan numbers count simultaneous cores with respect to two statistics, the length and (co)-skew-length.   Our main result here is that these statistics are piecewise linear functions on the simplex of $(a,b)$-cores, and the domains of linearity are essentially chambers of the Catalan arrangement. This suggests that $C_{a,b}(q,t)$ should be expressible as the sum of $C_a$ closed form functions of $(q,t)$, and that a thorough understanding of the geometry of the Catalan arrangement and its interaction with the lattice of cores could result in a proof of $(q,t)$-symmetry.
 
+We examine this for $a=3$, and use this to prove $q-t$-symmetry for general $(a,b)$ and low $q$-degree.
+
+\subsection{Simultaneous cores and $(q,t)$-rational Catalan numbers}
 
 
 \begin{definition}
@@ -1360,94 +1408,72 @@ Let $a<b$ coprime.  The \emph{$(q,t)$-rational Catalan number} is
 $$\Cat_{a,b}(q,t)=\sum_\lambda q^{\ell(\lambda)}t^{\sk^\prime(\lambda)}$$
 \end{definition}
 
-\begin{conjecture}[Armstrong-Hanusa-Jones]
+\begin{conjecture}[Specialization]
 $$\sum_{\lambda} q^{\ell(\lambda)+\sk(\lambda)}=q^{(a-1)(b-1)/2}\Cat_{a,b}(q,1/q)=\Cat_{a,b}(q)$$
 \end{conjecture}
 
-\begin{conjecture}[Armstrong-Hanusa-Jones]
+\begin{conjecture}[Symmetry]
 $$\Cat_{a,b}(q,t)=\Cat_{a,b}(t,q)$$
 \end{conjecture}
 
+\subsubsection{Results}
+Our main result is that the statistics $\ell$ and $\sk$ in the definition of $\cat_{a,n}(q,t)$ are piecewise polynomial on the $b/a$-dilation of the Catalan arrangement (Definition \ref{def:arrangements}).  More precisely:
+
+\begin{proposition}
+\label{prop:length}
+$$\ell(\mathbf{x})=-\frac{a-1}{2}+a\max x_i$$
+\end{proposition}
+
+\begin{proposition}
+\label{prop:skewlength}
+Let $\lfloor x\rfloor_0=\max\left(0, \lfloor x\rfloor\right)$.
+Then
+$$\sk(\mathbf{x})=\sum_{i,j=0}^a \lfloor x_i-x_j\rfloor_0 - \lfloor x_i-x_j-b/a\rfloor_0$$
+\end{proposition}
 
 
-\subsection{Chamber dependence of \texorpdfstring{$\core_a{c}$}{core(c)}}
-
-The lattice of charges $\Lambda_a$ is essentially the $A_{a-1}$ lattice.  Although we have given a uniform descirption of the partition corresponding to $\core_a(c)$ for any charge vector $c$, and shown the size $|\core_a(c)|$ is a global polynomial in $c$, in many ways $\core_a(c)$ has a chamber dependence on the $A_{a-1}$ hyperplane arrangement.  By this we mean that if we restrict to a given chamber of this hyperplane arrangement, then $\core_a(c)$ behaves nicely, but if $c$ crosses one of the walls of the hyperplane arrangement, then $\core_a(c)$ undergoes a qualitative change.
-
-
-We illustrate this now with an informal example.
-\begin{example}
-The boundary path of a large $a$-core can be decomposed into $a+1$ regions, labeled with $i\in\{0,1,\dots,a\}$.  On the $i$th region, $i$ out of every $a$ steps will be left, and $a-i$ will be down; thus on the $i$th region the path will have slope $-(a-i)/i$.  
-
-This description of $a$-cores is clear from the abacus description.  In the region zero, all the runners have unfilled energy states; we cross into the first region as soon as one of the runners start having filled energy states.  In general, the $i$th region is exactly those regions where $i$ of the runners have filled energy states.  
-
-We get a chamber structure on the space of $a$-cores by considering \emph{which} of the $i$ runners have filled or empty energy states.  
-
-
-
-\end{example}
-
-The main result of this section is that the statistics $\ell(\core_a(c))$ and $\sk^\prime(c)$ that take part in the conjectural description of $(q,t)$-rational Catalan numbers are piecewise linear.  The length $\ell$ is linear on the chambers of the $A_{a-1}$ arrangement, and the skew length $\sk^\prime$ is linear on chambers of the Catalan arrangement.
-
-As a consequence of this, we outline a strategy for proving $(q,t)$ symmetry.
+From Propositions \ref{prop:length, prop:skewlength}, it is immediate that $\ell$ and $\sk$ are invariant under the $S_a$ action permuting the coordinates. 
 
 
 
-\begin{definition}
-The $A_{a-1}$ hyperplane arrangement is the set of the $\binom{a}{2}$ hyperplanes $x_i=x_j$ in the $a-1$ dimensional vector space $\sum x_i=0$.
+Using the piecewise linearity
 
-There are $n!$ regions of the $A_{a-i}$ region, which are indexed by partitions $\sigma$; the region indexed by $\sigma$ is where $x_{\sigma(0)}<z_{\sigma(1)}<\cdots<x_{\sigma(a)}$.
-\end{definition}
 
-Another hyperplane arrangment that is pertinent is the Catalan arrangement, which is a deformation of the $A_a$ arrangement.
 
-\begin{definition}
-A hyperplane arrangement $\mathcal{A}^\prime$ is a \emph{deformation} of an arrangement $\mathcal{A}$ if every hyperplane in $\mathcal{A}^\prime$ is parallel to one in $\mathcal{A}$.
-\end{definition}
 
-\begin{definition}
-The \emph{Catalan arrangement} $\mathcal{C}_a$ is the union of the $3\binom{a}{2}$ hyperplanes $x_i-x_j\in\{-1,0,1\}, i<j$.
-\end{definition}
-
-The name \emph{Catalan arrangement} comes from the fact that $\mathcal{C}_a$ has $n!C_n$ regions.
-
-We have already seen the hyperplanes in the Catalan arrangement appearing, if $b\mathcal{C}_n$ denotes the Catalan arrangement scaled by $b$ (so $x_i-x_j\in\{-b,0,b\}$), then the hyperplanes that define the simplex of $b$-cores are in $b\mathcal{C}_n$.
+ It is also clear that $\ell$ is piecewise linear, and $\sk$ is piecewise linear when restricted to 
 
 
 
 
 
 
-\begin{lemma}
-Let $c_m$ be the maximum of the $c_i$.
 
-The length of an $a$ core is given by
-$$\ell(\core_a{\mathbf{c}})=\max_{i=0}^{a-1} a(c_i-1)+i+1$$
-and hence is piecewise linear on the chambers of the $A_{n-1}$ arrangement.
+\subsection{Length and Skew Length are piecewise linear}
+In this section we prove Propositions \ref{prop:length} and Lemma \ref{prop:skewlength}.
 
-In the $x$-coordinates, this becomes
-$$\ell(\core_a(x))=-(a-1)/2+a\max x_i$$,
- which is invariant under the $S_a$ action.
-\end{lemma}
+\subsection{Proof that $\ell(\core_a(x))=-(a-1)/2+a\max x_i$}
 
 \begin{proof}
 We first translate $\ell(\lambda^S)$ into fermionic language.
 Let $e$ be the lowest energy state of $S$ that is not occupied by an electron.  Then $\ell(\lambda^S)$ is the number of electrons with energy greater than $e$.
 
-For an $a$-core, $e=\min -ac_m-m-1/2$.  Let $m$ be the runner of the $a$-abacus that $e$ occurs on. For $i\neq m$, there are roughly $c_m-c_i\geq 0 $ electrons on the $i$th runner that have energy great than $e$.  The exact number depends  on which of $i$ and $m$ is bigger: if $i<m$, there are exactly $c_m-c_j$ such electrons, while if $i>m$, there are only $c_m-c_j-1$ such electrons.  There are $a-1-m$ runners with $i>m$, and hence we have
+Recall that the highest energy occupied state on the $i$th runner is $-ac_i-i-1/2$, and so the lowest unoccupied state is $a$ higher, and hence $e=\min_i -ac_i-i-1/2+a$.  
+
+Let $m$ be the runner of the $a$-abacus that has the lowest unoccupied energy state.  For $i\neq m$, there are roughly $c_m-c_i\geq 0 $ electrons on the $i$th runner that have energy great than $e$.  The exact number depends  on which of $i$ and $m$ is bigger: if $i<m$, there are exactly $c_m-c_i$ such electrons, while if $i>m$, there are only $c_m-c_i-1$ such electrons. 
+
+ There are $a-1-m$ runners with $i>m$, and hence we have
 
 \begin{align*}
-\ell(\core_a(\mathbf{c})) & =m-(a-1)+\sum_{i\neq m} c_m-c_i \\
- &=-(a-1-i)+ac_m
+\ell(\core_a(\mathbf{c})) & =-(a-1-m)+\sum_{i\neq m} c_m-c_i \\
+ &=-(a-1-m)+ac_m
  \end{align*}
  where the second line follows by adding $\sum c_i=0$ to the expression.
 
-In the $x$ coordinates, we see
-\begin{align*}
--(a-1)/2+a\max x_i&=-(a-1)/2+ac_m+as_m\\
-&=m-(a-1)+ac_m\\
-&=\ell(\core_a(x)).
-\end{align*}
+Since $x_i=c_i+i/a-(a-1)/(2a)$, it follows that
+$$
+\ell(\core_a(x))= -(a-1)/2+a\max x_i m
+$$
 
 \end{proof}
 
@@ -1464,166 +1490,62 @@ $$\ell(\lambda^M)=-\frac{a-1}{2}+ab\frac{a-1}{2a}=\frac{(a-1)(b-1)}{2}$$
 \end{example}
 
 
-\subsection{Skew length}
-
-Let 
-$$\lfloor x \rfloor_0=\max \left(0, \lfloor x \rfloor\right)$$
-
-\begin{lemma}
-$$\sk^b(x)=\sum_{i,j}\lfloor x_i-x_j\rfloor_0-\lfloor x_i-x_j-b/a\rfloor_0$$
-
-\end{lemma}
+\subsubsection{Skew Length}
 
 
 
-\subsubsection{}
-To calculate the skew length, we begin by first simply counting the number of cells on the $a$-parts of $\lambda$, without worrying about whether they are in the $b$-boundary or not.
 
-\begin{definition} Let $\lambda$ be an $a$-core.
-$\aparts(\lambda)$ is the total size of all the $a$-parts of $\lambda$.
+
+\begin{definition} \label{def:skewij}
+For $\lambda$ and $(a,b)$-core, let $\sk^T_{i,j}(\lambda)$ be the number of cells in the $i$th $a$-part with unoccupied state on the $j$th runner.
+
+Furthermore let $\sk_{ij}^S(\lambda)$ be the number of such cells with hook length less than $b$, and $\sk_{ij}^B(\lambda)$ be the number of such cells with hook length greater than $b$.
+ 
+Here, $T, S$ and $B$ are short for \emph{total, small} and \emph{big}.
 \end{definition}
 
+From Definition \ref{def:skewij} it is clear that
+$$\sk(\lambda)=\sum_{i\neq j}\sk^S_{ij}(\lambda)$$
+$$\sk_{ij}^S(\lambda)=\sk_{ij}^T(\lambda)-\sk^B_{ij}(\lambda)$$
+and so Proposition follows from
 
 \begin{lemma}
-The skew length of an $a$ core is given
- by
-$$sl(\core_a(\mathbf{c}))$$
-
-\end{lemma}
-
-\begin{proof}
-
-
-\end{proof}
-
-
-\begin{definition}
-Let $\sk_{i,j}(\lambda)$ be the number of cells in the $i$th $a$-part with unoccupied state on the $j$th runner, and $\sk_{i,j}^b(\lambda)$ be the number of such cells with hook length less than $b$, so that
-$$\aparts=\sum_{i,j} \sk_{i,j}(\lambda)$$
-and
-$$\sk(\lambda)=\sum^b_{i,j}(\lambda)$$
-\end{definition}
-
-\begin{lemma}
+Let $\lambda=\core_a(\mathbf{x})$ be an $(a,b)$-core.  Then:
 \begin{align*}
-\sk_{i,j}(\core_a(\mathbf{c}))&=\max(c_j-c_i-\delta_{j<i},0) \\
-\sk^b_{i,j}(\core_a(\mathbf{c}))&=\min\left(\sk_{i,j}(\core_a(\mathbf{c})), q_a(b)+\delta(r_a(b)>r_a(i-j))\right)
+\sk_{ij}^T(\lambda)&=\lfloor x_i-x_j\rfloor_0 \\
+\sk_{ij}^B(\lambda)&=\lfloor x_i-x_j-b/a\rfloor_0
 \end{align*}
 \end{lemma}
 
 \begin{proof}
-%First, recall that the parts $\lambda_i$ of $\lambda=\core_a(\mathbf{c})$ correspond to electrons with energy larger than the lowest unoccupied state.  The class of $\lambda_i-i\mod a$ is exactly which runner the electron appears on; hence, the cells in the $a$-part of $\core_a(\mathbf{c})$ are exactly those cells whose occupied state corresponds to the highest energy electron on a runner.
+Recalling that cells are in bijection with pairs $(e, f)$, with $e, f$ energy levels, $e$ filled and $f$ empty, we see that $\sk^T_{ij}$ counts pairs $(e, f)$ with $e$ the highest energy level on the $i$th runner, $f$ any empty state on the $j$th runner.  Thus, $\sk^T_{ij}(\lambda)$ is the number of unoccupied states on the $j$th runner with energy less than $e$.
 
-%How many cells are in the $i$-row?
+Recalling that the highest energy electron on the $i$th runner has energy $e_i=-ac_i-i-1/2$, and that the energy of each state to the left increases by $a$, we have  
+\begin{align*}
+\sk_{ij}^T(\lambda)&=q_a\left(-ac_i-i-1/2-(-ac_j-j+-/2)\right) \\
+&=q_a(-a(x_i-x_j)) \\
+&=\lfloor x_j-x_i\rfloor_0
+\end{align*}
 
-To find $\sk_{i,j}(\mathbf{c})$, recall that the highest energy electron on the $i$th runner has energy $e_i=-ac_i+i+1/2$, and hence the lowest unoccupied energy state on the $j$th runner has energy $-ac_j+j+1/2+a$.  Thus
-$$\sk_{i,j}=q_a(-ac_i+i+1/2-(-ac_j+j+1/2))=c_j-c_i+q_a(i-j)=c_j-c_i-\delta_{i<j}$$
-
-Note $\sk_{i,j}^b(\mathbf{c})$, will be similar, but it will be capped if the hooklengths of these cells get above $b$.
-
-If nonzero, the hooklength of the first of these has length $r_a(i-j)$, and, and the hooklength of the largest has length
-$e_i-e_j-a=a(c_j-c_i-1)+i-j$.  If the largest hooklength is less than $b$, then $\sk^b_{i,j}(\mathbf{c})=\sk_{i,j}(\mathbf{c})$.
-
-If this is greater than or equal to $b$, then instead $\sk^b_{i,j}(\mathbf{c})$ is equal to the $k$ so that $r_a(i-j)+(k-1)a<b$ but $r_a(i-j)+ka>b$.  A quick computation then gives that in this case:
-
-$$\sk_{i,j}^b=q_a(b)+\delta(r_a(b)>r_a(i-j))$$
-
-
+For $\sk_{ij}^B(\lambda)$, we want hooklengths of size at least $b$, so begin by reducing the energy of the first electron on the $i$th runner by $b$.  We now want to count ways of moving the resulting electron onto the $j$th runner, and soby calculation of $\sk_{ij}^T(\lambda)$ we immediately have
+$$\sk_{ij}^B(\lambda)=\lfloor x_j-x_i-b/a\rfloor_0$$
 \end{proof}
 
-\subsubsection{Chambers of linearity} It is clear from the definitions that $\sk_{i,j}$ and $\sk_{i,j}^b$, and hence $\sk$ and $\sk^b$, are piecewise linear functions of $\mathbf{c}$.  We now examine chamber structure and dependence of these functions.
+
+\subsection{Low degree \texorpdfstring{$(q,t)$}{(q,t)}-symmetry}
+In this section we show, for all $(a,b)$, that $(q,t)$-symmetry holds when the degree of one of the monomials are small.  
 
 
-Recall that the chambers of the $A_a$ arrangement are labeled by permutations $\sigma\in S_a$ that determine the ordering of the $\mathbf{c}_i$.  More explicitly, $\mathbf{c}$ is in the interior of chamber $\sigma$ if and only if $c_{\sigma(0)}<c_{\sigma(1)}<\cdots<c_{\sigma_{a-1}}$.
-
-Recall that for $\sigma\in S_a$, the number of \emph{inversions} of $\sigma$ is $$\inv(\sigma)=\#\{(i,j)|0\leq i<j\leq (a-1), \sigma(i)>\sigma(j)\}$$.
-
-Then for $\mathbf{c}$ in the interior of chamber $\sigma$, we have
-\begin{align*}
-\sk(\mathbf{c})&= \sum_{i,j=0}^{a-1}  \max(c_j-c_i-\delta_{j<i}, 0) \\
- &=\sum_{0\leq i<j\leq a-1} (c_{\sigma(j)}-c_{\sigma(i)}-\delta_{\sigma(j)<\sigma(i)}) \\
-                &=-\inv(\sigma)+\sum_{i=0}^{a-1}(1-a+2i)c_{\sigma(i)}\\
-&=-\inv(\sigma)+2a\langle\mathbf{s},\sigma(\mathbf{c}\rangle
-\end{align*}
-
-Where the second equality follows because $i$ is greater than $i$ elements in $\{0,1,\dots,a-1\}$ and less than $(a-1-i)$ elements, and thus $c_{\sigma_i}$ appears with a positive sign $i$ times in $\sum c_{\sigma(j)}-c_{\sigma(i)}$ times and a negative sign $(a-1-i)$ times.
+More precisely, we show
 
 
+\begin{corollary}[Low degree $(q,t)$-symmetry]
 
-\begin{lemma}
-In terms of the $x$-coordinates, we would expect this to be closely related to $\sum_{i<j}|x_i-x_j|$.
+$$[t^k]\Cat_{a,b}(q,t)=[t^k]\Cat_{a,b}(t,q)$$
+for 
 
-If $\mathbf{x}\in \mathcal{C}_\sigma$, we compute
-\begin{align*}
-\sum_{i<j} |x_i-x_j|&=\sum_{i<j} x_{\sigma(j)}-x_{\sigma(i)}\\
-&=\sum_{i<j} c_{\sigma(j)}-c_{\sigma(i)}+\sum_{i<j}s_{\sigma(j)}-s_{\sigma(i)} \end{align*}
+\end{corollary}
 
-The second term depends only on the partition $\sigma$.
-
-\begin{definition}[\cite{SU}] Let $$\INV(\sigma)=\{(i,j)|i<j,\sigma(i)>\sigma(j)\}$$ be the set of inversions of $\sigma$.
-
-Define the \emph{inversion sum} of $\invsum(\sigma)$ to be
-$$\invsum(\sigma)=\sum_{(i,j)\in\INV(\sigma)}
-\sigma(j)-\sigma(i)=\sum_{(i,j)\in\INV(\sigma)} (j-i)$$
-\end{definition}
-
-\begin{remark}
-That the two definitions of $\invsum(\sigma)$ are equal is Proposition 2.4 in \cite{SU}.
-
-This statistic is also on \url{http://www.findstat.org/} , in an
-unconnected manner, with the following description: the permutation
-matrix of $\sigma$ is also an alternating sign matrix (or ASM for
-short), which form a lattice.  The lattice of ASM is in some well
-defined sense the smallest lattice extending the Bruhat order.  The
-statistic $\invsum(\sigma)$ is the rank of $\sigma$ in the lattice of
-ASMs.  See \cite{}
-\end{remark}
-
-With this definition, we have
-\begin{align*}\sum_{i<j}s_{\sigma(j)}-s_{\sigma(i)} &=\frac{1}{s}\sum_{i<j}\sigma(j)-\sigma(i)\\
-&=\frac{1}{s}\frac{(s-1)s(2s-1)}{6}-\frac{2}{s}\invsum(\sigma)
-\end{align*}
-The first term in the second line is the sum of the first $(s-1)$
-squares, which
-
-
-
-Thus, we are lead to consider the sum of all inversions of $\sigma$.
-This statistic has appeared before, \cite{SU} introduce this stati
-
-
-
-
-
-
-Which leads us naturally to the partition statistic $i\sigma(i)$.  As written, this depends on the normalization of whether our group permute $\{0,\dots,a-1\}$ or $\{0,\dots,a\}$.  In any case, the sum is clearly at a maximum on the identity,  where it is the sum of squares.  It is more natural to have partition statistics be zero on the identity, and so we are lead to define the partition statistic:
-
-$$\asm(\sigma)=\frac{(a-1)a(2a-3)}{6}-\sum_{i=0}^{a-1}i\sigma(i)$$
-
-
-
-
-$$\sum_{i=0}^{a-1} (1-2a+2i)\frac{\sigma(i)}{a}=\frac{1-2a}{a}\sum\sigma(i)+2\sum_{i=0}^{a-1}i\sigma(i)$$
-
-The first term is independent of $\sigma$ and is equal to $(1-2a)(1-a)/2$; the second term, over
-
-
-\end{lemma}
-
-
-
-\subsection{}
-We now turn toward $\sk_a^b(x)$.  We saw that the number of cells
-having electron on the $i$ runner and positron anywhere on the $WHICH$
-runner is the $q_a(e_j-e_i)$.  However, once $e_j-e_ib/a$, these cells have hook lengths greater than $b$, and hence count in
-$\sk_a$ but not $\sk_a^b$.  Thus, though $\sk_a^b$ is locally linear, it changes every a wall $e_i-e_j=b/a$ is crossed.
-
-
-
-
-Their hook lengths have lengths $$j-i+a\delta_{j<i}, j-i+a\delta_{j<i}+a,\cdots+j-i+a\sk_{i,j}(\core_a(\mathbf{c}))-a$$
-
-\subsection{Toward \texorpdfstring{$(q,t)$}{(q,t)}-symmetry}
 
 
 
@@ -1637,10 +1559,15 @@ For $1\leq i\leq a-1$, let $$v_i=\left(\underbrace{\frac{i}{a}-1,\dots \frac{i}{
 
 One can see that the $v_i$ generate the lattice $\Lambda$, and lie on the rays of the unimodular cone $\cone$.  
 
-Because the difference of two entries of $v_i$ is $0$ or $1$, we see that $\sk$ is a linear function on the lattice $V$ and its cosets, and for $x\in\cone$.
-
-At any point in $\cone$, we thus have
+Because $\ell$ is a linear function on $\cone$, it is immediate from the definitions of $\ell$ and $v_i$ that, for any point $x\in\cone$ we have  
 $$\ell(x+v_i)=\ell(x)+i$$
+
+
+
+
+Because the difference of two entries of $v_i$ is $0$ or $1$, we see that $\sk$ is a piecewise linear function when restricted to elements of the lattice $\Lambda$.
+
+
 The dependence of $\sk$ on $v_i$ depends on which chamber of the Catalan arrangement we are in.  Near $0$, we have $\sk(x)=\sum_{i<j} x_j-x_i$, and so
 $$\sk(x+v_i) = \sk(x)+i(a-i)$$
 However, near $\infty$, we have that $x_j-x_i>b$ if $j\neq i+1$, and so $\sk(x)=\sum_i x_{i+1}-x_i=x_a-x_1$, and so
@@ -1684,14 +1611,21 @@ There is a labeling of the orbifold cosets by partitions $\sigma\in S_{a-1}$, so
 $$\sum_{\sigma\in S_n} q^{\siz(\sigma)} t^{\maj(\sigma)}=\prod_{k=1}^n [k]_{q^{n+1-k}t}$$
 \end{lemma}
 
-The proofs of the two lemmas occupy the next subsection.  We show now that our main result follows:
 
-\begin{corollary}[Low degree $(q,t)$-symmetry]
+\begin{remark}
+The notation $\siz(\sigma)$ is short for \emph{size}, and is choosen because of Lemma \ref{lem:sizmaj2}: for fixed $k$ and $\ell$, and large $n$, the number of permutations $\sigma\in S_n$ with $\maj(\sigma)=\ell$ and $\siz(\sigma)=k$ is equal to the number of partitions with length $\ell$ and size $k$.
+\end{remark}
 
-\end{corollary}
+The proofs of the two lemmas occupy the next subsection.  We now show that low degree $(q,t)$-symmetry follows from the lemmas.  More precisely:
 
-\subsection{Proof of Lemma \ref{sizmaj1}}
 
+\begin{proof}
+We explicitly compute the low $t$ and low $q$ degree terms of $\Cat_{a,b}(q,t)$.  
+
+
+\end{proof}
+
+\subsection{Proof of Lemma \ref{lem:sizmaj1}}
 \begin{proof}
 First, we determine a bijection between $S_{a-1}$ and the vectors orbifold cosets.  
 
@@ -1763,7 +1697,7 @@ And that $$\sum_{1\leq i<j\leq a} \delta(\sigma_j<\sigma_i)=\inv(\sigma).$$
 
 \end{proof}
 
-\subsection{Proof of Lemma \ref{sizmaj2}}
+\subsection{Proof of Lemma \ref{lem:sizmaj2}}
 
 For $2\leq j\leq n$, Define $C_j\in S_n$ to be the permutation 
 
@@ -1777,7 +1711,7 @@ Then any permutation can be written uniquely as a product,
 $$\sigma=C_n^{a_n}C_{n-1}^{a_{n-1}}\dots C_2^{a_2}$$
 with $0\leq a_k \leq k-1$, where the permutations further to the right act \emph{first}.
 
-Lemma \ref{sizmaj2} then reduces to showing:
+Lemma \ref{lem:sizmaj2} then reduces to showing:
 \begin{align*}
 \maj(\sigma)&=\sum a_i \\
 \siz(\sigma)&=\sum (n+1-i) a_i
