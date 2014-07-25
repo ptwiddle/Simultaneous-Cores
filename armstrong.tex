@@ -1417,7 +1417,7 @@ $$\Cat_{a,b}(q,t)=\Cat_{a,b}(t,q)$$
 \end{conjecture}
 
 \subsubsection{Results}
-Our main result is that the statistics $\ell$ and $\sk$ in the definition of $\cat_{a,n}(q,t)$ are piecewise polynomial on the $b/a$-dilation of the Catalan arrangement (Definition \ref{def:arrangements}).  More precisely:
+Our main result is that the statistics $\ell$ and $\sk$ in the definition of $\Cat_{a,n}(q,t)$ are piecewise polynomial on the $b/a$-dilation of the Catalan arrangement (Definition \ref{def:arrangements}).  More precisely:
 
 \begin{proposition}
 \label{prop:length}
@@ -1435,24 +1435,52 @@ $$\sk(\mathbf{x})=\sum_{i,j=0}^a \lfloor x_i-x_j\rfloor_0 - \lfloor x_i-x_j-b/a\
 From Propositions \ref{prop:length, prop:skewlength}, it is immediate that $\ell$ and $\sk$ are invariant under the $S_a$ action permuting the coordinates. 
 
 
+\subsubsection{}
+As a basic check, we now illustrate that Propositions \ref{prop:length} and \ref{prop:skewlength} give the correct results for the smallest and large $(a-b)$-cores; we will use these results later.
 
-Using the piecewise linearity
+\begin{example}[The empty partition]
+The empty partition corresponds to the vector $s$; recall $s_i=i/a-(a-1)/(2a)$.  
+  The largest of the $s_i$ is $s_{a-1}=(a-1)/(2a)$, and so $\ell(s)=a(a-1)/(2a)-(a-1)/2=0$.  
 
-
-
-
- It is also clear that $\ell$ is piecewise linear, and $\sk$ is piecewise linear when restricted to 
-
-
-
+Since $s_i-s_{i-1}=1/a$, we have $s_i-s_j<1$, and so $\lfloor s_i-s_j\rfloor_0=0$.  Verifying that $\sk(s)=0$.
 
 
+
+
+\end{example}
+
+
+\begin{example}[The largest $(a-b)$-core]
+
+The largest $(a,b)$-core $\lambda^M$ is the one vertex of $\SC_a(b)$ that is in $\Lambda+s$.  Its coordinates are some permutation of
+$bs=(bs_0,bs_1,\cdots bs_{a-1})$, since $\sk$ is $S_a$ invariant we may assume it is $bs$.  
+
+It is immediate that:
+$$\ell(\lambda^M)=-\frac{a-1}{2}+ab\frac{a-1}{2a}=\frac{(a-1)(b-1)}{2}$$
+
+Verifying $\sk(\lambda^M)=(a-1)(b-1)/2$ is more complicated.  We have 
+$$\sk(\lambda^M)=\sum_{i<j} \left\lfloor \frac{bj}{a}-\frac{bi}{a}\right\rfloor
+-\left\lfloor \frac{bj}{a}-\frac{bi}{a}-\frac{b}{a}\right\rfloor$$
+The summand depends only on the difference $k=j-i$, and is equal to $\lfloor kb/a\rfloor-\lfloor(k-1)b/a\rfloor$.
+
+There are $(a-1)$ pairs $(i,j)$ with $i-j=1$, and in general $a-k$ pairs with $i-j=k$, and so we have
+\begin{align*}
+\sk(\lambda^M) &=\sum_{k=1}^{a-1}(a-k)\left\lfloor \frac{b}{a} k\right\rfloor-(a-k)\left\lfloor\frac{b}{a}(k-1)\right\rfloor \\
+&=\sum_{k=1}^{a-1} \left\lfloor \frac{b}{a} k\right\rfloor \\
+&=\sum_{k=1}^{a-1} \frac{b}{a}k-\sum_{k=1}^{a-1}\left\langle \frac{b}{a}k\right\rangle \\
+&=\frac{b}{a} \frac{(a-1)a}{2}-\frac{1}{a}\frac{(a-1)a}{2} \\
+&=\frac{(a-1)(b-2)}{2}
+\end{align*}
+where the second line follows from telescoping the sum, the third line applies $\lfloor x\rfloor=x-\langle x\rangle$, and the third line applies $\sum i=n(n+1)/2$ and the fact that, since $a$ and $b$ are relatively prime, $kb$ will take on every residue class mod $a$ exactly once as $k$ ranges from 1 to $a$.
+
+\end{example}
 
 
 \subsection{Length and Skew Length are piecewise linear}
 In this section we prove Propositions \ref{prop:length} and Lemma \ref{prop:skewlength}.
 
-\subsection{Proof that $\ell(\core_a(x))=-(a-1)/2+a\max x_i$}
+\subsubsection{Proof of Proposition \ref{prop:length} - length is piecewise linear} 
+
 
 \begin{proof}
 We first translate $\ell(\lambda^S)$ into fermionic language.
@@ -1479,18 +1507,9 @@ $$
 
 
 
-\begin{example}
-The empty partition corresponds to the vector $s$.  The largest of the
-$s_i$ is $s_{a-1}=(a-1)/(2a)$, and indeed $a(a-1)/(2a)-(a-1)/2=0$.
-
-The largest $(a,b)$-core $\lambda^M$ is the one vertex of $\SC_a(b)$ that is in $\Lambda+s$.  Its coordinates are some permutation of
-$bs=(bs_0,bs_1,\cdots bs_{a-1})$, thus we see that
-$$\ell(\lambda^M)=-\frac{a-1}{2}+ab\frac{a-1}{2a}=\frac{(a-1)(b-1)}{2}$$
-
-\end{example}
 
 
-\subsubsection{Skew Length}
+\subsubsection{Proof of Proposition \ref{prop:skewlength} - skew length is piecewise linear}
 
 
 
@@ -1527,9 +1546,11 @@ Recalling that the highest energy electron on the $i$th runner has energy $e_i=-
 &=\lfloor x_j-x_i\rfloor_0
 \end{align*}
 
-For $\sk_{ij}^B(\lambda)$, we want hooklengths of size at least $b$, so begin by reducing the energy of the first electron on the $i$th runner by $b$.  We now want to count ways of moving the resulting electron onto the $j$th runner, and soby calculation of $\sk_{ij}^T(\lambda)$ we immediately have
+For $\sk_{ij}^B(\lambda)$, we want hooklengths of size at least $b$, so begin by reducing the energy of the first electron on the $i$th runner by $b$.  We now want to count ways of moving the resulting electron onto the $j$th runner, and so by our calculation of $\sk_{ij}^T(\lambda)$ we immediately have
 $$\sk_{ij}^B(\lambda)=\lfloor x_j-x_i-b/a\rfloor_0$$
 \end{proof}
+
+
 
 
 \subsection{Low degree \texorpdfstring{$(q,t)$}{(q,t)}-symmetry}
@@ -1537,10 +1558,7 @@ In this section we show, for all $(a,b)$, that $(q,t)$-symmetry holds when the d
 
 
 More precisely, we show
-
-
 \begin{corollary}[Low degree $(q,t)$-symmetry]
-
 $$[t^k]\Cat_{a,b}(q,t)=[t^k]\Cat_{a,b}(t,q)$$
 for 
 
@@ -1574,8 +1592,24 @@ However, near $\infty$, we have that $x_j-x_i>b$ if $j\neq i+1$, and so $\sk(x)=
 $$\sk(x+v_i)=\sk(x)+1$$
 here.
 
+To summarize, at each of $0$ and $\infty$, let $\Delta_i\ell$ denote the change in $\ell$ as we move one step along the $i$th lattice direction,and similarly with $\Delta_i\sk$.  
+$$\begin{array}{r|cc}
+ & \Delta_i\ell & \Delta_i\sk^\prime \\
+\hline
+0 & i & -i(a-i) \\
+\infty & -i & 1
+\end{array}
+$$
+We see that pairing the $i$th direction at $0$ with $i$ times the $(a-i)$th direction at $\infty$ will result in matching the changes in $\ell$ and $\sk$ at these two points.  However, it will only hit the index $(a-1)!$ sublattice of the cores near $\infty$ generated by the vectors $-iv_{a-i}$.  
 
+Let $R_\infty$ denote the set of coset representatives nearest to $\infty$, that is
+$$R_\infty=\left\{v_\infty-\sum k_iv_i \big| 0\leq k_i<a-i\right\}$$
 
+\begin{lemma}
+$$\sum_{v\in R_\infty} q^{\sk^\prime(v)}t^{\ell(v)}=t^{(a-1)(b-1)/2}\prod_{k=1}^{a-1} [k]_{t^{-1}q^{a-k}}$$
+\end{lemma}
+
+However, at 0, there are $(a-1)!$ different ``orbifold cosets'' appearing in $\mathfrak{c}$.  To prove low degree symmetry, we must match the values of $\ell, \sk^\prime$ on the smallest elements of these orbifold cosets with the values of $\sk^\prime, ell$ on the elements of $R_\infty$.
 
 
 \subsubsection{Structure near 0}
