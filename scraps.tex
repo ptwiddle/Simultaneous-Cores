@@ -1,0 +1,135 @@
+%First, recall that the parts $\lambda_i$ of $\lambda=\core_a(\mathbf{c})$ correspond to electrons with energy larger than the lowest unoccupied state.  The class of $\lambda_i-i\mod a$ is exactly which runner the electron appears on; hence, the cells in the $a$-part of $\core_a(\mathbf{c})$ are exactly those cells whose occupied state corresponds to the highest energy electron on a runner.
+
+%How many cells are in the $i$-row?
+\subsubsection{Chambers of linearity} It is clear from the definitions that $\sk_{i,j}$ and $\sk_{i,j}^b$, and hence $\sk$ and $\sk^b$, are piecewise linear functions of $\mathbf{c}$.  We now examine chamber structure and dependence of these functions.
+
+
+Recall that the chambers of the $A_a$ arrangement are labeled by permutations $\sigma\in S_a$ that determine the ordering of the $\mathbf{c}_i$.  More explicitly, $\mathbf{c}$ is in the interior of chamber $\sigma$ if and only if $c_{\sigma(0)}<c_{\sigma(1)}<\cdots<c_{\sigma_{a-1}}$.
+
+Recall that for $\sigma\in S_a$, the number of \emph{inversions} of $\sigma$ is $$\inv(\sigma)=\#\{(i,j)|0\leq i<j\leq (a-1), \sigma(i)>\sigma(j)\}$$.
+
+Then for $\mathbf{c}$ in the interior of chamber $\sigma$, we have
+\begin{align*}
+\sk(\mathbf{c})&= \sum_{i,j=0}^{a-1}  \max(c_j-c_i-\delta_{j<i}, 0) \\
+ &=\sum_{0\leq i<j\leq a-1} (c_{\sigma(j)}-c_{\sigma(i)}-\delta_{\sigma(j)<\sigma(i)}) \\
+                &=-\inv(\sigma)+\sum_{i=0}^{a-1}(1-a+2i)c_{\sigma(i)}\\
+&=-\inv(\sigma)+2a\langle\mathbf{s},\sigma(\mathbf{c}\rangle
+\end{align*}
+
+Where the second equality follows because $i$ is greater than $i$ elements in $\{0,1,\dots,a-1\}$ and less than $(a-1-i)$ elements, and thus $c_{\sigma_i}$ appears with a positive sign $i$ times in $\sum c_{\sigma(j)}-c_{\sigma(i)}$ times and a negative sign $(a-1-i)$ times.
+
+
+
+\begin{lemma}
+In terms of the $x$-coordinates, we would expect this to be closely related to $\sum_{i<j}|x_i-x_j|$.
+
+If $\mathbf{x}\in \mathcal{C}_\sigma$, we compute
+\begin{align*}
+\sum_{i<j} |x_i-x_j|&=\sum_{i<j} x_{\sigma(j)}-x_{\sigma(i)}\\
+&=\sum_{i<j} c_{\sigma(j)}-c_{\sigma(i)}+\sum_{i<j}s_{\sigma(j)}-s_{\sigma(i)} \end{align*}
+
+The second term depends only on the partition $\sigma$.
+
+\begin{definition}[\cite{SU}] Let $$\INV(\sigma)=\{(i,j)|i<j,\sigma(i)>\sigma(j)\}$$ be the set of inversions of $\sigma$.
+
+Define the \emph{inversion sum} of $\invsum(\sigma)$ to be
+$$\invsum(\sigma)=\sum_{(i,j)\in\INV(\sigma)}
+\sigma(j)-\sigma(i)=\sum_{(i,j)\in\INV(\sigma)} (j-i)$$
+\end{definition}
+
+\begin{remark}
+That the two definitions of $\invsum(\sigma)$ are equal is Proposition 2.4 in \cite{SU}.
+
+This statistic is also on \url{http://www.findstat.org/} , in an
+unconnected manner, with the following description: the permutation
+matrix of $\sigma$ is also an alternating sign matrix (or ASM for
+short), which form a lattice.  The lattice of ASM is in some well
+defined sense the smallest lattice extending the Bruhat order.  The
+statistic $\invsum(\sigma)$ is the rank of $\sigma$ in the lattice of
+ASMs.  See \cite{}
+\end{remark}
+
+With this definition, we have
+\begin{align*}\sum_{i<j}s_{\sigma(j)}-s_{\sigma(i)} &=\frac{1}{s}\sum_{i<j}\sigma(j)-\sigma(i)\\
+&=\frac{1}{s}\frac{(s-1)s(2s-1)}{6}-\frac{2}{s}\invsum(\sigma)
+\end{align*}
+The first term in the second line is the sum of the first $(s-1)$
+squares, which
+
+
+
+Thus, we are lead to consider the sum of all inversions of $\sigma$.
+This statistic has appeared before, \cite{SU} introduce this stati
+
+
+
+
+
+
+Which leads us naturally to the partition statistic $i\sigma(i)$.  As written, this depends on the normalization of whether our group permute $\{0,\dots,a-1\}$ or $\{0,\dots,a\}$.  In any case, the sum is clearly at a maximum on the identity,  where it is the sum of squares.  It is more natural to have partition statistics be zero on the identity, and so we are lead to define the partition statistic:
+
+$$\asm(\sigma)=\frac{(a-1)a(2a-3)}{6}-\sum_{i=0}^{a-1}i\sigma(i)$$
+
+
+
+
+$$\sum_{i=0}^{a-1} (1-2a+2i)\frac{\sigma(i)}{a}=\frac{1-2a}{a}\sum\sigma(i)+2\sum_{i=0}^{a-1}i\sigma(i)$$
+
+The first term is independent of $\sigma$ and is equal to $(1-2a)(1-a)/2$; the second term, over
+
+
+
+
+MORE STUFF
+
+\begin{lemma}
+Let $c_m$ be the maximum of the $c_i$.
+
+The length of an $a$ core is given by
+$$\ell(\core_a{\mathbf{c}})=\max_{i=0}^{a-1} a(c_i-1)+i+1$$
+and hence is piecewise linear on the chambers of the $A_{n-1}$ arrangement.
+
+In the $x$-coordinates, this becomes
+
+ which is invariant under the $S_a$ action.
+\end{lemma}
+
+\begin{lemma}
+\begin{align*}
+\sk_{i,j}(\core_a(\mathbf{c}))&=\max(c_j-c_i-\delta_{j<i},0) \\
+\sk^b_{i,j}(\core_a(\mathbf{c}))&=\min\left(\sk_{i,j}(\core_a(\mathbf{c})), q_a(b)+\delta(r_a(b)>r_a(i-j))\right)
+\end{align*}
+\end{lemma}
+
+
+If nonzero, the hooklength of the first of these has length $r_a(i-j)$, and, and the hooklength of the largest has length
+$e_i-e_j-a=a(c_j-c_i-1)+i-j$.  If the largest hooklength is less than $b$, then $\sk^b_{i,j}(\mathbf{c})=\sk_{i,j}(\mathbf{c})$.
+
+If this is greater than or equal to $b$, then instead $\sk^b_{i,j}(\mathbf{c})$ is equal to the $k$ so that $r_a(i-j)+(k-1)a<b$ but $r_a(i-j)+ka>b$.  A quick computation then gives that in this case:
+
+$$\sk_{i,j}^b=q_a(b)+\delta(r_a(b)>r_a(i-j))$$
+
+\subsection{}
+We now turn toward $\sk_a^b(x)$.  We saw that the number of cells
+having electron on the $i$ runner and positron anywhere on the $WHICH$
+runner is the $q_a(e_j-e_i)$.  However, once $e_j-e_ib/a$, these cells have hook lengths greater than $b$, and hence count in
+$\sk_a$ but not $\sk_a^b$.  Thus, though $\sk_a^b$ is locally linear, it changes every a wall $e_i-e_j=b/a$ is crossed.
+
+
+
+
+Their hook lengths have lengths $$j-i+a\delta_{j<i}, j-i+a\delta_{j<i}+a,\cdots+j-i+a\sk_{i,j}(\core_a(\mathbf{c}))-a$$
+
+
+
+
+We see that pairing the $i$th direction at $0$ with $i$ times the $(a-i)$th direction at $\infty$ will result in matching the changes in $\ell$ and $\sk$ at these two points.  However, it will only hit an index $(a-1)!$ sublattice $\Lambda_\infty\subset \Lambda_R$ of the cores near $\infty$.  Namely, $\Lambda_\infty$ is the lattice generated by the vectors $-iv_{a-i}$.  
+
+Let $C_\infty$ denote the set of coset representatives of $\Lambda_\infty\subset \Lambda_R$ where we take the vector in each coset nearest to $\infty$.  Explicitly,
+$$C_\infty=\left\{v_\infty-\sum k_iv_i \big| 0\leq k_i<a-i\right\}$$
+\begin{lemma}
+$$\sum_{v\in C_\infty} q^{\sk^\prime(v)}t^{\ell(v)}=t^{(a-1)(b-1)/2}\prod_{k=1}^{a-1} [k]_{t^{-1}q^{a-k}}$$
+\end{lemma}
+\begin{proof}
+By the table in Lemma \ref{lem:table}, multiplying by $[k]_{t^{-1}q^{a-k}}$ exactly accounts for the choice of having $0$ to $k-1$ steps in the direction $-v_{a-k}$.  Together with the calculation of $\ell(x_\infty)$ and $\sk(x_\infty)$, we are done.
+\end{proof}

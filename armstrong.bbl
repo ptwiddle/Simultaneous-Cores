@@ -1,0 +1,68 @@
+\begin{thebibliography}{10}
+
+\bibitem{ALR}
+Alejandro Adem, Johann Leida, and Yongbin Ruan.
+\newblock {\em Orbifolds and stringy topology}, volume 171 of {\em Cambridge
+  Tracts in Mathematics}.
+\newblock Cambridge University Press, Cambridge, 2007.
+
+\bibitem{anderson}
+Jaclyn Anderson.
+\newblock Partitions which are simultaneously {$t_1$}- and {$t_2$}-core.
+\newblock {\em Discrete Math.}, 248(1-3):237--243, 2002.
+
+\bibitem{AKS}
+David Aukerman, Ben Kane, and Lawrence Sze.
+\newblock On simultaneous {$s$}-cores/{$t$}-cores.
+\newblock {\em Discrete Math.}, 309(9):2712--2720, 2009.
+
+\bibitem{CR}
+Weimin Chen and Yongbin Ruan.
+\newblock A new cohomology theory of orbifold.
+\newblock {\em Comm. Math. Phys.}, 248(1):1--31, 2004.
+\newblock \url{http://arxiv.org/abs/math/0004129}.
+
+\bibitem{AHJ}
+B.~Jones D.~Armstrong, C.~Hanusa.
+\newblock Results and conjectures on simultaneous core partitions.
+\newblock \url{http://arxiv.org/abs/1308.0572}.
+
+\bibitem{DS}
+Robbert Dijkgraaf and Piotr Su{\l}kowski.
+\newblock Instantons on {ALE} spaces and orbifold partitions.
+\newblock {\em J. High Energy Phys.}, (3):013, 24, 2008.
+\newblock \url{http://arxiv.org/abs/0712.1427}.
+
+\bibitem{GKS}
+Frank Garvan, Dongsu Kim, and Dennis Stanton.
+\newblock Cranks and {$t$}-cores.
+\newblock {\em Invent. Math.}, 101(1):1--17, 1990.
+
+\bibitem{Haase}
+Christian Haase and Tyrrell~B. McAllister.
+\newblock Quasi-period collapse and {${\rm GL}_n(\Bbb Z)$}-scissors congruence
+  in rational polytopes.
+\newblock In {\em Integer points in polyhedra---geometry, number theory,
+  representation theory, algebra, optimization, statistics}, volume 452 of {\em
+  Contemp. Math.}, pages 115--122. Amer. Math. Soc., Providence, RI, 2008.
+\newblock \url{http://arxiv.org/abs/0709.4070}.
+
+\bibitem{SU}
+Joshua Sack and Henning {\'U}lfarsson.
+\newblock Refined inversion statistics on permutations.
+\newblock {\em Electron. J. Combin.}, 19(1):Paper 29, 27, 2012.
+\newblock \url{http://arxiv.org/abs/1106.1995}.
+
+\bibitem{SZ}
+R.~Stanley and P.~Zanello.
+\newblock The {C}atalan case of {A}rmstrong's conjecture on simultaneous core
+  partitions.
+\newblock \url{http://arxiv.org/abs/1312.4352}.
+
+\bibitem{Stapledon}
+A.~Stapledon.
+\newblock Weighted {E}hrhart theory and orbifold cohomology.
+\newblock {\em Adv. Math.}, 219(1):63--88, 2008.
+\newblock \url{http://arxiv.org/abs/0711.4382}.
+
+\end{thebibliography}

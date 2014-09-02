@@ -1,0 +1,357 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdftex 2014.6.9)  20 JUL 2014 12:45
+entering extended mode
+ %&-line parsing enabled.
+**\nonstopmode\input scraps.tex
+(./scraps.tex
+! Undefined control sequence.
+l.4 \subsubsection
+                  {Chambers of linearity} It is clear from the definitions t...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \sk 
+                    
+l.4 ... It is clear from the definitions that $\sk
+                                                  _{i,j}$ and $\sk_{i,j}^b$,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \sk 
+                    
+l.4 ...m the definitions that $\sk_{i,j}$ and $\sk
+                                                  _{i,j}^b$, and hence $\sk$...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \sk 
+                    
+l.4 ...sk_{i,j}$ and $\sk_{i,j}^b$, and hence $\sk
+                                                  $ and $\sk^b$, are piecewi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \sk 
+                    
+l.4 ...and $\sk_{i,j}^b$, and hence $\sk$ and $\sk
+                                                  ^b$, are piecewise linear ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \mathbf 
+                        
+l.4 ... are piecewise linear functions of $\mathbf
+                                                  {c}$.  We now examine cham...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \mathbf 
+                        
+l.7 ...that determine the ordering of the $\mathbf
+                                                  {c}_i$.  More explicitly, ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \mathbf 
+                        
+l.7 ... $\mathbf{c}_i$.  More explicitly, $\mathbf
+                                                  {c}$ is in the interior of...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.9 ...at for $\sigma\in S_a$, the number of \emph
+                                                  {inversions} of $\sigma$ i...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.9 ... of \emph{inversions} of $\sigma$ is $$\inv
+                                                  (\sigma)=\#\{(i,j)|0\leq i...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \mathbf 
+                        
+l.11 Then for $\mathbf
+                      {c}$ in the interior of chamber $\sigma$, we have
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.12 \begin
+           {align*}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.13 \sk
+        (\mathbf{c})&= \sum_{i,j=0}^{a-1}  \max(c_j-c_i-\delta_{j<i}, 0) \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.13 \sk(\mathbf
+                {c})&= \sum_{i,j=0}^{a-1}  \max(c_j-c_i-\delta_{j<i}, 0) \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.13 \sk(\mathbf{c})&
+                     = \sum_{i,j=0}^{a-1}  \max(c_j-c_i-\delta_{j<i}, 0) \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \sum 
+l.13 \sk(\mathbf{c})&= \sum
+                           _{i,j=0}^{a-1}  \max(c_j-c_i-\delta_{j<i}, 0) \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Runaway argument?
+ &=\sum _{0\leq i<j\leq a-1} (c_{\sigma (j)}-c_{\sigma (i)}-\delta _{\ETC.
+! Paragraph ended before \\ was complete.
+<to be read again> 
+                   \par 
+l.18 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.18 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Undefined control sequence.
+l.23 \begin
+           {lemma}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \mathbf 
+                        
+l.26 If $\mathbf
+                {x}\in \mathcal{C}_\sigma$, we compute
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26 If $\mathbf{x}\in \mathcal
+                               {C}_\sigma$, we compute
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.27 \begin
+           {align*}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \sum 
+l.28 \sum
+         _{i<j} |x_i-x_j|&=\sum_{i<j} x_{\sigma(j)}-x_{\sigma(i)}\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.28 \sum_{i<j} |x_i-x_j|&
+                          =\sum_{i<j} x_{\sigma(j)}-x_{\sigma(i)}\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Runaway argument?
+ &=\sum _{i<j} c_{\sigma (j)}-c_{\sigma (i)}+\sum _{i<j}s_{\sigma (j)\ETC.
+! Paragraph ended before \\ was complete.
+<to be read again> 
+                   \par 
+l.30 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.30 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Undefined control sequence.
+l.33 \begin
+           {definition}[\cite{SU}] Let $$\INV(\sigma)=\{(i,j)|i<j,\sigma(i)>...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.33 \begin{definition}[\cite
+                             {SU}] Let $$\INV(\sigma)=\{(i,j)|i<j,\sigma(i)>...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.33 \begin{definition}[\cite{SU}] Let $$\INV
+                                             (\sigma)=\{(i,j)|i<j,\sigma(i)>...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.35 Define the \emph
+                     {inversion sum} of $\invsum(\sigma)$ to be
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \invsum 
+                        
+l.35 Define the \emph{inversion sum} of $\invsum
+                                                (\sigma)$ to be
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.36 $$\invsum
+              (\sigma)=\sum_{(i,j)\in\INV(\sigma)}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.36 $$\invsum(\sigma)=\sum_{(i,j)\in\INV
+                                         (\sigma)}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.37 \sigma(j)-\sigma(i)=\sum_{(i,j)\in\INV
+                                           (\sigma)} (j-i)$$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] )</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb>
+Output written on scraps.pdf (1 page, 97899 bytes).
+PDF statistics:
+ 46 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

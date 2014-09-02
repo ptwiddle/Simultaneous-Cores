@@ -60,11 +60,11 @@
 \begin{document}
 \title{The lattice point geometry of simultaneous core partitions}
 \begin{abstract}
-We observe that for $a$ and $b$-relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Furthermore, many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
+We observe that for $a$ and $b$-relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
 
-We apply these results to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core partition is $(a+b+1)(a-1)(b-1)/24)$.
+We apply this observation to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core partition is $(a+b+1)(a-1)(b-1)/24$.
 
-We conjecture a unimodality result for $q$ rational Catalan numbers, and suggest these methods could help prove the $(q,t)$-symmetry and specialization conjectures.  We prove for low degree terms or when $a=3$.
+We conjecture a unimodality result for $q$-rational Catalan numbers, and suggest these methods could help prove the $(q,t)$-symmetry and specialization conjectures for $(q,t)$-rational Catalan numbers.  We prove these conjectures for low degree terms or when $a=3$.
 
 \end{abstract}
 
@@ -73,14 +73,11 @@ We conjecture a unimodality result for $q$ rational Catalan numbers, and suggest
 \date{}
 \maketitle
 \section{Introduction}
-The goal of this paper is to establish lattice point geometry as a foundation for studying rational Catalan combinatorics.  Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the studHecke algebras and compactified Jacobians of singular curves. 
+The goal of this paper is to establish lattice point geometry as a foundation for rational Catalan combinatorics.  Rational Catalan numbers and their $q$ and $(rq,t)$ analogs are natural generalizations of Catalan numbers that appear in the study of Hecke algebras and compactified Jacobians of singular curves. 
  
-Our point of entry to rational Catalan combinatorics is Anderson's \cite{anderson} result that rational Catalan numbers count simultaneous $(a,b)$-core partitions.  Simultaneous core partitions are our main object of study, and the first result of this paper is another proof of Anderson's theorem.
+Rational Catalan numbers are usually defined in terms of Dyck paths, but it is a result of Anderson that they also count simultaneous $(a,b)$-core partitions.  We mainly follow the simultaneous core perspective.
 
-
-
-
-\subsection{Background: Simultaneous cores and rational catalan numbers}
+\subsection{Background: Simultaneous cores and rational Catalan numbers}
 
 A \emph{partition of $n$} is a nonincreasing sequence $\lambda_1\geq \lambda_2\geq
 \lambda_{k}> 0$ of positive integers so that $\sum_{i=1}^k \lambda_i=n$.  We
