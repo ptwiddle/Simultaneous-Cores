@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.6.9)  22 AUG 2014 12:13
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.8.18)  12 SEP 2014 12:29
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode\input armstrong.tex
@@ -668,62 +668,73 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 76.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 179
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 202
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 ) [3]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 234.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 234.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 234.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 234.
+
+[4]
+Underfull \vbox (badness 4036) has occurred while \output is active []
+
+ [5]
+[6]
+
+LaTeX Warning: Reference ` ' on page 7 undefined on input line 428.
+
+
+LaTeX Warning: Reference ` ' on page 7 undefined on input line 428.
+
+
+LaTeX Warning: Reference ` ' on page 7 undefined on input line 428.
+
+[7] [8] [9] [10] [11] [12] [13] [14] [15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4]
-[5]
-
-LaTeX Warning: Reference ` ' on page 6 undefined on input line 396.
-
-
-LaTeX Warning: Reference ` ' on page 6 undefined on input line 396.
-
-
-LaTeX Warning: Reference ` ' on page 6 undefined on input line 396.
-
-[6] [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]
-[9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-[11] [12] [13] [14] [15] [16] [17]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18]
-[19] (/usr/share/texmf-texlive/tex/latex/microtype/mt-euf.cfg
+ [16]
+[17] [18] [19] (/usr/share/texmf-texlive/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
-) [20] [21]
+)
+[20] [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1423.
+(hyperref)                removing `math shift' on input line 1455.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1423.
+(hyperref)                removing `math shift' on input line 1455.
 
+[22]
 
-LaTeX Warning: Reference `prop:length, prop:skewlength' on page 22 undefined on
- input line 1462.
+LaTeX Warning: Reference `prop:length, prop:skewlength' on page 23 undefined on
+ input line 1494.
 
-[22] [23] [24] [25] [26] [27] [28] [29]
+[23] [24] [25] [26] [27] [28] [29]
 ! Too many }'s.
-l.1785 ...(the left-decreasing factorization code}
+l.1817 ...(the left-decreasing factorization code}
                                                   .
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-
-Overfull \hbox (3.63289pt too wide) in paragraph at lines 1821--1822
+[30]
+Overfull \hbox (3.63289pt too wide) in paragraph at lines 1853--1854
 []\OT1/pplx/m/n/10 (-20) There are two ``ob-vi-ous'' fam-i-lies of $\OML/zplm/m
 /it/10 k$\OT1/pplx/m/n/10 (-20) -cycles: \OT1/pplx/m/it/10 (-20) in-creas-ing \
 OT1/pplx/m/n/10 (-20) cy-cles $\OML/zplm/m/it/10 C[] \OT1/zplm/m/n/10 = (\OT1/p
@@ -731,10 +742,10 @@ plx/m/n/10 (-20) 1, 2, 3, [] , \OML/zplm/m/it/10 k\OT1/zplm/m/n/10 )$\OT1/pplx/
 m/n/10 (-20) ,
  []
 
-[30] [31] (./armstrong.bbl
+[31] (./armstrong.bbl
 
 Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
- on input line 43.
+ on input line 59.
 
 ) [32] (./armstrong.aux)
 
@@ -745,12 +756,12 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 16779 strings out of 495061
- 303870 string characters out of 1182622
- 882018 words of memory out of 3000000
- 18910 multiletter control sequences out of 15000+50000
- 61589 words of font info for 373 fonts, out of 3000000 for 9000
- 189 hyphenation exceptions out of 8191
+ 16790 strings out of 493848
+ 303967 string characters out of 1152823
+ 883463 words of memory out of 3000000
+ 19011 multiletter control sequences out of 15000+50000
+ 61908 words of font info for 378 fonts, out of 3000000 for 9000
+ 875 hyphenation exceptions out of 8191
  56i,10n,65p,841b,761s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/ty
@@ -766,9 +777,9 @@ thpazo/fplmri.pfb></usr/share/texmf-texlive/fonts/type1/public/fpl/fplrc8a.pfb>
 share/texmf-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texli
 ve/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/ur
 w/palatino/uplri8a.pfb>
-Output written on armstrong.pdf (32 pages, 418039 bytes).
+Output written on armstrong.pdf (32 pages, 423188 bytes).
 PDF statistics:
- 515 PDF objects out of 1000 (max. 8388607)
- 170 named destinations out of 1000 (max. 500000)
- 45293 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 524 PDF objects out of 1000 (max. 8388607)
+ 173 named destinations out of 1000 (max. 500000)
+ 45301 words of extra memory for PDF output out of 51595 (max. 10000000)
 

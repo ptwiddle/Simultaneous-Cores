@@ -38,6 +38,22 @@ Frank Garvan, Dongsu Kim, and Dennis Stanton.
 \newblock Cranks and {$t$}-cores.
 \newblock {\em Invent. Math.}, 101(1):1--17, 1990.
 
+\bibitem{GG}
+Iain~G. Gordon and Stephen Griffeth.
+\newblock Catalan numbers for complex reflection groups.
+\newblock {\em Amer. J. Math.}, 134(6):1491--1502, 2012.
+\newblock \url{http://arxiv.org/abs/0912.1578}.
+
+\bibitem{EM1}
+Evgeny Gorsky and Mikhail Mazin.
+\newblock Compactified {J}acobians and {$q,t$}-{C}atalan numbers, {I}.
+\newblock {\em J. Combin. Theory Ser. A}, 120(1):49--63, 2013.
+
+\bibitem{EM2}
+Evgeny Gorsky and Mikhail Mazin.
+\newblock Compactified {J}acobians and {$q,t$}-{C}atalan numbers, {II}.
+\newblock {\em J. Algebraic Combin.}, 39(1):153--186, 2014.
+
 \bibitem{Haase}
 Christian Haase and Tyrrell~B. McAllister.
 \newblock Quasi-period collapse and {${\rm GL}_n(\Bbb Z)$}-scissors congruence
@@ -46,12 +62,6 @@ Christian Haase and Tyrrell~B. McAllister.
   representation theory, algebra, optimization, statistics}, volume 452 of {\em
   Contemp. Math.}, pages 115--122. Amer. Math. Soc., Providence, RI, 2008.
 \newblock \url{http://arxiv.org/abs/0709.4070}.
-
-\bibitem{SU}
-Joshua Sack and Henning {\'U}lfarsson.
-\newblock Refined inversion statistics on permutations.
-\newblock {\em Electron. J. Combin.}, 19(1):Paper 29, 27, 2012.
-\newblock \url{http://arxiv.org/abs/1106.1995}.
 
 \bibitem{SZ}
 R.~Stanley and P.~Zanello.

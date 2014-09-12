@@ -60,11 +60,11 @@
 \begin{document}
 \title{The lattice point geometry of simultaneous core partitions}
 \begin{abstract}
-We observe that for $a$ and $b$-relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Furthermore, many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
+We observe that for $a$ and $b$ relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Furthermore, many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
 
 We apply these results to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core partition is $(a+b+1)(a-1)(b-1)/24)$.
 
-We conjecture a unimodality result for $q$ rational Catalan numbers, and suggest these methods could help prove the $(q,t)$-symmetry and specialization conjectures.  We prove for low degree terms or when $a=3$.
+We conjecture a unimodality result for $q$ rational Catalan numbers, and make preliminary investigations in applying these methods to the $(q,t)$-symmetry and specialization conjectures.  We prove these conjectures for low degree terms and when $a=3$.
 
 \end{abstract}
 
@@ -73,14 +73,14 @@ We conjecture a unimodality result for $q$ rational Catalan numbers, and suggest
 \date{}
 \maketitle
 \section{Introduction}
-The goal of this paper is to establish lattice point geometry as a foundation for studying rational Catalan combinatorics.  Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the studHecke algebras and compactified Jacobians of singular curves. 
+The goal of this paper is to establish lattice point geometry as a foundation for studying rational Catalan combinatorics.  Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG} and compactified Jacobians of singular curves \cite{EM1, EM2} . 
  
 Our point of entry to rational Catalan combinatorics is Anderson's \cite{anderson} result that rational Catalan numbers count simultaneous $(a,b)$-core partitions.  Simultaneous core partitions are our main object of study, and the first result of this paper is another proof of Anderson's theorem.
 
 
 
 
-\subsection{Background: Simultaneous cores and rational catalan numbers}
+\subsection{Background: Simultaneous cores and rational Catalan numbers}
 
 A \emph{partition of $n$} is a nonincreasing sequence $\lambda_1\geq \lambda_2\geq
 \lambda_{k}> 0$ of positive integers so that $\sum_{i=1}^k \lambda_i=n$.  We
@@ -92,7 +92,7 @@ $k$ the \emph{length} of $\lambda$ and denote it by $\ell(\lambda)$.
 
 We frequently identify $\lambda$ with its Young diagram, in
 English notation -- that is, we draw the parts of $\lambda$ as
-the columns of a series of boxes.
+the columns of a collection of boxes.
 
 \begin{definition}
 The \emph{arm} $a(\square)$ of a cell $\square$ is the number of cells contained in $\lambda$ and above  $\square$, and the \emph{leg} $l(\square)$ of a cell is the number of cells contained in $\lambda$ and to the right of $\square$.
@@ -159,26 +159,67 @@ For $a,b$ relatively prime, the \emph{rational Catalan number}, or \emph{$(a,b)$
 $$\Cat_{a,b}=\frac{1}{a+b}\binom{a+b}{a}$$ 
 \end{definition}
 
-The rational Catalan numbers count the number of lattice paths from $(0,a)$ to $(b,0)$ that stay beneath the line from $(0,a)$ to $(b,0)$; we see that $\Cat_{n,n+1}=\Cat_n$.
+The rational Catalan number $\Cat_{a.b}$ counts the number of lattice paths from $(0,a)$ to $(b,0)$ that stay beneath the line from $(0,a)$ to $(b,0)$.  This is consistent with the specialization $\Cat_{n,n+1}=\Cat_n$.
 
-\subsubsection{Anderson's Theorem}
+\subsection{}
 
-Anderson proved that simultaneous core partitions are counted by rational Catalan numbers:
+%Anderson proved that simultaneous core partitions are counted by rational Catalan numbers:
+
+Our main result is a bijection between simultaneous $(a,b)$-cores and lattice points in certain rational polytopes.  This description will give the following two consequences: 
 
 \begin{theorem}[Anderson \cite{anderson}]
 If $a$ and $b$ are relatively prime, the number of
 $(a,b)$-core partitions is $\Cat_{a,b}$.
 \end{theorem}
 
+
+\begin{theorem} \label{thm:armstrong}
+The average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.
+\end{theorem}
+
+\begin{remark} 
+Theorem \ref{thm:armstrong} was conjectured by Armstrong in 2011, and first appearing in print in \cite{AHJ}.  Proving Armstrong's conjecture was the initial motivation for this work.  
+
+Stanley and Zanello \cite{SZ} have proven the Catalan case ($a=b+1$) of Armstrong's conjecture by different methods.   
+\end{remark}
+
+
+
 Anderson's study of simultaneous core partitions was motivated by modular representation theory and number theory.  Her result has received much attention recently as the theory of rational Catalan combinatorics has become further developed.
 
 \subsection{Lattice Points}
 
-Our main result is a description of $(a,b)$-cores as the lattice points in a rational simplex, and our main tool for this is the ``abacus construction'', which we review in detail in Section \ref{sec:abacus}.  One immediate consequence of this description is a proof of Anderson's Theorem.
+The main thesis of this paper is that lattice point geometry is a useful tool in studying rational Catalan numbers and simultaneous core partitions.  
 
-The abacus construction was also the main tool in Anderson's original proof, however, the two proofs use different variants of the construction.  Anderson's construction give a bijection between the set of $a$-core partitions and $\N^{a-1}$, while the abacus construction we use (also used in \cite{GKS} to study the $t$-core crank) gives a bijection between $a$-core partitions and the $a-1$ diemensional lattice 
-$$\Lambda_C=\left\{c_1,\dots,c_a\in\Z|\sum c_i=0\right\}$$
-We show that within the space of $a$-cores, the condition of being a $b$-core is given by $a$ linear inequalities, that cut out a rational simplex when $a$ and $b$ are relatively prime.
+
+
+
+
+The main tool in proving is Ehrhart theory / Euler-Maclaurin theory.  The essential idea of Ehrhart theory is that counting lattice points in polytopes is a discrete approximation of the volume of the polytope, and so should behave similarly.  Euler-Maclaurin theory extends this to summing polynomials over the lattice points being a discrete approximations to the integral of the function over the polytope.
+
+\subsubsection{Ehrhart theory}
+
+Let $V$ be an $n$ dimensional real vector space, with $\Lambda\subset V$ an $n$ dimensional lattice; for instance, $\Lambda\subset V=\Z^n\subset \R^n$.  A lattice polytope $P\subset V$ is a polytope all of whose vertices are points of $\Lambda$.  
+
+For $t$ a positive integer, let $tP$ denote the $t$th dilate of $P$; that is, the polytope obtained by scaling all the vertices by $t$.  We want to count the number of lattice points in $tP$; that is, we want to study the function
+$$L(P,T)=\#\{\Lambda\cap tP\}$$
+Clearly, the volume of $tP$ is $t^n$ times the volume of $P$.  Ehrhart showed that in fact, $L(P,t)$ is a degree $n$ polynomial in $t$; Ehrhart theory refers to the study of these polynomials.
+
+Similarly, if $f$ is a polynomial of degree $d$ on $V$, then we have that $\int_{tP} f$ is a polynomial of degree $d+n$.  Euler-Maclaurin theory says that the discrete analog
+ $$L(f, P, t)=\sum_{x\in\Lambda\cap tP} f(x)$$.
+is also a polynomial of degree $d+n$.
+
+
+
+
+
+
+
+Our main result is a description of $(a,b)$-cores as the lattice points in a rational simplex, and our main tool for this is the ``abacus construction'', which we review in detail in Section \ref{sec:abacus}.  One immediate consequence of this description is a new proof of Anderson's Theorem.
+
+The abacus construction was also the main tool in Anderson's original proof, however, the two proofs use different variants of the construction.  Anderson's construction give a bijection between the set of $a$-core partitions and $\N^{a-1}$, while the variant we use (also used in \cite{GKS} to study the $t$-core crank) gives a bijection between $a$-core partitions and the $a-1$ diemensional lattice 
+$$\Lambda_C=\left\{c_1,\dots,c_a\in\Z\Big |\sum c_i=0\right\}$$
+We show that within the space of $a$-cores, the condition of being a $b$-core is given by $a$ linear inequalities, regardless of what $b$ is.  Furthermore, when when $a$ and $b$ are relatively prime, these inequalities define a rational simplex.  When $a$ and $b$ are not relatively prime, there are infinitely many $(a,b)$-cores.
 
 The formula for the number of $(a,b)$-cores then follows directly from this result, while Anderson's proof established a bijection with $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
 
@@ -186,19 +227,10 @@ The formula for the number of $(a,b)$-cores then follows directly from this resu
 \subsection{}
 Our second main observation is that many statistics on $(a,b)$-cores, in particular the size, length, and skew length, are (piecewise) linear or quadratic functions on $\Lambda_C$.  This observation implies strong results about the distribution of these statistics over the set of $(a,b)$-cores.
 
-For example, it is well known (see, for instance, Garvan-Kim-Stanton \cite{GKS}) that under the abacus construction, the size of an $a$-core partition $\lambda$ is a quadratic function on $\Lambda_C$; combining this with our main theorem and Euler-Maclaurin theory immediately implies the following result: 
+For example, it is well known (see, for instance, Garvan-Kim-Stanton \cite{GKS}) that under the abacus construction, the size of an $a$-core partition $\lambda$ is a quadratic function on $\Lambda_C$; combining this with our main theorem and Euler-Maclaurin theory implies the following result: 
 
-\begin{theorem} \label{thm:armstrong}
-The average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.
-\end{theorem}
 
-\begin{remark} 
-Theorem \ref{thm:armstrong} wasconjectured by Armstrong in 2011, and first appearing in print in \cite{AHJ}.  Proving Armstrong's conjecture was the initial motivation for this work.  
-
-Stanley and Zanello \cite{SZ} recently proved the Catalan case ($a=b+1$) of Armstrong's conjecture by different methods.   
-\end{remark}
-
-\subsubsection{$q$ and $(q,t)$-analogs}
+\subsection{$q$ and $(q,t)$-analogs}
 The results mentioned above are our most concrete results, and are proved in Section \ref{sec:AA}.   Together with the review of the abacus construction in Section \ref{sec:abacus}, they make up the first part of the paper.  The second part turns toward applying the lattice point framework to $q$ and $(q,t)$-analogs of rational Catalan numbers, and is somewhat more speculative.
 
 
