@@ -23,7 +23,7 @@
 \newtheorem{observation}{Observation}
 \newtheorem{question}{Question}
 \newtheorem{conjecture}[dummy]{Conjecture}
-
+\newtheorem{FalseHope}{False Hope}
 
 
 \newcommand{\Z}{\mathbb{Z}}
@@ -62,7 +62,7 @@
 \begin{abstract}
 We observe that for $a$ and $b$ relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Furthermore, many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
 
-We apply these results to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core partition is $(a+b+1)(a-1)(b-1)/24)$.
+We apply these results to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24)$.
 
 We conjecture a unimodality result for $q$ rational Catalan numbers, and make preliminary investigations in applying these methods to the $(q,t)$-symmetry and specialization conjectures.  We prove these conjectures for low degree terms and when $a=3$.
 
@@ -73,7 +73,7 @@ We conjecture a unimodality result for $q$ rational Catalan numbers, and make pr
 \date{}
 \maketitle
 \section{Introduction}
-The goal of this paper is to establish lattice point geometry as a foundation for studying rational Catalan combinatorics.  Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG} and compactified Jacobians of singular curves \cite{EM1, EM2} . 
+The goal of this paper is to establish lattice point geometry as a foundation for rational Catalan combinatorics.  Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG} and compactified Jacobians of singular curves \cite{EM1, EM2} . 
  
 Our point of entry to rational Catalan combinatorics is Anderson's \cite{anderson} result that rational Catalan numbers count simultaneous $(a,b)$-core partitions.  Simultaneous core partitions are our main object of study, and the first result of this paper is another proof of Anderson's theorem.
 
@@ -163,12 +163,10 @@ The rational Catalan number $\Cat_{a.b}$ counts the number of lattice paths from
 
 \subsection{}
 
-%Anderson proved that simultaneous core partitions are counted by rational Catalan numbers:
-
-Our main result is a bijection between simultaneous $(a,b)$-cores and lattice points in certain rational polytopes.  This description will give the following two consequences: 
+We prove the following two theorems:
 
 \begin{theorem}[Anderson \cite{anderson}]
-If $a$ and $b$ are relatively prime, the number of
+If $a$ and $Wb$ are relatively prime, the number of
 $(a,b)$-core partitions is $\Cat_{a,b}$.
 \end{theorem}
 
@@ -183,21 +181,27 @@ Theorem \ref{thm:armstrong} was conjectured by Armstrong in 2011, and first appe
 Stanley and Zanello \cite{SZ} have proven the Catalan case ($a=b+1$) of Armstrong's conjecture by different methods.   
 \end{remark}
 
-
-
-Anderson's study of simultaneous core partitions was motivated by modular representation theory and number theory.  Her result has received much attention recently as the theory of rational Catalan combinatorics has become further developed.
-
-\subsection{Lattice Points}
-
-The main thesis of this paper is that lattice point geometry is a useful tool in studying rational Catalan numbers and simultaneous core partitions.  
+There are two main tools in the proofs of these theorems: the abacus construction, Ehrhart / Euler-Maclaurin theory.  We breifly recall these ideas before giving a high-level overview of the proof.
 
 
 
 
 
+
+ 
+\subsubsection{Abaci} 
+
+The main tool used to study $a$-cores is the ``abacus construction''.  We review this construction in detail in Section \ref{sec:abacus}.  For now, we observe that there are at least two variants of the abacus construction in the literature.  
+
+The first construction, which we call the \emph{positive abacus}, gives a bijection between $a$ core partitions and $\N^{a-1}$.  Anderson's original proof used the positive abacus to give a bijection between $(a,b)$-cores and $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
+
+The second construction, which we call the \emph{signed abacus}, gives a bijection between $a$-core partitions and the $a-1$ dimensional lattice 
+$$\Lambda_a=\left\{c_1,\dots,c_a\in\Z\Big |\sum c_i=0\right\}$$
+We call $\Lambda_a$ the \emph{$a$-charge lattice}.  The second construction is used in \cite{GKS}, to study the $t$-core crank.  In particular, it shown that under the signed abacus, the size of an $a$-core is a quadratic function on $\Lambda_a$.
+
+\subsubsection{Ehrhart / Euler-Maclaurin}
 The main tool in proving is Ehrhart theory / Euler-Maclaurin theory.  The essential idea of Ehrhart theory is that counting lattice points in polytopes is a discrete approximation of the volume of the polytope, and so should behave similarly.  Euler-Maclaurin theory extends this to summing polynomials over the lattice points being a discrete approximations to the integral of the function over the polytope.
 
-\subsubsection{Ehrhart theory}
 
 Let $V$ be an $n$ dimensional real vector space, with $\Lambda\subset V$ an $n$ dimensional lattice; for instance, $\Lambda\subset V=\Z^n\subset \R^n$.  A lattice polytope $P\subset V$ is a polytope all of whose vertices are points of $\Lambda$.  
 
@@ -206,20 +210,40 @@ $$L(P,T)=\#\{\Lambda\cap tP\}$$
 Clearly, the volume of $tP$ is $t^n$ times the volume of $P$.  Ehrhart showed that in fact, $L(P,t)$ is a degree $n$ polynomial in $t$; Ehrhart theory refers to the study of these polynomials.
 
 Similarly, if $f$ is a polynomial of degree $d$ on $V$, then we have that $\int_{tP} f$ is a polynomial of degree $d+n$.  Euler-Maclaurin theory says that the discrete analog
- $$L(f, P, t)=\sum_{x\in\Lambda\cap tP} f(x)$$.
-is also a polynomial of degree $d+n$.
+ $$L(f, P, t)=\sum_{x\in\Lambda\cap tP} f(x)$$
+is also a polynomial of degree $d+ n$.
 
 
 
 
 
+\subsubsection{Initial motivation}
+Upon first hearing Armstrong's conjecture, I immediately had the following
+
+\begin{FalseHope}
+Fix $b$.  Then under the signed abacus construction, the set of $(a,b)$-cores maps to $a\Delta$, for some $(b-1)$-dimensional integral polytope $\Delta$.
+\end{FalseHope}
+
+The false hope gives a strategy to prove Anderson's theorem and Armstrong's conjecture.  Ehrhart theory would imply that for fixed $b$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $b-1$ in $a$.  Thus, for any fixed $b$, we could prove Anderson's conjecture by checking only finitely many values.  
+
+But it is clear from the definition that if we fix $b$, then for $a$ relatively prime to $b$, then we have $\Cat_{a,b}$ is a polynomial of degree $b-1$ in $a$.  Thus, proving Anderson's theorem is reduced to showing these two polynomials are equal, which only requires checking it for finitely many values.
+
+Furthermore, it is a theorem that thee size of a $b$ core partition is a quadratic function on the lattice.  Thus, if the dream were true Euler-Maclaurin theory would give that the total size of all $(a,b)$ cores was a polynomial of degree $b+1$, and proving Armstrong's conjecture could be done by checking it for finitely any values.
+
+\subsubsection{}
+
+The False Hope is not quite true.  One minor tweak is that as we vary $a$, the polytope is not only scaled, by also changed by a linear transformation.  These transformations preerve the number of lattice points and the quadratic form $Q$ giving the size of the partitions, and so does not pose any real difficulties.
+
+More troubling is the fact that the polytope is not an integral polytope, but rather only a rational polytope.   
 
 
-Our main result is a description of $(a,b)$-cores as the lattice points in a rational simplex, and our main tool for this is the ``abacus construction'', which we review in detail in Section \ref{sec:abacus}.  One immediate consequence of this description is a new proof of Anderson's Theorem.
+Ehrhart and Euler/Maclaurin theory can be extended to rational polytopes at the cost of replacing polynomials by \emph{quasipolynomial}.  
 
-The abacus construction was also the main tool in Anderson's original proof, however, the two proofs use different variants of the construction.  Anderson's construction give a bijection between the set of $a$-core partitions and $\N^{a-1}$, while the variant we use (also used in \cite{GKS} to study the $t$-core crank) gives a bijection between $a$-core partitions and the $a-1$ diemensional lattice 
-$$\Lambda_C=\left\{c_1,\dots,c_a\in\Z\Big |\sum c_i=0\right\}$$
-We show that within the space of $a$-cores, the condition of being a $b$-core is given by $a$ linear inequalities, regardless of what $b$ is.  Furthermore, when when $a$ and $b$ are relatively prime, these inequalities define a rational simplex.  When $a$ and $b$ are not relatively prime, there are infinitely many $(a,b)$-cores.
+\begin{definition}
+A function $f:\Z\to\C$ is a quasipolynomial of degree $d$ and period $n$ if there exist $n$ polynomials $p_0,\dots, p_{n-1}$ of degree $d$, so that for $x\in k+n\Z$, we have $f(x)=p_k(x)$.
+\end{definition}
+
+
 
 The formula for the number of $(a,b)$-cores then follows directly from this result, while Anderson's proof established a bijection with $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
 
