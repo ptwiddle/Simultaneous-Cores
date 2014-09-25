@@ -1,3 +1,39 @@
+It is well known, via the ``abacus'' construction, that $a$-cores are
+in bijection with points in a lattice $\Lambda_C\cong\Z^{a-1}$ we call the
+``lattice of cores'', and that the size of an $a$-core is a quadratic function on this lattice.  Our main new observation is that if $b$ is relatively
+prime to $a$, then the space of $(a,b)$-cores inside the
+lattice of cores are the lattice points in a rational simplex $\SC_a(b)$, and that changing $b$ reflects and scales this lattice.  
+
+We would then like to use Ehrhart and Euler-Maclaurin theory to conclude that the number of $(a,b)$-cores, and their total size, are both polynomial in $b$, reproving Anderson's result and proving Armstrong's conjecture.  There is a technical obstruction to this, in that since the simplex $\SC_a(b)$ is only rational, we only know get quasipolynomiality in $b$.
+
+
+For $k\in\N$, let $\delta_{a-1}$ denote the
+standard $a-1$ dimensional simplex $\sum a_i=k$.  Then $\SC_a(b)$ is
+linearly equivalent to $b\Delta_a$; however, the lattice of cores
+$\Lambda_C$ is not equivalent to the usual lattice, but rather an
+index $a$ sublattice.
+
+
+
+
+There are some technical complications to this method.  The most serious is that the simplex of $b$-cores inside $L_a$ is not integral,
+but only rational.  Ehrhart/Euler-Maclaurin theory for
+rational polytopes only produces quasipolynomial functions in general -- that
+is, functions that on $\Z$ that are polynomial when restricted to
+residue classes mod $p$, for some period $p$, but the polynomials for different residue classes are different in general.
+
+Identities between the polynomials for
+different residue classes are in general mysterious.  
+
+
+\subsection{}
+Our second main observation is that many statistics on $(a,b)$-cores, in particular the size, length, and skew length, are (piecewise) linear or quadratic functions on $\Lambda_C$.  This observation implies strong results about the distribution of these statistics over the set of $(a,b)$-cores.
+
+For example, it is well known (see, for instance, Garvan-Kim-Stanton \cite{GKS}) that under the abacus construction, the size of an $a$-core partition $\lambda$ is a quadratic function on $\Lambda_C$; combining this with our main theorem and Euler-Maclaurin theory implies the following result: 
+
+
+
+
 %First, recall that the parts $\lambda_i$ of $\lambda=\core_a(\mathbf{c})$ correspond to electrons with energy larger than the lowest unoccupied state.  The class of $\lambda_i-i\mod a$ is exactly which runner the electron appears on; hence, the cells in the $a$-part of $\core_a(\mathbf{c})$ are exactly those cells whose occupied state corresponds to the highest energy electron on a runner.
 
 %How many cells are in the $i$-row?

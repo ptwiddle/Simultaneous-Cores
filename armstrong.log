@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.6.9)  23 SEP 2014 14:35
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.8.18)  25 SEP 2014 16:44
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode\input armstrong.tex
@@ -674,70 +674,69 @@ LaTeX Font Info:    Try loading font information for U+fplmbb on input line 196
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [3] [4]
+) [3]
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 258.
+LaTeX Warning: Reference `[' on page 4 undefined on input line 225.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 258.
+[4]
+Overfull \hbox (1.85783pt too wide) in paragraph at lines 248--249
+[]\OT1/pplx/m/n/10 (-20) Although the gen-eral strat-egy out-lined above can be
+ car-ried forth with quasipoly-
+ []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 258.
+(hyperref)                removing `math shift' on input line 326.
 
 
-Underfull \vbox (badness 4108) has occurred while \output is active []
-
- [5]
-[6]
-
-LaTeX Warning: Reference ` ' on page 7 undefined on input line 452.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 326.
 
 
-LaTeX Warning: Reference ` ' on page 7 undefined on input line 452.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 326.
 
 
-LaTeX Warning: Reference ` ' on page 7 undefined on input line 452.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 326.
 
-[7] [8] [9]
-Underfull \vbox (badness 1253) has occurred while \output is active []
+[5] [6]
 
- [10]
-[11] [12] [13] [14] [15] [16] [17] [18]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Reference ` ' on page 7 undefined on input line 419.
 
- [19]
-[20] (/usr/share/texmf-texlive/tex/latex/microtype/mt-euf.cfg
+
+LaTeX Warning: Reference ` ' on page 7 undefined on input line 419.
+
+
+LaTeX Warning: Reference ` ' on page 7 undefined on input line 419.
+
+[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+(/usr/share/texmf-texlive/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
-) [21] [22]
+) [20] [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1479.
+(hyperref)                removing `math shift' on input line 1446.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1479.
+(hyperref)                removing `math shift' on input line 1446.
 
+[22]
 
 LaTeX Warning: Reference `prop:length, prop:skewlength' on page 23 undefined on
- input line 1518.
+ input line 1485.
 
-[23] [24] [25] [26] [27] [28] [29] [30]
+[23] [24] [25] [26] [27] [28] [29]
 ! Too many }'s.
-l.1841 ...(the left-decreasing factorization code}
+l.1808 ...(the left-decreasing factorization code}
                                                   .
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-
-Overfull \hbox (3.63289pt too wide) in paragraph at lines 1877--1878
+[30]
+Overfull \hbox (3.63289pt too wide) in paragraph at lines 1844--1845
 []\OT1/pplx/m/n/10 (-20) There are two ``ob-vi-ous'' fam-i-lies of $\OML/zplm/m
 /it/10 k$\OT1/pplx/m/n/10 (-20) -cycles: \OT1/pplx/m/it/10 (-20) in-creas-ing \
 OT1/pplx/m/n/10 (-20) cy-cles $\OML/zplm/m/it/10 C[] \OT1/zplm/m/n/10 = (\OT1/p
@@ -745,12 +744,12 @@ plx/m/n/10 (-20) 1, 2, 3, [] , \OML/zplm/m/it/10 k\OT1/zplm/m/n/10 )$\OT1/pplx/
 m/n/10 (-20) ,
  []
 
-[31] [32] (./armstrong.bbl
+[31] (./armstrong.bbl
 
 Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
  on input line 59.
 
-) [33] (./armstrong.aux)
+) [32] (./armstrong.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -759,30 +758,33 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 16806 strings out of 495061
- 304153 string characters out of 1182622
- 885157 words of memory out of 3000000
- 18919 multiletter control sequences out of 15000+50000
+ 16806 strings out of 493848
+ 304149 string characters out of 1152823
+ 883614 words of memory out of 3000000
+ 19019 multiletter control sequences out of 15000+50000
  62096 words of font info for 381 fonts, out of 3000000 for 9000
- 189 hyphenation exceptions out of 8191
+ 875 hyphenation exceptions out of 8191
  56i,10n,65p,841b,761s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt8.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-
-texlive/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texmf-texlive/fonts/
-type1/public/mathpazo/fplmr.pfb></usr/share/texmf-texlive/fonts/type1/public/ma
-thpazo/fplmri.pfb></usr/share/texmf-texlive/fonts/type1/public/fpl/fplrc8a.pfb>
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/
-share/texmf-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texli
-ve/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/ur
-w/palatino/uplri8a.pfb>
-Output written on armstrong.pdf (33 pages, 425972 bytes).
+pdfTeX warning (dest): name{subsection.1.7} has been referenced but does not 
+exist, replaced by a fixed one
+
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt8.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/mathpazo/fplmr.pfb></usr/share/texmf-texlive/fonts/type1/public/math
+pazo/fplmri.pfb></usr/share/texmf-texlive/fonts/type1/public/fpl/fplrc8a.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/sh
+are/texmf-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texlive
+/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/
+palatino/uplri8a.pfb>
+Output written on armstrong.pdf (32 pages, 422542 bytes).
 PDF statistics:
- 533 PDF objects out of 1000 (max. 8388607)
- 178 named destinations out of 1000 (max. 500000)
+ 528 PDF objects out of 1000 (max. 8388607)
+ 177 named destinations out of 1000 (max. 500000)
  45301 words of extra memory for PDF output out of 51595 (max. 10000000)
 

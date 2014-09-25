@@ -58,7 +58,7 @@
 \DeclareMathOperator{\Sym}{Sym}
 
 \begin{document}
-\title{The lattice point geometry of simultaneous core partitions}
+\title{Lattice points and simultaneous core partitions}
 \begin{abstract}
 We observe that for $a$ and $b$ relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Furthermore, many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
 
@@ -166,7 +166,7 @@ The rational Catalan number $\Cat_{a.b}$ counts the number of lattice paths from
 We prove the following two theorems:
 
 \begin{theorem}[Anderson \cite{anderson}]
-If $a$ and $Wb$ are relatively prime, the number of
+If $a$ and $b$ are relatively prime, the number of
 $(a,b)$-core partitions is $\Cat_{a,b}$.
 \end{theorem}
 
@@ -193,17 +193,21 @@ There are two main tools in the proofs of these theorems: the abacus constructio
 
 The main tool used to study $a$-cores is the ``abacus construction''.  We review this construction in detail in Section \ref{sec:abacus}.  For now, we observe that there are at least two variants of the abacus construction in the literature.  
 
-The first construction, which we call the \emph{positive abacus}, gives a bijection between $a$ core partitions and $\N^{a-1}$.  Anderson's original proof used the positive abacus to give a bijection between $(a,b)$-cores and $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
+The first construction, which we call the \emph{positive abacus}, gives a bijection between $a$ core partitions and $\N^{a-1}$.  Anderson's original proof used the positive abacus as part of a bijection between $(a,b)$-cores and $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
 
-The second construction, which we call the \emph{signed abacus}, gives a bijection between $a$-core partitions and the $a-1$ dimensional lattice 
+The second construction, which we call the \emph{signed abacus}, gives a bijection between $a$-core partitions and points in the $a-1$ dimensional lattice 
 $$\Lambda_a=\left\{c_1,\dots,c_a\in\Z\Big |\sum c_i=0\right\}$$
-We call $\Lambda_a$ the \emph{$a$-charge lattice}.  The second construction is used in \cite{GKS}, to study the $t$-core crank.  In particular, it shown that under the signed abacus, the size of an $a$-core is a quadratic function on $\Lambda_a$.
+We call $\Lambda_a$ the \emph{$a$-charge lattice}.  The second construction is used in \cite{GKS}, to study the $t$-core crank.  In particular, it shown that under the signed abacus, the size of an $a$-core is a quadratic function on $\Lambda_a$.  
+
+Our proof uses the signed lattice, and directly proves the count, without passing through $(a,b)$-Dyck paths.
 
 \subsubsection{Ehrhart / Euler-Maclaurin}
-The main tool in proving is Ehrhart theory / Euler-Maclaurin theory.  The essential idea of Ehrhart theory is that counting lattice points in polytopes is a discrete approximation of the volume of the polytope, and so should behave similarly.  Euler-Maclaurin theory extends this to summing polynomials over the lattice points being a discrete approximations to the integral of the function over the polytope.
+The main novelty necessary to prove Armstrong's conjecture is to apply the techniques of Ehrhart / Euler-Maclaurin theory to core partitions.
+
+ The essential idea of Ehrhart theory is that counting lattice points in polytopes is a discrete approximation of the volume of the polytope, and so should behave similarly.  Euler-Maclaurin theory extends this to summing polynomials over the lattice points being a discrete analog to the integral of the function over the polytope.
 
 
-Let $V$ be an $n$ dimensional real vector space, with $\Lambda\subset V$ an $n$ dimensional lattice; for instance, $\Lambda\subset V=\Z^n\subset \R^n$.  A lattice polytope $P\subset V$ is a polytope all of whose vertices are points of $\Lambda$.  
+Let $V$ be an $n$ dimensional real vector space, and $\Lambda\subset V$ an $n$ dimensional lattice.  For example, $\Lambda\subset V=\Z^n\subset \R^n$.  A lattice polytope $P\subset V$ is a polytope all of whose vertices are points of $\Lambda$.  
 
 For $t$ a positive integer, let $tP$ denote the $t$th dilate of $P$; that is, the polytope obtained by scaling all the vertices by $t$.  We want to count the number of lattice points in $tP$; that is, we want to study the function
 $$L(P,T)=\#\{\Lambda\cap tP\}$$
@@ -218,24 +222,18 @@ is also a polynomial of degree $d+ n$.
 
 
 \subsubsection{Initial motivation}
-Upon first hearing Armstrong's conjecture, I immediately had the following
-
-\begin{FalseHope}
+To explain the method used to prove Theorems \ref[], we begin with the following \begin{FalseHope}
 Fix $b$.  Then under the signed abacus construction, the set of $(a,b)$-cores maps to $a\Delta$, for some $(b-1)$-dimensional integral polytope $\Delta$.
 \end{FalseHope}
-
-The false hope gives a strategy to prove Anderson's theorem and Armstrong's conjecture.  Ehrhart theory would imply that for fixed $b$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $b-1$ in $a$.  Thus, for any fixed $b$, we could prove Anderson's conjecture by checking only finitely many values.  
-
-But it is clear from the definition that if we fix $b$, then for $a$ relatively prime to $b$, then we have $\Cat_{a,b}$ is a polynomial of degree $b-1$ in $a$.  Thus, proving Anderson's theorem is reduced to showing these two polynomials are equal, which only requires checking it for finitely many values.
+The false hope provides an obvious strategy to prove Anderson's theorem and Armstrong's conjecture.  If the false hope were true, Ehrhart theory would imply that for fixed $b$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $b-1$ in $a$.  But it is clear from the definition of $\Cat_{a,b}$ that if we fix $b$, then for $a$ relatively prime to $b$ $\Cat_{a,b}$ is a polynomial of degree $b-1$ in $a$.  Thus, proving Anderson's theorem is reduced to showing these two polynomials are equal, which only requires checking it for finitely many values.
 
 Furthermore, it is a theorem that thee size of a $b$ core partition is a quadratic function on the lattice.  Thus, if the dream were true Euler-Maclaurin theory would give that the total size of all $(a,b)$ cores was a polynomial of degree $b+1$, and proving Armstrong's conjecture could be done by checking it for finitely any values.
 
 \subsubsection{}
 
-The False Hope is not quite true.  One minor tweak is that as we vary $a$, the polytope is not only scaled, by also changed by a linear transformation.  These transformations preerve the number of lattice points and the quadratic form $Q$ giving the size of the partitions, and so does not pose any real difficulties.
+The False Hope is not quite true, but the strategy outlined above is still the one we wfollow.  One minor tweak needed to the False hope, is that as we vary $a$, the polytope is not only scaled, by also changed by a linear transformation.  These transformations preserve the number of lattice points and the quadratic form $Q$ giving the size of the partitions, and so does not pose any real difficulties.
 
-More troubling is the fact that the polytope is not an integral polytope, but rather only a rational polytope.   
-
+More troubling is the fact that the polytope is not an integral polytope, but rather only a rational polytope -- that is, also $\Delta$ is not a lattice polytope, there is some $k\in\Z$ so that $k\Delta$ is a lattice polytope.   
 
 Ehrhart and Euler/Maclaurin theory can be extended to rational polytopes at the cost of replacing polynomials by \emph{quasipolynomial}.  
 
@@ -243,63 +241,16 @@ Ehrhart and Euler/Maclaurin theory can be extended to rational polytopes at the 
 A function $f:\Z\to\C$ is a quasipolynomial of degree $d$ and period $n$ if there exist $n$ polynomials $p_0,\dots, p_{n-1}$ of degree $d$, so that for $x\in k+n\Z$, we have $f(x)=p_k(x)$.
 \end{definition}
 
+We see that since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nicely into the quasipolynomial framework.  For fixed $a$, and for $b$ in a fixed residue class mod $a$, we have $\Cat_{a,b}$ is polynomial; it just so happens that for any residue class relatively prime to $a$, these polynomials are identical.
 
+Such ``accidental'' equalities between the polynomials for different residues happens somewhat frequently in Ehrhart theory, but in general is rather mysterious and not much is known.  Perhaps the most studied manifestation of this is, \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial, does not directly relate to our situation.
 
-The formula for the number of $(a,b)$-cores then follows directly from this result, while Anderson's proof established a bijection with $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
+Although the general strategy outlined above can be carried forth with quasipolynomials instead of polynomials, it is much more difficult as many more values must be checked, and I could not find a way to prove Theorems just using quasipolynomiality.  
 
+Instead, we found that in this case there is a rather clear explanation of the ``accidental'' equality of the different residue classes, which we now explain.
 
-\subsection{}
-Our second main observation is that many statistics on $(a,b)$-cores, in particular the size, length, and skew length, are (piecewise) linear or quadratic functions on $\Lambda_C$.  This observation implies strong results about the distribution of these statistics over the set of $(a,b)$-cores.
+The polytope of $a,b$ cores turns out to be an $a-1$ dimensional simplex with a $\Z/a\Z$ symmetry.  This symmetry does not, however, fix the lattice $\Lambda_a$: rahter, there is a larger lattice $\Lambda_a^\prime$ containing $\Lambda_a$, with $[\Lambda_a:\Lambda^\prime_a]=a$. When $b$ is relatively prime to $a$, this action does not have any fixed points, and each orbit in $\Lambda_a^\prime$ contains exactly one element of $\Lambda_a$.  Thus, the number of points in $\Delta\cap \Lambda_a$ is exactly $1/a$ of the number of points in $\Delta\cap \Lambda_a^\prime$.
 
-For example, it is well known (see, for instance, Garvan-Kim-Stanton \cite{GKS}) that under the abacus construction, the size of an $a$-core partition $\lambda$ is a quadratic function on $\Lambda_C$; combining this with our main theorem and Euler-Maclaurin theory implies the following result: 
-
-
-\subsection{$q$ and $(q,t)$-analogs}
-The results mentioned above are our most concrete results, and are proved in Section \ref{sec:AA}.   Together with the review of the abacus construction in Section \ref{sec:abacus}, they make up the first part of the paper.  The second part turns toward applying the lattice point framework to $q$ and $(q,t)$-analogs of rational Catalan numbers, and is somewhat more speculative.
-
-
-
-
-\subsubsection{}
-
-
-
-
-It is well known, via the ``abacus'' construction, that $a$-cores are
-in bijection with points in a lattice $\Lambda_C\cong\Z^{a-1}$ we call the
-``lattice of cores'', and that the size of an $a$-core is a quadratic function on this lattice.  Our main new observation is that if $b$ is relatively
-prime to $a$, then the space of $(a,b)$-cores inside the
-lattice of cores are the lattice points in a rational simplex $\SC_a(b)$, and that changing $b$ reflects and scales this lattice.  
-
-We would then like to use Ehrhart and Euler-Maclaurin theory to conclude that the number of $(a,b)$-cores, and their total size, are both polynomial in $b$, reproving Anderson's result and proving Armstrong's conjecture.  There is a technical obstruction to this, in that since the simplex $\SC_a(b)$ is only rational, we only know get quasipolynomiality in $b$.
-
-
-For $k\in\N$, let $\delta_{a-1}$ denote the
-standard $a-1$ dimensional simplex $\sum a_i=k$.  Then $\SC_a(b)$ is
-linearly equivalent to $b\Delta_a$; however, the lattice of cores
-$\Lambda_C$ is not equivalent to the usual lattice, but rather an
-index $a$ sublattice.
-
-
-
-
-There are some technical complications to this method.  The most serious is that the simplex of $b$-cores inside $L_a$ is not integral,
-but only rational.  Ehrhart/Euler-Maclaurin theory for
-rational polytopes only produces quasipolynomial functions in general -- that
-is, functions that on $\Z$ that are polynomial when restricted to
-residue classes mod $p$, for some period $p$, but the polynomials for different residue classes are different in general.
-
-Identities between the polynomials for
-different residue classes are in general mysterious.  Perhaps the most studied aspect, \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial, is in some ways orthogonal to our situation.
-
- However, in our case 
-there is a straightforward explanation -- the simplex of $b$-cores in
-$C_a$ will have a $\Z_a$ symmetry.  The lattice of $\Lambda_a$ of $a$-cores sits
-inside a larger lattice $\Lambda^\prime_a$, with 
-$[\Lambda_a:\Lambda^\prime_a]=a$.  Furthermore, $\Z_a$ acts on
-$V_a$, preserving the simplex $S_b$ and the quadratic form $B$, so
-that the orbits $g\Lambda_a, g\in \Z_a$ are exactly the cosets of
-$\Lambda_a$ inside $\Lambda^\prime_a$.
 
 
 \begin{tikzpicture}[scale=.8]
@@ -364,6 +315,22 @@ $\Lambda_a$ inside $\Lambda^\prime_a$.
 
 
 \end{tikzpicture}
+
+
+
+
+
+
+
+\subsection{$q$ and $(q,t)$-analogs}
+The results mentioned above are our most concrete results, and are proved in Section \ref{sec:AA}.   Together with the review of the abacus construction in Section \ref{sec:abacus}, they make up the first part of the paper.  The second part turns toward applying the lattice point framework to $q$ and $(q,t)$-analogs of rational Catalan numbers, and is somewhat more speculative.
+
+
+
+
+\subsubsection{}
+
+
 
 
 
