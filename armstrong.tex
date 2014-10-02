@@ -62,9 +62,9 @@
 \begin{abstract}
 We observe that for $a$ and $b$ relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Furthermore, many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
 
-We apply these results to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24)$.
+We apply these results to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.
 
-We conjecture a unimodality result for $q$ rational Catalan numbers, and make preliminary investigations in applying these methods to the $(q,t)$-symmetry and specialization conjectures.  We prove these conjectures for low degree terms and when $a=3$.
+We conjecture a unimodality result for $q$ rational Catalan numbers, and make preliminary investigations in applying these methods to the $(q,t)$-symmetry and specialization conjectures.  We prove these conjectures for low degree terms and when $a=3$, connecting them to the Catalan hyperplane arrangement and proving an apparently new result about permutation statistics along the way.
 
 \end{abstract}
 
@@ -165,7 +165,7 @@ The rational Catalan number $\Cat_{a.b}$ counts the number of lattice paths from
 
 We prove the following two theorems:
 
-\begin{theorem}[Anderson \cite{anderson}]
+\begin{theorem}[Anderson \cite{anderson}] \label{thm:anderson}
 If $a$ and $b$ are relatively prime, the number of
 $(a,b)$-core partitions is $\Cat_{a,b}$.
 \end{theorem}
@@ -225,15 +225,20 @@ is also a polynomial of degree $d+ n$.
 To explain the method used to prove Theorems \ref[], we begin with the following \begin{FalseHope}
 Fix $b$.  Then under the signed abacus construction, the set of $(a,b)$-cores maps to $a\Delta$, for some $(b-1)$-dimensional integral polytope $\Delta$.
 \end{FalseHope}
-The false hope provides an obvious strategy to prove Anderson's theorem and Armstrong's conjecture.  If the false hope were true, Ehrhart theory would imply that for fixed $b$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $b-1$ in $a$.  But it is clear from the definition of $\Cat_{a,b}$ that if we fix $b$, then for $a$ relatively prime to $b$ $\Cat_{a,b}$ is a polynomial of degree $b-1$ in $a$.  Thus, proving Anderson's theorem is reduced to showing these two polynomials are equal, which only requires checking it for finitely many values.
+The false hope provides an obvious strategy to prove Anderson's theorem and Armstrong's conjecture.  If the false hope were true, Ehrhart theory would imply that, for $a$ relatively prime to a fixed $b$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $b-1$ in $a$.  It is clear from the definition that this polynomiality property holds for $\Cat_{a,b}$.  Thus, proving Anderson's theorem for a fixed $b$  reduces to showing that two polynomials are equal, which only requires checking finitely many values.  
 
-Furthermore, it is a theorem that thee size of a $b$ core partition is a quadratic function on the lattice.  Thus, if the dream were true Euler-Maclaurin theory would give that the total size of all $(a,b)$ cores was a polynomial of degree $b+1$, and proving Armstrong's conjecture could be done by checking it for finitely any values.
+Furthermore, it is a theorem that thee size of a $b$ core partition is a quadratic function on the lattice.  Thus, if False Hope  were true Euler-Maclaurin theory would give that the total size of all $(a,b)$ cores was a polynomial of degree $b+1$, and again we could hope to exploit this polynomiality in a proof.
+
+Note that since the degree of the polynomial $\Cat_{a,b}$ grow as $b$ grows, proving Anderson and Armstrong's conjecture as a whole by this method would still requires checking infinitely many values.
+
 
 \subsubsection{}
 
-The False Hope is not quite true, but the strategy outlined above is still the one we wfollow.  One minor tweak needed to the False hope, is that as we vary $a$, the polytope is not only scaled, by also changed by a linear transformation.  These transformations preserve the number of lattice points and the quadratic form $Q$ giving the size of the partitions, and so does not pose any real difficulties.
+The False Hope is not quite true, but the strategy outlined above is essentially the one we follow.  One minor tweak needed to the False Hope is that as we vary $a$, the polytope is not only scaled, by also changed by a linear transformation.  These transformations preserve the number of lattice points and the quadratic function giving the size of the partitions, and so does not pose any real difficulties.
 
-More troubling is the fact that the polytope is not an integral polytope, but rather only a rational polytope -- that is, also $\Delta$ is not a lattice polytope, there is some $k\in\Z$ so that $k\Delta$ is a lattice polytope.   
+More troubling is that the polytope $\mathcal{C}_{a,b}$ is not integral, but only rational.  Recall that a polytope $\Delta$ is \emph{rational} if there is some $k\in\Z$ so that $k\Delta$ is a lattice polytope.   
+
+
 
 Ehrhart and Euler/Maclaurin theory can be extended to rational polytopes at the cost of replacing polynomials by \emph{quasipolynomial}.  
 
@@ -241,18 +246,28 @@ Ehrhart and Euler/Maclaurin theory can be extended to rational polytopes at the 
 A function $f:\Z\to\C$ is a quasipolynomial of degree $d$ and period $n$ if there exist $n$ polynomials $p_0,\dots, p_{n-1}$ of degree $d$, so that for $x\in k+n\Z$, we have $f(x)=p_k(x)$.
 \end{definition}
 
-We see that since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nicely into the quasipolynomial framework.  For fixed $a$, and for $b$ in a fixed residue class mod $a$, we have $\Cat_{a,b}$ is polynomial; it just so happens that for any residue class relatively prime to $a$, these polynomials are identical.
+\begin{example}
 
-Such ``accidental'' equalities between the polynomials for different residues happens somewhat frequently in Ehrhart theory, but in general is rather mysterious and not much is known.  Perhaps the most studied manifestation of this is, \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial, does not directly relate to our situation.
-
-Although the general strategy outlined above can be carried forth with quasipolynomials instead of polynomials, it is much more difficult as many more values must be checked, and I could not find a way to prove Theorems just using quasipolynomiality.  
-
-Instead, we found that in this case there is a rather clear explanation of the ``accidental'' equality of the different residue classes, which we now explain.
-
-The polytope of $a,b$ cores turns out to be an $a-1$ dimensional simplex with a $\Z/a\Z$ symmetry.  This symmetry does not, however, fix the lattice $\Lambda_a$: rahter, there is a larger lattice $\Lambda_a^\prime$ containing $\Lambda_a$, with $[\Lambda_a:\Lambda^\prime_a]=a$. When $b$ is relatively prime to $a$, this action does not have any fixed points, and each orbit in $\Lambda_a^\prime$ contains exactly one element of $\Lambda_a$.  Thus, the number of points in $\Delta\cap \Lambda_a$ is exactly $1/a$ of the number of points in $\Delta\cap \Lambda_a^\prime$.
+\end{example}
 
 
+Since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nicely into the quasipolynomial framework.  For fixed $a$, and for $b$ in a fixed residue class mod $a$, we have that $\Cat_{a,b}$ is polynomial; it just so happens that for any residue class relatively prime to $a$, these polynomials are identical.
 
+Such ``accidental'' equalities between the polynomials for different residues happen frequently in Ehrhart theory, but are still mysterious in general.  Perhaps the most studied manifestation of this is \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial.
+
+
+Although the general strategy outlined above can be carried forth with quasipolynomials instead of polynomials, it is more difficult as the periods of the quasipolynomials are increasing with $b$, and so many more values must be checked.  In the end, we could not find a way to prove Theorems \ref{thm:anderson, thm:armstrong} using solely quasipolynomiality.   Instead, we found a clear explanation of the ``accidental'' equality of the polynomials for different residue classes, which we now explain.
+
+Although $\mathcal{C}_{a,b}$ is not a lattice polytope with respect to the lattice $\Lambda_a$ of $a$-cores, $\mathcal{C}_{a,b}$ will be a lattice polytope with respect to a refinement of $\Lambda_a$.  In particular, there is a lattice $\Lambda_a^\prime$ containing $\Lambda_a$ with index $[\Lambda_a:\Lambda^\prime_a]=a$, so that with respect to the lattice $\Lambda_a^\prime$, the polytope $\mathcal{C}_{a,b}$ is the standard simplex $\sum_{i=1}^{a} x_i=b, 0
+leq x_i\in \Z$.  
+
+Furthermore, consider the action of $\Z_a$ cyclicly permutating the variables, i.e., $x_i\mapsto x_{i+1}, x_{a}\mapsto x_0$.   When $b$ is relatively prime to $a$, this action does not have any fixed points.  Furthermore, in this case the $\Z_a$ orbit of each point in $\Lambda_a^\prime$ contains exactly one element of $\Lambda_a$.  This is illustrated in Figure \ref{fig:sublattice}: the left hand picture shows $\Lambda_3\subset \C_{3,10}$, while the right hand picture shows $\Lambda_3^\prime$.  The black dots are elements of $\Lambda_3$, while the red and green dots are the other cosets of $\Lambda_3$ inside of $\Lambda_3^\prime$, and are obtained by rotating around the blue circle.
+
+
+\begin{figure}[h!]
+
+\caption{$\Lambda_3$ and $\Lambda_3^\prime$ inside $\mathcal{C}_{3, 10}$}
+\label{fig:sublattice}
 \begin{tikzpicture}[scale=.8]
 
 \begin{scope}
@@ -262,15 +277,9 @@ The polytope of $a,b$ cores turns out to be an $a-1$ dimensional simplex with a 
 
 \fill[gray!50] (-3,0)--(2, 5/3*1.7320508)--(2, -5/3*1.7320508)--cycle;
 
-
-
-
-
 \foreach \x in {-7,-6,...,7}{% Two indices running over each
     \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
         \node[draw,circle,inner sep=1pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
-
-
 
 \draw[dashed] (2, 10*1.7320508/2)--(2, -5*1.7320508);
 \draw[dashed] (-15-3, 5*1.7320508)--(15-3, -5*1.7320508);
@@ -281,13 +290,8 @@ The polytope of $a,b$ cores turns out to be an $a-1$ dimensional simplex with a 
 \clip (-3.5, -4*1.7320508/2)--(-3.5, 4*1.7320508/2)--(2.5,
 4*1.7320508/2)--(2.5, -4*1.7320508/2)--cycle;
 
-
 \fill[gray!50] (-3,0)--(2, 5/3*1.7320508)--(2, -5/3*1.7320508)--cycle;
-
-
 \draw[thick, blue] (.333,0) circle(.08);
-
-
 \foreach \x in {-7,-6,...,7}{% Two indices running over each
     \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
         \node[draw,circle,inner sep=1pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
@@ -311,50 +315,42 @@ The polytope of $a,b$ cores turns out to be an $a-1$ dimensional simplex with a 
 \draw[dashed] (-15-3, -5*1.7320508)--(15-3, 5*1.7320508);
 \end{scope}
 
-
-
-
 \end{tikzpicture}
 
+\end{figure}
 
 
+From this we see that the number of points in $\mathcal{C}_{a,b}\cap \Lambda_a$ is exactly $1/a$ of the number of points in the standard simplex, which is $\binom{a+b-1}{b}$.  Since $$\frac{1}{a}\binom{a+b-1}{b}=\frac{1}{a+b}\binom{a+b}{b}=
+\Cat_{a,b}$$
+this proves Anderson's theorem.
 
+Thus, $\Cat_{a,b}$ is the number of degree $b$ monomials $p_1^{e_1}\cdots p_a^{e_a}$ with $\sum e_i=b$ and $\sum i e_i=0\mod a$.  Alternatively, let $V_a$ be the regular representation of $\Z_a$.  Then $\Cat_{a,b}$ is the dimension of the invariant part of the $b$th symmetric power of $V_a$: 
+$$\Cat_{a,b}=\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}$$
 
 
 
 \subsection{$q$ and $(q,t)$-analogs}
-The results mentioned above are our most concrete results, and are proved in Section \ref{sec:AA}.   Together with the review of the abacus construction in Section \ref{sec:abacus}, they make up the first part of the paper.  The second part turns toward applying the lattice point framework to $q$ and $(q,t)$-analogs of rational Catalan numbers, and is somewhat more speculative.
+
+In the remaining section of the paper, we begin to apply the lattice point viewpoint toward $q$ and $(q,t)$ analogs of $\Cat_{a,b}$.   
 
 
 
 
-\subsubsection{}
+nctions on $\mathcal{C}_{a,b}$, so that the $q$ and $(q,t)$ analogs are sums over the lattice points in
+
+Section \ref{sec:qcat} investigates connections between the lattice point $q$ rational Catalan numbers
+$$\Cat_{a,b}(q)=\frac{1}{[a+b]_q}\binom{a+b}{a}$$
+the obvious $q$ analog of rational Catalan numbers.
+
+In particular, one might hope that $\Cat_{a,b}(q)$
 
 
 
 
+numbers, which have an algebraic definition
 
 
-To illustrate this, let us sketch the proof of Anderson's theorem:
-after a change of variables, the simplex $C_b$ becomes the simplex
-$\sum_{i=1}^a x_i=b$, the standard lattice $x_i\in\Z$ becomes the
-lattice $\Lambda^\prime_a$, and the lattice of cores $\Lambda_a$ becomes the index $a$ lattice given by $\sum ix_i=0\mod a$.
 
-Cyclicly permuting the coordinates by $x_i\mapsto x_{i+1}$ changes
-$\sum ix_i$ by $b\mod a$, and since $a$ and $b$ are relatively prime,
-we see that the conditions on $\Lambda_a, \Lambda^\prime_a$ and the
-$\Z_a$ action are satisfied.  Thus, we see that the number of $(a,b)$
-cores is $1/a$ of the number of lattice points in the $b$th dilate of
-the standard $a-1$ dimensional simplex.  By Ehrhart theory, this is a
-polynomial of degree $a-1$, with value $1$ when $b=0$, and by Ehrhart
-reciprocity vanishing at $b=-1,\dots, -(a-1)$ -- hence, it must be
-
-$$\frac{1}{a}\frac{(a+b-1)!}{(a-1)!b!}$$
-
-An attractive formulation of this is as follows: let $V_a$ be the
-regular representation of $Z_a$.  Then $\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}.$
-
-Another way of phrasing this is that the $(a,b)$ Catalan number is the number of degree $b$ polynomials in $p_1,\dots, p_a$ $p_1^{e_1}\cdots p_a^{e_a}$ with $\sum e_i=b$ and $\sum i e_i=0\mod a$.
 
 
 
@@ -1099,7 +1095,7 @@ To see that $A=1/24$, note that although there are no points of $\Lambda_s$ in $
 
 
 
-\section{Toward \texorpdfstring{$q$}{q}-analogs}
+\section{Toward \texorpdfstring{$q$}{q}-analogs} \label{sec:qcat}
 In this section, we apply our lattice point and simplex point of view on simultaneous cores to the $q$-analog of rational Catalan numbers; the next section approaches $(q,t)$-analogs.
 
 \subsection{\texorpdfstring{$q$}{q}-numbers}
