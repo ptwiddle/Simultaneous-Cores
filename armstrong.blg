@@ -2,46 +2,47 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: armstrong.aux
 The style file: plain.bst
 Database file #1: Armstrong.bib
+Warning--I didn't find a database entry for ""
 Warning--there's a number but no volume in DS
-You've used 13 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            599 strings with 5939 characters,
-and the built_in function-call counts, 4153 in all, are:
-= -- 430
-> -- 166
+            616 strings with 6347 characters,
+and the built_in function-call counts, 4926 in all, are:
+= -- 508
+> -- 209
 < -- 3
-+ -- 67
-- -- 52
-* -- 302
-:= -- 704
-add.period$ -- 45
-call.type$ -- 13
-change.case$ -- 64
++ -- 85
+- -- 66
+* -- 352
+:= -- 849
+add.period$ -- 54
+call.type$ -- 16
+change.case$ -- 80
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 149
-empty$ -- 325
-format.name$ -- 52
-if$ -- 851
+cite$ -- 17
+duplicate$ -- 172
+empty$ -- 374
+format.name$ -- 66
+if$ -- 1000
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 12
-newline$ -- 73
-num.names$ -- 26
-pop$ -- 46
+int.to.str$ -- 16
+missing$ -- 13
+newline$ -- 88
+num.names$ -- 32
+pop$ -- 58
 preamble$ -- 1
-purify$ -- 52
+purify$ -- 65
 quote$ -- 0
-skip$ -- 99
+skip$ -- 114
 stack$ -- 0
-substring$ -- 302
-swap$ -- 24
+substring$ -- 343
+swap$ -- 25
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 50
+type$ -- 62
 warning$ -- 1
-while$ -- 46
-width$ -- 15
-write$ -- 153
-(There was 1 warning)
+while$ -- 54
+width$ -- 18
+write$ -- 182
+(There were 2 warnings)

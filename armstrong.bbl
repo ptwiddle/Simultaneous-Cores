@@ -22,6 +22,11 @@ Weimin Chen and Yongbin Ruan.
 \newblock {\em Comm. Math. Phys.}, 248(1):1--31, 2004.
 \newblock \url{http://arxiv.org/abs/math/0004129}.
 
+\bibitem{CHW}
+William~Y.C. Chen, Harry~H.Y. Huang, and Larry~X.W. Wang.
+\newblock Average size of a self-conugate $(s,t)$-core partition.
+\newblock \url{http://arxiv.org/abs/1405.2175}.
+
 \bibitem{AHJ}
 B.~Jones D.~Armstrong, C.~Hanusa.
 \newblock Results and conjectures on simultaneous core partitions.
@@ -32,6 +37,12 @@ Robbert Dijkgraaf and Piotr Su{\l}kowski.
 \newblock Instantons on {ALE} spaces and orbifold partitions.
 \newblock {\em J. High Energy Phys.}, (3):013, 24, 2008.
 \newblock \url{http://arxiv.org/abs/0712.1427}.
+
+\bibitem{FMS}
+Ben Ford, Ho{\`a}ng Mai, and Lawrence Sze.
+\newblock Self-conjugate simultaneous {$p$}- and {$q$}-core partitions and
+  blocks of {$A_n$}.
+\newblock {\em J. Number Theory}, 129(4):858--865, 2009.
 
 \bibitem{GKS}
 Frank Garvan, Dongsu Kim, and Dennis Stanton.
@@ -74,5 +85,10 @@ A.~Stapledon.
 \newblock Weighted {E}hrhart theory and orbifold cohomology.
 \newblock {\em Adv. Math.}, 219(1):63--88, 2008.
 \newblock \url{http://arxiv.org/abs/0711.4382}.
+
+\bibitem{X}
+Huan Xiong.
+\newblock The number of simultaneous core partitions.
+\newblock \url{http://arxiv.org/abs/1409.7038}.
 
 \end{thebibliography}
