@@ -325,29 +325,55 @@ From this we see that the number of points in $\mathcal{C}_{a,b}\cap \Lambda_a$ 
 this proves Anderson's theorem.
 
 Thus, $\Cat_{a,b}$ is the number of degree $b$ monomials $p_1^{e_1}\cdots p_a^{e_a}$ with $\sum e_i=b$ and $\sum i e_i=0\mod a$.  Alternatively, let $V_a$ be the regular representation of $\Z_a$.  Then $\Cat_{a,b}$ is the dimension of the invariant part of the $b$th symmetric power of $V_a$: 
-$$\Cat_{a,b}=\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}$$
+\begin{equation} \label{eq:invariant}
+\Cat_{a,b}=\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}$$
 
 
 
 \subsection{$q$ and $(q,t)$-analogs}
 
-In the remaining section of the paper, we begin to apply the lattice point viewpoint toward $q$ and $(q,t)$ analogs of $\Cat_{a,b}$.   
+The second half of the paper, comprosing Sections \ref{ } and \ref{ \}, initiates the application of the lattice point viewpoint to $q$ and $(q,t)$ analogs of $\Cat_{a,b}$.   
 
 
 
+\subsubsection{}
+Section \ref{ } looks at the $q$-rational Catalan numbers $\Cat_{a,b}(q)$, which are the obvious extension of rational Catalan numbers obtained by replacing all numbers in the definition of $\Cat_{a,b}(q)$ by their $q$ analog:
+$$\Cat_{a,b}(q)=\frac{1}{[a+b]_q}\binom{a+b}{a}.$$
+It is a not obvious fact, proven in  , that the coefficients of $\Cat_{a,b}(q)$ are positive.  The main question we pursue in Section \ref{ } is whether our lattice point view can shed any light on this positivity question.
 
-nctions on $\mathcal{C}_{a,b}$, so that the $q$ and $(q,t)$ analogs are sums over the lattice points in
+We observed in Equation \ref{eq:invariant} that $\Cat_{a,n}$ is the dimension of $\Sym^b(\C[\Z_a])^\Z_a$; on the other hand.  On the other hand, we could let $\C^*$ act on $\C[\Z_a]$ by $\lambda\cdot [k]=\lambda^k[k]$; then the $q$ binomial coefficient are computing the $\C^*$ weight on $\Sym^b(\C[\Z_a])$.
 
-Section \ref{sec:qcat} investigates connections between the lattice point $q$ rational Catalan numbers
-$$\Cat_{a,b}(q)=\frac{1}{[a+b]_q}\binom{a+b}{a}$$
-the obvious $q$ analog of rational Catalan numbers.
+It is then natural to hope that the coefficients of $\Cat_{a,b}(q)$ are computing the dimensions of the $\C^*$ eigenspaces on the invariant part of $\Sym^b(\C[\Z_a])$.  This hope, however, is false.
 
-In particular, one might hope that $\Cat_{a,b}(q)$
+However, this line of thought leads us to conjectural formula for $\Cat_{a,b}(q)$ as a sum of $a^{a-2}$ terms, each of which is the product of $q^b$ times a $q^a$ binomial coefficients.   
+
+This conjectural formula leads naturally to a unimodality conjecture about $\Cat_{a,b}(q)$.  Recall that a sequence $a_1,dots, a_n$ is \emp{unimodal} if there is some $k$ so that $$a_1\leq a_2\leq \cdots \leq a_{k-1}\leq a_k \geq a_{k-1} \geq a_{k-2}\cdots\geq a_n$$
+The coefficients of $\Cat_{a,b}$ are not unimodal.  However, we conjecture that, if we fix $0
+leq k <a$, and look only at the coefficients of $\Cat_{a,b}(q)$ of the form $q^{an+k}$, the resulting sequences are unimodal.
+
+
+\subsubsection{ }
+
+The $(q,t)$-rational Catalan numbers were original defined in terms of summing certain statistics over lattice paths, but Armstrong, have given an analogous formula over simultaneous core.  In particular, let $\SC_{a,b}$ denote the set of all $(a,b)$-cores, 
+$$\Cat_{a,b}(q,t)=\sum_{\lambda\in \SC_{a,b}} q^{\ell(\lambda)}t^{\sk^\prime(\lambda)}$$
+where $\ell(\lambda)$ is the length of $\lambda$, and $\sk^\prime(\lambda)$ is the \emph{co-skew length}, a statistic introduced by $\lambda$.
+
+Our main result in the second half of the paper is that $\ell$ and $\sk^\prime$ are piecewise linear functions on $\Delta_{a,b}$,  and thus that lattice point geometry should be useful in these studying $\Cat_{a,b}(q,t)$ and $\Cat_{a,b}(q)$. 
+
+This result is for a variety of reasons: it provides a progress toward proving some conjectures about $\Cat_{a,b}(q,t)$.
+  First, it is conjectured that $\Cat_{a,b}(q,t)$ is symmetric in $q$ and $t$, and that $$q^{(a-1)(b-1)/2}}\Cat_{a,b}(q,1/q)=\Cat_{a,b}(q).$$  
+As a corollary of Lemma \ref{ }, we are able to prove these conjectures for the high and low degree terms of $\Cat_{a,b}$:
+
+Second, it turns out that the chambers of linearity for $\ell$ and $\sk^\prime$ are interesting hyperplane arrangements -- the walls of $\ell$ are the walls of the $A_{n-1}$ arrangement, and the walls of $\sk^\prime$ are the walls of a deformation of the $A_{n-1}$ arrangement known as the Catalan arrangement.  This gives a connection between $\Cat_{a,b}(q,t)$ and $\Cat_a$, which we don't believe was well known.  Furthermore, it suggests that a thorough understanding of the geometry of the Catalan arrangement could lead to a full proof of the specialization and symmetry conjectures.
+
+Finally, in order to prove Corollary \cite{ } we are lead to define and investigate a new permutation statistic $\siz(\sigma)$.  
+
+\begin{lemma}
+$$\sum_{\sigma\in S_n} q^{\siz(\sigma)}t^{\maj(\sigma)}=\prod_{k=1}^n [k]_{q^{n+1-k}t}$$ 
+\end{lemma}
 
 
 
-
-numbers, which have an algebraic definition
 
 
 
@@ -1027,8 +1053,9 @@ Thus, the images of $x_i\in\Lambda+s$ lie in an index $a$ sublattice of the stan
 
 The scaled simplex $b\Delta_a$ has $\binom{a+b-1}{a-1}$
   usual lattice points.  Cyclicly permuting the variables preserves
-  $b\Delta_a$ and the standard lattice, and cyclicly permutes the $a$
-  cosets of the charge lattice.   Thus the standard lattice points in
+  $b\Delta_a$ and the standard lattice, and when $b$ is relatively prime to $a$ it cyclicly permutes the $a$ cosets of the charge lattice.   
+
+Thus the standard lattice points in
   $b\Delta_a$ are equidistributed among the $a$-cosets of the
   charge lattice, and hence each one contains $\frac{1}{a}\binom{a+b-1}{a-1}=\Cat_{a,b}$.
 
@@ -1353,7 +1380,7 @@ but then shifting the result by a factor of $q^{\iota(\mathfrak{c})}$ for some $
 Algebraically, this suggests
 \begin{conjecture} \label{conj:cosets}
 There is an \emph{age} function $\iota$ on the cosets $\mathfrak{c}\in\Lambda/\Lambda_T$, so that
-$$\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c})}=[a]_{q^2}[a]_{q^2}\cdots[a]_{q^{a-1}}$$
+$$\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c})}=[a]_{q^2}[a]_{q^3}\cdots[a]_{q^{a-1}}$$
  and
 $$\Cat_{a,b}(q)=\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c}} \binom{b/a-s(\mathfrak{c},b)+a-1 }{a-1}_{q^a}$$
 where the $q^a$ binomial coefficient $q^a$-counts the points in $\mathfrak{c}\cap \mathcal{SC}_{a-1}(b)$.
