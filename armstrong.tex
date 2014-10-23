@@ -9,7 +9,7 @@
 \usetikzlibrary{snakes, arrows}
 \linespread{1.2}
 
-
+v
 
 \theoremstyle{definition}
 \newtheorem{dummy}{}[section]
@@ -62,7 +62,7 @@
 \begin{abstract}
 We observe that for $a$ and $b$ relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Furthermore, many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
 
-We apply these results to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.
+We apply these results to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.  Our methods also give new derivations of analagous formulas for the number and average size of self-conjugate $(a,b)$ proven by \cite{FMS} and \cite{CHW} 
 
 We conjecture a unimodality result for $q$ rational Catalan numbers, and make preliminary investigations in applying these methods to the $(q,t)$-symmetry and specialization conjectures.  We prove these conjectures for low degree terms and when $a=3$, connecting them to the Catalan hyperplane arrangement and proving an apparently new result about permutation statistics along the way.
 
@@ -328,6 +328,20 @@ Thus, $\Cat_{a,b}$ is the number of degree $b$ monomials $p_1^{e_1}\cdots p_a^{e
 \begin{equation} \label{eq:invariant}
 \Cat_{a,b}=\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}$$
 
+\subsubsection{Self-conjugate simultaneous cores}
+It was shown in \cite{FMS} that self-conjugate $(a,b)$-core partitions are counted by 
+
+
+
+$$\binom{\left\lfloor \frac{a}{2} \right\rfloor +\left\lfloor \frac{b}{2} \right\rfloor}{\left\lfloor \frac{a}{2} \right\rfloor}$$
+
+It was conjectured by Armstrong, and proven recently by \cite{CHW} that the average size of a self-conjugate $(a,b)$-core partition is the same as an average size of all $(a,b)$-core partitions, namely $(a+b+1)(a-1)(b-1)/24$.  Our methods easily adapt to give new, unified proofs of these results.
+
+In Lemma \ref{lem:conjugatedual}, we show that the bijection between $(a,b)$-cores and elements of $\Sym^b\C[\Z_a]^{\Z_\}$, or dimension $b$ representations of $\Z_a$ with determinant 1, conjugating a partition corresponds to the inversion sending $g$ to $g^{-1}$, or sending a representation $V$ to its dual $V^*$.  In the lattice point of view, this is just a linear map, and hence the self-dual $(a,b)$-cores correspond to the lattice points in the fixed point locus of $T$.  
+
+We show in Lemma \ref{lem:conjugatecount}, that the lattice points in $ \cap T$ are naturally the lattice points in the $\lfloor a/2\rfloor$ dimensional simplex $\lfloor b/2\rfloor \delta_{\floor a/2\floor +1}$, hence rederiving the count of simultaneous $(a,b)$-core partitions.  
+
+Once we have done this, an analogous application of Euler-Maclaurin theory reproves the statement about the average value.
 
 
 \subsection{$q$ and $(q,t)$-analogs}
@@ -443,12 +457,7 @@ In section \ref{ } we introduce standard notation and bijections about $a$-core 
 \subsection{Further directions}
 
 
-\subsubsection{Self-conjugate simultaneous cores}
-It was shown in \cite{FMS} that self-conjugate $(a,b)$-core partitions are counted by 
 
-\cite{CHW}
-
-Self-conjugate simultaneous core partitions studied e.g. in \cite{FMS}; th
 
 
 \subsubsection{Simultaneous cores for 3 or more moduli}
@@ -1136,6 +1145,55 @@ constant $A$ independent of $a$ and $b$.
 
 To see that $A=1/24$, note that although there are no points of $\Lambda_s$ in $\mathcal{S}_a(0)=0$, the standard simplex $\delta_{a-1}(0)$ contains the origin as a lattice point, and so $P_a(0)=Q(0)=-(a^2-1)/24$.
 \end{proof}
+
+\subsection{Self-conjugate \textorpdfstring{$(a,b)$}{(a,b)}-cores} \label{sec:conjugate}
+
+Let $T:V_a\to V_a$ be the linear map given by.
+$$T(c_i)=-c_{a-i}$$.
+It is not hard to see that, when translated to core partitions, $T$ corresponds to taking the conjugate, that is: $$\core_a(c)^T=\core_a(T(c))$$
+
+Since $T(s)=s$, the same formula holds for the shifted coordines $x$. 
+
+Thus, to study self-conjugate $(a,b)$-cores, we want to study the $T$ fixed locus of $\SC_a(b)$.  
+
+
+\subsubsection{Representation theory and polytopes}
+We now describe a basic representation theoretic question that will turn out to be equivalent.
+
+Consider the set isomorphism classes of $b$-dimensional representations of $\Z_a$.  We have seen that this is $b\delta_a=\{(y_0,\dots, y_{a-1})\in \Z^a| y_i\geq 0, \sum y_i=b\}$, with $y_i$ being the multiplicity of the $i$th irreducible representation in our $b$-dimensional representation.
+
+Asking this representation to have determinant 1 is asking $\sum iy_i=0\mod a$.  Sending a representation to its dual obviously corresponds to the linear map $C:y_i\mapsto y_{a-i}$, where recall we are using period subscripts so that $y_0=y_a$.
+
+\begin{lemma} \label{lem:selfconjugatecount}
+The number of $b$-dimensional, self-conjugate $\Z_a$ representations with determinant 1 is given by $$\binom{\left\lfloor\frac{a}{2}\right\rfloor+\left\lfloor\frac{b}{2}\right\rfloor}{\left\lfloor\frac{a}{2}\right\rfloor}$$
+\end{lemma}
+
+\begin{proof}
+  Let $a=2k$ or $2k+1$; our proof operates by giving a bijection between the representations in question and $k$-tuples of non-negative integers $(z_1,\dots, z_k)$ with $2\sum z_i\leq b$, which are clearly counted by the given binomial coefficient.
+
+First, suppose that $a=2k+1$ is odd.  Then the only irreducible self-conjugate representation is the identity, and so $C$ has a $k+1$ dimensional fixed point set, given by $(z_0, z_1,\dots, z_k,z_k,\dots, z_1)$.  Thus, we see that $\sum_{i=1}^k 2z_k\leq b$, and value of $z_0$ is fixed by $\sum_{i=0}^{a-1}z_i=b$.
+
+When $a=2k$ is even, there are two irreducible self-conjugate representations, the identity and the.  Again, we see that $C$ has a $k+1$ dimensional fixed point set, this time coordinatized by $(z_0, z_1,\dots z_{k-1},w_{k}, z_{k-1},\dots,z_1)$.  For such a representation to have determinant 1 is equivalent to $w_k$ begin even, say $w_k=2z_k$.  Thus, we again have $\sum_{i=1}^k 2z_k\leq b$, with $z_0$ being determined by $\sum_{i=-}^{a-1}z_i=b$. 
+\end{proof}
+
+\begin{lemma} \label{lem:conjugatedual}
+Under the map between, taking the conjugate of an $a$-core corresponds to taking the dual $\Z_a$ representation.
+\end{lemma}
+
+\begin{proof}
+
+
+\end{proof}
+
+
+\begin{proposition} \label{prop:conjugatesize}
+
+
+\end{proposition}
+
+  We see that
+
+
 
 
 
