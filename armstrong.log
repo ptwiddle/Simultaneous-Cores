@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.8.18)  22 OCT 2014 14:37
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.8.18)  4 NOV 2014 15:27
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode\input armstrong.tex
@@ -539,78 +539,62 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
 \arrowsize=\dimen170
 ))
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12 v
-      
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (17.2778pt too wide) in paragraph at lines 12--13
-[]\OT1/cmr/m/n/10 v 
- []
-
 \c@dummy=\count128
 \c@observation=\count129
 \c@question=\count130
 \c@FalseHope=\count131
+
 (./armstrong.aux)
 \openout1 = `armstrong.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 59.
 
  (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 60.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 59.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 60.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 59.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 60.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 59.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 60.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 59.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1zplm.fd
@@ -630,7 +614,7 @@ ABD: EveryShipout initializing macros
 \MPnumerator=\count136
 \everyMPtoPDFconversion=\toks38
 )
-Package hyperref Info: Link coloring OFF on input line 60.
+Package hyperref Info: Link coloring OFF on input line 59.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -639,15 +623,15 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count137
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \ref on input line 59.
+LaTeX Info: Redefining \pageref on input line 59.
  (./armstrong.out)
 (./armstrong.out)
 \@outlinefile=\write4
 \openout4 = `armstrong.out'.
 
 \AtBeginShipoutBox=\box40
-LaTeX Info: Redefining \microtypecontext on input line 60.
+LaTeX Info: Redefining \microtypecontext on input line 59.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -664,47 +648,43 @@ Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplx/m/sc/8'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 75.
+(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 74.
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplx/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 76.
+(Font)              scaled to size 10.42007pt on input line 75.
 
 (/usr/share/texmf-texlive/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 76.
+(Font)              scaled to size 7.91925pt on input line 75.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 76.
+(Font)              scaled to size 10.42007pt on input line 75.
 
 (/usr/share/texmf-texlive/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 76.
-
-Overfull \vbox (398.3805pt too high) has occurred while \output is active []
-
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 196
+(Font)              scaled to size 7.91925pt on input line 75.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 195
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [2]
+) [3]
 
-LaTeX Warning: Reference `[' on page 3 undefined on input line 225.
+LaTeX Warning: Reference `[' on page 4 undefined on input line 224.
 
-[3]
+[4]
 
-LaTeX Warning: Reference `thm:anderson, thm:armstrong' on page 4 undefined on i
-nput line 259.
+LaTeX Warning: Reference `thm:anderson, thm:armstrong' on page 5 undefined on i
+nput line 258.
 
 
-Overfull \hbox (1.85783pt too wide) in paragraph at lines 259--260
+Overfull \hbox (1.85783pt too wide) in paragraph at lines 258--259
 []\OT1/pplx/m/n/10 (-20) Although the gen-eral strat-egy out-lined above can be
  car-ried forth with quasipoly-
  []
@@ -712,11 +692,11 @@ Overfull \hbox (1.85783pt too wide) in paragraph at lines 259--260
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4]
+[5]
 ! Missing } inserted.
 <inserted text> 
                 }
-l.340 ...s and elements of $\Sym^b\C[\Z_a]^{\Z_\}$
+l.339 ...s and elements of $\Sym^b\C[\Z_a]^{\Z_\}$
                                                   , or dimension $b$ represe...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -725,11 +705,11 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-LaTeX Warning: Reference `lem:conjugatecount' on page 5 undefined on input line
- 342.
+LaTeX Warning: Reference `lem:conjugatecount' on page 6 undefined on input line
+ 341.
 
 ! Undefined control sequence.
-l.342 ...implex $\lfloor b/2\rfloor \delta_{\floor
+l.341 ...implex $\lfloor b/2\rfloor \delta_{\floor
                                                    a/2\floor +1}$, hence red...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -738,7 +718,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.342 ...floor b/2\rfloor \delta_{\floor a/2\floor
+l.341 ...floor b/2\rfloor \delta_{\floor a/2\floor
                                                    +1}$, hence rederiving th...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -748,46 +728,46 @@ and I'll forget about whatever was undefined.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 348.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 348.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 348.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 348.
 
 
-LaTeX Warning: Reference ` ' on page 5 undefined on input line 349.
+LaTeX Warning: Reference ` ' on page 6 undefined on input line 348.
 
 Runaway argument?
 { \}, initiates the application of the lattice point viewpoint to $q$\ETC.
 ! Paragraph ended before \T@ref was complete.
 <to be read again> 
                    \par 
-l.350 
+l.349 
       
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-[5]
 
-LaTeX Warning: Reference ` ' on page 6 undefined on input line 354.
+LaTeX Warning: Reference ` ' on page 6 undefined on input line 353.
+
+[6]
+
+LaTeX Warning: Reference ` ' on page 7 undefined on input line 355.
 
 
-LaTeX Warning: Reference ` ' on page 6 undefined on input line 356.
-
-
-LaTeX Warning: Reference `eq:invariant' on page 6 undefined on input line 358.
+LaTeX Warning: Reference `eq:invariant' on page 7 undefined on input line 357.
 
 ! Undefined control sequence.
-l.364 ...l that a sequence $a_1,dots, a_n$ is \emp
+l.363 ...l that a sequence $a_1,dots, a_n$ is \emp
                                                   {unimodal} if there is som...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -796,7 +776,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Extra }, or forgotten $.
-l.378 ...$q$ and $t$, and that $$q^{(a-1)(b-1)/2}}
+l.377 ...$q$ and $t$, and that $$q^{(a-1)(b-1)/2}}
                                                   \Cat_{a,b}(q,1/q)=\Cat_{a,...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -804,32 +784,36 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[6]
 
-LaTeX Warning: Reference ` ' on page 7 undefined on input line 379.
-
-
-LaTeX Warning: Citation `' on page 7 undefined on input line 383.
+LaTeX Warning: Reference ` ' on page 7 undefined on input line 378.
 
 [7]
 
-LaTeX Warning: Reference ` ' on page 8 undefined on input line 455.
+LaTeX Warning: Citation `' on page 8 undefined on input line 382.
+
+[8]
+
+LaTeX Warning: Reference ` ' on page 9 undefined on input line 454.
 
 
-LaTeX Warning: Reference ` ' on page 8 undefined on input line 455.
+LaTeX Warning: Reference ` ' on page 9 undefined on input line 454.
 
 
-LaTeX Warning: Reference ` ' on page 8 undefined on input line 455.
+LaTeX Warning: Reference ` ' on page 9 undefined on input line 454.
 
-[8] [9] [10] [11]
+[9] [10]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12]
-[13] [14] [15] [16] [17]
+ [11]
+[12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
+[14] [15] [16] [17] [18]
 ! Undefined control sequence.
 <argument> Self-conjugate \textorpdfstring 
                                            {$(a,b)$}{(a,b)}-cores
-l.1151 L
+l.1150 L
         et $T:V_a\to V_a$ be the linear map given by.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -840,7 +824,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> Self-conjugate \textorpdfstring 
                                            {$(a,b)$}{(a,b)}-cores
-l.1151 L
+l.1150 L
         et $T:V_a\to V_a$ be the linear map given by.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -850,16 +834,16 @@ and I'll forget about whatever was undefined.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1151.
+(hyperref)                removing `math shift' on input line 1150.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1151.
+(hyperref)                removing `math shift' on input line 1150.
 
 ! Undefined control sequence.
 <argument> Self-conjugate \textorpdfstring 
                                            {$(a,b)$}{(a,b)}-cores
-l.1151 L
+l.1150 L
         et $T:V_a\to V_a$ be the linear map given by.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -867,29 +851,62 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[18] [19] [20]
+[19] [20] [21]
 Underfull \vbox (badness 2538) has occurred while \output is active []
 
- [21]
-[22] (/usr/share/texmf-texlive/tex/latex/microtype/mt-euf.cfg
+ [22]
+[23] (/usr/share/texmf-texlive/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
-) [23] [24]
+) [24] [25]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1544.
+(hyperref)                removing `math shift' on input line 1543.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1544.
+(hyperref)                removing `math shift' on input line 1543.
 
 
-LaTeX Warning: Reference `prop:length, prop:skewlength' on page 25 undefined on
- input line 1583.
+LaTeX Warning: Reference `prop:length, prop:skewlength' on page 26 undefined on
+ input line 1582.
 
-[25] [26] [27] [28] [29] [30] [31] [32]
+[26] [27] [28]
+
+! LaTeX Error: Environment prop undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1709 \begin{prop}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (8.92174pt too wide) detected at line 1712
+[][]\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 q\OT1/pplx/m/n/10 , \OML/zplm/m/it/10 t
+\OT1/zplm/m/n/10 ) = [] + [] + []
+ []
+
+
+! LaTeX Error: \begin{equation} on input line 327 ended by \end{prop}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1714 \end{prop}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[29] [30] [31] [32] [33]
 ! Extra }, or forgotten \endgroup.
-l.1906 ...(the left-decreasing factorization code}
+l.1923 ...(the left-decreasing factorization code}
                                                   .
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -897,8 +914,8 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-
-Overfull \hbox (3.63289pt too wide) in paragraph at lines 1942--1943
+[34]
+Overfull \hbox (3.63289pt too wide) in paragraph at lines 1959--1960
 []\OT1/pplx/m/n/10 (-20) There are two ``ob-vi-ous'' fam-i-lies of $\OML/zplm/m
 /it/10 k$\OT1/pplx/m/n/10 (-20) -cycles: \OT1/pplx/m/it/10 (-20) in-creas-ing \
 OT1/pplx/m/n/10 (-20) cy-cles $\OML/zplm/m/it/10 C[] \OT1/zplm/m/n/10 = (\OT1/p
@@ -906,20 +923,20 @@ plx/m/n/10 (-20) 1, 2, 3, [] , \OML/zplm/m/it/10 k\OT1/zplm/m/n/10 )$\OT1/pplx/
 m/n/10 (-20) ,
  []
 
-[33] [34] (./armstrong.bbl
+[35] (./armstrong.bbl
 
 Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
- on input line 70.
+ on input line 75.
 
-) [35]
+[36]) [37]
 
-! LaTeX Error: \begin{equation} on input line 328 ended by \end{document}.
+! LaTeX Error: \begin{equation} on input line 327 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1983 \end{document}
+l.2000 \end{document}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -932,14 +949,14 @@ LaTeX Warning: There were undefined references.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 328 (\begingroup)
+### semi simple group (level 1) entered at line 327 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16839 strings out of 493848
- 304568 string characters out of 1152823
- 886783 words of memory out of 3000000
- 19038 multiletter control sequences out of 15000+50000
- 61902 words of font info for 378 fonts, out of 3000000 for 9000
+ 16846 strings out of 493848
+ 304635 string characters out of 1152823
+ 884402 words of memory out of 3000000
+ 19041 multiletter control sequences out of 15000+50000
+ 61908 words of font info for 378 fonts, out of 3000000 for 9000
  875 hyphenation exceptions out of 8191
  56i,10n,65p,841b,843s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sha
@@ -956,9 +973,9 @@ l/fplrc8a.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msa
 m10.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/sha
 re/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on armstrong.pdf (35 pages, 441537 bytes).
+Output written on armstrong.pdf (37 pages, 445799 bytes).
 PDF statistics:
- 569 PDF objects out of 1000 (max. 8388607)
- 195 named destinations out of 1000 (max. 500000)
+ 586 PDF objects out of 1000 (max. 8388607)
+ 199 named destinations out of 1000 (max. 500000)
  45309 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -10,7 +10,6 @@
 \linespread{1.2}
 
 
-
 \theoremstyle{definition}
 \newtheorem{dummy}{}[section]
 \newtheorem{theorem}[dummy]{Theorem}
@@ -23,7 +22,7 @@
 \newtheorem{observation}{Observation}
 \newtheorem{question}{Question}
 \newtheorem{conjecture}[dummy]{Conjecture}
-
+\newtheorem{FalseHope}{False Hope}
 
 
 \newcommand{\Z}{\mathbb{Z}}
@@ -58,13 +57,13 @@
 \DeclareMathOperator{\Sym}{Sym}
 
 \begin{document}
-\title{The lattice point geometry of simultaneous core partitions}
+\title{Lattice points and simultaneous core partitions}
 \begin{abstract}
-We observe that for $a$ and $b$-relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
+We observe that for $a$ and $b$ relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Furthermore, many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.  
 
-We apply this observation to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core partition is $(a+b+1)(a-1)(b-1)/24$.
+We apply these results to rational Catalan combinatorics.  Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.  Our methods also give new derivations of analagous formulas for the number and average size of self-conjugate $(a,b)$ proven by \cite{FMS} and \cite{CHW} 
 
-We conjecture a unimodality result for $q$-rational Catalan numbers, and suggest these methods could help prove the $(q,t)$-symmetry and specialization conjectures for $(q,t)$-rational Catalan numbers.  We prove these conjectures for low degree terms or when $a=3$.
+We conjecture a unimodality result for $q$ rational Catalan numbers, and make preliminary investigations in applying these methods to the $(q,t)$-symmetry and specialization conjectures.  We prove these conjectures for low degree terms and when $a=3$, connecting them to the Catalan hyperplane arrangement and proving an apparently new result about permutation statistics along the way.
 
 \end{abstract}
 
@@ -73,9 +72,12 @@ We conjecture a unimodality result for $q$-rational Catalan numbers, and suggest
 \date{}
 \maketitle
 \section{Introduction}
-The goal of this paper is to establish lattice point geometry as a foundation for rational Catalan combinatorics.  Rational Catalan numbers and their $q$ and $(rq,t)$ analogs are natural generalizations of Catalan numbers that appear in the study of Hecke algebras and compactified Jacobians of singular curves. 
+The goal of this paper is to establish lattice point geometry as a foundation for rational Catalan combinatorics.  Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG} and compactified Jacobians of singular curves \cite{EM1, EM2} . 
  
-Rational Catalan numbers are usually defined in terms of Dyck paths, but it is a result of Anderson that they also count simultaneous $(a,b)$-core partitions.  We mainly follow the simultaneous core perspective.
+Our point of entry to rational Catalan combinatorics is Anderson's \cite{anderson} result that rational Catalan numbers count simultaneous $(a,b)$-core partitions.  Simultaneous core partitions are our main object of study, and the first result of this paper is another proof of Anderson's theorem.
+
+
+
 
 \subsection{Background: Simultaneous cores and rational Catalan numbers}
 
@@ -89,7 +91,7 @@ $k$ the \emph{length} of $\lambda$ and denote it by $\ell(\lambda)$.
 
 We frequently identify $\lambda$ with its Young diagram, in
 English notation -- that is, we draw the parts of $\lambda$ as
-the columns of a series of boxes.
+the columns of a collection of boxes.
 
 \begin{definition}
 The \emph{arm} $a(\square)$ of a cell $\square$ is the number of cells contained in $\lambda$ and above  $\square$, and the \emph{leg} $l(\square)$ of a cell is the number of cells contained in $\lambda$ and to the right of $\square$.
@@ -156,93 +158,115 @@ For $a,b$ relatively prime, the \emph{rational Catalan number}, or \emph{$(a,b)$
 $$\Cat_{a,b}=\frac{1}{a+b}\binom{a+b}{a}$$ 
 \end{definition}
 
-The rational Catalan numbers count the number of lattice paths from $(0,a)$ to $(b,0)$ that stay beneath the line from $(0,a)$ to $(b,0)$; we see that $\Cat_{n,n+1}=\Cat_n$.
+The rational Catalan number $\Cat_{a.b}$ counts the number of lattice paths from $(0,a)$ to $(b,0)$ that stay beneath the line from $(0,a)$ to $(b,0)$.  This is consistent with the specialization $\Cat_{n,n+1}=\Cat_n$.
 
-\subsubsection{Anderson's Theorem}
+\subsection{}
 
-Anderson proved that simultaneous core partitions are counted by rational Catalan numbers:
+We prove the following two theorems:
 
-\begin{theorem}[Anderson \cite{anderson}]
+\begin{theorem}[Anderson \cite{anderson}] \label{thm:anderson}
 If $a$ and $b$ are relatively prime, the number of
 $(a,b)$-core partitions is $\Cat_{a,b}$.
 \end{theorem}
 
-Anderson's study of simultaneous core partitions was motivated by modular representation theory and number theory.  Her result has received much attention recently as the theory of rational Catalan combinatorics has become further developed.
-
-\subsection{Lattice Points}
-
-Our main result is a description of $(a,b)$-cores as the lattice points in a rational simplex, and our main tool for this is the ``abacus construction'', which we review in detail in Section \ref{sec:abacus}.  One immediate consequence of this description is a proof of Anderson's Theorem.
-
-The abacus construction was also the main tool in Anderson's original proof, however, the two proofs use different variants of the construction.  Anderson's construction give a bijection between the set of $a$-core partitions and $\N^{a-1}$, while the abacus construction we use (also used in \cite{GKS} to study the $t$-core crank) gives a bijection between $a$-core partitions and the $a-1$ diemensional lattice 
-$$\Lambda_C=\left\{c_1,\dots,c_a\in\Z|\sum c_i=0\right\}$$
-We show that within the space of $a$-cores, the condition of being a $b$-core is given by $a$ linear inequalities, that cut out a rational simplex when $a$ and $b$ are relatively prime.
-
-The formula for the number of $(a,b)$-cores then follows directly from this result, while Anderson's proof established a bijection with $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
-
-
-\subsection{}
-Our second main observation is that many statistics on $(a,b)$-cores, in particular the size, length, and skew length, are (piecewise) linear or quadratic functions on $\Lambda_C$.  This observation implies strong results about the distribution of these statistics over the set of $(a,b)$-cores.
-
-For example, it is well known (see, for instance, Garvan-Kim-Stanton \cite{GKS}) that under the abacus construction, the size of an $a$-core partition $\lambda$ is a quadratic function on $\Lambda_C$; combining this with our main theorem and Euler-Maclaurin theory immediately implies the following result: 
 
 \begin{theorem} \label{thm:armstrong}
 The average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.
 \end{theorem}
 
 \begin{remark} 
-Theorem \ref{thm:armstrong} wasconjectured by Armstrong in 2011, and first appearing in print in \cite{AHJ}.  Proving Armstrong's conjecture was the initial motivation for this work.  
+Theorem \ref{thm:armstrong} was conjectured by Armstrong in 2011, and first appearing in print in \cite{AHJ}.  Proving Armstrong's conjecture was the initial motivation for this work.  
 
-Stanley and Zanello \cite{SZ} recently proved the Catalan case ($a=b+1$) of Armstrong's conjecture by different methods.   
+Stanley and Zanello \cite{SZ} have proven the Catalan case ($a=b+1$) of Armstrong's conjecture by different methods, and building on their work Aggarwal \cite{Aggarwal} has proven the case $a=mb+1$.   
 \end{remark}
 
-\subsubsection{$q$ and $(q,t)$-analogs}
-The results mentioned above are our most concrete results, and are proved in Section \ref{sec:AA}.   Together with the review of the abacus construction in Section \ref{sec:abacus}, they make up the first part of the paper.  The second part turns toward applying the lattice point framework to $q$ and $(q,t)$-analogs of rational Catalan numbers, and is somewhat more speculative.
+There are two main tools in the proofs of these theorems: the abacus construction, and Ehrhart theory.  We breifly recall these ideas before giving a high-level overview of the proof.
 
 
+
+
+
+
+ 
+\subsubsection{Abaci} 
+
+The main tool used to study $a$-cores is the ``abacus construction''.  We review this construction in detail in Section \ref{sec:abacus}.  For now, we observe that there are at least two variants of the abacus construction in the literature.  
+
+The first construction, which we call the \emph{positive abacus}, gives a bijection between $a$ core partitions and $\N^{a-1}$.  Anderson's original proof used the positive abacus as part of a bijection between $(a,b)$-cores and $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
+
+The second construction, which we call the \emph{signed abacus}, gives a bijection between $a$-core partitions and points in the $a-1$ dimensional lattice 
+$$\Lambda_a=\left\{c_1,\dots,c_a\in\Z\Big |\sum c_i=0\right\}$$
+We call $\Lambda_a$ the \emph{$a$-charge lattice}.  The second construction is used in \cite{GKS}, to study the $t$-core crank.  In particular, it shown that under the signed abacus, the size of an $a$-core is a quadratic function on $\Lambda_a$.  
+
+Our proof uses the signed lattice, and directly proves the count, without passing through $(a,b)$-Dyck paths.
+
+\subsubsection{Ehrhart / Euler-Maclaurin}
+The main novelty necessary to prove Armstrong's conjecture is to apply the techniques of Ehrhart / Euler-Maclaurin theory to core partitions.
+
+ The essential idea of Ehrhart theory is that counting lattice points in polytopes is a discrete approximation of the volume of the polytope, and so should behave similarly.  Euler-Maclaurin theory extends this to summing polynomials over the lattice points being a discrete analog to the integral of the function over the polytope.
+
+
+Let $V$ be an $n$ dimensional real vector space, and $\Lambda\subset V$ an $n$ dimensional lattice.  For example, $\Lambda\subset V=\Z^n\subset \R^n$.  A lattice polytope $P\subset V$ is a polytope all of whose vertices are points of $\Lambda$.  
+
+For $t$ a positive integer, let $tP$ denote the $t$th dilate of $P$; that is, the polytope obtained by scaling all the vertices by $t$.  We want to count the number of lattice points in $tP$; that is, we want to study the function
+$$L(P,T)=\#\{\Lambda\cap tP\}$$
+Clearly, the volume of $tP$ is $t^n$ times the volume of $P$.  Ehrhart showed that in fact, $L(P,t)$ is a degree $n$ polynomial in $t$; Ehrhart theory refers to the study of these polynomials.
+
+Similarly, if $f$ is a polynomial of degree $d$ on $V$, then we have that $\int_{tP} f$ is a polynomial of degree $d+n$.  Euler-Maclaurin theory says that the discrete analog
+ $$L(f, P, t)=\sum_{x\in\Lambda\cap tP} f(x)$$
+is also a polynomial of degree $d+ n$.
+
+
+
+
+
+\subsubsection{Initial motivation}
+To explain the method used to prove Theorems \ref[], we begin with the following \begin{FalseHope}
+Fix $b$.  Then under the signed abacus construction, the set of $(a,b)$-cores maps to $a\Delta$, for some $(b-1)$-dimensional integral polytope $\Delta$.
+\end{FalseHope}
+The false hope provides an obvious strategy to prove Anderson's theorem and Armstrong's conjecture.  If the false hope were true, Ehrhart theory would imply that, for $a$ relatively prime to a fixed $b$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $b-1$ in $a$.  It is clear from the definition that this polynomiality property holds for $\Cat_{a,b}$.  Thus, proving Anderson's theorem for a fixed $b$  reduces to showing that two polynomials are equal, which only requires checking finitely many values.  
+
+Furthermore, it is a theorem that thee size of a $b$ core partition is a quadratic function on the lattice.  Thus, if False Hope  were true Euler-Maclaurin theory would give that the total size of all $(a,b)$ cores was a polynomial of degree $b+1$, and again we could hope to exploit this polynomiality in a proof.
+
+Note that since the degree of the polynomial $\Cat_{a,b}$ grow as $b$ grows, proving Anderson and Armstrong's conjecture as a whole by this method would still requires checking infinitely many values.
 
 
 \subsubsection{}
 
+The False Hope is not quite true, but the strategy outlined above is essentially the one we follow.  One minor tweak needed to the False Hope is that as we vary $a$, the polytope is not only scaled, by also changed by a linear transformation.  These transformations preserve the number of lattice points and the quadratic function giving the size of the partitions, and so does not pose any real difficulties.
+
+More troubling is that the polytope $\mathcal{C}_{a,b}$ is not integral, but only rational.  Recall that a polytope $\Delta$ is \emph{rational} if there is some $k\in\Z$ so that $k\Delta$ is a lattice polytope.   
 
 
 
-It is well known, via the ``abacus'' construction, that $a$-cores are
-in bijection with points in a lattice $\Lambda_C\cong\Z^{a-1}$ we call the
-``lattice of cores'', and that the size of an $a$-core is a quadratic function on this lattice.  Our main new observation is that if $b$ is relatively
-prime to $a$, then the space of $(a,b)$-cores inside the
-lattice of cores are the lattice points in a rational simplex $\SC_a(b)$, and that changing $b$ reflects and scales this lattice.  
+Ehrhart and Euler/Maclaurin theory can be extended to rational polytopes at the cost of replacing polynomials by \emph{quasipolynomial}.  
 
-We would then like to use Ehrhart and Euler-Maclaurin theory to conclude that the number of $(a,b)$-cores, and their total size, are both polynomial in $b$, reproving Anderson's result and proving Armstrong's conjecture.  There is a technical obstruction to this, in that since the simplex $\SC_a(b)$ is only rational, we only know get quasipolynomiality in $b$.
+\begin{definition}
+A function $f:\Z\to\C$ is a quasipolynomial of degree $d$ and period $n$ if there exist $n$ polynomials $p_0,\dots, p_{n-1}$ of degree $d$, so that for $x\in k+n\Z$, we have $f(x)=p_k(x)$.
+\end{definition}
 
+\begin{example}
 
-For $k\in\N$, let $\delta_{a-1}$ denote the
-standard $a-1$ dimensional simplex $\sum a_i=k$.  Then $\SC_a(b)$ is
-linearly equivalent to $b\Delta_a$; however, the lattice of cores
-$\Lambda_C$ is not equivalent to the usual lattice, but rather an
-index $a$ sublattice.
+\end{example}
 
 
+Since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nicely into the quasipolynomial framework.  For fixed $a$, and for $b$ in a fixed residue class mod $a$, we have that $\Cat_{a,b}$ is polynomial; it just so happens that for any residue class relatively prime to $a$, these polynomials are identical.
+
+Such ``accidental'' equalities between the polynomials for different residues happen frequently in Ehrhart theory, but are still mysterious in general.  Perhaps the most studied manifestation of this is \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial.
 
 
-There are some technical complications to this method.  The most serious is that the simplex of $b$-cores inside $L_a$ is not integral,
-but only rational.  Ehrhart/Euler-Maclaurin theory for
-rational polytopes only produces quasipolynomial functions in general -- that
-is, functions that on $\Z$ that are polynomial when restricted to
-residue classes mod $p$, for some period $p$, but the polynomials for different residue classes are different in general.
+Although the general strategy outlined above can be carried forth with quasipolynomials instead of polynomials, it is more difficult as the periods of the quasipolynomials are increasing with $b$, and so many more values must be checked.  In the end, we could not find a way to prove Theorems \ref{thm:anderson, thm:armstrong} using solely quasipolynomiality.   Instead, we found a clear explanation of the ``accidental'' equality of the polynomials for different residue classes, which we now explain.
 
-Identities between the polynomials for
-different residue classes are in general mysterious.  Perhaps the most studied aspect, \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial, is in some ways orthogonal to our situation.
+Although $\mathcal{C}_{a,b}$ is not a lattice polytope with respect to the lattice $\Lambda_a$ of $a$-cores, $\mathcal{C}_{a,b}$ will be a lattice polytope with respect to a refinement of $\Lambda_a$.  In particular, there is a lattice $\Lambda_a^\prime$ containing $\Lambda_a$ with index $[\Lambda_a:\Lambda^\prime_a]=a$, so that with respect to the lattice $\Lambda_a^\prime$, the polytope $\mathcal{C}_{a,b}$ is the standard simplex $\sum_{i=1}^{a} x_i=b, 0
+leq x_i\in \Z$.  
 
- However, in our case 
-there is a straightforward explanation -- the simplex of $b$-cores in
-$C_a$ will have a $\Z_a$ symmetry.  The lattice of $\Lambda_a$ of $a$-cores sits
-inside a larger lattice $\Lambda^\prime_a$, with 
-$[\Lambda_a:\Lambda^\prime_a]=a$.  Furthermore, $\Z_a$ acts on
-$V_a$, preserving the simplex $S_b$ and the quadratic form $B$, so
-that the orbits $g\Lambda_a, g\in \Z_a$ are exactly the cosets of
-$\Lambda_a$ inside $\Lambda^\prime_a$.
+Furthermore, consider the action of $\Z_a$ cyclicly permutating the variables, i.e., $x_i\mapsto x_{i+1}, x_{a}\mapsto x_0$.   When $b$ is relatively prime to $a$, this action does not have any fixed points.  Furthermore, in this case the $\Z_a$ orbit of each point in $\Lambda_a^\prime$ contains exactly one element of $\Lambda_a$.  This is illustrated in Figure \ref{fig:sublattice}: the left hand picture shows $\Lambda_3\subset \C_{3,10}$, while the right hand picture shows $\Lambda_3^\prime$.  The black dots are elements of $\Lambda_3$, while the red and green dots are the other cosets of $\Lambda_3$ inside of $\Lambda_3^\prime$, and are obtained by rotating around the blue circle.
 
 
+\begin{figure}[h!]
+
+\caption{$\Lambda_3$ and $\Lambda_3^\prime$ inside $\mathcal{C}_{3, 10}$}
+\label{fig:sublattice}
 \begin{tikzpicture}[scale=.8]
 
 \begin{scope}
@@ -252,15 +276,9 @@ $\Lambda_a$ inside $\Lambda^\prime_a$.
 
 \fill[gray!50] (-3,0)--(2, 5/3*1.7320508)--(2, -5/3*1.7320508)--cycle;
 
-
-
-
-
 \foreach \x in {-7,-6,...,7}{% Two indices running over each
     \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
         \node[draw,circle,inner sep=1pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
-
-
 
 \draw[dashed] (2, 10*1.7320508/2)--(2, -5*1.7320508);
 \draw[dashed] (-15-3, 5*1.7320508)--(15-3, -5*1.7320508);
@@ -271,13 +289,8 @@ $\Lambda_a$ inside $\Lambda^\prime_a$.
 \clip (-3.5, -4*1.7320508/2)--(-3.5, 4*1.7320508/2)--(2.5,
 4*1.7320508/2)--(2.5, -4*1.7320508/2)--cycle;
 
-
 \fill[gray!50] (-3,0)--(2, 5/3*1.7320508)--(2, -5/3*1.7320508)--cycle;
-
-
 \draw[thick, blue] (.333,0) circle(.08);
-
-
 \foreach \x in {-7,-6,...,7}{% Two indices running over each
     \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
         \node[draw,circle,inner sep=1pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
@@ -301,34 +314,82 @@ $\Lambda_a$ inside $\Lambda^\prime_a$.
 \draw[dashed] (-15-3, -5*1.7320508)--(15-3, 5*1.7320508);
 \end{scope}
 
-
-
-
 \end{tikzpicture}
 
+\end{figure}
+
+
+From this we see that the number of points in $\mathcal{C}_{a,b}\cap \Lambda_a$ is exactly $1/a$ of the number of points in the standard simplex, which is $\binom{a+b-1}{b}$.  Since $$\frac{1}{a}\binom{a+b-1}{b}=\frac{1}{a+b}\binom{a+b}{b}=
+\Cat_{a,b}$$
+this proves Anderson's theorem.
+
+Thus, $\Cat_{a,b}$ is the number of degree $b$ monomials $p_1^{e_1}\cdots p_a^{e_a}$ with $\sum e_i=b$ and $\sum i e_i=0\mod a$.  Alternatively, let $V_a$ be the regular representation of $\Z_a$.  Then $\Cat_{a,b}$ is the dimension of the invariant part of the $b$th symmetric power of $V_a$: 
+\begin{equation} \label{eq:invariant}
+\Cat_{a,b}=\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}$$
+
+\subsubsection{Self-conjugate simultaneous cores}
+It was shown in \cite{FMS} that self-conjugate $(a,b)$-core partitions are counted by 
 
 
 
-To illustrate this, let us sketch the proof of Anderson's theorem:
-after a change of variables, the simplex $C_b$ becomes the simplex
-$\sum_{i=1}^a x_i=b$, the standard lattice $x_i\in\Z$ becomes the
-lattice $\Lambda^\prime_a$, and the lattice of cores $\Lambda_a$ becomes the index $a$ lattice given by $\sum ix_i=0\mod a$.
+$$\binom{\left\lfloor \frac{a}{2} \right\rfloor +\left\lfloor \frac{b}{2} \right\rfloor}{\left\lfloor \frac{a}{2} \right\rfloor}$$
 
-Cyclicly permuting the coordinates by $x_i\mapsto x_{i+1}$ changes
-$\sum ix_i$ by $b\mod a$, and since $a$ and $b$ are relatively prime,
-we see that the conditions on $\Lambda_a, \Lambda^\prime_a$ and the
-$\Z_a$ action are satisfied.  Thus, we see that the number of $(a,b)$
-cores is $1/a$ of the number of lattice points in the $b$th dilate of
-the standard $a-1$ dimensional simplex.  By Ehrhart theory, this is a
-polynomial of degree $a-1$, with value $1$ when $b=0$, and by Ehrhart
-reciprocity vanishing at $b=-1,\dots, -(a-1)$ -- hence, it must be
+It was conjectured by Armstrong, and proven recently by \cite{CHW} that the average size of a self-conjugate $(a,b)$-core partition is the same as an average size of all $(a,b)$-core partitions, namely $(a+b+1)(a-1)(b-1)/24$.  Our methods easily adapt to give new, unified proofs of these results.
 
-$$\frac{1}{a}\frac{(a+b-1)!}{(a-1)!b!}$$
+In Lemma \ref{lem:conjugatedual}, we show that the bijection between $(a,b)$-cores and elements of $\Sym^b\C[\Z_a]^{\Z_\}$, or dimension $b$ representations of $\Z_a$ with determinant 1, conjugating a partition corresponds to the inversion sending $g$ to $g^{-1}$, or sending a representation $V$ to its dual $V^*$.  In the lattice point of view, this is just a linear map, and hence the self-dual $(a,b)$-cores correspond to the lattice points in the fixed point locus of $T$.  
 
-An attractive formulation of this is as follows: let $V_a$ be the
-regular representation of $Z_a$.  Then $\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}.$
+We show in Lemma \ref{lem:conjugatecount}, that the lattice points in $ \cap T$ are naturally the lattice points in the $\lfloor a/2\rfloor$ dimensional simplex $\lfloor b/2\rfloor \delta_{\floor a/2\floor +1}$, hence rederiving the count of simultaneous $(a,b)$-core partitions.  
 
-Another way of phrasing this is that the $(a,b)$ Catalan number is the number of degree $b$ polynomials in $p_1,\dots, p_a$ $p_1^{e_1}\cdots p_a^{e_a}$ with $\sum e_i=b$ and $\sum i e_i=0\mod a$.
+Once we have done this, an analogous application of Euler-Maclaurin theory reproves the statement about the average value.
+
+
+\subsection{$q$ and $(q,t)$-analogs}
+
+The second half of the paper, comprosing Sections \ref{ } and \ref{ \}, initiates the application of the lattice point viewpoint to $q$ and $(q,t)$ analogs of $\Cat_{a,b}$.   
+
+
+
+\subsubsection{}
+Section \ref{ } looks at the $q$-rational Catalan numbers $\Cat_{a,b}(q)$, which are the obvious extension of rational Catalan numbers obtained by replacing all numbers in the definition of $\Cat_{a,b}(q)$ by their $q$ analog:
+$$\Cat_{a,b}(q)=\frac{1}{[a+b]_q}\binom{a+b}{a}.$$
+It is a not obvious fact, proven in  , that the coefficients of $\Cat_{a,b}(q)$ are positive.  The main question we pursue in Section \ref{ } is whether our lattice point view can shed any light on this positivity question.
+
+We observed in Equation \ref{eq:invariant} that $\Cat_{a,n}$ is the dimension of $\Sym^b(\C[\Z_a])^\Z_a$; on the other hand.  On the other hand, we could let $\C^*$ act on $\C[\Z_a]$ by $\lambda\cdot [k]=\lambda^k[k]$; then the $q$ binomial coefficient are computing the $\C^*$ weight on $\Sym^b(\C[\Z_a])$.
+
+It is then natural to hope that the coefficients of $\Cat_{a,b}(q)$ are computing the dimensions of the $\C^*$ eigenspaces on the invariant part of $\Sym^b(\C[\Z_a])$.  This hope, however, is false.
+
+However, this line of thought leads us to conjectural formula for $\Cat_{a,b}(q)$ as a sum of $a^{a-2}$ terms, each of which is the product of $q^b$ times a $q^a$ binomial coefficients.   
+
+This conjectural formula leads naturally to a unimodality conjecture about $\Cat_{a,b}(q)$.  Recall that a sequence $a_1,dots, a_n$ is \emp{unimodal} if there is some $k$ so that $$a_1\leq a_2\leq \cdots \leq a_{k-1}\leq a_k \geq a_{k-1} \geq a_{k-2}\cdots\geq a_n$$
+The coefficients of $\Cat_{a,b}$ are not unimodal.  However, we conjecture that, if we fix $0
+leq k <a$, and look only at the coefficients of $\Cat_{a,b}(q)$ of the form $q^{an+k}$, the resulting sequences are unimodal.
+
+
+\subsubsection{ }
+
+The $(q,t)$-rational Catalan numbers were original defined in terms of summing certain statistics over lattice paths, but Armstrong, have given an analogous formula over simultaneous core.  In particular, let $\SC_{a,b}$ denote the set of all $(a,b)$-cores, 
+$$\Cat_{a,b}(q,t)=\sum_{\lambda\in \SC_{a,b}} q^{\ell(\lambda)}t^{\sk^\prime(\lambda)}$$
+where $\ell(\lambda)$ is the length of $\lambda$, and $\sk^\prime(\lambda)$ is the \emph{co-skew length}, a statistic introduced by $\lambda$.
+
+Our main result in the second half of the paper is that $\ell$ and $\sk^\prime$ are piecewise linear functions on $\Delta_{a,b}$,  and thus that lattice point geometry should be useful in these studying $\Cat_{a,b}(q,t)$ and $\Cat_{a,b}(q)$. 
+
+This result is for a variety of reasons: it provides a progress toward proving some conjectures about $\Cat_{a,b}(q,t)$.
+  First, it is conjectured that $\Cat_{a,b}(q,t)$ is symmetric in $q$ and $t$, and that $$q^{(a-1)(b-1)/2}}\Cat_{a,b}(q,1/q)=\Cat_{a,b}(q).$$  
+As a corollary of Lemma \ref{ }, we are able to prove these conjectures for the high and low degree terms of $\Cat_{a,b}$:
+
+Second, it turns out that the chambers of linearity for $\ell$ and $\sk^\prime$ are interesting hyperplane arrangements -- the walls of $\ell$ are the walls of the $A_{n-1}$ arrangement, and the walls of $\sk^\prime$ are the walls of a deformation of the $A_{n-1}$ arrangement known as the Catalan arrangement.  This gives a connection between $\Cat_{a,b}(q,t)$ and $\Cat_a$, which we don't believe was well known.  Furthermore, it suggests that a thorough understanding of the geometry of the Catalan arrangement could lead to a full proof of the specialization and symmetry conjectures.
+
+Finally, in order to prove Corollary \cite{ } we are lead to define and investigate a new permutation statistic $\siz(\sigma)$.  
+
+\begin{lemma}
+$$\sum_{\sigma\in S_n} q^{\siz(\sigma)}t^{\maj(\sigma)}=\prod_{k=1}^n [k]_{q^{n+1-k}t}$$ 
+\end{lemma}
+
+
+
+
+
+
 
 
 
@@ -392,7 +453,19 @@ We get a chamber structure on the space of $a$-cores by considering \emph{which}
 \subsection{Outline}
 In section \ref{ } we introduce standard notation and bijections about $a$-core partitions.  Section \ref{ } applies this to simultaneous core partitions and proves our main results.  Section \ref{ } describes some conjectural applications of these ideas to the $q$ and $(q,t)$ generalizations of $(a,b)$-Catalan numbers.
 
+\subsection{Further directions}
 
+
+
+
+
+\subsubsection{Simultaneous cores for 3 or more moduli}
+
+Recently proven by \cite{X}.
+
+
+
+, or to partitions that are simultaneous $a$-core for 3 or more values of $a$.  
 \subsection{Acknowledgements}
 I learned about Armstrong's conjecture over dinner after speaking in the MIT combinatorics seminar.  I would like to thank Jon Novak for the invitation, Fabrizio Zanello for telling me about the conjecture, and funding bodies everywhere for supporting seminar dinners.
 
@@ -1005,8 +1078,9 @@ Thus, the images of $x_i\in\Lambda+s$ lie in an index $a$ sublattice of the stan
 
 The scaled simplex $b\Delta_a$ has $\binom{a+b-1}{a-1}$
   usual lattice points.  Cyclicly permuting the variables preserves
-  $b\Delta_a$ and the standard lattice, and cyclicly permutes the $a$
-  cosets of the charge lattice.   Thus the standard lattice points in
+  $b\Delta_a$ and the standard lattice, and when $b$ is relatively prime to $a$ it cyclicly permutes the $a$ cosets of the charge lattice.   
+
+Thus the standard lattice points in
   $b\Delta_a$ are equidistributed among the $a$-cosets of the
   charge lattice, and hence each one contains $\frac{1}{a}\binom{a+b-1}{a-1}=\Cat_{a,b}$.
 
@@ -1071,9 +1145,58 @@ constant $A$ independent of $a$ and $b$.
 To see that $A=1/24$, note that although there are no points of $\Lambda_s$ in $\mathcal{S}_a(0)=0$, the standard simplex $\delta_{a-1}(0)$ contains the origin as a lattice point, and so $P_a(0)=Q(0)=-(a^2-1)/24$.
 \end{proof}
 
+\subsection{Self-conjugate \textorpdfstring{$(a,b)$}{(a,b)}-cores} \label{sec:conjugate}
+
+Let $T:V_a\to V_a$ be the linear map given by.
+$$T(c_i)=-c_{a-i}$$.
+It is not hard to see that, when translated to core partitions, $T$ corresponds to taking the conjugate, that is: $$\core_a(c)^T=\core_a(T(c))$$
+
+Since $T(s)=s$, the same formula holds for the shifted coordines $x$. 
+
+Thus, to study self-conjugate $(a,b)$-cores, we want to study the $T$ fixed locus of $\SC_a(b)$.  
 
 
-\section{Toward \texorpdfstring{$q$}{q}-analogs}
+\subsubsection{Representation theory and polytopes}
+We now describe a basic representation theoretic question that will turn out to be equivalent.
+
+Consider the set isomorphism classes of $b$-dimensional representations of $\Z_a$.  We have seen that this is $b\delta_a=\{(y_0,\dots, y_{a-1})\in \Z^a| y_i\geq 0, \sum y_i=b\}$, with $y_i$ being the multiplicity of the $i$th irreducible representation in our $b$-dimensional representation.
+
+Asking this representation to have determinant 1 is asking $\sum iy_i=0\mod a$.  Sending a representation to its dual obviously corresponds to the linear map $C:y_i\mapsto y_{a-i}$, where recall we are using period subscripts so that $y_0=y_a$.
+
+\begin{lemma} \label{lem:selfconjugatecount}
+The number of $b$-dimensional, self-conjugate $\Z_a$ representations with determinant 1 is given by $$\binom{\left\lfloor\frac{a}{2}\right\rfloor+\left\lfloor\frac{b}{2}\right\rfloor}{\left\lfloor\frac{a}{2}\right\rfloor}$$
+\end{lemma}
+
+\begin{proof}
+  Let $a=2k$ or $2k+1$; our proof operates by giving a bijection between the representations in question and $k$-tuples of non-negative integers $(z_1,\dots, z_k)$ with $2\sum z_i\leq b$, which are clearly counted by the given binomial coefficient.
+
+First, suppose that $a=2k+1$ is odd.  Then the only irreducible self-conjugate representation is the identity, and so $C$ has a $k+1$ dimensional fixed point set, given by $(z_0, z_1,\dots, z_k,z_k,\dots, z_1)$.  Thus, we see that $\sum_{i=1}^k 2z_k\leq b$, and value of $z_0$ is fixed by $\sum_{i=0}^{a-1}z_i=b$.
+
+When $a=2k$ is even, there are two irreducible self-conjugate representations, the identity and the.  Again, we see that $C$ has a $k+1$ dimensional fixed point set, this time coordinatized by $(z_0, z_1,\dots z_{k-1},w_{k}, z_{k-1},\dots,z_1)$.  For such a representation to have determinant 1 is equivalent to $w_k$ begin even, say $w_k=2z_k$.  Thus, we again have $\sum_{i=1}^k 2z_k\leq b$, with $z_0$ being determined by $\sum_{i=-}^{a-1}z_i=b$. 
+\end{proof}
+
+\begin{lemma} \label{lem:conjugatedual}
+Under the map between, taking the conjugate of an $a$-core corresponds to taking the dual $\Z_a$ representation.
+\end{lemma}
+
+\begin{proof}
+
+
+\end{proof}
+
+
+\begin{proposition} \label{prop:conjugatesize}
+
+
+\end{proposition}
+
+  We see that
+
+
+
+
+
+\section{Toward \texorpdfstring{$q$}{q}-analogs} \label{sec:qcat}
 In this section, we apply our lattice point and simplex point of view on simultaneous cores to the $q$-analog of rational Catalan numbers; the next section approaches $(q,t)$-analogs.
 
 \subsection{\texorpdfstring{$q$}{q}-numbers}
@@ -1331,7 +1454,7 @@ but then shifting the result by a factor of $q^{\iota(\mathfrak{c})}$ for some $
 Algebraically, this suggests
 \begin{conjecture} \label{conj:cosets}
 There is an \emph{age} function $\iota$ on the cosets $\mathfrak{c}\in\Lambda/\Lambda_T$, so that
-$$\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c})}=[a]_{q^2}[a]_{q^2}\cdots[a]_{q^{a-1}}$$
+$$\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c})}=[a]_{q^2}[a]_{q^3}\cdots[a]_{q^{a-1}}$$
  and
 $$\Cat_{a,b}(q)=\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c}} \binom{b/a-s(\mathfrak{c},b)+a-1 }{a-1}_{q^a}$$
 where the $q^a$ binomial coefficient $q^a$-counts the points in $\mathfrak{c}\cap \mathcal{SC}_{a-1}(b)$.
@@ -1575,6 +1698,24 @@ $$\sk_{ij}^B(\lambda)=\lfloor x_j-x_i-b/a\rfloor_0$$
 \end{proof}
 
 
+\subsubsection{Rationality}
+
+It is an immediate corollary of the piecewise linearity of the length and the skew length that, for fixed $a$, and a fixed residue class $k$ mod $a$, that for $b$ in the residue class $k$, we have
+
+$\Cat_{a,b}(q,t)$ is a rational function of $q$ and $t$, and the denominator can be written so the exponents depend linearly on $b$ and $\delta$.
+
+ 
+
+\begin{prop}
+Let $b=3k+1+\delta$, where $\delta\in\{0,1\}$.  Then:
+
+$$\Cat_{3,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-qt^{-2})}+\frac{q^kt^k(q+t+q^\delta t^\delta)}{(1-q^{-1}t^2)(1-q^2t^{-1})}+\frac{q^{3k+\delta}}{(1-tq^{-1})(1-tq^{-2})}$$
+
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
 
 
 \subsection{Low degree \texorpdfstring{$(q,t)$}{(q,t)}-symmetry}

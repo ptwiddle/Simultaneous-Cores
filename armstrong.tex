@@ -9,7 +9,6 @@
 \usetikzlibrary{snakes, arrows}
 \linespread{1.2}
 
-v
 
 \theoremstyle{definition}
 \newtheorem{dummy}{}[section]
@@ -178,10 +177,10 @@ The average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.
 \begin{remark} 
 Theorem \ref{thm:armstrong} was conjectured by Armstrong in 2011, and first appearing in print in \cite{AHJ}.  Proving Armstrong's conjecture was the initial motivation for this work.  
 
-Stanley and Zanello \cite{SZ} have proven the Catalan case ($a=b+1$) of Armstrong's conjecture by different methods.   
+Stanley and Zanello \cite{SZ} have proven the Catalan case ($a=b+1$) of Armstrong's conjecture by different methods, and building on their work Aggarwal \cite{Aggarwal} has proven the case $a=mb+1$.   
 \end{remark}
 
-There are two main tools in the proofs of these theorems: the abacus construction, Ehrhart / Euler-Maclaurin theory.  We breifly recall these ideas before giving a high-level overview of the proof.
+There are two main tools in the proofs of these theorems: the abacus construction, and Ehrhart theory.  We breifly recall these ideas before giving a high-level overview of the proof.
 
 
 
@@ -1699,6 +1698,24 @@ $$\sk_{ij}^B(\lambda)=\lfloor x_j-x_i-b/a\rfloor_0$$
 \end{proof}
 
 
+\subsubsection{Rationality}
+
+It is an immediate corollary of the piecewise linearity of the length and the skew length that, for fixed $a$, and a fixed residue class $k$ mod $a$, that for $b$ in the residue class $k$, we have
+
+$\Cat_{a,b}(q,t)$ is a rational function of $q$ and $t$, and the denominator can be written so the exponents depend linearly on $b$ and $\delta$.
+
+
+
+\begin{prop}
+Let $b=3k+1+\delta$, where $\delta\in\{0,1\}$.  Then:
+
+$$\Cat_{3,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-qt^{-2})}+\frac{q^kt^k(q+t+q^\delta t^\delta)}{(1-q^{-1}t^2)(1-q^2t^{-1})}+\frac{q^{3k+\delta}}{(1-tq^{-1})(1-tq^{-2})}$$
+
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
 
 
 \subsection{Low degree \texorpdfstring{$(q,t)$}{(q,t)}-symmetry}
