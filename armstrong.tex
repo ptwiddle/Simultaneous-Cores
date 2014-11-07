@@ -220,7 +220,7 @@ is also a polynomial of degree $d+ n$.
 
 
 \subsubsection{Initial motivation}
-To explain the method used to prove Theorems \ref[], we begin with the following \begin{FalseHope}
+To explain the method used to prove Theorems \ref{thm:anderson} and \ref{thm:armstrong}, we begin with the following \begin{FalseHope}
 Fix $b$.  Then under the signed abacus construction, the set of $(a,b)$-cores maps to $a\Delta$, for some $(b-1)$-dimensional integral polytope $\Delta$.
 \end{FalseHope}
 The false hope provides an obvious strategy to prove Anderson's theorem and Armstrong's conjecture.  If the false hope were true, Ehrhart theory would imply that, for $a$ relatively prime to a fixed $b$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $b-1$ in $a$.  It is clear from the definition that this polynomiality property holds for $\Cat_{a,b}$.  Thus, proving Anderson's theorem for a fixed $b$  reduces to showing that two polynomials are equal, which only requires checking finitely many values.  
@@ -254,7 +254,7 @@ Since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nic
 Such ``accidental'' equalities between the polynomials for different residues happen frequently in Ehrhart theory, but are still mysterious in general.  Perhaps the most studied manifestation of this is \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial.
 
 
-Although the general strategy outlined above can be carried forth with quasipolynomials instead of polynomials, it is more difficult as the periods of the quasipolynomials are increasing with $b$, and so many more values must be checked.  In the end, we could not find a way to prove Theorems \ref{thm:anderson, thm:armstrong} using solely quasipolynomiality.   Instead, we found a clear explanation of the ``accidental'' equality of the polynomials for different residue classes, which we now explain.
+Although the general strategy outlined above can be carried forth with quasipolynomials instead of polynomials, it is more difficult as the periods of the quasipolynomials are increasing with $b$, and so many more values must be checked.  In the end, we could not find a way to prove Theorems \ref{thm:anderson} and \ref{thm:armstrong} using solely quasipolynomiality.   Instead, we found a clear explanation of the ``accidental'' equality of the polynomials for different residue classes, which we now explain.
 
 Although $\mathcal{C}_{a,b}$ is not a lattice polytope with respect to the lattice $\Lambda_a$ of $a$-cores, $\mathcal{C}_{a,b}$ will be a lattice polytope with respect to a refinement of $\Lambda_a$.  In particular, there is a lattice $\Lambda_a^\prime$ containing $\Lambda_a$ with index $[\Lambda_a:\Lambda^\prime_a]=a$, so that with respect to the lattice $\Lambda_a^\prime$, the polytope $\mathcal{C}_{a,b}$ is the standard simplex $\sum_{i=1}^{a} x_i=b, 0
 leq x_i\in \Z$.  
@@ -324,7 +324,9 @@ this proves Anderson's theorem.
 
 Thus, $\Cat_{a,b}$ is the number of degree $b$ monomials $p_1^{e_1}\cdots p_a^{e_a}$ with $\sum e_i=b$ and $\sum i e_i=0\mod a$.  Alternatively, let $V_a$ be the regular representation of $\Z_a$.  Then $\Cat_{a,b}$ is the dimension of the invariant part of the $b$th symmetric power of $V_a$: 
 \begin{equation} \label{eq:invariant}
-\Cat_{a,b}=\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}$$
+\Cat_{a,b}=\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}
+\end{equation}
+
 
 \subsubsection{Self-conjugate simultaneous cores}
 It was shown in \cite{FMS} that self-conjugate $(a,b)$-core partitions are counted by 
@@ -335,23 +337,23 @@ $$\binom{\left\lfloor \frac{a}{2} \right\rfloor +\left\lfloor \frac{b}{2} \right
 
 It was conjectured by Armstrong, and proven recently by \cite{CHW} that the average size of a self-conjugate $(a,b)$-core partition is the same as an average size of all $(a,b)$-core partitions, namely $(a+b+1)(a-1)(b-1)/24$.  Our methods easily adapt to give new, unified proofs of these results.
 
-In Lemma \ref{lem:conjugatedual}, we show that the bijection between $(a,b)$-cores and elements of $\Sym^b\C[\Z_a]^{\Z_\}$, or dimension $b$ representations of $\Z_a$ with determinant 1, conjugating a partition corresponds to the inversion sending $g$ to $g^{-1}$, or sending a representation $V$ to its dual $V^*$.  In the lattice point of view, this is just a linear map, and hence the self-dual $(a,b)$-cores correspond to the lattice points in the fixed point locus of $T$.  
+In Lemma \ref{lem:conjugatedual}, we show that the bijection between $(a,b)$-cores and elements of $\Sym^b\C[\Z_a]^{\Z_a}$, or dimension $b$ representations of $\Z_a$ with determinant 1, conjugating a partition corresponds to the inversion sending $g$ to $g^{-1}$, or sending a representation $V$ to its dual $V^*$.  In the lattice point of view, this is just a linear map, and hence the self-dual $(a,b)$-cores correspond to the lattice points in the fixed point locus of $T$.  
 
-We show in Lemma \ref{lem:conjugatecount}, that the lattice points in $ \cap T$ are naturally the lattice points in the $\lfloor a/2\rfloor$ dimensional simplex $\lfloor b/2\rfloor \delta_{\floor a/2\floor +1}$, hence rederiving the count of simultaneous $(a,b)$-core partitions.  
+We show in Lemma \ref{lem:conjugatecount}, that the lattice points in $ \cap T$ are naturally the lattice points in the $\lfloor a/2\rfloor$ dimensional simplex $\lfloor b/2\rfloor \delta_{\lfloor a/2\rfloor +1}$, hence rederiving the count of simultaneous $(a,b)$-core partitions.  
 
 Once we have done this, an analogous application of Euler-Maclaurin theory reproves the statement about the average value.
 
 
-\subsection{$q$ and $(q,t)$-analogs}
+\subsection{\texorpdfstring{$q$}{q} and \texorpdfstring{$(q,t)$}{(q,t)}-analogs}
 
-The second half of the paper, comprosing Sections \ref{ } and \ref{ \}, initiates the application of the lattice point viewpoint to $q$ and $(q,t)$ analogs of $\Cat_{a,b}$.   
+The second half of the paper, comprosing Sections \ref{sec:qcat} and \ref{sec:qt}, initiates the application of the lattice point viewpoint to $q$ and $(q,t)$ analogs of $\Cat_{a,b}$.   
 
 
 
 \subsubsection{}
-Section \ref{ } looks at the $q$-rational Catalan numbers $\Cat_{a,b}(q)$, which are the obvious extension of rational Catalan numbers obtained by replacing all numbers in the definition of $\Cat_{a,b}(q)$ by their $q$ analog:
+Section \ref{sec:qcat} looks at the $q$-rational Catalan numbers $\Cat_{a,b}(q)$, which are the obvious extension of rational Catalan numbers obtained by replacing all numbers in the definition of $\Cat_{a,b}(q)$ by their $q$ analog:
 $$\Cat_{a,b}(q)=\frac{1}{[a+b]_q}\binom{a+b}{a}.$$
-It is a not obvious fact, proven in  , that the coefficients of $\Cat_{a,b}(q)$ are positive.  The main question we pursue in Section \ref{ } is whether our lattice point view can shed any light on this positivity question.
+It is a not obvious fact, proven in  , that the coefficients of $\Cat_{a,b}(q)$ are positive.  The main question we pursue in Section \ref{sec:qcat} is whether our lattice point view can shed any light on this positivity question.
 
 We observed in Equation \ref{eq:invariant} that $\Cat_{a,n}$ is the dimension of $\Sym^b(\C[\Z_a])^\Z_a$; on the other hand.  On the other hand, we could let $\C^*$ act on $\C[\Z_a]$ by $\lambda\cdot [k]=\lambda^k[k]$; then the $q$ binomial coefficient are computing the $\C^*$ weight on $\Sym^b(\C[\Z_a])$.
 
@@ -359,7 +361,7 @@ It is then natural to hope that the coefficients of $\Cat_{a,b}(q)$ are computin
 
 However, this line of thought leads us to conjectural formula for $\Cat_{a,b}(q)$ as a sum of $a^{a-2}$ terms, each of which is the product of $q^b$ times a $q^a$ binomial coefficients.   
 
-This conjectural formula leads naturally to a unimodality conjecture about $\Cat_{a,b}(q)$.  Recall that a sequence $a_1,dots, a_n$ is \emp{unimodal} if there is some $k$ so that $$a_1\leq a_2\leq \cdots \leq a_{k-1}\leq a_k \geq a_{k-1} \geq a_{k-2}\cdots\geq a_n$$
+This conjectural formula leads naturally to a unimodality conjecture about $\Cat_{a,b}(q)$.  Recall that a sequence $a_1,dots, a_n$ is \emph{unimodal} if there is some $k$ so that $$a_1\leq a_2\leq \cdots \leq a_{k-1}\leq a_k \geq a_{k-1} \geq a_{k-2}\cdots\geq a_n$$
 The coefficients of $\Cat_{a,b}$ are not unimodal.  However, we conjecture that, if we fix $0
 leq k <a$, and look only at the coefficients of $\Cat_{a,b}(q)$ of the form $q^{an+k}$, the resulting sequences are unimodal.
 
@@ -373,12 +375,12 @@ where $\ell(\lambda)$ is the length of $\lambda$, and $\sk^\prime(\lambda)$ is t
 Our main result in the second half of the paper is that $\ell$ and $\sk^\prime$ are piecewise linear functions on $\Delta_{a,b}$,  and thus that lattice point geometry should be useful in these studying $\Cat_{a,b}(q,t)$ and $\Cat_{a,b}(q)$. 
 
 This result is for a variety of reasons: it provides a progress toward proving some conjectures about $\Cat_{a,b}(q,t)$.
-  First, it is conjectured that $\Cat_{a,b}(q,t)$ is symmetric in $q$ and $t$, and that $$q^{(a-1)(b-1)/2}}\Cat_{a,b}(q,1/q)=\Cat_{a,b}(q).$$  
-As a corollary of Lemma \ref{ }, we are able to prove these conjectures for the high and low degree terms of $\Cat_{a,b}$:
+  First, it is conjectured that $\Cat_{a,b}(q,t)$ is symmetric in $q$ and $t$, and that $$q^{(a-1)(b-1)/2}\Cat_{a,b}(q,1/q)=\Cat_{a,b}(q).$$  
+As a corollary of this piecewise linearity, we are able to prove these conjectures for the high and low degree terms of $\Cat_{a,b}$:
 
 Second, it turns out that the chambers of linearity for $\ell$ and $\sk^\prime$ are interesting hyperplane arrangements -- the walls of $\ell$ are the walls of the $A_{n-1}$ arrangement, and the walls of $\sk^\prime$ are the walls of a deformation of the $A_{n-1}$ arrangement known as the Catalan arrangement.  This gives a connection between $\Cat_{a,b}(q,t)$ and $\Cat_a$, which we don't believe was well known.  Furthermore, it suggests that a thorough understanding of the geometry of the Catalan arrangement could lead to a full proof of the specialization and symmetry conjectures.
 
-Finally, in order to prove Corollary \cite{ } we are lead to define and investigate a new permutation statistic $\siz(\sigma)$.  
+Finally, in order to prove the specialization and symmetry conjectures for low degree terms we are lead to define and investigate a new permutation statistic $\siz(\sigma)$.  
 
 \begin{lemma}
 $$\sum_{\sigma\in S_n} q^{\siz(\sigma)}t^{\maj(\sigma)}=\prod_{k=1}^n [k]_{q^{n+1-k}t}$$ 
@@ -450,7 +452,7 @@ We get a chamber structure on the space of $a$-cores by considering \emph{which}
 
 
 \subsection{Outline}
-In section \ref{ } we introduce standard notation and bijections about $a$-core partitions.  Section \ref{ } applies this to simultaneous core partitions and proves our main results.  Section \ref{ } describes some conjectural applications of these ideas to the $q$ and $(q,t)$ generalizations of $(a,b)$-Catalan numbers.
+In section \ref{sec:abacus} we introduce standard notation and bijections about $a$-core partitions.  Section \ref{sec:numberandsize} applies this to simultaneous core partitions and proves our main results.  Sections \ref{sec:qcat} and \ref{sec:qt} describes some conjectural applications of these ideas to the $q$ and $(q,t)$ generalizations of $(a,b)$-Catalan numbers.
 
 \subsection{Further directions}
 
@@ -908,7 +910,7 @@ Since $\sum c_k=0$, the total energy of all particles simplifies to $\frac{a}{2}
 \end{proof}
 
 
-\section{Simultaneous Cores} \label{sec:AA}
+\section{Simultaneous Cores} \label{sec:numberandsize}
 
 We now turn to studying the set of $b$-cores within the lattice
 $\Lambda_a$ of $a$-cores.
@@ -1144,35 +1146,16 @@ constant $A$ independent of $a$ and $b$.
 To see that $A=1/24$, note that although there are no points of $\Lambda_s$ in $\mathcal{S}_a(0)=0$, the standard simplex $\delta_{a-1}(0)$ contains the origin as a lattice point, and so $P_a(0)=Q(0)=-(a^2-1)/24$.
 \end{proof}
 
-\subsection{Self-conjugate \textorpdfstring{$(a,b)$}{(a,b)}-cores} \label{sec:conjugate}
+\subsection{Self-conjugate \texorpdfstring{$(a,b)$}{(a,b)}-cores} \label{sec:conjugate}
 
-Let $T:V_a\to V_a$ be the linear map given by.
-$$T(c_i)=-c_{a-i}$$.
-It is not hard to see that, when translated to core partitions, $T$ corresponds to taking the conjugate, that is: $$\core_a(c)^T=\core_a(T(c))$$
-
+Let $T:V_a\to V_a$ be the linear map given by
+$$T(c_i)=-c_{a-i}$$
+In terms of core partitions, $T$ corresponds to taking the conjugate: $$\core_a(c)^T=\core_a(T(c))$$
 Since $T(s)=s$, the same formula holds for the shifted coordines $x$. 
 
-Thus, to study self-conjugate $(a,b)$-cores, we want to study the $T$ fixed locus of $\SC_a(b)$.  
+Thus the set of self-conjugate $(a,b)$-cores, is the $T$ fixed locus of $\SC_a(b)$.  
 
-
-\subsubsection{Representation theory and polytopes}
-We now describe a basic representation theoretic question that will turn out to be equivalent.
-
-Consider the set isomorphism classes of $b$-dimensional representations of $\Z_a$.  We have seen that this is $b\delta_a=\{(y_0,\dots, y_{a-1})\in \Z^a| y_i\geq 0, \sum y_i=b\}$, with $y_i$ being the multiplicity of the $i$th irreducible representation in our $b$-dimensional representation.
-
-Asking this representation to have determinant 1 is asking $\sum iy_i=0\mod a$.  Sending a representation to its dual obviously corresponds to the linear map $C:y_i\mapsto y_{a-i}$, where recall we are using period subscripts so that $y_0=y_a$.
-
-\begin{lemma} \label{lem:selfconjugatecount}
-The number of $b$-dimensional, self-conjugate $\Z_a$ representations with determinant 1 is given by $$\binom{\left\lfloor\frac{a}{2}\right\rfloor+\left\lfloor\frac{b}{2}\right\rfloor}{\left\lfloor\frac{a}{2}\right\rfloor}$$
-\end{lemma}
-
-\begin{proof}
-  Let $a=2k$ or $2k+1$; our proof operates by giving a bijection between the representations in question and $k$-tuples of non-negative integers $(z_1,\dots, z_k)$ with $2\sum z_i\leq b$, which are clearly counted by the given binomial coefficient.
-
-First, suppose that $a=2k+1$ is odd.  Then the only irreducible self-conjugate representation is the identity, and so $C$ has a $k+1$ dimensional fixed point set, given by $(z_0, z_1,\dots, z_k,z_k,\dots, z_1)$.  Thus, we see that $\sum_{i=1}^k 2z_k\leq b$, and value of $z_0$ is fixed by $\sum_{i=0}^{a-1}z_i=b$.
-
-When $a=2k$ is even, there are two irreducible self-conjugate representations, the identity and the.  Again, we see that $C$ has a $k+1$ dimensional fixed point set, this time coordinatized by $(z_0, z_1,\dots z_{k-1},w_{k}, z_{k-1},\dots,z_1)$.  For such a representation to have determinant 1 is equivalent to $w_k$ begin even, say $w_k=2z_k$.  Thus, we again have $\sum_{i=1}^k 2z_k\leq b$, with $z_0$ being determined by $\sum_{i=-}^{a-1}z_i=b$. 
-\end{proof}
+In   we saw that simplex of $(a,b)$-cores was equivalent to the simplex of $b$-dimensional representations of $\Z_a$ with trivial determinant; 
 
 \begin{lemma} \label{lem:conjugatedual}
 Under the map between, taking the conjugate of an $a$-core corresponds to taking the dual $\Z_a$ representation.
@@ -1184,10 +1167,48 @@ Under the map between, taking the conjugate of an $a$-core corresponds to taking
 \end{proof}
 
 
+
+\subsubsection{Representation theory and polytopes}
+We now describe a basic representation theoretic question that will turn out to be equivalent.
+
+Consider the set of isomorphism classes of $b$-dimensional representations of $\Z_a$.  We have seen that this is $b\delta_a=\{(y_0,\dots, y_{a-1})\in \Z^a| y_i\geq 0, \sum y_i=b\}$, where $y_i$ is the multiplicity of the $i$th irreducible representation in our $b$-dimensional representation.
+
+The condition of having trivial determinant corresponds to $\sum iy_i=0\mod a$.  Sending a representation to its dual corresponds to the linear map $C:y_i\mapsto y_{a-i}$, where recall we are using period subscripts so that $y_0=y_a$.
+
+\begin{lemma} \label{lem:conjugatecount}
+The number of $b$-dimensional, self-conjugate $\Z_a$ representations with determinant 1 is given by $$\binom{\left\lfloor\frac{a}{2}\right\rfloor+\left\lfloor\frac{b}{2}\right\rfloor}{\left\lfloor\frac{a}{2}\right\rfloor}$$
+\end{lemma}
+
+\begin{proof}
+  Let $a=2k$ or $2k+1$.  We give a bijection between the representations in question and $k$-tuples of non-negative integers $(z_1,\dots, z_k)$ with $2\sum z_i\leq b$.  The set of such $z_i$ are the lattice points in a $k=\lfloor a/2\rfloor$ dimensional simplex, which are clearly counted by the given binomial coefficient.
+
+First, suppose that $a=2k+1$.  Then the only irreducible self-conjugate representation is the identity, and so $C$ has a $k$ dimensional fixed point set consisting of points of the form $(u_0, u_1,\dots, u_k,u_k,\dots, u_1)$.  Thus, we see that $\sum_{i=1}^k 2u_k\leq b$, and value of $u_0$ is fixed by $\sum_{i=0}^{a-1}u_i=b$.
+
+When $a=2k$, there are two irreducible self-conjugate representations, the identity and the sign representation induced by the surjection $\Z_a\to\Z_2$.  Again, $C$ has a $k$ dimensional fixed point set, this time consisting of points of the form $(u_0, u_1,\dots u_{k-1}, w_{k}, u_{k-1},\dots,u_1)$.  Now for such a preresentation, having trivial determinant is equivalent to $w_k$ being even, say $w_k=2u_k$.  Then again we have $\sum_{i=1}^k 2u_k\leq b$, with $u_0$ being determined by $\sum_{i=-}^{a-1}u_i=b$. 
+\end{proof}
+
+
+
 \begin{proposition} \label{prop:conjugatesize}
-
-
+Let $a$ and $b$ be relatively prime.  Then the average size of a self-conjugate $(a,b)$-core is $(a-1)(b-1)(a+b+1)/24$.
 \end{proposition}
+
+
+\begin{proof}
+The proof is completely analogous to the case for non self-conjugate $(a,b)$-cores.
+
+Although we only consider simultaneous cores when $(a,b)$ are relatively prime, the $k$ dimensional simplex always exists, and always has a quadratic form on it; we show that the average value of this quadratic form is equal to the desired value.  However, the change of coordinates between the standard $k$ dimensional simplex and the simplex of self-conjugate $(a,b)$-cores depends on the parity of $a$ and $b$.
+
+We fix $k$; Euler-Maclaurin theory then gives that the total size is a polynomial of degree $k+2$.  Ehrhart reciprocity immediately gives that $-1, \dots, -k$ are zeros of the total size polynomial, and also are the $k$ zeros of the number of lattice points polynomial, and so we have that for fixed $k$ the average size is a polynomial.
+
+It remains to see what the restriction of the quadratic form $Q$ is to the self-conjugate cores in the $u$ coordinates.  
+
+In both the odd and even cases we find that $b=1$, must be a root, corresponding to the empty partition, and that 
+
+the simplex with a single lattice point would correspond to the point in $V_a$ when all the $x_i=0$, and hence has value $(a^2-1)/24$.  
+
+\end{proof}
+
 
   We see that
 
@@ -1528,7 +1549,7 @@ Here, the terms have been grouped so that the coefficients on each line have the
 
 
 
-\section{Toward \texorpdfstring{$(q,t)$}{(q,t)}-analogs}
+\section{Toward \texorpdfstring{$(q,t)$}{(q,t)}-analogs} \label{sec:qt}
 
 We now turn toward applying the lattice-point viewpoint toward $(q,t)$-analog $\Cat_{a,b}(q,t)$, original defined in terms of lattice points, and translated to simultaneous cores in \cite{AHJ}.  
 
@@ -1536,7 +1557,7 @@ The $(q,t)$-rational catalan numbers count simultaneous cores with respect to tw
 
 We examine this for $a=3$, and use this to prove $q-t$-symmetry for general $(a,b)$ and low $q$-degree.
 
-\subsection{Simultaneous cores and $(q,t)$-rational Catalan numbers}
+\subsection{Simultaneous cores and \texorpdfstring{$(q,t)$}{(q,t)}-rational Catalan numbers}
 
 
 \begin{definition}
@@ -1578,7 +1599,7 @@ $$\sk(\mathbf{x})=\sum_{i,j=0}^a \lfloor x_i-x_j\rfloor_0 - \lfloor x_i-x_j-b/a\
 \end{proposition}
 
 
-From Propositions \ref{prop:length, prop:skewlength}, it is immediate that $\ell$ and $\sk$ are invariant under the $S_a$ action permuting the coordinates. 
+From Propositions \ref{prop:length} and \ref{prop:skewlength}, it is immediate that $\ell$ and $\sk$ are invariant under the $S_a$ action permuting the coordinates. 
 
 
 \subsubsection{}
@@ -1705,12 +1726,12 @@ $\Cat_{a,b}(q,t)$ is a rational function of $q$ and $t$, and the denominator can
 
  
 
-\begin{prop}
+\begin{proposition}
 Let $b=3k+1+\delta$, where $\delta\in\{0,1\}$.  Then:
 
 $$\Cat_{3,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-qt^{-2})}+\frac{q^kt^k(q+t+q^\delta t^\delta)}{(1-q^{-1}t^2)(1-q^2t^{-1})}+\frac{q^{3k+\delta}}{(1-tq^{-1})(1-tq^{-2})}$$
 
-\end{prop}
+\end{proposition}
 
 \begin{proof}
 
@@ -1919,7 +1940,7 @@ $$\sk(x^\sigma)=\sum_{k=1}^{a-2} k(a-k)\des_k(\sigma)-\inv(\sigma)=\siz(\sigma)$
 
 
 
-Before we prove Lemma \ref{lem:sizmaj2}, we introduce a family of codes for permuations that we call \emph{factorization codes}; we will use a specific factorization code (the left-decreasing factorization code}.
+Before we prove Lemma \ref{lem:sizmaj2}, we introduce a family of codes for permuations that we call \emph{factorization codes}; our proof will use a specific factorization code we call the left-decreasing factorization code.
 
 \begin{definition}
 A \emph{valid sequence of length $n$} is a sequence of integers $a_i, 1\leq i\leq n $ such that $0\leq a_i<i$.  Let $\VS_n$ denote the set of valid sequences; clearly $|\VS|=n!$.
