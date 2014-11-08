@@ -4,45 +4,45 @@ The style file: plain.bst
 Database file #1: Armstrong.bib
 Warning--I didn't find a database entry for ""
 Warning--there's a number but no volume in DS
-You've used 16 entries,
+You've used 17 entries,
             2118 wiz_defined-function locations,
-            616 strings with 6347 characters,
-and the built_in function-call counts, 4926 in all, are:
-= -- 508
-> -- 209
+            621 strings with 6474 characters,
+and the built_in function-call counts, 5096 in all, are:
+= -- 526
+> -- 216
 < -- 3
-+ -- 85
-- -- 66
-* -- 352
-:= -- 849
-add.period$ -- 54
-call.type$ -- 16
-change.case$ -- 80
++ -- 88
+- -- 68
+* -- 357
+:= -- 885
+add.period$ -- 57
+call.type$ -- 17
+change.case$ -- 84
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 172
-empty$ -- 374
-format.name$ -- 66
-if$ -- 1000
+cite$ -- 18
+duplicate$ -- 178
+empty$ -- 385
+format.name$ -- 68
+if$ -- 1032
 int.to.chr$ -- 0
-int.to.str$ -- 16
+int.to.str$ -- 17
 missing$ -- 13
-newline$ -- 88
-num.names$ -- 32
-pop$ -- 58
+newline$ -- 93
+num.names$ -- 34
+pop$ -- 61
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 68
 quote$ -- 0
-skip$ -- 114
+skip$ -- 118
 stack$ -- 0
-substring$ -- 343
+substring$ -- 348
 swap$ -- 25
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 62
+type$ -- 66
 warning$ -- 1
-while$ -- 54
-width$ -- 18
-write$ -- 182
+while$ -- 56
+width$ -- 19
+write$ -- 191
 (There were 2 warnings)
