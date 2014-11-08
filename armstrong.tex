@@ -71,9 +71,11 @@ We conjecture a unimodality result for $q$ rational Catalan numbers, and make pr
 \date{}
 \maketitle
 \section{Introduction}
-The goal of this paper is to establish lattice point geometry as a foundation for rational Catalan combinatorics.  Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG} and compactified Jacobians of singular curves \cite{EM1, EM2} . 
- 
-Our point of entry to rational Catalan combinatorics is Anderson's \cite{anderson} result that rational Catalan numbers count simultaneous $(a,b)$-core partitions.  Simultaneous core partitions are our main object of study, and the first result of this paper is another proof of Anderson's theorem.
+This paper establishes lattice point geometry as a foundation for the study of simultaneous core partitions, and rational Catalan combinatorics more generally.  Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG} and compactified Jacobians of singular curves \cite{EM1, EM2}.  
+
+It is a theorem of Anderson that simultaneous core partitions are counted by rational Catalan numbers; our main result is to give a new proof of this theorem by identifying simultaneous core partitions with lattice points in a rational simplex.
+
+
 
 
 
@@ -120,7 +122,7 @@ leg and arm of $s$ are labeled $a$ and $l$, respectively.
 
 We now introduce our main object of study.
 \begin{definition}
-An $a$-\emph{core} is a partition that has no hook lengths of size $a$.  An $(a,b)$-\emph{core} is a partition that is simultaneous an $a$-core and a $b$-core.
+An $a$-\emph{core} is a partition that has no hook lengths of size $a$.  An $(a,b)$-\emph{core} is a partition that is simultaneously an $a$-core and a $b$-core.
 
 \end{definition}
 
@@ -149,43 +151,38 @@ but it \emph{is} an $a$-core for all other $a$.
 \end{example}
 
 \subsubsection{Rational Catalan numbers}
-Recall that the Catalan number $\Cat_n=\frac{1}{2n+1}\binom{2n+1}{n}$.  Catalan numbers count hundreds of different combinatorial objects; for instance, the number of lattice paths from $(0,n)$ to $(n+1,0)$ that stay strictly below the line connecting these two points.
+Recall that the Catalan number $\Cat_n=\frac{1}{2n+1}\binom{2n+1}{n}$.  Catalan numbers count hundreds of different combinatorial objects; for example, the number of lattice paths from $(0,n)$ to $(n+1,0)$ that stay strictly below the line connecting these two points.
 
-The rational Catalan numbers are defined by a natural two variable generalization of these.
+Rational Catalan numbers are a natural two parameter generalization of $\Cat_n$.
 \begin{definition}
 For $a,b$ relatively prime, the \emph{rational Catalan number}, or \emph{$(a,b)$ Catalan number} $\Cat_{a,b}$ is 
 $$\Cat_{a,b}=\frac{1}{a+b}\binom{a+b}{a}$$ 
 \end{definition}
 
-The rational Catalan number $\Cat_{a.b}$ counts the number of lattice paths from $(0,a)$ to $(b,0)$ that stay beneath the line from $(0,a)$ to $(b,0)$.  This is consistent with the specialization $\Cat_{n,n+1}=\Cat_n$.
+The rational Catalan number $\Cat_{a,b}$ counts the number of lattice paths from $(0,a)$ to $(b,0)$ that stay beneath the line from $(0,a)$ to $(b,0)$.  This is consistent with the specialization $\Cat_{n,n+1}=\Cat_n$.
 
 \subsection{}
 
-We prove the following two theorems:
+Simultaneous cores and rational Catalan numbers are connected by:
 
 \begin{theorem}[Anderson \cite{anderson}] \label{thm:anderson}
 If $a$ and $b$ are relatively prime, the number of
 $(a,b)$-core partitions is $\Cat_{a,b}$.
 \end{theorem}
 
+Our main result is a new proof of Theorem \ref{thm:anderson} using the geometry of lattice points in rational polyhedra.  This new viewpoint easily extends to prove other results; chief among them a proof of Armstrong's conjecture:
 
 \begin{theorem} \label{thm:armstrong}
 The average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.
 \end{theorem}
 
 \begin{remark} 
-Theorem \ref{thm:armstrong} was conjectured by Armstrong in 2011, and first appearing in print in \cite{AHJ}.  Proving Armstrong's conjecture was the initial motivation for this work.  
+Theorem \ref{thm:armstrong}  Armstrong conjectured Theorem \ref{thm:armstrong} in 2011; it first appeared in print in \cite{AHJ}. 
 
 Stanley and Zanello \cite{SZ} have proven the Catalan case ($a=b+1$) of Armstrong's conjecture by different methods.   
 \end{remark}
 
-There are two main tools in the proofs of these theorems: the abacus construction, Ehrhart / Euler-Maclaurin theory.  We breifly recall these ideas before giving a high-level overview of the proof.
-
-
-
-
-
-
+The two main tools in the proofs of the theorem are the abacus construction and Ehrhart theory.  We briefly recall these ideas before giving a high-level overview of the proof.
  
 \subsubsection{Abaci} 
 
@@ -193,37 +190,43 @@ The main tool used to study $a$-cores is the ``abacus construction''.  We review
 
 The first construction, which we call the \emph{positive abacus}, gives a bijection between $a$ core partitions and $\N^{a-1}$.  Anderson's original proof used the positive abacus as part of a bijection between $(a,b)$-cores and $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
 
-The second construction, which we call the \emph{signed abacus}, gives a bijection between $a$-core partitions and points in the $a-1$ dimensional lattice 
+We will only make use of the second construction, which we call the \emph{signed abacus}, gives a bijection between $a$-core partitions and points in the $a-1$ dimensional lattice 
 $$\Lambda_a=\left\{c_1,\dots,c_a\in\Z\Big |\sum c_i=0\right\}$$
-We call $\Lambda_a$ the \emph{$a$-charge lattice}.  The second construction is used in \cite{GKS}, to study the $t$-core crank.  In particular, it shown that under the signed abacus, the size of an $a$-core is a quadratic function on $\Lambda_a$.  
 
-Our proof uses the signed lattice, and directly proves the count, without passing through $(a,b)$-Dyck paths.
+We give a review of the signed abacus in Section \ref{sec:abacus}.  For now we just mention one well known result that is key to our proof of Armstrong's conjecture: 
+\begin{theorem}
+Under the signed abacus bijection, the size of an $a$-core is given by a quadratic function $Q$ on $\Lambda_a$.
+\end{theorem}
+We prove this as Theorem \ref{thm:quadratic}; see there for a more formal statement.
+
+
 
 \subsubsection{Ehrhart / Euler-Maclaurin}
-The main novelty necessary to prove Armstrong's conjecture is to apply the techniques of Ehrhart / Euler-Maclaurin theory to core partitions.
+The number of lattice points in a polytope can be viewed as a discrete version of the volume of a polytope.  Ehrhart theory is the study of this analogy, in particular, with how the familiar behavior of volume becomes slightly tweaked with discrete volume.
 
- The essential idea of Ehrhart theory is that counting lattice points in polytopes is a discrete approximation of the volume of the polytope, and so should behave similarly.  Euler-Maclaurin theory extends this to summing polynomials over the lattice points being a discrete analog to the integral of the function over the polytope.
+Let $V$ be an $n$ dimensional real vector space, and $\Lambda\subset V$ an $n$ dimensional lattice.  Conretely, $\Lambda=\Z^n, V=\R^n$.  A lattice polytope $P\subset V$ is a polytope all of whose vertices are points of $\Lambda$.  
 
+For $t$ a positive integer, let $tP$ denote the $t$th dilate of $P$, the polytope obtained by scaling $P$ by $t$.  For $t\geq 0$, define $L(P,t)$ to the number of lattice points in $tP$: 
+$$L(P,t)=\#\{\Lambda\cap tP\}$$
+Clearly, the volume of $tP$ is $t^n$ times the volume of $P$.  Ehrhart showed that, in parallel to this fact, $L(P,t)$ is a degree $n$ polynomial in $t$.  Ehrhart theory refers to the study of these polynomials.
 
-Let $V$ be an $n$ dimensional real vector space, and $\Lambda\subset V$ an $n$ dimensional lattice.  For example, $\Lambda\subset V=\Z^n\subset \R^n$.  A lattice polytope $P\subset V$ is a polytope all of whose vertices are points of $\Lambda$.  
+Other than the fact that $L(P,t)$ is a polynomial, the one fact from Ehrhart theory we will use is Ehrhart reciprocity.  If we scale a polytope by a negative number, then keeping track of orientation the volume changes by $(-t)^n$.  The polynomial $L(P,t)$ will not be even or odd, and so $L(P,-t)$ cannot be $(-1)^n$ times the number of lattice points in $-P$.  Ehrhart reciprocity states that instead, $L(P,-t)$ is $-(1)^nL(P^\circ, t)$, where $P^\circ$ here denotes the interior of $P$.
 
-For $t$ a positive integer, let $tP$ denote the $t$th dilate of $P$; that is, the polytope obtained by scaling all the vertices by $t$.  We want to count the number of lattice points in $tP$; that is, we want to study the function
-$$L(P,T)=\#\{\Lambda\cap tP\}$$
-Clearly, the volume of $tP$ is $t^n$ times the volume of $P$.  Ehrhart showed that in fact, $L(P,t)$ is a degree $n$ polynomial in $t$; Ehrhart theory refers to the study of these polynomials.
+The results of Ehrhart theory extend to an analogy between integrating a polynomial over a region and summing it over the lattice points in a polytope.  This is an extension of the familiar ``sum of the first $n$ cubes'' type formulas.
 
-Similarly, if $f$ is a polynomial of degree $d$ on $V$, then we have that $\int_{tP} f$ is a polynomial of degree $d+n$.  Euler-Maclaurin theory says that the discrete analog
+More specifically, if $f$ is a polynomial of degree $d$ on $V$, then we have that $\int_{tP} f$ is a polynomial of degree $d+n$.  Euler-Maclaurin theory says that the discrete analog
  $$L(f, P, t)=\sum_{x\in\Lambda\cap tP} f(x)$$
-is also a polynomial of degree $d+ n$.
+is also a polynomial of degree $d+ n$. Ehrhart reciprocity also extends: $$L(f,P,-t)=(-1)^nL(f, -P^\circ, t)$$
 
 
 
 
 
 \subsubsection{Initial motivation}
-To explain the method used to prove Theorems \ref[], we begin with the following \begin{FalseHope}
-Fix $b$.  Then under the signed abacus construction, the set of $(a,b)$-cores maps to $a\Delta$, for some $(b-1)$-dimensional integral polytope $\Delta$.
+To explain the method used to prove Theorems \ref{thm:anderson} and \ref{thm:armstrong}, we begin with the following \begin{FalseHope}
+Fix $a$.  Under the signed abacus construction, the set of $(a,b)$-cores maps to $b\Delta$, for some $(a-1)$-dimensional integral polytope $\Delta$.
 \end{FalseHope}
-The false hope provides an obvious strategy to prove Anderson's theorem and Armstrong's conjecture.  If the false hope were true, Ehrhart theory would imply that, for $a$ relatively prime to a fixed $b$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $b-1$ in $a$.  It is clear from the definition that this polynomiality property holds for $\Cat_{a,b}$.  Thus, proving Anderson's theorem for a fixed $b$  reduces to showing that two polynomials are equal, which only requires checking finitely many values.  
+  If the false hope were true, Ehrhart theory would imply that, for $b$ relatively prime to a fixed $a$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $a-1$ in $b$.  It is clear from the definition that this polynomiality property holds for $\Cat_{a,b}$.  Thus, proving Anderson's theorem for a fixed $a$  reduces to showing that two polynomials are equal, which only requires checking finitely many values.  
 
 Furthermore, it is a theorem that thee size of a $b$ core partition is a quadratic function on the lattice.  Thus, if False Hope  were true Euler-Maclaurin theory would give that the total size of all $(a,b)$ cores was a polynomial of degree $b+1$, and again we could hope to exploit this polynomiality in a proof.
 
@@ -333,13 +336,7 @@ It was shown in \cite{FMS} that self-conjugate $(a,b)$-core partitions are count
 
 $$\binom{\left\lfloor \frac{a}{2} \right\rfloor +\left\lfloor \frac{b}{2} \right\rfloor}{\left\lfloor \frac{a}{2} \right\rfloor}$$
 
-It was conjectured by Armstrong, and proven recently by \cite{CHW} that the average size of a self-conjugate $(a,b)$-core partition is the same as an average size of all $(a,b)$-core partitions, namely $(a+b+1)(a-1)(b-1)/24$.  Our methods easily adapt to give new, unified proofs of these results.
-
-In Lemma \ref{lem:conjugatedual}, we show that the bijection between $(a,b)$-cores and elements of $\Sym^b\C[\Z_a]^{\Z_\}$, or dimension $b$ representations of $\Z_a$ with determinant 1, conjugating a partition corresponds to the inversion sending $g$ to $g^{-1}$, or sending a representation $V$ to its dual $V^*$.  In the lattice point of view, this is just a linear map, and hence the self-dual $(a,b)$-cores correspond to the lattice points in the fixed point locus of $T$.  
-
-We show in Lemma \ref{lem:conjugatecount}, that the lattice points in $ \cap T$ are naturally the lattice points in the $\lfloor a/2\rfloor$ dimensional simplex $\lfloor b/2\rfloor \Delta_{\lfloor a/2\rfloor +1}$, hence rederiving the count of simultaneous $(a,b)$-core partitions.  
-
-Once we have done this, an analogous application of Euler-Maclaurin theory reproves the statement about the average value.
+It was conjectured by Armstrong, and proven recently by \cite{CHW} that the average size of a self-conjugate $(a,b)$-core partition is the same as an average size of all $(a,b)$-core partitions, namely $(a+b+1)(a-1)(b-1)/24$.  Our methods easily adapt to prove this results in a very similar manner; we do this in Section \ref{sec:conjugate}.
 
 
 \subsection{$q$ and $(q,t)$-analogs}
@@ -478,7 +475,7 @@ I learned about Armstrong's conjecture over dinner after speaking in the MIT com
 
 \section{Abaci and Electrons} \label{sec:abacus}
 
-In this section we recall the fermionic viewpoint of partitions and the abaci model of $a$-cores.  The main results are that $a$-cores are in bijection with points on the ``charge lattice'' $\Lambda_a$, and the size of a given $a$-core is given by a quadratic function on the lattice.
+This section is a review of the fermionic viewpoint of partitions and the abaci model of $a$-cores.  It contains no new material.  The main results are that $a$-cores are in bijection with points on the ``charge lattice'' $\Lambda_a$, and the size of a given $a$-core is given by a quadratic function on the lattice.
 
 
 %\begin{definition}
@@ -487,22 +484,22 @@ In this section we recall the fermionic viewpoint of partitions and the abaci mo
 % $$\Lambda_a=\{ \mathbf{c}=(c_0\dots, c_{a-1}) | \sum c_i=0;\quad c_i\in \Z\}$$
 %\end{definition}
 
-\subsection{The fermionic viewpoint}
-In this section, we introduce Dirac's electron sea and its relation to partitions and Frobenius notation.
-
-\subsubsection{} The following is a motivating fairy tale and should not be mistaken for an attempt at accurate physics or accurate history.
+\subsection{Fermions}
+ We begin with a motivating fairy tale. It should not be mistaken for an attempt at accurate physics or accurate history.
 
 
-According to quantum mechanics, the possible energies levels of an electron are quantized -- they can only be half integers.  The Dirac equation predicts that electrons can have negative energy, and hence the possible energy levels of an electron are half integers i.e., elements of $\Z_{1/2}=\{a+1/2|a,\in\Z\}$.  However, the physical meaning of a negative energy electron is elusive.
+\subsubsection{A fairy tale}
+According to quantum mechanics, the possible energies levels of an electron are quantized -- they can only be half integers i.e., elements of $\Z_{1/2}=\{a+1/2|a,\in\Z\}$.  In particular, basic quantum mechanics predicts electrons with negative energy.  Physically, it makes no sense to have negative energy electrons, so these negative energy electrons were a problem that needed explaining.
+
 
 Dirac's \emph{electron sea} solves the problem of negative energy electrons by redefining the vacuum state $\vac$.  The Pauli exclusion principle states that each possible energy state can have at most one electron in it; thus, we can view any set of electrons as a subset $S\subset \Z_{1/2}$.  Intuitively, the vacuum state $\vac$ should consist of empty space with no electrons at all, and hence correspond to the set $S=\emptyset\subset\Z_{1/2}$.
 
-Dirac suggested redefining $\vac$ to be an
-infinite ``sea'' of electrons; specifically, in the vacuum state every negative energy level should be filled with an electron, and none of the positive energy states filled.   Pauli's
-exclusion principle implies we cannot add a negative energy electron
-to $\vac$, but we can add any positive energy electron to $\vac$, and so Dirac's electron sea solves the problem of negative energy electrons.
+Dirac suggested isntead to take $\vac$ to be an
+infinite ``sea'' of negative energy electrons.   Specifically, in the vacuum state every negative energy level should be filled with an electron, but none of the positive energy states should be filled with an electron.  Then by Pauli's
+exclusion principle we cannot add a negative energy electron
+to $\vac$, but positive energy electrons can be added as usual.  Thus, Dirac's electron sea solves the problem of negative energy electrons.
 
-In addition, Dirac's electron sea predicts the positron, a particle
+As an added benefit, Dirac's electron sea predicts the positron, a particle
 that has the same energy levels as an electron, but positive charge.  Namely, a positron corresponds to a ``hole'' in the electron sea, that is, a negative
 energy level \emph{not} filled with an electron.  Removing a negative energy electron results in adding positive charge and positive energy, and hence can be interpreted as a having a positron.
 
@@ -513,7 +510,7 @@ energy level \emph{not} filled with an electron.  Removing a negative energy ele
 The vacuum $\vac\subset \Z_{1/2}$ is the set $\Z_{1/2}^-$.
 
 A \emph{state} $S$ is a set $S\subset\Z+1/2$ so that the symmetric
-difference $S\Delta \vac=(S\cap\Z_{1/2}^+)\cup (S^c\cap\Z_{1/2}^-)$ is finite.  States should be interpreted as a finite collection of electrons (the elements of $S\cap \Z^+_{1/2}$) and positrons (the elements of $S^c\cap \Z^-_{1/2}$).
+difference $S \textbf{xor} \vac=(S\cap\Z_{1/2}^+)\cup (S^c\cap\Z_{1/2}^-)$ is finite.  States should be interpreted as a finite collection of electrons (the elements of $S\cap \Z^+_{1/2}$) and positrons (the elements of $S^c\cap \Z^-_{1/2}$).
 
 The \emph{charge} $c(S)$ of a state $S$ is the number of positrons minus the number of electrons:
 $$c(S)=\# S\cap Z^+_{1/2} - \# S^c\cap \Z^-_{1/2}$$
@@ -525,14 +522,10 @@ $$e(S)=\sum_{k\in\Z^+_{1/2}\cap S} k +\sum_{k\in\Z^-_{1/2}\cap S^c} -k$$
 
 \subsubsection{Maya Diagrams}
 
-It is convenient to represent states $S$ as
-\emph{Maya Diagrams}
+It is convenient to have a graphical representation of states $S$.
 
-The Maya diagram of $S$ is an infinite line of circles,
-one for each element of $\Z_{1/2}$, with the positive circles extending to the left and
-the negative direction to the right.  A black ``stone'' is placed on the
-circle corresponding to $k\in\Z_{1/2}$ if and only if $k\in S$, that is, if the energy level $k$ is occupied by an electron.
-
+The \emph{Maya diagram} of $S$ is an infinite sequence of circles on the $x$-axis, one circle centerred at each element of $\Z_{1/2}$, with the positive circles extending to the left and the negative direction to the right.  A black ``stone'' is placed on the
+circle corresponding to $k\in\Z_{1/2}$ if and only if $k\in S$.
 
 \begin{example}
 The Maya diagram corresponding to the vacuum vector $\vac$ is shown below.
@@ -583,21 +576,21 @@ $5/2$.
 
 \subsection{Paths}
 
-There is a bijection from the set of partitions $\mathcal{P}$ to the
+We now describe a bijection between the set of partitions $\mathcal{P}$ to the
 set of charge 0 states, that sends a partition
 $\lambda\in\mathcal{P}_n$ of size $n$ to a state $S_\lambda$ with
-energy $e(S_\lambda)=n$.  This bijection can be described in two ways:
+energy $e(S_\lambda)=n$.  This bijection can be understood in two ways:
 as recording the boundary path of $\lambda$, or recording the modified
-Frobenius coordinates of $lambda$.
+Frobenius coordinates of $\lambda$.
 
 
 \subsubsection{}
 We draw partitions in ``Russian
 notation'' -- rotated $\pi/4$ radians counterclockwise and scaled up
 by a factor of $\sqrt{2}$, so that each segment of the border path of
-$\lambda$ is centered above a half integer.  For each segment of the border path, we place an electron in the corresponding energy level if that segment of the border slopes up, and we leave the energy state empty if that segment of border path slopes down.
+$\lambda$ is centered above a half integer on the $x$-axis.  We traverse the boundary path of $\Lambda$ from left to right.  For each segment of the border path, we place an electron in the corresponding energy level if that segment of the border slopes up, and we leave the energy state empty if that segment of border path slopes down.
 
-\begin{example}
+\begin{example} \label{ex:electronstopartitions}
 
 We illustrate the bijection in the case of $\lambda=3+2+2$.  The corresponding state $S_\lambda$ consists of two
 electrons with energy $5/2$ and $1/2$, and two positrons with energy
@@ -652,26 +645,24 @@ $3/2$ and $5/2$.
 
 \subsubsection{Frobenius Coordinates}
 
-The energies $e_i$ of the electrons and the positrons of $\lambda$ are
+The energies of the electrons and the positrons of $\lambda$ are
 the \emph{modified Frobenius coordinates},
 
-Dissect the partition $\lambda$ with the vertical line through
-$0$.  The left side of $\lambda$ consists of $c$ rows, where $c$ is the number
-of electrons, and the length of the $i$th row will be the energy of
-the $i$th electron.  Similarly, the right side consists of $c$
-pieces, with lengths the energies of the positrons.
+The $y$-axis dissects the partition $\lambda$ into two pieces.  The left side of $\lambda$ consists of $c$ rows, where $c$ is the number
+of electrons.  The length of the $i$th row is the energy of
+the $i$th electron.  The right half of $\lambda$ also consists of $c$ rows, with lengths the energies of the positrons.  Note that $c$ here is the size of the \emph{Durfee square} of $\lambda$.
 
-\begin{example}
+
+
+\begin{example} Consider Example \ref{ex:electronstopartitions}.  If the $y$-axis was drawn in, left of the $y$-axis would be two rows, the bottom row having length 2.5 and the top row length .5 -- these were precisely the energies of the electrons in $S$.  Similarly, the right hand side has two rows of length 2.5 and 1.5, the energies of the positrons in $S$.
 
 
 \end{example}
 
 \subsubsection{Non-zero charge}
 
-The bijection between states of charge zero and partitions may be
-modified to give a bijection between the states of charge $c$ and
-partitions, for any $c\in\Z$: simply translate the the grid the
-partition is drawn on by $c$.
+The bijection between partitions and states of charge zero may be
+modified to give a bijection between partitions and states of charge $c$ for any $c\in\Z$.   Simply translate the partition to the right by $c$.
 
 
 
@@ -881,7 +872,7 @@ We illustrate that $\core_3(0,3, -3)=7+5+3+3+2+2+1+1$.
 \subsection{Size of an \texorpdfstring{$a$}{a}-core}
 
 
-\begin{theorem}
+\begin{theorem} \label{thm:quadratic}
 $$|\core_a(\mathbf{c})|=\frac{a}{2}\sum_{k=0}^{a-1} c_k^2+ kc_k$$
 \end{theorem}
 
@@ -1145,6 +1136,14 @@ To see that $A=1/24$, note that although there are no points of $\Lambda_s$ in $
 \end{proof}
 
 \subsection{Self-conjugate \texorpdfstring{$(a,b)$}{(a,b)}-cores} \label{sec:conjugate}
+
+In Lemma \ref{lem:conjugatedual}, we show that the bijection between $(a,b)$-cores and elements of $\Sym^b\C[\Z_a]^{\Z_\}$, or dimension $b$ representations of $\Z_a$ with determinant 1, conjugating a partition corresponds to the inversion sending $g$ to $g^{-1}$, or sending a representation $V$ to its dual $V^*$.  In the lattice point of view, this is just a linear map, and hence the self-dual $(a,b)$-cores correspond to the lattice points in the fixed point locus of $T$.  
+
+We show in Lemma \ref{lem:conjugatecount}, that the lattice points in $ \cap T$ are naturally the lattice points in the $\lfloor a/2\rfloor$ dimensional simplex $\lfloor b/2\rfloor \Delta_{\lfloor a/2\rfloor +1}$, hence rederiving the count of simultaneous $(a,b)$-core partitions.  
+
+Once we have done this, an analogous application of Euler-Maclaurin theory reproves the statement about the average value.
+
+
 
 Let $T:V_a\to V_a$ be the linear map given by.
 $$T(c_i)=-c_{a-i}$$.

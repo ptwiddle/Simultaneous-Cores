@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.6.9)  24 OCT 2014 21:56
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.6.9)  26 OCT 2014 15:25
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode\input armstrong.tex
@@ -669,87 +669,68 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 74.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 194
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 191
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [3]
-
-LaTeX Warning: Reference `[' on page 4 undefined on input line 223.
-
-[4]
+) [3] [4]
 
 LaTeX Warning: Reference `thm:anderson, thm:armstrong' on page 5 undefined on i
-nput line 257.
+nput line 260.
 
 
-Overfull \hbox (1.85783pt too wide) in paragraph at lines 257--258
+Overfull \hbox (1.85783pt too wide) in paragraph at lines 260--261
 []\OT1/pplx/m/n/10 (-20) Although the gen-eral strat-egy out-lined above can be
  car-ried forth with quasipoly-
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
- [5]
-! Missing } inserted.
-<inserted text> 
-                }
-l.338 ...s and elements of $\Sym^b\C[\Z_a]^{\Z_\}$
-                                                  , or dimension $b$ represe...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+[5]
 
-
-LaTeX Warning: Reference `lem:conjugatecount' on page 6 undefined on input line
- 340.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 344.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 347.
+(hyperref)                removing `math shift' on input line 344.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 347.
+(hyperref)                removing `math shift' on input line 344.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 347.
+(hyperref)                removing `math shift' on input line 344.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 347.
-
-
-LaTeX Warning: Reference ` ' on page 6 undefined on input line 347.
+LaTeX Warning: Reference ` ' on page 6 undefined on input line 344.
 
 Runaway argument?
 { \}, initiates the application of the lattice point viewpoint to $q$\ETC.
 ! Paragraph ended before \T@ref was complete.
 <to be read again> 
                    \par 
-l.348 
+l.345 
       
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 
-LaTeX Warning: Reference ` ' on page 6 undefined on input line 352.
+LaTeX Warning: Reference ` ' on page 6 undefined on input line 349.
 
 
-LaTeX Warning: Reference ` ' on page 6 undefined on input line 354.
+LaTeX Warning: Reference ` ' on page 6 undefined on input line 351.
+
+
+LaTeX Warning: Reference `eq:invariant' on page 6 undefined on input line 353.
 
 [6]
-
-LaTeX Warning: Reference `eq:invariant' on page 7 undefined on input line 356.
-
 ! Undefined control sequence.
-l.362 ...l that a sequence $a_1,dots, a_n$ is \emp
+l.359 ...l that a sequence $a_1,dots, a_n$ is \emp
                                                   {unimodal} if there is som...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -758,7 +739,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Extra }, or forgotten $.
-l.376 ...$q$ and $t$, and that $$q^{(a-1)(b-1)/2}}
+l.373 ...$q$ and $t$, and that $$q^{(a-1)(b-1)/2}}
                                                   \Cat_{a,b}(q,1/q)=\Cat_{a,...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -767,32 +748,45 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 
-LaTeX Warning: Reference ` ' on page 7 undefined on input line 377.
-
-[7]
-
-LaTeX Warning: Citation `' on page 8 undefined on input line 381.
-
-[8]
-
-LaTeX Warning: Reference ` ' on page 9 undefined on input line 453.
+LaTeX Warning: Reference ` ' on page 7 undefined on input line 374.
 
 
-LaTeX Warning: Reference ` ' on page 9 undefined on input line 453.
+LaTeX Warning: Citation `' on page 7 undefined on input line 378.
+
+[7] [8]
+
+LaTeX Warning: Reference ` ' on page 9 undefined on input line 450.
 
 
-LaTeX Warning: Reference ` ' on page 9 undefined on input line 453.
+LaTeX Warning: Reference ` ' on page 9 undefined on input line 450.
+
+
+LaTeX Warning: Reference ` ' on page 9 undefined on input line 450.
 
 [9] [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-[12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Reference `ex:electronstopartitions' on page 11 undefined on inp
+ut line 657.
 
- [13]
-[14] [15] [16] [17] [18] [19] [20] [21]
-Underfull \vbox (badness 2538) has occurred while \output is active []
+[11] [12] [13] [14] [15] [16] [17]
+! Missing } inserted.
+<inserted text> 
+                }
+l.1140 ... and elements of $\Sym^b\C[\Z_a]^{\Z_\}$
+                                                  , or dimension $b$ represe...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[18]
+
+LaTeX Warning: Reference `lem:conjugatecount' on page 19 undefined on input lin
+e 1142.
+
+[19] [20] [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
 [23] (/usr/share/texmf-texlive/tex/latex/microtype/mt-euf.cfg
@@ -801,19 +795,19 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 ) [24] [25]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1542.
+(hyperref)                removing `math shift' on input line 1541.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1542.
+(hyperref)                removing `math shift' on input line 1541.
 
 
 LaTeX Warning: Reference `prop:length, prop:skewlength' on page 26 undefined on
- input line 1581.
+ input line 1580.
 
 [26] [27] [28] [29] [30] [31] [32] [33]
 ! Extra }, or forgotten \endgroup.
-l.1904 ...(the left-decreasing factorization code}
+l.1903 ...(the left-decreasing factorization code}
                                                   .
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -822,7 +816,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 
-Overfull \hbox (3.63289pt too wide) in paragraph at lines 1940--1941
+Overfull \hbox (3.63289pt too wide) in paragraph at lines 1939--1940
 []\OT1/pplx/m/n/10 (-20) There are two ``ob-vi-ous'' fam-i-lies of $\OML/zplm/m
 /it/10 k$\OT1/pplx/m/n/10 (-20) -cycles: \OT1/pplx/m/it/10 (-20) in-creas-ing \
 OT1/pplx/m/n/10 (-20) cy-cles $\OML/zplm/m/it/10 C[] \OT1/zplm/m/n/10 = (\OT1/p
@@ -837,13 +831,13 @@ Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
 
 ) [36]
 
-! LaTeX Error: \begin{equation} on input line 326 ended by \end{document}.
+! LaTeX Error: \begin{equation} on input line 329 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1981 \end{document}
+l.1980 \end{document}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -859,14 +853,14 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 326 (\begingroup)
+### semi simple group (level 1) entered at line 329 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16840 strings out of 495061
- 304575 string characters out of 1182622
- 885198 words of memory out of 3000000
- 18939 multiletter control sequences out of 15000+50000
- 61902 words of font info for 378 fonts, out of 3000000 for 9000
+ 16843 strings out of 495061
+ 304685 string characters out of 1182622
+ 884562 words of memory out of 3000000
+ 18945 multiletter control sequences out of 15000+50000
+ 62680 words of font info for 377 fonts, out of 3000000 for 9000
  189 hyphenation exceptions out of 8191
  56i,10n,65p,841b,843s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sha
@@ -883,9 +877,9 @@ l/fplrc8a.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msa
 m10.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/sha
 re/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on armstrong.pdf (36 pages, 441477 bytes).
+Output written on armstrong.pdf (36 pages, 445582 bytes).
 PDF statistics:
- 573 PDF objects out of 1000 (max. 8388607)
- 196 named destinations out of 1000 (max. 500000)
- 45309 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 579 PDF objects out of 1000 (max. 8388607)
+ 197 named destinations out of 1000 (max. 500000)
+ 46333 words of extra memory for PDF output out of 51595 (max. 10000000)
 
