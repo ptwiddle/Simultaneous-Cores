@@ -258,13 +258,9 @@ A function $f:\Z\to\C$ is a quasipolynomial of degree $d$ and period $n$ if ther
 
 Since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nicely into the quasipolynomial framework.  For fixed $a$, and for $b$ in a fixed residue class mod $a$, we have that $\Cat_{a,b}$ is polynomial; it just so happens that for any residue class relatively prime to $a$, these polynomials are identical.
 
-Such ``accidental'' equalities between the polynomials for different residues happen frequently in Ehrhart theory, but are still mysterious in general.  Perhaps the most studied manifestation of this is \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial.
+Such ``accidental'' equalities between the polynomials for different residues happen frequently in Ehrhart theory, but are still mysterious in general.  Perhaps the most studied manifestation of this is \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial.  In our case, there is an elementary explanation of the ``accidental'' equalities between the polynomials for different residue classes, which we now explain.
 
-
-Although the general strategy outlined above can be carried forth with quasipolynomials instead of polynomials, it is more difficult as the periods of the quasipolynomials are increasing with $b$, and so many more values must be checked.  In the end, we could not find a way to prove Theorems \ref{thm:anderson} and \ref{thm:armstrong} using solely quasipolynomiality.   Instead, we found a clear explanation of the ``accidental'' equality of the polynomials for different residue classes, which we now explain.
-
-Although $\mathcal{C}_{a,b}$ is not a lattice polytope with respect to the lattice $\Lambda_a$ of $a$-cores, $\mathcal{C}_{a,b}$ will be a lattice polytope with respect to a refinement of $\Lambda_a$.  In particular, there is a lattice $\Lambda_a^\prime$ containing $\Lambda_a$ with index $[\Lambda_a:\Lambda^\prime_a]=a$, so that with respect to the lattice $\Lambda_a^\prime$, the polytope $\mathcal{C}_{a,b}$ is the standard simplex $\sum_{i=1}^{a} x_i=b, 0
-leq x_i\in \Z$.  
+Although $\mathcal{C}_{a,b}$ is not a lattice polytope with respect to the lattice $\Lambda_a$ of $a$-cores, $\mathcal{C}_{a,b}$ will be a lattice polytope with respect to a refinement of $\Lambda_a$.  In particular, there is a lattice $\Lambda_a^\prime$ containing $\Lambda_a$ with index $[\Lambda_a:\Lambda^\prime_a]=a$, so that with respect to the lattice $\Lambda_a^\prime$, the polytope $\mathcal{C}_{a,b}$ is the standard simplex $\sum_{i=1}^{a} x_i=b, 0\leq x_i\in \Z$.  
 
 Furthermore, consider the action of $\Z_a$ cyclicly permutating the variables, i.e., $x_i\mapsto x_{i+1}, x_{a}\mapsto x_0$.   When $b$ is relatively prime to $a$, this action does not have any fixed points.  Furthermore, in this case the $\Z_a$ orbit of each point in $\Lambda_a^\prime$ contains exactly one element of $\Lambda_a$.  This is illustrated in Figure \ref{fig:sublattice}: the left hand picture shows $\Lambda_3\subset \C_{3,10}$, while the right hand picture shows $\Lambda_3^\prime$.  The black dots are elements of $\Lambda_3$, while the red and green dots are the other cosets of $\Lambda_3$ inside of $\Lambda_3^\prime$, and are obtained by rotating around the blue circle.
 
@@ -338,12 +334,9 @@ Thus, $\Cat_{a,b}$ is the number of degree $b$ monomials $p_1^{e_1}\cdots p_a^{e
 \subsubsection{Self-conjugate simultaneous cores}
 It was shown in \cite{FMS} that self-conjugate $(a,b)$-core partitions are counted by 
 
-
-
 $$\binom{\left\lfloor \frac{a}{2} \right\rfloor +\left\lfloor \frac{b}{2} \right\rfloor}{\left\lfloor \frac{a}{2} \right\rfloor}$$
 
-
-It was conjectured by Armstrong, and proven recently by \cite{CHW} that the average size of a self-conjugate $(a,b)$-core partition is the same as an average size of all $(a,b)$-core partitions, namely $(a+b+1)(a-1)(b-1)/24$.  Our methods easily adapt to prove this results in a very similar manner; we do this in Section \ref{sec:conjugate}.
+It was conjectured by Armstrong, and proven recently by \cite{CHW} that the average size of self-conjugate $(a,b)$-core partitions is the same as the average size of all $(a,b)$-core partitions, namely $(a+b+1)(a-1)(b-1)/24$.  In Section \ref{sec:conjugate} we show that our lattice point methods easily extend to give new proofs of these results.
 
 \subsection{\texorpdfstring{$q$}{q} and \texorpdfstring{$(q,t)$}{(q,t)}-analogs}
 
@@ -1087,7 +1080,7 @@ Thus the standard lattice points in
 
 We now have all the ingredients needed to prove Armstrong's conjecture.  We derive it as a consequence of:
 
-\begin{theorem} \label{thm-polynomial}
+\begin{theorem} \label{thm:polynomial}
 For fixed $a$, and $b$ relatively prime to $a$,  the average size of an $(a,b)$-core is a polynomial of degree 2 in $b$.
 \end{theorem}
 
@@ -1114,7 +1107,7 @@ $b=-1,\dots,-(a-1)$, and so $P_a/Q_a$ is a polynomial of degree 2.
 \end{proof}
 
 
-\begin{corollary}
+\begin{corollary} \label{cor:averagesize}
 When $(a,b)$ are relatively prime, the average size of an $(a,b)$ core is $(a+b+1)(a-1)(b-1)/24$
 \end{corollary}
 
@@ -1122,28 +1115,18 @@ When $(a,b)$ are relatively prime, the average size of an $(a,b)$ core is $(a+b+
 
 Fix $a$, and let $P_a(b)=G_a(b)/F_a(b)$ be the degree two polynomial that
 gives the average value of the $(a,b)$-cores when $a$ and $b$ are
-relatively prime.  As we know $P_a(b)$ is a polynomial of degree 2, we can determine it by computing a few values by hand; together with $(a,b)$ symmetry of cores, $P_a(b)$ is also a polynomial of degree two in $a$, and hence we can compute the exact formula by calculating only a few values.
+relatively prime.  As we know $P_a(b)$ is a polynomial of degree 2, we can determine it by computing only three values.
 
+First, we find the two roots of $P_a(b)$.  As the only $1$ core is the empty partition, we have $F_a(1)=1$ and $G_a(1)=0$, and so $P_a(1)=0$.
 
+Ehrhart reciprocity gives that $G_a(-a-b)$ is, up to a sign, the sum of $Q$ over the lattice points in the interior of $(a+b)\Delta_a$, which are just the lattice points contained in $b\Delta_a$, and hence equal to $G_a(b)$.  In particular, $P_a(-a-1)=0$.  
 
-This is essentially the route we take, but use Ehrhart reciprocity to minimize the computation needed.
-
-First, we find the two roots of $P_a(b)$.  As the only $1$ core is the empty partition, we have $F_a(1)=1$ and $G_a(1)=0$, and so
-$(b-1)$ is a factor of $P_a$.
-
-Ehrhart reciprocity gives that
-$G_a(-a-1)$ is, up to a sign, the sum of $Q$ over the lattice points in the
-interior of $(a+1)\Delta_a$, which are just the lattice points contained in $\Delta_a$, and hence equal to $G_a(1)=0$, and so $(b+a+1)$ is a factor of $G_a$.
-
-By symmetry between $a$ and $b$, we must have the average size for an $(a,b)$ core is $A(a-1)(b-1)(a+b+1)$ for some
-constant $A$ independent of $a$ and $b$.
-
-To see that $A=1/24$, note that although there are no points of $\Lambda_s$ in $\mathcal{S}_a(0)=0$, the standard simplex $\delta_{a-1}(0)$ contains the origin as a lattice point, and so $P_a(0)=Q(0)=-(a^2-1)/24$.
+Finally, we compute $P_a(0)$.  It is clear that $\mathcal{S}_a(0)=\{0\}$.  Although this is not a point of $\Lambda_a$, it is in $\Lambda_a^\prime$, and so $P_a(0)=Q(0)=-(a^2-1)/24$.
 \end{proof}
 
 \subsection{Self-conjugate \texorpdfstring{$(a,b)$}{(a,b)}-cores} \label{sec:conjugate}
 
-In Lemma \ref{lem:conjugatedual}, we show that the bijection between $(a,b)$-cores and elements of $\Sym^b\C[\Z_a]^{\Z_\}$, or dimension $b$ representations of $\Z_a$ with determinant 1, conjugating a partition corresponds to the inversion sending $g$ to $g^{-1}$, or sending a representation $V$ to its dual $V^*$.  In the lattice point of view, this is just a linear map, and hence the self-dual $(a,b)$-cores correspond to the lattice points in the fixed point locus of $T$.  
+In Lemma \ref{lem:conjugatedual}, we show that the bijection between $(a,b)$-cores and elements of $\Sym^b(\C[\Z_a])^{\Z_a}$, or dimension $b$ representations of $\Z_a$ with determinant 1, conjugating a partition corresponds to the inversion sending $g$ to $g^{-1}$, or sending a representation $V$ to its dual $V^*$.  In the lattice point of view, this is just a linear map, and hence the self-dual $(a,b)$-cores correspond to the lattice points in the fixed point locus of $T$.  
 
 We show in Lemma \ref{lem:conjugatecount}, that the lattice points in $ \cap T$ are naturally the lattice points in the $\lfloor a/2\rfloor$ dimensional simplex $\lfloor b/2\rfloor \Delta_{\lfloor a/2\rfloor +1}$, hence rederiving the count of simultaneous $(a,b)$-core partitions.  
 
@@ -1199,17 +1182,12 @@ Let $a$ and $b$ be relatively prime.  Then the average size of a self-conjugate 
 
 
 \begin{proof}
-The proof is completely analogous to the case for non self-conjugate $(a,b)$-cores.
 
-Although we only consider simultaneous cores when $(a,b)$ are relatively prime, the $k$ dimensional simplex always exists, and always has a quadratic form on it; we show that the average value of this quadratic form is equal to the desired value.  However, the change of coordinates between the standard $k$ dimensional simplex and the simplex of self-conjugate $(a,b)$-cores depends on the parity of $a$ and $b$.
+Since $a$ and $b$ are relatively prime, at most one is even, so we my assume $a$ is odd.  
 
-We fix $k$; Euler-Maclaurin theory then gives that the total size is a polynomial of degree $k+2$.  Ehrhart reciprocity immediately gives that $-1, \dots, -k$ are zeros of the total size polynomial, and also are the $k$ zeros of the number of lattice points polynomial, and so we have that for fixed $k$ the average size is a polynomial.
+The proof is essentially the same as that for all $(a,b)$-cores.  One complication is that it seems we must treat odd and even values of $b$ separately.   In each each case, an argument identical to Lemma \ref{thm:polynomial} gives that the average size is a polynomial of degree 2 in $b$.  A priori, we may have different polynomials for $b$ odd and $b$ even; however, the symmetry $(a,b)\mapsto (a, -a-b)$ coming from Ehrhart reciprocity still holds and interchanges odd and even values of $b$, and so if we can compute three values of either polynomial (that don't get identified by this symmetry), we will identify both polynomials.
 
-It remains to see what the restriction of the quadratic form $Q$ is to the self-conjugate cores in the $u$ coordinates.  
-
-In both the odd and even cases we find that $b=1$, must be a root, corresponding to the empty partition, and that 
-
-the simplex with a single lattice point would correspond to the point in $V_a$ when all the $x_i=0$, and hence has value $(a^2-1)/24$.  
+All $1$ and $2$ cores are self conjugate, and this gives two values; the arguments made in Corollary \ref{cor:averagesize} for the vanishing of the polynomial at $b=1$ holds for self-conjugate partitions as well, giving a third value.
 
 \end{proof}
 
