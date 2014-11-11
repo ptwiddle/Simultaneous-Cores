@@ -31,7 +31,9 @@
 \newcommand{\proj}{\mathbb{P}}
 \newcommand{\core}{\mathbf{core}}
 \newcommand{\DP}{\mathcal{DP}}
-\newcommand{\SC}{\mathcal{SC}}
+\newcommand{\SC}{\mathbf{SC}}
+\newcommand{\TD}{\mathbf{TD}}
+
 \newcommand{\OC}{\mathcal{OC}}
 \newcommand{\Cat}{\mathbf{Cat}}
 \newcommand{\sk}{s\ell}
@@ -228,8 +230,8 @@ To explain the method used to prove Theorems \ref{thm:anderson} and \ref{thm:arm
 
 \begin{FalseHope}
 Fix $a$.  Under the signed abacus construction, the set of $(a,b)$-cores maps to $b\Delta$, for some $(a-1)$-dimensional integral polytope $\Delta$.
-
 \end{FalseHope}
+
   If the false hope were true, Ehrhart theory would imply that, for $b$ relatively prime to a fixed $a$, $|\mathcal{C}_{a,b}|$ would be a polynomial of degree $a-1$ in $b$.  It is clear from the definition that this polynomiality property holds for $\Cat_{a,b}$.  Thus, proving Anderson's theorem for a fixed $a$  reduces to showing that two polynomials are equal, which only requires checking finitely many values.  
 
 Furthermore, it is a theorem that thee size of a $b$ core partition is a quadratic function on the lattice.  Thus, if False Hope  were true Euler-Maclaurin theory would give that the total size of all $(a,b)$ cores was a polynomial of degree $b+1$, and again we could hope to exploit this polynomiality in a proof.
@@ -239,9 +241,11 @@ Note that since the degree of the polynomial $\Cat_{a,b}$ grow as $b$ grows, pro
 
 \subsubsection{}
 
-The False Hope is not quite true, but the strategy outlined above is essentially the one we follow.  One minor tweak needed to the False Hope is that as we vary $a$, the polytope is not only scaled, by also changed by a linear transformation.  These transformations preserve the number of lattice points and the quadratic function giving the size of the partitions, and so does not pose any real difficulties.
+The False Hope is not quite true, but the strategy outlined above is essentially the one we follow.  The set of $b$ cores inside the lattice of $a$ cores \emph{does} form a polytope (a simplex, actually), which we will call $\SC_a(b)$, (``sc'' for ``simplex of cores'').  
 
-More troubling is that the polytope $\mathcal{C}_{a,b}$ is not integral, but only rational.  Recall that a polytope $\Delta$ is \emph{rational} if there is some $k\in\Z$ so that $k\Delta$ is a lattice polytope.   
+One minor tweak needed to the False Hope is that as we vary $b$ $\SC_a(b)$ is not only scaled, but also changed by a linear transformation.  These transformations preserve the number of lattice points and the quadratic function $Q$ giving the size of the partitions, and so do not pose any real difficulties.
+
+More troubling is that the polytope $\SC_{a}(b)$ is not integral, but only rational.  Recall that a polytope $\Delta$ is \emph{rational} if there is some $k\in\Z$ so that $k\Delta$ is a lattice polytope.   
 
 
 
@@ -255,14 +259,21 @@ A function $f:\Z\to\C$ is a quasipolynomial of degree $d$ and period $n$ if ther
 
 \end{example}
 
-
 Since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nicely into the quasipolynomial framework.  For fixed $a$, and for $b$ in a fixed residue class mod $a$, we have that $\Cat_{a,b}$ is polynomial; it just so happens that for any residue class relatively prime to $a$, these polynomials are identical.
 
 Such ``accidental'' equalities between the polynomials for different residues happen frequently in Ehrhart theory, but are still mysterious in general.  Perhaps the most studied manifestation of this is \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial.  In our case, there is an elementary explanation of the ``accidental'' equalities between the polynomials for different residue classes, which we now explain.
 
-Although $\mathcal{C}_{a,b}$ is not a lattice polytope with respect to the lattice $\Lambda_a$ of $a$-cores, $\mathcal{C}_{a,b}$ will be a lattice polytope with respect to a refinement of $\Lambda_a$.  In particular, there is a lattice $\Lambda_a^\prime$ containing $\Lambda_a$ with index $[\Lambda_a:\Lambda^\prime_a]=a$, so that with respect to the lattice $\Lambda_a^\prime$, the polytope $\mathcal{C}_{a,b}$ is the standard simplex $\sum_{i=1}^{a} x_i=b, 0\leq x_i\in \Z$.  
+yAlthough $\mathcal{C}_{a,b}$ is not a lattice polytope with respect to the lattice $\Lambda_a$ of $a$-cores, $\mathcal{C}_{a,b}$ will be a lattice polytope with respect to a refinement of $\Lambda_a$.  In particular, there is a lattice $\Lambda_a^\prime$ containing $\Lambda_a$ with index $[\Lambda_a:\Lambda^\prime_a]=a$, so that with respect to the lattice $\Lambda_a^\prime$, the polytope $\mathcal{C}_{a,b}$ is the standard simplex $\sum_{i=1}^{a} x_i=b, 0\leq x_i\in \Z$.  
 
 Furthermore, consider the action of $\Z_a$ cyclicly permutating the variables, i.e., $x_i\mapsto x_{i+1}, x_{a}\mapsto x_0$.   When $b$ is relatively prime to $a$, this action does not have any fixed points.  Furthermore, in this case the $\Z_a$ orbit of each point in $\Lambda_a^\prime$ contains exactly one element of $\Lambda_a$.  This is illustrated in Figure \ref{fig:sublattice}: the left hand picture shows $\Lambda_3\subset \C_{3,10}$, while the right hand picture shows $\Lambda_3^\prime$.  The black dots are elements of $\Lambda_3$, while the red and green dots are the other cosets of $\Lambda_3$ inside of $\Lambda_3^\prime$, and are obtained by rotating around the blue circle.
+
+
+Consider the set of isomorphism classes of $b$-dimensional representations of $\Z_a$.  We have seen that this is $b\delta_a=\{(y_0,\dots, y_{a-1})\in \Z^a| y_i\geq 0, \sum y_i=b\}$, where $y_i$ is the multiplicity of the $i$th irreducible representation in our $b$-dimensional representation.
+
+The condition of having trivial determinant corresponds to $\sum iy_i=0\mod a$.  Sending a representation to its dual corresponds to the linear map $C:y_i\mapsto y_{a-i}$, where recall we are using period subscripts so that $y_0=y_a$.
+
+
+
 
 
 \begin{figure}[h!]
@@ -1012,7 +1023,7 @@ $$Q(\mathbf{x})=-\frac{a^2-1}{24}+\frac{a}{2}\sum_{i=0}^{a-1} x_i^2$$
 \end{lemma}
 
 \begin{proof}
-That the linear term of $Q$ vanishes in the $\mathbf{x}$ coordinates follows immediately from the definition of $\mathbf{s}$.  The constant term of $Q$ in the $\mathbf{x}$ coordinates is $-\frac{a}{2}\sum_{i=0}^{a-1} s_i^2$, which a short computation shows is $\frac{a^2-1}{24}$.
+That the linear term of $Q$ vanishes in the $\mathbf{x}$ coordinates follows immediately from the definition of $\mathbf{s}$.  The constant term of $Q$ in the $\mathbf{x}$ coordinates is $-\frac{a}{2}\sum_{i=0}^{a-1} s_i^2$, which a short computation shows is $-\frac{a^2-1}{24}$.
 
 The statement about the set of $b$-cores follows from the computation
 
@@ -1024,45 +1035,31 @@ x_{i+b}-x_{i}&=c_{i+b}-c_i+s_{i+b}-s_i \\
 \end{align*}
 \end{proof}
 
-Another change of variables makes clear the shape these inequalities cut out.
-\begin{lemma} \label{lem-standardsimplex}
-If $a$ and $b$ are relatively prime, then after the change of variables
-$$y_{i}=x_{i}-x_{i+b}+\frac{b}{a}$$
-the simplex of $(a,b)$-cores becomes the scaled standard simplex
-$$b\Delta_{a-1}=\{(y_0,\dots, y_{a-1})\Big|\sum y_i=b\}$$
-and the shifted lattice $\Lambda+\mathbf{s}$ goes to the index $a$ lattice:
-$$\sum_{k=0}^{a-1} (a-k)y_{i+kb}=(i+a/2)\mod a$$
+Although we will often use the $x$ coordinates, to show that the simplex of $\SC_a(b)$ is isomorphic to the simplex $\TD_a(b)$ of trivial determinant representations, another change of variables is needed:
+ 
+\begin{lemma} \label{lem:standardsimplex}
+Let $a$ and $b$ be relatively prime, and let 
+$$k=-\frac{b+1}{2}\pmod a$$
+  Then the change of variables
+$$z_i=x_{ib+k}-x_{(i+1)b+k}+b/a$$
+gives an isomorphism between the rational simplices $\SC_a(b)$ and $\TD_a(b)$. 
 \end{lemma}
 
 \begin{proof}
-It is immediate that the $y_i$ satisfy $\sum y_i=b$ and $y_i\geq 0$.  If $x_i\in\Lambda+s$, the fractional part of $y_i$ is the fractional part of $s_i-s_{i+b}$, which is negative the fractional part of $b/a$, and hence $y_i$ is an integer.
+It is immediate that the $z_i$ satisfy $\sum z_i=b$ and $z_i\geq 0$.  The integrality of the $z_i$ follows from the fact that the fractional part of $x_i-x_j$ is $(i-j)/a$.  We must show $\sum iz_i=0\mod a$.
 
-To show which sublattice $\Lambda+s$ maps to, and to show the map is surjective onto the simplex, we invert it.  Note that $x_{i+b}=x_i-z_i+b/a$.
+One computes:
+$$\sum_{i=0}^{a-1} iz_i=\sum_{i=0}^{a-1} x_i+\frac{b}{a}\sum_{i=0}^{a-1} i -ax_k$$
+Since the fractional part of $x_k$ is $s_k=k/a-(a-1)/2a$, plugging in the definition of $k$ gives that $ax_k=-b/2\pmod a$.  Since $\sum x_i=0$ and $\sum i=(a-1)a/2$, we see $\sum iz_i=0\pmod a$.
 
-\begin{align*}
-x_i&=x_i \\
-x_{i+b}&=x_i+b/a-z_i \\
-x_{i+2b}&=x_i+2b/a-z_i-z_{i+b} \\
-&\cdots \\
-x_{i+(a-1)b}&=x_i+(a-1)b/a-z_i-z_{i+b}-\cdots-z_{i+(a-2)b}
-\end{align*}
-Summing these equations, the left hand side is $\sum x_i=0$.  Thus, we have
-$$ax_i=(a-1)z_i+(a-2)z_{i+b}+\cdots+z_{i+(a-2)b}-b(a-1)/2$$
-and the map is invertible.
-
-Further noting that if $x_i\in \Lambda+s$, then $ax_i=ac_i+i-(a-1)/2$, and so
-$$\sum_{k=0}^{a-1} (a-1-k)z_{i+kb}=i+(a-1)(b-1)/2\mod a$$
-Thus, the images of $x_i\in\Lambda+s$ lie in an index $a$ sublattice of the standard lattice; it is a further easy check that this sublattice is equivalent to one of the cosets of the sublattice described in the introduction.
-
-
+A further computation shows this change of variables is invertible.
 \end{proof}
 
 
-\begin{corollary}[Anderson \cite{anderson}] \label{cor:anderson} The
-  number of simultaneous $(a,b)$-cores is $\Cat_{a,b}$.
+\begin{corollary}[Anderson \cite{anderson}] \label{cor:anderson} The number of simultaneous $(a,b)$-cores is $\Cat_{a,b}$.
 \end{corollary}
 
-\begin{proof} This follows quickly from Lemma \ref{lem-standardsimplex}.
+\begin{proof} This follows quickly from Lemma \ref{lem:standardsimplex}.
 
 
 The scaled simplex $b\Delta_a$ has $\binom{a+b-1}{a-1}$
@@ -1132,35 +1129,26 @@ We show in Lemma \ref{lem:conjugatecount}, that the lattice points in $ \cap T$ 
 
 Once we have done this, an analogous application of Euler-Maclaurin theory reproves the statement about the average value.
 
-
-
-Let $T:V_a\to V_a$ be the linear map given by.
-$$T(c_i)=-c_{a-i}$$.
-It is not hard to see that, when translated to core partitions, $T$ corresponds to taking the conjugate, that is: $$\core_a(c)^T=\core_a(T(c))$$
+Let $T:V_a\to V_a$ be the linear map given by
+$$T(c_i)=-c_{a-i}$$
+It is easy to check that when translated to core partitions, $T$ corresponds to taking the conjugate, that is: $$\core_a(c)^T=\core_a(T(c))$$
+Thus the set of self-conjugate $(a,b)$-cores is the $T$ fixed locus of $\SC_a(b)$.  
 
 Since $T(s)=s$, the same formula holds for the shifted coordines $x$. 
 
-Thus the set of self-conjugate $(a,b)$-cores, is the $T$ fixed locus of $\SC_a(b)$.  
 
-In   we saw that simplex of $(a,b)$-cores was equivalent to the simplex of $b$-dimensional representations of $\Z_a$ with trivial determinant; 
 
 \begin{lemma} \label{lem:conjugatedual}
-Under the map between, taking the conjugate of an $a$-core corresponds to taking the dual $\Z_a$ representation.
+Under the isomorphism between $\SC_a(b)$ and $\TD_a(b)$ established in Lemma \ref{lem:standardsimplex}, taking the conjugate partition corresponds to taking the dual $\Z_a$ representation.
 \end{lemma}
 
 \begin{proof}
-
-
+We want to show $T(z_i)=z_{-i}$.  We compute:
+$$T(z_i)=T(x_{ib+k}-x_{(i+1)b+k})=-x_{-ib-k-1}+x_{-ib-b-k-1}=x_{-ib+k-(b+1+2k)}-x_{(-i+1)b+k-(b+1+2k)}$$
+And so we need $b+1+2k=0\pmod a$, but this is exactly the definition of $k$ in Lemma \ref{lem:standardsimplex}.
 \end{proof}
 
 
-
-\subsubsection{Representation theory and polytopes}
-We now describe a basic representation theoretic question that will turn out to be equivalent.
-
-Consider the set of isomorphism classes of $b$-dimensional representations of $\Z_a$.  We have seen that this is $b\delta_a=\{(y_0,\dots, y_{a-1})\in \Z^a| y_i\geq 0, \sum y_i=b\}$, where $y_i$ is the multiplicity of the $i$th irreducible representation in our $b$-dimensional representation.
-
-The condition of having trivial determinant corresponds to $\sum iy_i=0\mod a$.  Sending a representation to its dual corresponds to the linear map $C:y_i\mapsto y_{a-i}$, where recall we are using period subscripts so that $y_0=y_a$.
 
 \begin{lemma} \label{lem:conjugatecount}
 The number of $b$-dimensional, self-conjugate $\Z_a$ representations with determinant 1 is given by $$\binom{\left\lfloor\frac{a}{2}\right\rfloor+\left\lfloor\frac{b}{2}\right\rfloor}{\left\lfloor\frac{a}{2}\right\rfloor}$$
@@ -1458,7 +1446,7 @@ Algebraically, this suggests
 There is an \emph{age} function $\iota$ on the cosets $\mathfrak{c}\in\Lambda/\Lambda_T$, so that
 $$\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c})}=[a]_{q^2}[a]_{q^3}\cdots[a]_{q^{a-1}}$$
  and
-$$\Cat_{a,b}(q)=\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c}} \binom{b/a-s(\mathfrak{c},b)+a-1 }{a-1}_{q^a}$$
+$$\Cat_{a,b}(q)=\sum_{\mathfrak{c}\in\Lambda/\Lambda_T} q^{\iota(\mathfrak{c})} \binom{b/a-s(\mathfrak{c},b)+a-1 }{a-1}_{q^a}$$
 where the $q^a$ binomial coefficient $q^a$-counts the points in $\mathfrak{c}\cap \mathcal{SC}_{a-1}(b)$.
 \end{conjecture}
 
