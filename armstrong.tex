@@ -259,22 +259,22 @@ A function $f:\Z\to\C$ is a quasipolynomial of degree $d$ and period $n$ if ther
 
 \end{example}
 
-Since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nicely into the quasipolynomial framework.  For fixed $a$, and for $b$ in a fixed residue class mod $a$, we have that $\Cat_{a,b}$ is polynomial; it just so happens that for any residue class relatively prime to $a$, these polynomials are identical.
+Since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nicely into the quasipolynomial framework.  For $a$ fixed, and $b$ in a fixed residue class mod $a$, $\Cat_{a,b}$ is a polynomial.  It just so happens that residue classes relatively prime to $a$ have identical polynomials.
 
-Such ``accidental'' equalities between the polynomials for different residues happen frequently in Ehrhart theory, but are still mysterious in general.  Perhaps the most studied manifestation of this is \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial.  In our case, there is an elementary explanation of the ``accidental'' equalities between the polynomials for different residue classes, which we now explain.
-
-yAlthough $\mathcal{C}_{a,b}$ is not a lattice polytope with respect to the lattice $\Lambda_a$ of $a$-cores, $\mathcal{C}_{a,b}$ will be a lattice polytope with respect to a refinement of $\Lambda_a$.  In particular, there is a lattice $\Lambda_a^\prime$ containing $\Lambda_a$ with index $[\Lambda_a:\Lambda^\prime_a]=a$, so that with respect to the lattice $\Lambda_a^\prime$, the polytope $\mathcal{C}_{a,b}$ is the standard simplex $\sum_{i=1}^{a} x_i=b, 0\leq x_i\in \Z$.  
-
-Furthermore, consider the action of $\Z_a$ cyclicly permutating the variables, i.e., $x_i\mapsto x_{i+1}, x_{a}\mapsto x_0$.   When $b$ is relatively prime to $a$, this action does not have any fixed points.  Furthermore, in this case the $\Z_a$ orbit of each point in $\Lambda_a^\prime$ contains exactly one element of $\Lambda_a$.  This is illustrated in Figure \ref{fig:sublattice}: the left hand picture shows $\Lambda_3\subset \C_{3,10}$, while the right hand picture shows $\Lambda_3^\prime$.  The black dots are elements of $\Lambda_3$, while the red and green dots are the other cosets of $\Lambda_3$ inside of $\Lambda_3^\prime$, and are obtained by rotating around the blue circle.
-
-
-Consider the set of isomorphism classes of $b$-dimensional representations of $\Z_a$.  We have seen that this is $b\delta_a=\{(y_0,\dots, y_{a-1})\in \Z^a| y_i\geq 0, \sum y_i=b\}$, where $y_i$ is the multiplicity of the $i$th irreducible representation in our $b$-dimensional representation.
-
-The condition of having trivial determinant corresponds to $\sum iy_i=0\mod a$.  Sending a representation to its dual corresponds to the linear map $C:y_i\mapsto y_{a-i}$, where recall we are using period subscripts so that $y_0=y_a$.
+Such ``accidental'' equalities between the polynomials for different residue classes happen frequently in Ehrhart theory, but are mysterious in general.  Perhaps the most studied manifestation of this is \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial.  In our case, symmetry considerations give an elementary explanation of the ``accidental'' equalities between the polynomials for different residue classes.
 
 
 
+In Lemma \ref{lem:standardsimplex} we show that the the polyhedron $\SC_a(b)$ is isomorphic to a rational simplex we call $\TD_a(b)$ (for \emph{Trivial Determinant}) that we now describe.  Let $L_k$ be the one dimensional representation of $\Z_a$ where $1\in \Z_a$ acts as $\exp(2\pi ik/a)$.  Then any $b$ dimensional representation $V$ of $\Z_a$ may be written as
+$$V=\bigoplus_{k=0}^{a-1} L_k^{\oplus z_k}$$
+for nonnegative integers $z_i$ satisfying $\sum z_i=b$.  Thus, the set of all $b$ dimensional representations of $\Z_a$ is isomorphic to the standard simplex $b\Delta_a$, which has $\binom{a-1+b}{b}$ lattice points.
 
+The simplex $\TD_a(b)$ is obtained by considering only those representations that have trivial determinant (i.e., $\wedge^b V=L_0$), or alternatively restricting to the index $a$ sublattice of $z_i$ satisfying $\sum iz_i=0\pmod a$.
+
+However, we could just as well have considered the set of representations with determinant isomorphic to $L_k$ for any $k$.  Tensoring $V$ by $L_1$ corresponds to the cyclic permutation of coordinates $z_k\mapstoz_{k+1}$, and changes the determinant of $V$ by tensoring by $L_b$ (where we are using periodic indices).  Thus, the dual $\Z_a$ acts on the set of all $b$ dimensional representations, and when $b$ is relatively prime to $a$ this action is free, and each orbit contains exactly one representation with trivial determinant.  Hence, the number of points in $\TD_a(b)$ is exactly one $a$th of the number of points in $b\Delta_a$, namely $\binom{a-1+b}{b}/a=\Cat_{a,b}$.  
+
+The situation is illustrated in Figure \ref{fig:sublattice}: the left hand picture shows $\TD_3(10)\cong \SC_3(10)$
+ while the right hand picture shows the standard simplex $10\Delta_3$.   The black dots are the representations with trivial determinant, while the red and green dots are those representations with determinant $L_1$ and $L_2$.  Rotating about the blue circle by 120 degrees corresponds to tensoring by $L_1$ and permutes the different colored dots.
 
 \begin{figure}[h!]
 
@@ -321,7 +321,6 @@ The condition of having trivial determinant corresponds to $\sum iy_i=0\mod a$. 
         \node[draw,circle,inner sep=.7pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
 \end{scope}
 
-
 \draw[dashed] (2, 10*1.7320508/2)--(2, -5*1.7320508);
 \draw[dashed] (-15-3, 5*1.7320508)--(15-3, -5*1.7320508);
 \draw[dashed] (-15-3, -5*1.7320508)--(15-3, 5*1.7320508);
@@ -332,22 +331,18 @@ The condition of having trivial determinant corresponds to $\sum iy_i=0\mod a$. 
 \end{figure}
 
 
-From this we see that the number of points in $\mathcal{C}_{a,b}\cap \Lambda_a$ is exactly $1/a$ of the number of points in the standard simplex, which is $\binom{a+b-1}{b}$.  Since $$\frac{1}{a}\binom{a+b-1}{b}=\frac{1}{a+b}\binom{a+b}{b}=
-\Cat_{a,b}$$
-this proves Anderson's theorem.
-
-Thus, $\Cat_{a,b}$ is the number of degree $b$ monomials $p_1^{e_1}\cdots p_a^{e_a}$ with $\sum e_i=b$ and $\sum i e_i=0\mod a$.  Alternatively, let $V_a$ be the regular representation of $\Z_a$.  Then $\Cat_{a,b}$ is the dimension of the invariant part of the $b$th symmetric power of $V_a$: 
-\begin{equation} \label{eq:invariant}
-\Cat_{a,b}=\dim_\C \left(\Sym^b(V_a)\right)^{\Z_a}
-\end{equation}
+Thus, we see that the rational Catalan number $\Cat_{a,b}$ counts the isomorphism classes of $b$-dimensional representations of $\Z_a$ with determinant 1, or equivalently, $\Cat_{a,b}=\dim_\C \Sym^b(\C[\Z_a])^\Z_a$.  Furthermore, the identification of $\SC_a(b)$ with $\TD_a(b)$ proves Anderson's theorem.
 
 
 \subsubsection{Self-conjugate simultaneous cores}
-It was shown in \cite{FMS} that self-conjugate $(a,b)$-core partitions are counted by 
+Our lattice point easily adapt to treat the case of self-conjugate simultaneous cores.  It was shown in \cite{FMS} that self-conjugate $(a,b)$-core partitions are counted by 
 
 $$\binom{\left\lfloor \frac{a}{2} \right\rfloor +\left\lfloor \frac{b}{2} \right\rfloor}{\left\lfloor \frac{a}{2} \right\rfloor}$$
 
-It was conjectured by Armstrong, and proven recently by \cite{CHW} that the average size of self-conjugate $(a,b)$-core partitions is the same as the average size of all $(a,b)$-core partitions, namely $(a+b+1)(a-1)(b-1)/24$.  In Section \ref{sec:conjugate} we show that our lattice point methods easily extend to give new proofs of these results.
+It was conjectured by Armstrong, and proven recently by \cite{CHW} that the average size of self-conjugate $(a,b)$-core partitions is the same as the average size of all $(a,b)$-core partitions, namely $(a+b+1)(a-1)(b-1)/24$.  
+
+We give new proofs of both of these results; the key is that the action of conjugation on $\SC_a(b)$ corresponds to the action of taking dual representations on $\TD_a(b)$.  
+
 
 \subsection{\texorpdfstring{$q$}{q} and \texorpdfstring{$(q,t)$}{(q,t)}-analogs}
 
