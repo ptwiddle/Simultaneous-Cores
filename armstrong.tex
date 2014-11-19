@@ -357,19 +357,25 @@ which would explain the positivity of the coefficients of $\Cat_q(a,b)$.
 
 Furthermore, this conjectural formula leads naturally to a unimodality conjecture about $\Cat_{a,b}(q)$.  Recall that a sequence $a_1,dots, a_n$ is \emph{unimodal} if there is some $k$ so that $$a_1\leq a_2\leq \cdots \leq a_{k-1}\leq a_k \geq a_{k-1} \geq a_{k-2}\cdots\geq a_n$$
 The coefficients of $\Cat_{a,b}$ are not unimodal.  However, we conjecture that, if we fix $0
-leq k <a$, and look only at the coefficients of $\Cat_{a,b}(q)$ of the form $q^{an+k}$, the resulting sequences are unimodal.
+\leq k <a$, and look only at the coefficients of $\Cat_{a,b}(q)$ of the form $q^{an+k}$, the resulting sequences are unimodal.
 
 \subsubsection{ }
 
 The $(q,t)$-rational Catalan numbers were original defined in terms of summing certain statistics over lattice paths, but Armstrong, have given an analogous formula over simultaneous core.  In particular, let $\SC_{a,b}$ denote the set of all $(a,b)$-cores, 
 $$\Cat_{a,b}(q,t)=\sum_{\lambda\in \SC_{a,b}} q^{\ell(\lambda)}t^{\sk^\prime(\lambda)}$$
-where $\ell(\lambda)$ is the length of $\lambda$, and $\sk^\prime(\lambda)$ is the \emph{co-skew length}, a statistic introduced by $\lambda$.
+where $\ell(\lambda)$ is the length of $\lambda$, and $\sk^\prime(\lambda)$ is the \emph{co-skew length}, a statistic introduced
 
-Our main result in the second half of the paper is that $\ell$ and $\sk^\prime$ are piecewise linear functions on $\Delta_{a,b}$,  and thus that lattice point geometry should be useful in these studying $\Cat_{a,b}(q,t)$ and $\Cat_{a,b}(q)$. 
+Our main result in the second half of the paper is that $\ell$ and $\sk^\prime$ are piecewise linear functions on $\Delta_{a,b}$,  and thus that lattice point geometry should be useful in these studying $\Cat_{a,b}(q,t)$ and $\Cat_{a,b}(q)$. In particular, the piecewise linearity implies that for fixed $a$, and for $b$ in a fixed residue class $k\pmod a, \Cat_{a,b}(q,t)$ has a uniform formula as a rational function.  We explicitly compute this rational function when $a=3$; let $b=3k+1+\delta$, where $\delta\in\{0,1\}$; then:
 
-This result is for a variety of reasons: it provides a progress toward proving some conjectures about $\Cat_{a,b}(q,t)$.
-  First, it is conjectured that $\Cat_{a,b}(q,t)$ is symmetric in $q$ and $t$, and that $$q^{(a-1)(b-1)/2}\Cat_{a,b}(q,1/q)=\Cat_{a,b}(q).$$  
-As a corollary of this piecewise linearity, we are able to prove these conjectures for the high and low degree terms of $\Cat_{a,b}$:
+$$\Cat_{a,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-q^2t^{-1})}+\frac{q^kt^{k+1}+q^{k+\delta}t^{k+\delta}+q^{k+1}t^k}{(1-q^{-1}t^2)(1-q^2t^{-1})}+\frac{q^{3k+\delta}}{(1-tq^{-1})(1-t^2q^{-1})}$$
+
+This provides an avenue of attack toward the symmetry and specialization conjectures about $\Cat_{a,b}(q,t)$.  The symmetry conjecture states that $\Cat_{a,b}(q,t)$ is symmetric in $q$ and $t$, and and the specialization conjecture states $$q^{(a-1)(b-1)/2}\Cat_{a,b}(q,1/q)=\Cat_{a,b}(q)$$  
+Using lattice point methods, we prove these conjectures for the high and low degree terms of $\Cat_{a,b}$, independent of $a$ and $b$.
+
+We also derive an explicit formula for $\Cat_{3,b}(q,t)$ as a rational function, from which it is easy to prove both conjectures when $a$ is 3.
+
+
+for $a=3$ and any $b$.
 
 Second, it turns out that the chambers of linearity for $\ell$ and $\sk^\prime$ are interesting hyperplane arrangements -- the walls of $\ell$ are the walls of the $A_{n-1}$ arrangement, and the walls of $\sk^\prime$ are the walls of a deformation of the $A_{n-1}$ arrangement known as the Catalan arrangement.  This gives a connection between $\Cat_{a,b}(q,t)$ and $\Cat_a$, which we don't believe was well known.  Furthermore, it suggests that a thorough understanding of the geometry of the Catalan arrangement could lead to a full proof of the specialization and symmetry conjectures.
 
@@ -400,7 +406,7 @@ A hyperplane arrangement $\mathcal{A}^\prime$ is a \emph{deformation} of an arra
 \end{definition}
 
 \begin{definition} \label{def:arrangements}
-The \emph{Catalan arrangement} $\mathcal{C}_a$ is the union of the $3\binom{a}{2}$ hyperplanes $x_i-x_j\in\{-1,0,1\}, i<j$.
+The \emph{Catalan arrangement} $\mathcal{C}_a$ is the union of the $3\binom{a}{2q}$ hyperplanes $x_i-x_j\in\{-1,0,1\}, i<j$.
 \end{definition}
 
 The name \emph{Catalan arrangement} comes from the fact that $\mathcal{C}_a$ has $n!C_n$ regions.
