@@ -73,9 +73,11 @@ We conjecture a unimodality result for $q$ rational Catalan numbers, and make pr
 \date{}
 \maketitle
 \section{Introduction}
-This paper establishes lattice point geometry as a foundation for the study of simultaneous core partitions, and rational Catalan combinatorics more generally.  Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG} and compactified Jacobians of singular curves \cite{EM1, EM2}.  
+This paper establishes lattice point geometry as a foundation for the study of simultaneous core partitions, and, more generally, rational Catalan combinatorics.
 
-It is a theorem of Anderson that simultaneous core partitions are counted by rational Catalan numbers; our main result is to give a new proof of this theorem by identifying simultaneous core partitions with lattice points in a rational simplex.
+Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG} and compactified Jacobians of singular curves \cite{EM1, EM2}.  It is a theorem of Anderson that simultaneous core partitions are counted by rational Catalan numbers.  
+
+ Our first result is to give a new proof of Anderson's theorem by identifying simultaneous core partitions with lattice points in a rational simplex.  After this identification is made, many other results follow quite naturally.  
 
 
 
@@ -193,19 +195,20 @@ The main tool used to study $a$-cores is the ``abacus construction''.  We review
 
 The first construction, which we call the \emph{positive abacus}, gives a bijection between $a$ core partitions and $\N^{a-1}$.  Anderson's original proof used the positive abacus as part of a bijection between $(a,b)$-cores and $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
 
-We will only make use of the second construction, which we call the \emph{signed abacus}, gives a bijection between $a$-core partitions and points in the $a-1$ dimensional lattice 
+We will only make use of the second construction, which we call the \emph{signed abacus}.  The signed abacus is a bijection between $a$-core partitions and points in the $a-1$ dimensional lattice 
 $$\Lambda_a=\left\{c_1,\dots,c_a\in\Z\Big |\sum c_i=0\right\}$$
 
-We give a review of the signed abacus in Section \ref{sec:abacus}.  For now we just mention one well known result that is key to our proof of Armstrong's conjecture: 
+We give a detailed review of the signed abacus in Section \ref{sec:abacus}.  For now we just mention one result that is key to our proof of Armstrong's conjecture: 
 \begin{theorem}
-Under the signed abacus bijection, the size of an $a$-core is given by a quadratic function $Q$ on $\Lambda_a$.
+Under the signed abacus bijection, the size of an $a$-core is given by the quadratic function 
+$$Q(c_1,\dots, c_a)=\frac{a}{2}\sum c_i^2+\sum ic_i$$
 \end{theorem}
-We prove this as Theorem \ref{thm:quadratic}; see there for a more formal statement.
+We prove this as Theorem \ref{thm:quadratic}.
 
 
 
 \subsubsection{Ehrhart / Euler-Maclaurin}
-The number of lattice points in a polytope can be viewed as a discrete version of the volume of a polytope.  Ehrhart theory is the study of this analogy, in particular, with how the familiar behavior of volume becomes slightly tweaked with discrete volume.
+The number of lattice points in a polytope can be viewed as a discrete version of the volume of a polytope.  Ehrhart theory is the study of this analogy.  A gentle introduction to Ehrhart theory may be found in \cite{BR}.
 
 Let $V$ be an $n$ dimensional real vector space, and $\Lambda\subset V$ an $n$ dimensional lattice.  Conretely, $\Lambda=\Z^n, V=\R^n$.  A lattice polytope $P\subset V$ is a polytope all of whose vertices are points of $\Lambda$.  
 
@@ -213,7 +216,7 @@ For $t$ a positive integer, let $tP$ denote the $t$th dilate of $P$, the polytop
 $$L(P,t)=\#\{\Lambda\cap tP\}$$
 Clearly, the volume of $tP$ is $t^n$ times the volume of $P$.  Ehrhart showed that, in parallel to this fact, $L(P,t)$ is a degree $n$ polynomial in $t$.  Ehrhart theory refers to the study of these polynomials.
 
-Other than the fact that $L(P,t)$ is a polynomial, the one fact from Ehrhart theory we will use is Ehrhart reciprocity.  If we scale a polytope by a negative number, then keeping track of orientation the volume changes by $(-t)^n$.  The polynomial $L(P,t)$ will not be even or odd, and so $L(P,-t)$ cannot be $(-1)^n$ times the number of lattice points in $-P$.  Ehrhart reciprocity states that instead, $L(P,-t)$ is $-(1)^nL(P^\circ, t)$, where $P^\circ$ here denotes the interior of $P$.
+Other than the fact that $L(P,t)$ is a polynomial of degree $n$, the one fact from Ehrhart theory we will use is Ehrhart reciprocity.  If we scale a polytope by a negative number, then keeping track of orientation the volume changes by $(-t)^n$.  The polynomial $L(P,t)$ will not be even or odd, and so $L(P,-t)$ cannot be $(-1)^n$ times the number of lattice points in $-P$.  Ehrhart reciprocity states that instead, $L(P,-t)$ is $-(1)^nL(P^\circ, t)$, where $P^\circ$ here denotes the interior of $P$.
 
 The results of Ehrhart theory extend to an analogy between integrating a polynomial over a region and summing it over the lattice points in a polytope.  This is an extension of the familiar ``sum of the first $n$ cubes'' type formulas.
 
@@ -255,12 +258,13 @@ Ehrhart and Euler/Maclaurin theory can be extended to rational polytopes at the 
 A function $f:\Z\to\C$ is a quasipolynomial of degree $d$ and period $n$ if there exist $n$ polynomials $p_0,\dots, p_{n-1}$ of degree $d$, so that for $x\in k+n\Z$, we have $f(x)=p_k(x)$.
 \end{definition}
 
-\begin{example}
-
+\begin{example} Let $P$ be the polytope $x, y\geq 0, 2x+y\leq 1$.  Then
+$$\#\{tP\cap \Z^2\}=\left\{\begin{array}{rl} \frac{t^2+4t+4}{4} & \text{$t$ even} \\ 
+\frac{t^2+4t+3}{4} & \text{$t$ odd}\end{array}\right.$$ 
 \end{example}
 
 Since $\Cat_{a,b}$ is defined only for $a$ and $b$ relatively prime, it fits nicely into the quasipolynomial framework.  For $a$ fixed, and $b$ in a fixed residue class mod $a$, $\Cat_{a,b}$ is a polynomial.  It just so happens that residue classes relatively prime to $a$ have identical polynomials.
-
+7
 Such ``accidental'' equalities between the polynomials for different residue classes happen frequently in Ehrhart theory, but are mysterious in general.  Perhaps the most studied manifestation of this is \emph{period collapse} (see \cite{Haase} and references), where the quasipolynomial is in fact a polynomial.  In our case, symmetry considerations give an elementary explanation of the ``accidental'' equalities between the polynomials for different residue classes.
 
 \subsubsection{}
@@ -269,12 +273,11 @@ In Lemma \ref{lem:standardsimplex} we show that the the polyhedron $\SC_a(b)$ is
 $$V=\bigoplus_{k=0}^{a-1} L_k^{\oplus z_k}$$
 for nonnegative integers $z_i$ satisfying $\sum z_i=b$.  Thus, the set of all $b$ dimensional representations of $\Z_a$ is isomorphic to the standard simplex $b\Delta_a$, which has $\binom{a-1+b}{b}$ lattice points.
 
-The simplex $\TD_a(b)$ is obtained by considering only those representations that have trivial determinant (i.e., $\wedge^b V=L_0$), or alternatively restricting to the index $a$ sublattice of $z_i$ satisfying $\sum iz_i=0\pmod a$.
+The simplex $\TD_a(b)$ is obtained by considering only those representations that have trivial determinant (i.e., $\wedge^b V\cong L_0$), or equivalently restricting to the index $a$ sublattice of $z_i$ satisfying $\sum iz_i=0\pmod a$.
 
 However, we could just as well have considered the set of representations with determinant isomorphic to $L_k$ for any $k$.  Tensoring $V$ by $L_1$ corresponds to the cyclic permutation of coordinates $z_k\mapsto z_{k+1}$, and changes the determinant of $V$ by tensoring by $L_b$ (where we are using periodic indices).  Thus, the dual $\Z_a$ acts on the set of all $b$ dimensional representations, and when $b$ is relatively prime to $a$ this action is free, and each orbit contains exactly one representation with trivial determinant.  Hence, the number of points in $\TD_a(b)$ is exactly one $a$th of the number of points in $b\Delta_a$, namely $\binom{a-1+b}{b}/a=\Cat_{a,b}$.  
 
-The situation is illustrated in Figure \ref{fig:sublattice}: the left hand picture shows $\TD_3(10)\cong \SC_3(10)$
- while the right hand picture shows the standard simplex $10\Delta_3$.   The black dots are the representations with trivial determinant, while the red and green dots are those representations with determinant $L_1$ and $L_2$.  Rotating about the blue circle by 120 degrees corresponds to tensoring by $L_1$ and permutes the different colored dots.
+The situation is illustrated in Figure \ref{fig:sublattice}.  The left hand picture shows $\TD_3(10)\cong \SC_3(10)$, while the right hand picture shows the standard simplex $10\Delta_3$.   The black dots are the representations with trivial determinant, while the red and green dots are those representations with determinant $L_1$ and $L_2$.  Rotating about the blue circle by 120 degrees corresponds to tensoring by $L_1$ and permutes the different colored dots.
 
 \begin{figure}[h!]
 
@@ -1494,7 +1497,7 @@ When $a=4$ and $b=4k+1$,
 \begin{align*}
 \Cat_{4, 4k+1}(q)=&
 {k+3\brack 3}_{q^4}&+&q^4{k+2\brack 3}_{q^4}&+&q^8{k+2\brack 3}_{q^4}&+&q^{12}{k+1\brack 3}_{q^4} \\
-+&q^5{k+2\brack 3}_{q^4}&+&q^9{k+2\brack 3}_{q^4}&+&q^9{k+1\brack 3}_{q^4}&+&q^{13}{k\brack 3}_{q^4} \\
++&q^5{k+2\brack 3}_{q^4}&+&q^9{k+2\brack 3}_{q^4}&+&q^9{k+1\brack 3}_{q^4}&+&q^{13}{k+1\brack 3}_{q^4} \\
 +&q^2{k+2\brack 3}_{q^4}&+&q^6{k+2\brack 3}_{q^4}&+&q^6{k+1\brack 3}_{q^4}&+&q^{10}{k+1\brack 3}_{q^4}\\
 +&q^3{k+2\brack 3}_{q^4}&+&q^7{k+2\brack 3}_{q^4}&+&q^{11}{k+1\brack 3}_{q^4}&+&q^{15}{k+1\brack 3}_{q^4}
 \end{align*}
@@ -1523,7 +1526,7 @@ We examine this for $a=3$, and use this to prove $q-t$-symmetry for general $(a,
 
 \subsection{Simultaneous cores and \texorpdfstring{$(q,t)$}{(q,t)}-rational Catalan numbers}
 
-
+We first introduce the skew length statistic needed to define $(q,t)$-rational Catalan numbers.
 \begin{definition}
 Let $a<b$ be relatively prime, and $\lambda$ an $(a,b)$-core.  The                  \emph{$b$-boundary} of $\lambda$ consists of all cells $\square\in\lambda$ with $h(\square)<b$.
 
@@ -1539,6 +1542,8 @@ Let $a<b$ coprime.  The \emph{$(q,t)$-rational Catalan number} is
 $$\Cat_{a,b}(q,t)=\sum_\lambda q^{\ell(\lambda)}t^{\sk^\prime(\lambda)}$$
 \end{definition}
 
+We will focus on understanding the following two conjectures:
+
 \begin{conjecture}[Specialization]
 $$\sum_{\lambda} q^{\ell(\lambda)+\sk(\lambda)}=q^{(a-1)(b-1)/2}\Cat_{a,b}(q,1/q)=\Cat_{a,b}(q)$$
 \end{conjecture}
@@ -1548,7 +1553,7 @@ $$\Cat_{a,b}(q,t)=\Cat_{a,b}(t,q)$$
 \end{conjecture}
 
 \subsubsection{Results}
-Our main result is that the statistics $\ell$ and $\sk$ in the definition of $\Cat_{a,n}(q,t)$ are piecewise polynomial on the $b/a$-dilation of the Catalan arrangement (Definition \ref{def:arrangements}).  More precisely:
+Our main result is that the statistics $\ell$ and $\sk$ in the definition of $\Cat_{a,n}(q,t)$ are piecewise linear functions on a dilation of the Catalan arrangement (Definition \ref{def:arrangements}).  More precisely, in the $\mathbf{x}$ coordinates on $a$-cores, $\ell$ and $\sk$ have the following formula
 
 \begin{proposition}
 \label{prop:length}
@@ -1562,6 +1567,9 @@ Then
 $$\sk(\mathbf{x})=\sum_{i,j=0}^a \lfloor x_i-x_j\rfloor_0 - \lfloor x_i-x_j-b/a\rfloor_0$$
 \end{proposition}
 
+From Proposition \ref{prop:length}, it is clear that length is linear on each chamber of the braid arrangement.  
+
+Note that $\sk$ is not piecewise linear on $V_a$, but if we restrict to $\Lambda+s$, then $x_i$ can only change by an integer, so $\sk$ will be piecewise linear on chambers of the arrangement $x_i-x_j\in \{0,\pm b/a\}$, a scaling of the Catalan arrangement.
 
 From Propositions \ref{prop:length} and \ref{prop:skewlength}, it is immediate that $\ell$ and $\sk$ are invariant under the $S_a$ action permuting the coordinates. 
 
@@ -1602,13 +1610,13 @@ There are $(a-1)$ pairs $(i,j)$ with $i-j=1$, and in general $a-k$ pairs with $i
 &=\frac{b}{a} \frac{(a-1)a}{2}-\frac{1}{a}\frac{(a-1)a}{2} \\
 &=\frac{(a-1)(b-2)}{2}
 \end{align*}
-where the second line follows from telescoping the sum, the third line applies $\lfloor x\rfloor=x-\langle x\rangle$, and the third line applies $\sum i=n(n+1)/2$ and the fact that, since $a$ and $b$ are relatively prime, $kb$ will take on every residue class mod $a$ exactly once as $k$ ranges from 1 to $a$.
+where the second line follows from reindexing the second sum, the third line applies $\lfloor x\rfloor=x-\langle x\rangle$, and the fourth line applies $\sum i=n(n+1)/2$ and the fact that, since $a$ and $b$ are relatively prime, $kb$ will take on every residue class mod $a$ exactly once as $k$ ranges from 1 to $a$.
 
 \end{example}
 
 
 \subsection{Length and Skew Length are piecewise linear}
-In this section we prove Propositions \ref{prop:length} and Lemma \ref{prop:skewlength}.
+In this section we prove Propositions \ref{prop:length} and\ref{prop:skewlength}.
 
 \subsubsection{Proof of Proposition \ref{prop:length} - length is piecewise linear} 
 
@@ -1622,7 +1630,6 @@ Recall that the highest energy occupied state on the $i$th runner is $-ac_i-i-1/
 Let $m$ be the runner of the $a$-abacus that has the lowest unoccupied energy state.  For $i\neq m$, there are roughly $c_m-c_i\geq 0 $ electrons on the $i$th runner that have energy great than $e$.  The exact number depends  on which of $i$ and $m$ is bigger: if $i<m$, there are exactly $c_m-c_i$ such electrons, while if $i>m$, there are only $c_m-c_i-1$ such electrons. 
 
  There are $a-1-m$ runners with $i>m$, and hence we have
-
 \begin{align*}
 \ell(\core_a(\mathbf{c})) & =-(a-1-m)+\sum_{i\neq m} c_m-c_i \\
  &=-(a-1-m)+ac_m
@@ -1631,7 +1638,7 @@ Let $m$ be the runner of the $a$-abacus that has the lowest unoccupied energy st
 
 Since $x_i=c_i+i/a-(a-1)/(2a)$, it follows that
 $$
-\ell(\core_a(x))= -(a-1)/2+a\max x_i m
+\ell(\core_a(x))= -(a-1)/2+a\max x_i 
 $$
 
 \end{proof}
@@ -1714,8 +1721,17 @@ for
 \end{corollary}
 
 \subsubsection{} 
+Because $\ell$ and $\sk$ are symmetric under the $S_a$ action on the $\mathbf{x}$-coordinates, we will find it convenient to quotient out by that action.
+
+
 Let $\dominant$ denote the dominant chamber $$\dominant=\{x\in V_a|x_1\leq x_1\leq x_2\leq\cdots\leq x_a\}$$
-Then $\dominant$ is a fundamental domain for the action of $S_a$ on $V_a$, and we will use $\cone$ to denote the polyhedron $\dominant\cap\SC_{a}(b)$.  We will consider the image of $\Lambda_S\cap \SC_{a}(b)$ under the $S_a$ action as a subset of $\cone$;  Since the points of $\Lambda_S$ have distinct coordinates, each point has a unique representative in $\dominant$.  
+Then $\dominant$ is a fundamental domain for the action of $S_a$ on $V_a$, and we will use $\cone$ to denote the polyhedron $\dominant\cap\SC_{a}(b)$.  
+
+
+
+We will consider the image of $\Lambda_S\cap \SC_{a}(b)$ under the $S_a$ action as a subset of $\cone$; 
+
+ Since the points of $\Lambda_S$ have distinct coordinates, each point has a unique representative in $\dominant$.  
 
 
 
