@@ -1,3 +1,34 @@
+
+
+We now give an informal discussion of how $\core_a(\mathbf{x})$ depends on the chamber of $\mathcal{A}_a$.
+
+
+\begin{example}
+Consider the lattice path of a large random $a$-core.  At the start, every segment of the path slopes down; then there is a section where one out of every $a$ segments slopes up; then another large section where two out of every $a$ slope up, then 3 out of every $a$ steps slope up, until eventually the path hits the $x$-axis, from which point every step slopes up.
+
+In the first sections, all steps that slope up correspond to electrons on the same runner $i$ of the $a$-abacus.  The $i$ that occurs is the one with $x_i$ is minimum.  Similarly, in the second section, all of segments corresponding to electrons on runner $i$ slope up, but also the segments corresponding to electrons on runner $j$, where $x_j$ is the second smallest of all the $x_k$.
+
+The ordering of the $x_i$ tell us the ordering the up-steps on the $i$th abacus happen.
+
+\end{example}
+\subsection{Chamber dependence of \texorpdfstring{$\core_a{c}$}{core(c)}}
+
+The lattice of charges $\Lambda_a$ is essentially the $A_{a-1}$ lattice.  Although we have given a uniform descirption of the partition corresponding to $\core_a(c)$ for any charge vector $c$, and shown the size $|\core_a(c)|$ is a global polynomial in $c$, in many ways $\core_a(c)$ has a chamber dependence on the $A_{a-1}$ hyperplane arrangement.  By this we mean that if we restrict to a given chamber of this hyperplane arrangement, then $\core_a(c)$ behaves nicely, but if $c$ crosses one of the walls of the hyperplane arrangement, then $\core_a(c)$ undergoes a qualitative change.
+
+
+We illustrate this now with an informal example.
+\begin{example}
+The boundary path of a large $a$-core can be decomposed into $a+1$ regions, labeled with $i\in\{0,1,\dots,a\}$.  On the $i$th region, $i$ out of every $a$ steps will be left, and $a-i$ will be down; thus on the $i$th region the path will have slope $-(a-i)/i$.  
+
+This description of $a$-cores is clear from the abacus description.  In the region zero, all the runners have unfilled energy states; we cross into the first region as soon as one of the runners start having filled energy states.  In general, the $i$th region is exactly those regions where $i$ of the runners have filled energy states.  
+
+We get a chamber structure on the space of $a$-cores by considering \emph{which} of the $i$ runners have filled or empty energy states.  
+
+
+
+\end{example}
+
+
 It is well known, via the ``abacus'' construction, that $a$-cores are
 in bijection with points in a lattice $\Lambda_C\cong\Z^{a-1}$ we call the
 ``lattice of cores'', and that the size of an $a$-core is a quadratic function on this lattice.  Our main new observation is that if $b$ is relatively
