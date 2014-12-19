@@ -1723,67 +1723,43 @@ For $\sk_{ij}^B(\lambda)$, we want hooklengths of size at least $b$, so begin by
 $$\sk_{ij}^B(\lambda)=\lfloor x_j-x_i-b/a\rfloor_0$$
 \end{proof}
 
+\subsection{Symmetry}
 
-\subsubsection{Rationality}
-
-It is an immediate corollary of the piecewise linearity of the length and the skew length that, for fixed $a$, and a fixed residue class $k$ mod $a$, that for $b$ in the residue class $k$, we have
-
-$\Cat_{a,b}(q,t)$ is a rational function of $q$ and $t$, and the denominator can be written so the exponents depend linearly on $b$ and $\delta$.
-
- 
-
-\begin{proposition}
-Let $b=3k+1+\delta$, where $\delta\in\{0,1\}$.  Then:
-
-$$\Cat_{3,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-qt^{-2})}+\frac{q^kt^k(q+t+q^\delta t^\delta)}{(1-q^{-1}t^2)(1-q^2t^{-1})}+\frac{q^{3k+\delta}}{(1-tq^{-1})(1-tq^{-2})}$$
-
-\end{proposition}
-
-\begin{proof}
-
-\end{proof}
+Before applying piecewise linearity to the Symmetry and Specialization conjectures, we exploit the fact that $\ell$ and $\sk$ are $S_a$ symmetric in the $\mathbf{x}$-coordinates.
 
 
-\subsection{Low degree \texorpdfstring{$(q,t)$}{(q,t)}-symmetry}
-In this section we show, for all $(a,b)$, that $(q,t)$-symmetry holds when the degree of one of the monomials are small.  
+\subsection{The Dominant Cone $\dominant$}
+
+Let $\dominant$ denote the dominant chamber $$\dominant=\{x\in V_a|x_1< x_2< x_3<\cdots < x_a\}$$
+Then $\dominant$ is a fundamental domain for the action of $S_a$ on $V_a$.  We will use $\cone$ to denote the polyhedron $\dominant\cap\SC_{a}(b)$.  
+
+We will consider the image of $\Lambda_S\cap \SC_{a}(b)$ under the $S_a$ action as a subset of $\cone$.   Since a point $x=(x_1,\dots,x_a)\in\Lambda+s$ must have have distinct coordinates, each point has a unique representative in $\dominant$.  
+
+Two points of $\cone$ will be important to us; $x_0=s$ is the point closest to $0$ in $S_a\cdot(\Lambda+s)\cap\cone$.  The farthest point of $\cone$ from the origin we will call $x_\infty=bs$ is in $S_a\cdot(\Lambda+s)$.
+
+Different chambers of the Catalan arrangement in $\cone$ will have different number of $S_a$ preimages in $\SC_a(b)$.  For a point $x$ near $0$, there will be $a!$ different points in $\SC_a(b)$ that map to $x$ under the $S_a$ action.  On the other hand, although $x_\infty$ has $a!$ preimages in $V_a$, only $a$ of them are in $\SC_a(b)$ (the $a$-vertices).
+
+The walls of the Catalan arrangement, in addition to being the walls of the polynomiality for $\sk$, are the walls that define the number of preimages a given point $x\in\cone$ has in $\SC_a(b)$.
 
 
-More precisely, we show
-\begin{corollary}[Low degree $(q,t)$-symmetry]
-$$[t^k]\Cat_{a,b}(q,t)=[t^k]\Cat_{a,b}(t,q)$$
-for 
+\subsubsection{A refined lattice}
 
-\end{corollary}
+We now turn to the effect the $S_a$ quotient has on the shifted lattice $\Lambda+s$.
 
-\subsubsection{} 
-Because $\ell$ and $\sk$ are symmetric under the $S_a$ action on the $\mathbf{x}$-coordinates, we will find it convenient to quotient out by that action.
+While the cones of the braid arrangement, are not unimodular with respect to the lattice $\Lambda$, the quotient of $\Lambda+s$ by the $\Z_a$ action that cyclic permutes the coordinates turns out to be the shift $\Lambda_R+s$ of another lattice $\Lambda_R$.
 
-
-
-
-
-
-
-Let $\dominant$ denote the dominant chamber $$\dominant=\{x\in V_a|x_1\leq x_1\leq x_2\leq\cdots\leq x_a\}$$
-Then $\dominant$ is a fundamental domain for the action of $S_a$ on $V_a$, and we will use $\cone$ to denote the polyhedron $\dominant\cap\SC_{a}(b)$.  
-
-
-
-We will consider the image of $\Lambda_S\cap \SC_{a}(b)$ under the $S_a$ action as a subset of $\cone$; 
-
- Since the points of $\Lambda_S$ have distinct coordinates, each point has a unique representative in $\dominant$.  
-
-
-
+\begin{definition} The \emph{rotated lattice} $\Lambda_R$ is the $a-1$ dimension lattice
+$$\Lambda_R=\{(z_1,\dots z_a)|z_i\in \frac{1}{a}\Z, \sum_{i=1}^a z_i=0\}$$
+\end{definition}
 
 \begin{definition}
-
 For $1\leq i\leq a-1$, let $$v_i=\left(\underbrace{\frac{i}{a}-1,\dots \frac{i}{a}-1}_{i \text{ times}},\underbrace{ \frac{i}{a},\dotsm\frac{i}{a}}_{a-i \text{ times}}\right)$$
 \end{definition}
 
+One can see that the $v_i$ generate the lattice $\Lambda_R$ and that each $v_i$ spans one of the rays of $\dominant$ at $0$, and so the braid arrangement is unimodar with respect to $\Lambda_R$.
 
 
-One can see that the $v_i$ generate the lattice $\Lambda_R$, and that locally near $x_0$, the $\cone=x_0+\sum t_i v_i$, with $t_i\geq 0$, while near $x_\infty$ we have $\cone=x_\infty-\sum t_iv_i$ .
+locally near $x_0$, the $\cone=x_0+\sum t_i v_i$, with $t_i\geq 0$, while near $x_\infty$ we have $\cone=x_\infty-\sum t_iv_i$ .
 
 Because $\ell$ is a linear function on $\dominant$ it is immediate from the definitions of $\ell$ and $v_i$ that, for any point $x\in\cone$ we have  
 $$\ell(x+v_i)=\ell(x)+i$$
@@ -1808,6 +1784,45 @@ $$\begin{array}{r|cc}
 \end{array}
 $$
 \end{lemma}
+
+
+
+
+
+
+\subsection{Rationality and $\Cat_{3,b}(q,t)$}
+
+It is an immediate corollary of the piecewise linearity of the length and the skew length that, for fixed $a$, and a fixed residue class $k$ mod $a$, that for $b$ in the residue class $k$, we have
+
+$\Cat_{a,b}(q,t)$ is a rational function of $q$ and $t$, and the denominator can be written so the exponents depend linearly on $b$ and $\delta$.
+
+ 
+
+
+
+\begin{proposition}
+Let $b=3k+1+\delta$, where $\delta\in\{0,1\}$.  Then:
+
+$$\Cat_{3,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-qt^{-2})}+\frac{q^kt^k(q+t+q^\delta t^\delta)}{(1-q^{-1}t^2)(1-q^2t^{-1})}+\frac{q^{3k+\delta}}{(1-tq^{-1})(1-tq^{-2})}$$
+
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+
+\subsection{Low degree \texorpdfstring{$(q,t)$}{(q,t)}-symmetry}
+In this section we show, for all $(a,b)$, that $(q,t)$-symmetry holds when the degree of one of the monomials are small.  
+
+
+More precisely, we show
+\begin{corollary}[Low degree $(q,t)$-symmetry]
+$$[t^k]\Cat_{a,b}(q,t)=[t^k]\Cat_{a,b}(t,q)$$
+for 
+
+\end{corollary}
+
 
 \subsubsection{Contribution near $x_\infty$}
 Near $x_\infty$, the only orbifold lattice points in $\core$ are the ones near the $a$ vertices of $\SC_a(b)$, and hence here the orbifold lattice $\Lambda_O$ is just the rotated lattice $\Lambda_R$.  
