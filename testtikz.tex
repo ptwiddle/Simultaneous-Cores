@@ -94,8 +94,17 @@
 
 \end{tikzpicture}
 
+\newpage
+\begin{tikzpicture}
+
+\begin{scope}[green, xshift=.5cm, yshift=.2886751cm]
+\foreach \x in {0,1,...,7}{% Two indices running over each
+    \foreach \y in {0,1,...,7-\x}{% node on the grid we have drawn
+        \node[draw,circle,inner sep=.7pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
+\end{scope}
 
 
+\end{tikzpicture}
 
 
 \end{document}
