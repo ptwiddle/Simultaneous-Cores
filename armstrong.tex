@@ -1641,30 +1641,42 @@ $$\Cat_{3,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-qt^{-2})}+\frac{q^kt^k(q+t+
 \end{proposition}
 
 \begin{proof}
-After the $S_3$ action, there are two chambers of linearity for $\ell$ and $\sk$, which we call chamber I and Chamber II.  Both are triangles; Chamber I has vertices $x_0=(0,0,0), x_1=(-2b/9, b/9, b/9)$ and $x_2=(-b/9, -b/9, 2b/9)$.  Chamber II shares vertices $x_1$ and $x_2$ with chamber I, and has third vertex $x_\infty=(-b/3,0,b/3)$.  Chamber I has two orbifold cosets, while Chamber II has only one.  Thus, we have essentially three rational polyhedra -- chamber II, chamber I with the trivial orbifold coset, and Chamber I with the nontrivial orbifold coset.
+After the $S_3$ action, there are two chambers of linearity for $\ell$ and $\sk$, which we call chamber I and Chamber II.  Both are triangles; Chamber I has vertices $(0,0,0), x_1=(-2b/9, b/9, b/9)$ and $x_2=(-b/9, -b/9, 2b/9)$.  Chamber II shares vertices $x_1$ and $x_2$ with chamber I, and has third vertex $x_\infty=(-b/3,0,b/3)$.  Chamber I has two orbifold cosets, while Chamber II has only one.  
 
 To deal with these, rather than usingthe Lawrence-Varchenko decomposition, we will use the Brion decomposition -- the indicator function of a rational polyhedron is the positive sum of the inward pointing indicators of the cone at each vertex:
 
-At $x_0$, the rays of the cone are $v_1$ which has $\ell, \sk^\prime$ weight $(1, -2)$, and $v_2$, which has $\ell, \sk^\prime$ weight $(2,-2)$.  Thus, the cone based at $0$ would have weight $1/(1-qt^{-2})1/(1-q^2t^{-2})$.
+We will work verex by verex.
 
-However, the $\sk$ weight of $x_0$ is $t^{3k+\delta}$.  
 
-The vertex closest to the origin in the nontrivial orbifold coset is $x_0^\prime=(-2/3,0,2/3)$, which has $\sk(x_0^\prime=\ell(x_1^\prime=1)$, and so vertex contributes $(1, 3k+\delta-1)$.
+At $x_0$, the rays of the cone are $v_1$ which has $\ell, \sk^\prime$ weight $(1, -2)$, and $v_2$, which has $\ell, \sk^\prime$ weight $(2,-2)$.  Thus, the denominator at $0$ is $1/(1-qt^{-2})1/(1-q^2t^{-2})$.
+
+The closest point to $0$ in the trivial orbifold coset is $x_0=(-1/3,0,1/3)$, which has weight $t^{3k+\delta}$, and the vertex closest to the origin in the nontrivial orbifold coset is $x_0^\prime=(-2/3,0,2/3)$, which has $\sk(x_0^\prime)=\ell(x_1^\prime=1)$, and so vertex contributes $(1, 3k+\delta-1)$.
 
 Thus, the total contribution from both cosets at $0$ is
 $$\frac{t^{3k+\delta}+qt^{3k+\delta-1}}{(1-qt^{-2})(1-q^2t^{-2})}=\frac{t^{3k+\delta}(1+qt^{-1})}{(1-qt^{-2})(1-q^2t^{-2})}
 =\frac{t^{3k+\delta}}{(1-qt^{-2})(1-qt^{-1})}$$
 
+
 At $x_1=(-2b/9, b/9, b/9)$ there are three cones to deal with.
 
-We first deal with both orbifold cosets in Chamber I.  The rays pointing inward to Chamber I at $x_1$ are $-v_1$and $v_2-v_1$; reading from Lemma \ref{ }, we see that these rays of $(\ell, \sk^\prime)$ weights $(-1, 2)$ and $(1, 0)$, respectively.  Thus the denominator from the Chamber I cosets will be $(1-q^{-1}t^2)(1-q)$.  
+The rays pointing inward to Chamber I at $x_1$ are $-v_1$and $v_2-v_1$; reading from Lemma \ref{ }, we see that these rays have $(\ell, \sk^\prime)$ weights $(-1, 2)$ and $(1, 0)$, respectively.  Thus the denominator from the Chamber I cosets will be $(1-q^{-1}t^2)(1-q)$.  The rays pointing inward to Chamber II at $x_1$ are $v_2-v_1$ and $v_2$; hence the denominator of the Chamber II will be $(1-q^2t^{-1})(1-q)$.
 
+To find the numerators, we find the closest points in each chamber and relevant orbifold coset to $(-2b/9, b/9, b/9)$.
 
-To find the numerator, we find the closest points from each orbifold coset in chamber 1 $x_1=(-2b/9, b/9, b/9)=(-2k/3-2/9-\delta/9,k/3+1/9+\delta/9, k/3+1/9+\delta/9)$.  
+$$
+\begin{array}{rrrrr|rr}
+\text{point} & \shortstack{ \text{Shift from}\\ (-2k/3,k/3,k/3)} & \ell & \sk & \text{Coset} &  &  \\
+\hline
+w  & (1/3, -1/3, 0) & k-1 & 2k-2 & 1 & 1 & \\
+x  & (0, -1/3, 1/3) & k &2k-1 & 2 & 1 & 1 \\ 
+y & (-1/3, 0, 1/3) & k &2k & 1 & 2 & 1 \\
+z & (-2/3, 0, 2/3) & k+1 & 2k+1 & 2 &   & 2 
+\end{array}
+$$
+ 
+First, assume that $b=3k+1$, that is, $\delta=0$.  Then, the closest point in the trivial coset is $(-1/3, 0, 1/3)$, this point is $(-2k/3+1/3, k/3-1/3, k/3)$, in the other coset it is $(-2k/3, k/3-1/3, k/3+1/3)$, and the point closest to $x_1$ in Chamber 2 is $(-2k/3-1/3, k/3, k/3+1/3)$.
 
-First, assume that $b=3k+1$, that is, $\delta=0$.  Then, the closest point in coset containing $(-1/3, 0, 1/3)$, this point is $(-2k/3+1/3, k/3-1/3, k/3)$, in the other coset it is $(-2k/3, k/3-1/3, k/3+1/3)$; the point closest to $x_1$ in Chamber 2 is $(-2k/3-1/3, k/3, k/3+1/3)$.
-
-However, if we now increase $b$ by 1, making $\delta=0$, we see that the point $(-2k/3-1/3, k/3, k/3+1/3)$ now has $x_2-x_0=k+2/3=b/3$; thus it is no longer strictly in chamber II but on the wall of chamber I.  
+However, if we now increase $b$ by 1, making $\delta=1$, we see that the point $(-2k/3-1/3, k/3, k/3+1/3)$ now has $x_2-x_0=k+2/3=b/3$; thus it is no longer strictly in chamber II but on the wall of chamber I.  
 
 
 At $x_2=(-b/9, -b/9, 2b/9)$, there are three cones to deal with.  
