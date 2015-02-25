@@ -146,7 +146,7 @@ The two main tools in the proofs of the theorem are the abacus construction and 
 \subsubsection{Abaci}
 The main tool used to study $a$-cores is the ``abacus construction''. We review this construction in detail in Section \ref{sec:abacus}. For now, we observe that there are at least two variants of the abacus construction in the literature.
 The first construction, which we call the \emph{positive abacus}, gives a bijection between $a$ core partitions and $\N^{a-1}$. Anderson's original proof used the positive abacus as part of a bijection between $(a,b)$-cores and $(a,b)$-Dyck paths, which were already known to be counted by $\Cat_{a,b}$.
-We will only make use of the second construction, which we call the \emph{signed abacus}. The signed abacus is a bijection between $a$-core partitions and points in the $a-1$ dimensional lattice
+We only use the second construction, which we call the \emph{signed abacus}. The signed abacus is a bijection between $a$-core partitions and points in the $a-1$ dimensional lattice
 $$\Lambda_a=\left\{c_1,\dots,c_a\in\Z\Big |\sum c_i=0\right\}$$
 We give a detailed review of the signed abacus in Section \ref{sec:abacus}. For now we just mention one result that is key to our proof of Armstrong's conjecture:
 \begin{theorem}
@@ -160,7 +160,7 @@ Let $V$ be an $n$ dimensional real vector space, and $\Lambda\subset V$ an $n$ d
 For $t$ a positive integer, let $tP$ denote the $t$th dilate of $P$, the polytope obtained by scaling $P$ by $t$. For $t\geq 0$, define $L(P,t)$ to the number of lattice points in $tP$:
 $$L(P,t)=\#\{\Lambda\cap tP\}$$
 Clearly, the volume of $tP$ is $t^n$ times the volume of $P$. Ehrhart showed that, in parallel to this fact, $L(P,t)$ is a degree $n$ polynomial in $t$. Ehrhart theory refers to the study of these polynomials.
-Other than the fact that $L(P,t)$ is a polynomial of degree $n$, the one fact from Ehrhart theory we will use is Ehrhart reciprocity. If we scale a polytope by a negative number, then keeping track of orientation the volume changes by $(-t)^n$. The polynomial $L(P,t)$ will not be even or odd, and so $L(P,-t)$ cannot be $(-1)^n$ times the number of lattice points in $-P$. Ehrhart reciprocity states that instead, $L(P,-t)$ is $-(1)^nL(P^\circ, t)$, where $P^\circ$ here denotes the interior of $P$.
+Other than the fact that $L(P,t)$ is a polynomial of degree $n$, the one fact from Ehrhart theory we need is Ehrhart reciprocity. If we scale a polytope by a negative number, then keeping track of orientation the volume changes by $(-t)^n$. The polynomial $L(P,t)$ is not in general even or odd, and so $L(P,-t)$ cannot be $(-1)^n$ times the number of lattice points in $-P$. Ehrhart reciprocity states that instead, $L(P,-t)$ is $-(1)^nL(P^\circ, t)$, where $P^\circ$ here denotes the interior of $P$.
 The results of Ehrhart theory extend to an analogy between integrating a polynomial over a region and summing it over the lattice points in a polytope. This is an extension of the familiar ``sum of the first $n$ cubes'' type formulas.
 More specifically, if $f$ is a polynomial of degree $d$ on $V$, then we have that $\int_{tP} f$ is a polynomial of degree $d+n$. Euler-Maclaurin theory says that the discrete analog
 $$L(f, P, t)=\sum_{x\in\Lambda\cap tP} f(x)$$
@@ -174,7 +174,7 @@ If the false hope were true, Ehrhart theory would imply that, for $b$ relatively
 Furthermore, it is known that the size of an $a$-core is a quadratic function $Q$ on the lattice. Thus, if False Hope were true Euler-Maclaurin theory would give that the total size of all $(a,b)$ cores was a polynomial of degree $a+1$ in $b$ and again we could hope to exploit this polynomiality in a proof.
 Note that since the degree of the polynomial $\Cat_{a,b}$ grow as $b$ grows, proving Anderson and Armstrong's conjecture as a whole by this method would still requires checking infinitely many values.
 \subsubsection{}
-The False Hope is not quite true, but the strategy outlined above is essentially the one we follow. The set of $b$ cores inside the lattice of $a$ cores \emph{does} form a polytope (a simplex, actually), which we will call $\SC_a(b)$ for \emph{Simplex of Cores}.
+The False Hope is not quite true, but the strategy outlined above is essentially the one we follow. The set of $b$ cores inside the lattice of $a$ cores \emph{does} form a polytope (a simplex, actually), which we call $\SC_a(b)$ for \emph{Simplex of Cores}.
 One minor tweak needed to the False Hope is that as we vary $b$ $\SC_a(b)$ is not only scaled, but also changed by a linear transformation. These transformations preserve the number of lattice points and the quadratic function $Q$ giving the size of the partitions, and so do not pose any real difficulties.
 More troubling is that the polytope $\SC_{a}(b)$ is not integral, but only rational. Recall that a polytope $P$ is \emph{rational} if there is some $k\in\Z$ so that $kP$ is a lattice polytope.
 \subsubsection{Rational Polytopes and quasipolynomials}
@@ -336,7 +336,7 @@ Since any count of the lattice points in $\mathcal{P}$ with respsect to linear f
 Fix $a$. Then $\Cat_{a,b}(q,t)$ has a uniform expression as a rational function in $q$ and $t$, with the dependence on $b$ only appearing in the exponents of the numerator. For $b$ in a fixed conjugacy class $\mod a$, this dependence is linear.
 \end{proposition}
 \begin{example}{$\Cat_{3,b}(q,t)$}
-In Section \ref{ } , we explicitly compute this rational function when $a=3$. Write $b=3k+1+\delta$, where $\delta\in\{0,1\}$. Then
+In Proposition \ref{prop:qt3}, we explicitly compute this rational function when $a=3$. Write $b=3k+1+\delta$, where $\delta\in\{0,1\}$. Then
 \begin{multline*}
 \Cat_{a,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-q^2t^{-1})} +\frac{q^kt^{k+1}+q^{k+\delta}t^{k+\delta}+q^{k+1}t^k}{(1-q^{-1}t^2)(1-q^2t^{-1})} \\+\frac{q^{3k+\delta}}{(1-tq^{-1})(1-t^2q^{-1})}
 \end{multline*}
@@ -910,7 +910,7 @@ x_{i+b}-x_{i}&=c_{i+b}-c_i+s_{i+b}-s_i \\
 \end{align*}
 \end{proof}
 
-Although we will often use the $x$ coordinates, to show that the simplex of $\SC_a(b)$ is isomorphic to the simplex $\TD_a(b)$ of trivial determinant representations, another change of variables is needed:
+Although we often use the $x$ coordinates, to show that the simplex of $\SC_a(b)$ is isomorphic to the simplex $\TD_a(b)$ of trivial determinant representations, another change of variables is needed:
  
 \begin{lemma} \label{lem:standardsimplex}
 Let $a$ and $b$ be relatively prime, and let 
@@ -965,7 +965,7 @@ is invariant under $S_a$, and in particular rotation, we see that the sum of the
 Thus, the average value of an $(a,b)$-core is $G_a(b)/F_a(b)$, the quotient of a polynomial of degree $a+1$ by a polynomial of degree $a-1$.  To show this is a polynomial of degree two in $b$, we need to show that every root of $F_a$ is a root of $G_a$.
 
 We already know from \ref{cor:anderson} that the roots of $F_a$ are $-1,
--2,\dots, -(a-1)$.  We now give another derivation of this fact, using Ehrhart reciprocity, that will easily adapt to shown these are also roots of $G_a$. 
+-2,\dots, -(a-1)$.  We now give another derivation of this fact, using Ehrhart reciprocity, that easily adapts to shown these are also roots of $G_a$. 
 
 Ehrhart reciprocity says that $F_a(-x)$ is, up to a sign, the number of
 points in the \emph{interior} of $x\Delta_{a-1}$.  The interior
@@ -1052,7 +1052,7 @@ Let $a$ and $b$ be relatively prime.  Then the average size of a self-conjugate 
 
 Since $a$ and $b$ are relatively prime, at most one is even, so we may assume $a$ is odd.  
 
-The proof is essentially the same as that for all $(a,b)$-cores.  One complication is that it seems we must treat odd and even values of $b$ separately.   In each each case, an argument identical to Lemma \ref{thm:polynomial} gives that the average size is a polynomial of degree 2 in $b$.  A priori, we may have different polynomials for $b$ odd and $b$ even; however, the symmetry $(a,b)\leftrightarrow (a, -a-b)$ coming from Ehrhart reciprocity still holds and interchanges odd and even values of $b$, and so if we can compute three values of either polynomial (that don't get identified by this symmetry), we will identify both polynomials.
+The proof is essentially the same as that for all $(a,b)$-cores.  One complication is that it seems we must treat odd and even values of $b$ separately.   In each each case, an argument identical to Lemma \ref{thm:polynomial} gives that the average size is a polynomial of degree 2 in $b$.  A priori, we may have different polynomials for $b$ odd and $b$ even; however, the symmetry $(a,b)\leftrightarrow (a, -a-b)$ coming from Ehrhart reciprocity still holds and interchanges odd and even values of $b$, and so if we can compute three values of either polynomial (that don't get identified by this symmetry), we identify both polynomials.
 
 All $1$ and $2$ cores are self conjugate, and thus if $b$ is 1 or 2, the average value is the same.  The arguments made in Corollary \ref{cor:averagesize} for the value of the polynomial at $b=0$ holds for self-conjugate partitions as well, giving a third value.
 \end{proof}
@@ -1211,10 +1211,10 @@ To deal correctly with the boundary of $P$, one must correctly include or exclud
 
 The algebraic structure of $\binom{b+a-1}{a-1}$ suggests  a refinement of the Lawrence-Varchenko decomposition of $b\Delta_{a-1}$ for $q$-counting the lattice points.
 
-Expanding the numerator of $\binom{a+b-1}{a-1}$ as $(1-q^{b+1})\cdots (1-q^{b+a-1})$ there are $\binom{a-1}{k}$ terms obtained from choosing $1$ from $n-k$ factors and $q^M$ from $k$ factors. Each such term has sign $(-1)^k$, and the exponent of $q$ is slightly larger than $kb$.  We will interpret these $\binom{a-1}{k}$ terms as making up the polarized tangent cone at the $k$th vertex.
+Expanding the numerator of $\binom{a+b-1}{a-1}$ as $(1-q^{b+1})\cdots (1-q^{b+a-1})$ there are $\binom{a-1}{k}$ terms obtained from choosing $1$ from $n-k$ factors and $q^M$ from $k$ factors. Each such term has sign $(-1)^k$, and the exponent of $q$ is slightly larger than $kb$.  We interpret these $\binom{a-1}{k}$ terms as making up the polarized tangent cone at the $k$th vertex.
 
 
-The polarized tangent cone at the $k$th vertex $v_k$ will not carry the standard $q$-grading.  However, it appears the cone at $v_k$ may be subdivided into $\binom{a-1}{k}$ smaller cones that do have the standard $q$-grading, essentially by intersecting with the $A_{a-1}$ hyperplane arrangement translated to $v_k$.
+The polarized tangent cone at the $k$th vertex $v_k$ does not carry the standard $q$-grading.  However, it appears the cone at $v_k$ may be subdivided into $\binom{a-1}{k}$ smaller cones that do have the standard $q$-grading, essentially by intersecting with the $A_{a-1}$ hyperplane arrangement translated to $v_k$.
 
 \begin{example} We illustrate the decomposition of $b\Delta_2$ suggested by
 $${b+2 \brack 2}_q=\frac{1}{(1-q)(1-q^2)}\left(1-q^{b+1}-q^{b+2}+q^{2b+3}\right)$$
@@ -1476,7 +1476,7 @@ There are $(a-1)$ pairs $(i,j)$ with $i-j=1$, and in general $a-k$ pairs with $i
 &=\frac{b}{a} \frac{(a-1)a}{2}-\frac{1}{a}\frac{(a-1)a}{2} \\
 &=\frac{(a-1)(b-2)}{2}
 \end{align*}
-where the second line follows from reindexing the second sum, the third line applies $\lfloor x\rfloor=x-\langle x\rangle$, and the fourth line applies $\sum i=n(n+1)/2$ and the fact that, since $a$ and $b$ are relatively prime, $kb$ will take on every residue class mod $a$ exactly once as $k$ ranges from 1 to $a$.
+where the second line follows from reindexing the second sum, the third line applies $\lfloor x\rfloor=x-\langle x\rangle$, and the fourth line applies $\sum i=n(n+1)/2$ and the fact that, since $a$ and $b$ are relatively prime, $kb$ takes on every residue class mod $a$ exactly once as $k$ ranges from 1 to $a$.
 
 \end{example}
 
@@ -1562,9 +1562,9 @@ Before applying piecewise linearity to the Symmetry and Specialization conjectur
 \subsubsection{The Dominant Cone $\dominant$}
 
 Let $\dominant$ denote the dominant chamber $$\dominant=\{x\in V_a|x_1< x_2< x_3<\cdots < x_a\}$$
-Then $\dominant$ is a fundamental domain for the action of $S_a$ on $V_a$.  We will use $\polyh$ to denote the polyhedron $\dominant\cap\SC_{a}(b)$.  
+Then $\dominant$ is a fundamental domain for the action of $S_a$ on $V_a$.  We use $\polyh$ to denote the polyhedron $\dominant\cap\SC_{a}(b)$.  
 
-Two vertices of $\polyh$ will be particularly important to us $0$ and  $x_\infty=b\cdot s$.
+Two vertices of $\polyh$ are particularly important to us: $0$ and  $x_\infty=b\cdot s$.
 
 Consider the quotient map from $\SC_a(b)$ to $\polyh$.  A generic point near the origin in $\polyh$ has $a!$ preimages in $\SC_a(b)$.  However, as we cross the walls of the Catalan arrangement the number of preimages drops -- a point near $x_\infty$ has only $a$ preimages -- one near each vertex of $\SC_a(b)$. 
 
@@ -1593,10 +1593,10 @@ $$\ell(x+v_i)=\ell(x)+i$$
 
 Because the difference of two entries of $v_i$ is $0$ or $1$, we see that $\sk$ is a piecewise linear function when restricted to the elements of any translate of $\Lambda_R$.
 
-The dependence of $\sk$ on $v_i$ depends on which chamber of the Catalan arrangement we are in.  Near $x_0$, we have $$\sk(x)=\sum_{i<j} x_j-x_i$$, and so
+The dependence of $\sk$ on $v_i$ depends on which chamber of the Catalan arrangement we are in.  Near $x_0$, we have $$\sk(x)=\sum_{i<j} x_j-x_i$$ and so
 $$\sk(x+v_i) = \sk(x)+i(a-i)$$
 However, near $x_\infty$, we have that $x_j-x_i>b$ if $j\neq i+1$, so 
-$$\sk(x)=\sum_i x_{i+1}-x_i=x_a-x_1$$, and
+$$\sk(x)=\sum_i x_{i+1}-x_i=x_a-x_1$$ and
 $$\sk(x+v_i)=\sk(x)+1$$
 
 This discussion is summarized as follows:
@@ -1616,9 +1616,9 @@ $$
 
 \subsubsection{Orbifold cosets}
 
-The quotient of $\Lambda+S$ by the cyclic $\Z_a$ action results in the refined lattice $\Lambda_R$, but we want to quotient out by the full $S_a$ action.  The resultant set of points will not itself be a lattice, but will consist of cosets of the $\Lambda_R$ lattice, which we call \emph{orbifold cosets}.  
+The quotient of $\Lambda+S$ by the cyclic $\Z_a$ action results in the refined lattice $\Lambda_R$, but we want to quotient out by the full $S_a$ action.  The resultant set of points is not itself a lattice, but consists of cosets of the $\Lambda_R$ lattice, which we call \emph{orbifold cosets}.  
 
-As the number of preimages of a point in $\polyh$ depends on the chamber of the Catalan arrangement, the number of orbifold cosets will as well. Near $x_\infity$, there will only be one orbifold coset, while near $0$ there will be $(a-1)!$, and on the chambers in between the   
+As the number of preimages of a point in $\polyh$ depends on the chamber of the Catalan arrangement, the number of orbifold cosets does as well. Near $x_{\infty}$, there is only be one orbifold coset, while near $0$ there are $(a-1)!$, and the chambers in between vary between these two extremes.   
 
 
 
@@ -1633,7 +1633,7 @@ $\Cat_{a,b}(q,t)$ is a rational function of $q$ and $t$, and the denominator can
 
 
 
-\begin{proposition}
+\begin{proposition} \label{prop:qt3}
 Let $b=3k+1+\delta$, where $\delta\in\{0,1\}$.  Then:
 
 $$\Cat_{3,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-qt^{-2})}+\frac{q^kt^k(q+t+q^\delta t^\delta)}{(1-q^{-1}t^2)(1-q^2t^{-1})}+\frac{q^{3k+\delta}}{(1-tq^{-1})(1-tq^{-2})}$$
@@ -1641,51 +1641,109 @@ $$\Cat_{3,b}(q,t)=\frac{t^{3k+\delta}}{(1-qt^{-1})(1-qt^{-2})}+\frac{q^kt^k(q+t+
 \end{proposition}
 
 \begin{proof}
-After the $S_3$ action, there are two chambers of linearity for $\ell$ and $\sk$, which we call chamber I and Chamber II.  Both are triangles; Chamber I has vertices $(0,0,0), x_1=(-2b/9, b/9, b/9)$ and $x_2=(-b/9, -b/9, 2b/9)$.  Chamber II shares vertices $x_1$ and $x_2$ with chamber I, and has third vertex $x_\infty=(-b/3,0,b/3)$.  Chamber I has two orbifold cosets, while Chamber II has only one.  
+After the $S_3$ action, there are two chambers of linearity for $\ell$ and $\sk$, which we call Chamber I and Chamber II.  Both are triangles; Chamber I has vertices $(0,0,0), x_1=(-2b/9, b/9, b/9)$ and $x_2=(-b/9, -b/9, 2b/9)$.  Chamber II shares vertices $x_1$ and $x_2$ with Chamber I, and has third vertex $x_\infty=(-b/3,0,b/3)$.  Chamber I has two orbifold cosets, while Chamber II has only one.  
 
-To deal with these, rather than usingthe Lawrence-Varchenko decomposition, we will use the Brion decomposition -- the indicator function of a rational polyhedron is the positive sum of the inward pointing indicators of the cone at each vertex:
+Thus, we can express $\Cat_{3,b}(q,t)$ as the sum of three indicator functions of rational polytopes.  We write this indicator functions as a sum of contributions from the vertices using the Brion decomposition (rather than the Lawrence-Varchenko decomposition).  The Brion decomposition says that the the indicator function of a rational polyhedron is the \emph{positive} sum of the \emph{inward} pointing indicators of the cone at each vertex:
 
-We will work verex by verex.
+\begin{center}
+  \begin{tikzpicture}
+  \draw[fill=blue!20] (0,0) node [below left] {$A$} --(1,0) node [below right] {$B$}--(2,1) node [above right] {$C$}--(0,1) node [above left] {$D$}--cycle;
+
+
+\draw (2.5,.5) node {$=$};
+
+\begin{scope}[xshift=3cm]
+    \draw (0,0) node [below left] {$A$};
+    \draw[-triangle 45] (0,0)-- (0,1);
+    \draw[-triangle 45] (0,0)-- (1, 0);
+\end{scope}
+
+\begin{scope}[xshift=5cm]
+    \draw (-.6,.5) node {$+$};
+    \draw (1,0) node [below right] {$B$};
+    \draw[-triangle 45] (1,0)-- (0,0);
+    \draw[-triangle 45] (1,0)-- (2, 1);
+\end{scope}
+
+\begin{scope}[xshift=8cm]
+    \draw (-.6,.5) node {$+$};
+    \draw (1,1) node [above right] {$C$};
+    \draw[-triangle 45] (1,1)-- (0,0);
+    \draw[-triangle 45] (1,1)-- (0, 1);
+\end{scope}
+
+\begin{scope}[xshift=10cm]
+    \draw (-.6,.5) node {$+$};
+    \draw (0,1) node [above left] {$D$};
+    \draw[-triangle 45] (0,1)-- (0,0);
+    \draw[-triangle 45] (0,1)-- (1, 1);
+\end{scope}
+
+
+  \end{tikzpicture}
+
+
+
+
+\end{center}
+
+
+In what follows, we determine the contribution of each of the four vertices $x_0,x_1,x_2,x_\infty$ to the Brion decomposition of $\Cat_{3,b}(q,t)$.
+
 
 
 At $x_0$, the rays of the cone are $v_1$ which has $\ell, \sk^\prime$ weight $(1, -2)$, and $v_2$, which has $\ell, \sk^\prime$ weight $(2,-2)$.  Thus, the denominator at $0$ is $1/(1-qt^{-2})1/(1-q^2t^{-2})$.
 
-The closest point to $0$ in the trivial orbifold coset is $x_0=(-1/3,0,1/3)$, which has weight $t^{3k+\delta}$, and the vertex closest to the origin in the nontrivial orbifold coset is $x_0^\prime=(-2/3,0,2/3)$, which has $\sk(x_0^\prime)=\ell(x_1^\prime=1)$, and so vertex contributes $(1, 3k+\delta-1)$.
+The closest point to $0$ in the trivial orbifold coset is $x_0=(-1/3,0,1/3)$, which has weight $t^{3k+\delta}$, and the vertex closest to the origin in the nontrivial orbifold coset is $x_0^\prime=(-2/3,0,2/3)$, which has $\sk(x_0^\prime)=\ell(x_0^\prime)=1$, and so $x_0^\prime$ contributes $qt^{3k+\delta-1}$.
 
-Thus, the total contribution from both cosets at $0$ is
+Thus, the total contribution at $x_0$ is
 $$\frac{t^{3k+\delta}+qt^{3k+\delta-1}}{(1-qt^{-2})(1-q^2t^{-2})}=\frac{t^{3k+\delta}(1+qt^{-1})}{(1-qt^{-2})(1-q^2t^{-2})}
 =\frac{t^{3k+\delta}}{(1-qt^{-2})(1-qt^{-1})}$$
+the first term in Proposition \ref{prop:qt3}.
 
+At $x_1=(-2b/9, b/9, b/9)$, the rays pointing inward to Chamber I are $-v_1$and $v_2-v_1$; reading from Lemma \ref{lem:table}, we see that these rays have $(\ell, \sk^\prime)$ weights $(-1, 2)$ and $(1, 0)$, respectively.  Thus the denominator from the Chamber I cosets is $(1-q^{-1}t^2)(1-q)$.  The rays pointing inward to Chamber II at $x_1$ are $v_2-v_1$ and $v_2$; hence the denominator of the Chamber II contribution is $(1-q^2t^{-1})(1-q)$.
 
-At $x_1=(-2b/9, b/9, b/9)$ there are three cones to deal with.
-
-The rays pointing inward to Chamber I at $x_1$ are $-v_1$and $v_2-v_1$; reading from Lemma \ref{ }, we see that these rays have $(\ell, \sk^\prime)$ weights $(-1, 2)$ and $(1, 0)$, respectively.  Thus the denominator from the Chamber I cosets will be $(1-q^{-1}t^2)(1-q)$.  The rays pointing inward to Chamber II at $x_1$ are $v_2-v_1$ and $v_2$; hence the denominator of the Chamber II will be $(1-q^2t^{-1})(1-q)$.
-
-To find the numerators, we find the closest points in each chamber and relevant orbifold coset to $(-2b/9, b/9, b/9)$.
+To find the numerators, we find the closest points in each chamber and relevant orbifold coset to $(-2b/9, b/9, b/9)$.  This information is summarized in the following table, which lists four points, the value of $\ell$ and $\sk$ on each point, the coset it belongs to, and which chamber it contributes to when $\delta=0$ and when $\delta=1$.  So, for instance, point $y$ is in Chamber II when $\delta=0$, but crosses to Chamber I when $\delta=1$; point $z$ is the closest point to $x_1$ in Chamber II when $\delta=1$, but doesn't contribute when $\delta=0$.
 
 $$
 \begin{array}{rrrrr|rr}
-\text{point} & \shortstack{ \text{Shift from}\\ (-2k/3,k/3,k/3)} & \ell & \sk & \text{Coset} &  &  \\
+\text{point} & \shortstack{ \text{Shift from}\\ (-2k/3,k/3,k/3)} & \ell & \sk & \text{Coset} & \delta=0  &\delta=1  \\
 \hline
-w  & (1/3, -1/3, 0) & k-1 & 2k-2 & 1 & 1 & \\
-x  & (0, -1/3, 1/3) & k &2k-1 & 2 & 1 & 1 \\ 
-y & (-1/3, 0, 1/3) & k &2k & 1 & 2 & 1 \\
-z & (-2/3, 0, 2/3) & k+1 & 2k+1 & 2 &   & 2 
+w  & (1/3, -1/3, 0) & k-1 & 2k-2 & 1 & I & \\
+x  & (0, -1/3, 1/3) & k &2k-1 & 2 & I & I \\ 
+y & (-1/3, 0, 1/3) & k &2k & 1 & II & I \\
+z & (-2/3, 0, 2/3) & k+1 & 2k+1 & 2 &   & II 
 \end{array}
 $$
- 
-First, assume that $b=3k+1$, that is, $\delta=0$.  Then, the closest point in the trivial coset is $(-1/3, 0, 1/3)$, this point is $(-2k/3+1/3, k/3-1/3, k/3)$, in the other coset it is $(-2k/3, k/3-1/3, k/3+1/3)$, and the point closest to $x_1$ in Chamber 2 is $(-2k/3-1/3, k/3, k/3+1/3)$.
 
-However, if we now increase $b$ by 1, making $\delta=1$, we see that the point $(-2k/3-1/3, k/3, k/3+1/3)$ now has $x_2-x_0=k+2/3=b/3$; thus it is no longer strictly in chamber II but on the wall of chamber I.  
-
-
-At $x_2=(-b/9, -b/9, 2b/9)$, there are three cones to deal with.  
-
-We first deal with both orbifold cosets in Chamber I.  The rays of the inward pointing cone to Chamber I at $x_1$ are the vector $v_1$
+From the table and the description of the rays of Chamber I and II at this point, we see that the contribution of $x_1$ to the Brion decomposition of $\Cat_{3,3k+1+\delta}(q,t)$ is 
+$$\frac{q^{k-1+\delta}t^{k+2}+q^kt^{k+1}}{(1-q^{-1}t^2)(1-q)}+\frac{q^{k+\delta}t^k}{(1-q^2t^{-1})(1-q)}$$
+which algebraic manipulation shows is equal to
+$$\frac{q^kt^k(q+t+q^\delta t^\delta)}{(1-q^{-1}t^2)(1-q^2t^{-1})}$$
+the middle term in Proposition \ref{prop:qt3}.
 
 
-At $x_\infty$, there is only one orbifold coset, $x_\infty$ 
+At $x_2=(-b/9, -b/9, 2b/9)$, the rays pointing in to Chamber I are $-v_2$ and $v_1-v_2$, which have $(q,t)$ weight $(-2, 2)$ and $(-1, 0)$, respectively here.  The rays pointing into Chamber II at $x_2$ are $v_1$ and $v_1-v_2$, which have $(q,t)$ weight $(1,-1)$ and $(-1,0)$ here.
 
+$$
+\begin{array}{rrrrr|rr}
+\text{point} & \shortstack{ \text{Shift from}\\ (-k/3,-k/3,2k/3)} & \ell & \sk & \text{Coset} & \delta=0  &\delta=1  \\
+\hline
+w  & (0, 1/3, -1/3) & 2k-2 & 2k-2 & 1 & I & \\
+x  & (-1/3, 1/3, 0) & 2k-1 &2k-1 & 2 & I & I \\ 
+y & (-1/3, 0, 1/3) & 2k &2k & 1 & II & I \\
+z & (-2/3, 0, 2/3) & 2k+1 & 2k+1 & 2 &   & II 
+\end{array}
+$$
+
+From the table and the description of the rays of Chamber I and II at $x_2$, we see that the contribution of $x_2$ to the Brion decomposition $\Cat_{3, 3k+1+\delta}(q,t)$ is:
+$$\frac{q^{2k-2+\delta}t^{k+2}+q^{2k-1+\delta}t^{k+1}}{(1-q^{-2}t^2)(1-q^{-1})}+\frac{q^{2k+\delta}t^k}{(1-qt^{-1})(1-q^{-1})}$$
+which algebraic manipulation shows vanishes.
+
+
+At $x_\infty$, there is only one orbifold coset, and the inward pointinting vectors are $-v_1$ and $-v_2$ which have $(q,t)$ weight $(-1,1)$ and $(-2,1)$ here.  Thus, the contribution of $x_\infty$ is 
+$$\frac{q^{3k+\delta}}{(1-tq^{-1})(1-tq^{-2})}$$
+the last term in Proposition \ref{prop:qt3}.
 
 
 
@@ -1700,30 +1758,29 @@ In this section we show, for all $(a,b)$, that $(q,t)$-symmetry holds when the d
 More precisely, we show
 \begin{corollary}[Low degree $(q,t)$-symmetry]
 $$[t^k]\Cat_{a,b}(q,t)=[t^k]\Cat_{a,b}(t,q)$$
-for 
-
+for $k$ sufficiently small (compared to $a$ and $b$).
 \end{corollary}
 
 
 \subsubsection{Contribution near $x_\infty$}
-Near $x_\infty$, the only orbifold lattice points in $\core$ are the ones near the $a$ vertices of $\SC_a(b)$, and hence here the orbifold lattice $\Lambda_O$ is just the rotated lattice $\Lambda_R$.  
+As we saw for $a=3$, near $x_\infty$ there is only one orbifold coset of the rotated lattice $\Lambda_R$.  We have seen that $\ell(x_\infty)=(a-1)(b-1)/2$, $\sk(x_\infty)=0$.  Reading off how adding multiples of $v_i$ changes $\ell$ and $\sk^\prime$ from Lemma \ref{lem:table}, we see that the low $t$-degree terms of $\Cat_{a,b}(q,t)$ is:
 
-Since $x_\infty$ has 
-
-$$t^{(a-1)(b-1)/2}\prod_{k=1}^{a-1}\frac{1}{(1-qt^{-k})}$$
+$$q^{(a-1)(b-1)/2}\prod_{k=1}^{a-1}\frac{1}{(1-tq^{-k})}$$
 
 
 \subsubsection{Contribution near 0}
-Consider the contribution of points in $\{x_0+\Lambda_R\}\cap\cone$ near $x_0$; from Lemma \ref{lem:table} and the values of $\ell, \sk^\prime$ on $x_0$, we have
+Let $\cone_0=\{x_0+\Lambda_R\}\cap\cone$ be the set of points in the orbifold coset of $\Lambda_R$ of $x_0$ and in $\cone$.
 
-$$\sum_{p\in } q^{\sk^\prime(p)}t^{\ell(p)}=q^{(a-1)(b-1)/2}\prod_{k=1}^{a-1} \frac{1}{(1-t^kq^{-k(a-k)})}$$.
+From Lemma \ref{lem:table} and the values of $\ell, \sk^\prime$ on $x_0$, we have
 
-However, we have not taken account of the orbifold cosets of $\Lambda_R$.  There are $a!$ chambers of $\dominant$, and the image of $\Lambda_C$ under $a$ of them come together to make $\Lambda_R$, and so there will be $(a-1)!$ orbifold cosets of $\Lambda_R$ near $0$.  
+$$\sum_{p\in\cone_0} q^{\sk^\prime(p)}t^{\ell(p)}=q^{(a-1)(b-1)/2}\prod_{k=1}^{a-1} \frac{1}{(1-t^kq^{-k(a-k)})}$$.
 
-Since $\cone$ is integral at $0$ with respect to $\Lambda_R$, each orbifold coset $\gamma$ of $\Lambda_R$ will have a unique minimal representative $x_\gamma$, so that the points in $\gamma\cap\cone$ will be $x_\gamma+\left(\Lambda_R\cap \cone\right)$,  and the contribution near $0$ of the points in $\gamma$ will be the same as that of the points in $\Lambda_R+x_0$
-$$q^{\sk^\prime(x_\gamma)}t^{\ell(x_\gamma)}$$
+To figure out the entire contribution to $\Cat_{a,b}(t,q)$, we must figure out the contribution from the other $(a-1)!$ orbifold cosets of $\Lambda_R$ near $x_0$.  
 
-Thus, low degree symmetry will follow from
+Since $\cone$ is integral at $0$ with respect to $\Lambda_R$, each orbifold coset $\gamma$ of $\Lambda_R$  had a unique minimal representative $x_\gamma$, so that the points in $\gamma\cap\cone$ str $x_\gamma+\left(\Lambda_R\cap \cone\right)$,  and the contribution near $0$ of the points in $\gamma$ is 
+$$q^{\sk^\prime(x_\gamma)}t^{\ell(x_\gamma)}\prod_{k=1}^{a-1}\frac{1}{1-t^kq^{-k(a-k)}}$$
+
+Thus, low degree symmetry follows from
 \begin{proposition} \label{prop:orbcosets}
 $$\sum_{\gamma\in\OC} q^{\sk^\prime(x_\gamma)}t^{\ell(x_\gamma)}=\prod_{k=1}^{a-1}[k]_{q^{-(a-k)}t}$$ 
 
@@ -1731,15 +1788,15 @@ $$\sum_{\gamma\in\OC} q^{\sk^\prime(x_\gamma)}t^{\ell(x_\gamma)}=\prod_{k=1}^{a-
   
 \subsubsection{Proof of Proposition \ref{prop:orbcosets}}
 
-We factor the proof of Proposition \ref{prop:orbcosets} into two lemmas; the first establishes a bijection between the orbifold cosets $\gamma$ and permutations in $S_{a-1}$, and identifies permutation statistics that correspond to $\ell$ and $\sk$; the second shows that these permutation statistics have the proper distribution.  Before stating these lemmas, we introduce these permutation statistics, one of which is, to our knowledge, new, and may be of independent interest.
+We break the proof of Proposition \ref{prop:orbcosets} into two lemmas.  The first establishes a bijection between the orbifold cosets $\gamma$ and permutations in $S_{a-1}$, and identifies permutation statistics that correspond to $\ell$ and $\sk$ under this bijection.  The second lemma shows that these permutation statistics have the proper distribution.  Before stating these lemmas, we introduce these permutation statistics, one of which appears to be new and may be of independent interest.
 
 \subsubsection{Permutation Statitistics}
-The permutation statistics we need will all be defined in terms of descents and inversions; the following summarizes the standard definitions we will need here:
+The permutation statistics we need are defined in terms of descents and inversions.
 \begin{definition} \label{def:standardpermutations}
 For $\sigma\in S_n$, let 
 $$\DES(\sigma)=\left\{i\in [1, n-1] \Big | \sigma(i)>\sigma(i+1)\right\}$$
 We use $\des(\sigma)$ to denote $|\DES(\sigma)|$, and 
-$$\maj(\sigma)=\sum_{i\in\INV(\sigma)} i$$.
+$$\maj(\sigma)=\sum_{i\in\INV(\sigma)} i$$
 
 Recall that 
 $$\inv(\sigma)=\left|\left\{(i,j)\big| 1\leq i<j\leq n, \sigma(i)>\sigma(j)\right\}\right|$$
@@ -1755,7 +1812,7 @@ $$\siz(\sigma)=\left(\sum_{i\in\DES(\sigma)} (n+1-i)i\right)-\inv(\sigma)$$
 Our motivation for the definition of $\siz$ are the following two lemmas, which together immediately prove Proposition \ref{prop:orbcosets}
 
 \begin{lemma} \label{lem:sizmaj1}
-There is a labeling of the orbifold cosets by partitions $\sigma\in S_{a-1}$, so that if $v_\sigma$ be the minimum vector in the coset labeled by $\sigma$, then:
+There is a labeling of the orbifold cosets by permutations $\sigma\in S_{a-1}$, so that if $v_\sigma$ be the minimum vector in the coset labeled by $\sigma$, then:
 \begin{align*}
 \ell(v_\sigma)&=\maj(\sigma) \\
 \sk(v_\sigma)&=\siz(\sigma)\\
@@ -1782,7 +1839,7 @@ Let $w\in\Lambda_O\cap \cone$, and define $\sigma^w$ by
 $$\frac{\sigma^w_i}{a}=\langle w_{i}-w_a\rangle$$
 As $w\in S_a\Lambda_C$, we see $\sigma^w$ is a permutation in $S_{a-1}$.
 
-Since the entires of the $v_i$ all have the same entries modulo $1$, we see that$\sigma^{w+v_i}=\sigma^w$; that is, $\sigma^w$ is constant on the orbifold cosets.  
+Since the entires of the $v_i$ all have the same entries modulo $1$, we see that $\sigma^{w+v_i}=\sigma^w$; that is, $\sigma^w$ is constant on the orbifold cosets.  
 
 It is not hard to see that this map is surjective, and hence a bijection between orbifold cosets and $S_{a-1}$.
 
@@ -1792,10 +1849,10 @@ We now describe the minimal element $x^\sigma$ in the orbifold coset correspondi
 Being the minimal vector $x^\sigma$ in a coset means that $x^\sigma-v_i\notin\dominant$ for all $i$, which is equivalent to
 $$x^\sigma_i+1>x^\sigma_{i+1},\quad 1\leq i\leq a-1$$
 
-To find $x^\sigma$ we will first define a vector $w^\sigma$ satisfying
+To find $x^\sigma$ we first define a vector $w^\sigma$ satisfying
 $$w^\sigma_i<w^\sigma_{i+1}<w^\sigma_i+1$$
 $$\left\langle w_i-w_a\right\rangle=\frac{\sigma_i}{a}$$
-but does not satisfy $\sum w_i^\sigma=0$, we will then subtract the approproiate multiple of $(1/a,\dots, 1/a)$ to get $v^\sigma$.
+but does not satisfy $\sum w_i^\sigma=0$, we then subtract the approproiate multiple of $(1/a,\dots, 1/a)$ to get $v^\sigma$.
 
 We need $w^\sigma_{i+1}>w^\sigma_i$ and $\langle w^\sigma_{i+1}-w^\sigma_i\rangle=\langle\sigma_{i+1}/a-\sigma_i/a\rangle$, and so we set
 $$w^\sigma_{i+1}=w^\sigma_i+\frac{\sigma_{i+1}-\sigma_i}{a}+\des_i(\sigma)$$
@@ -1805,7 +1862,7 @@ Then
 $$x_i^\sigma=w_i^\sigma-\frac{1}{a}\sum_{j=1}^a w^\sigma_j$$
 is the minimal vector in the orbifold coset labeled by $\sigma$.
 \subsubsection{Simplification}
- To find $\ell(x^\sigma)$ and $\sk(x^\sigma)$, we will want to simplify our expression for $x_i^\sigma$.  The following definition will help.
+ To find $\ell(x^\sigma)$ and $\sk(x^\sigma)$, we simplify our expression for $x_i^\sigma$.  The following definition helps.
 \begin{definition}
 For $i<j$, define $\des_{ij}$ to be the number of descents between $i$ and $j$.  That is:
 $$\des_{ij}(\sigma)=\left|\left\langle k\in\DES(\sigma)\big| i\leq k < j\right\}\right|=\sum_{k=i}^{j-1}\des_k(\sigma)$$
@@ -1856,7 +1913,7 @@ $$\sk(x^\sigma)=\sum_{k=1}^{a-2} k(a-k)\des_k(\sigma)-\inv(\sigma)=\siz(\sigma)$
 
 
 
-Before we prove Lemma \ref{lem:sizmaj2}, we introduce a family of codes for permuations that we call \emph{factorization codes}; our proof will use a specific factorization code we call the left-decreasing factorization code.
+Before we prove Lemma \ref{lem:sizmaj2}, we introduce a family of codes for permuations that we call \emph{factorization codes}; our proof uses a specific factorization code we call the left-decreasing factorization code.
 
 \begin{definition}
 A \emph{valid sequence of length $n$} is a sequence of integers $a_i, 1\leq i\leq n $ such that $0\leq a_i<i$.  Let $\VS_n$ denote the set of valid sequences; clearly $|\VS|=n!$.
@@ -1904,20 +1961,20 @@ We now inductively prove Lemma \ref{lem:LDweights} giving $\maj$ and $\siz$ of a
 
 Clearly Lemma \ref{lem:LDweights} holds on the identity permutation, where all $a_i=0$.   Thus we must show that in such a factorization, multiplying by $C^-_k$ raises $\maj$ by one and $\siz$ by $(n+1-k)$.
 
-To do this, we must determine what multiplication by $C_k^-$ does to the set $\DES$ of descents.  When multiplying by $C^-_k$, we have not yet permuted the elements $(k+1), (k+2),\dots, n$, and so $\DES\subset \{1,\dots, k-1\}$. As $C_k$ decreases $2,\dots, j$ by 1, any comparisons involving two of these elements will remain unchanged; hence, the only descents multiplying by $C^-_k$ could change are those involving 1, which it will change to $k$.
+To do this, we must determine what multiplication by $C_k^-$ does to the set $\DES$ of descents.  When multiplying by $C^-_k$, we have not yet permuted the elements $(k+1), (k+2),\dots, n$, and so $\DES\subset \{1,\dots, k-1\}$. As $C_k$ decreases $2,\dots, j$ by 1, any comparisons involving two of these elements remains unchanged; hence, the only descents multiplying by $C^-_k$ could change are those involving 1, which it changes to $k$.
 
-Suppose that in the one-line notation of $\sigma$ the 1 is in position $j$; then $j-1$ will be a descent (unless $j=1$), and $j$ will not be a descent.  After we have multiplied by $c_k$, the 1 will change to a $k$, and so $j-1$ will not be a descent, and $j$ will be.
+Suppose that in the one-line notation of $\sigma$ the 1 is in position $j$; then $j-1$ is a descent (unless $j=1$), and $j$ is not a descent.  After we multiply by $c_k$, the 1 changes to a $k$, and so now $j-1$ is not a descent,but $j$ is.
 
-Thus, multiplying by $C_j$ will either increase a descent by one, or create a new descent at 1.  In either case, the major index will increase by one.
+Thus, multiplying by $C_j$ either increases a descent by one, or creates a new descent at 1.  In either case, the major index increases by one.
 
 We now investigate the effect of multipication by $C_k$ on $\siz$, supposing that 1 is in position $j$.  We first determine the change in the first term in $\siz$ (the sum over descents), and then determine the change this makes to the second term $\inv$.
 
 A descent at $j-1$ contributes $$(n+1-(j-1))(j-1)=nj-j^2+3j-2$$ to $\siz$; a descent at $j$ contributes $$(n+1-j)j=nj-j^2+j$$
-and thus multiplying by $C_k^-$ when $1$ is in position $j<k$ will increase the first term of $\siz$ by $2-2j$.
+and thus multiplying by $C_k^-$ when $1$ is in position $j<k$ increases the first term of $\siz$ by $2-2j$.
 
-We now turn to the inversions.  It is clear that the only inversions that will change are those that were comparing $1$.  Before we multiply by $C_k^-$, $1$ is in position $j$, and the $j-1$ pairs $(i,j), 1\leq i \leq j-1$  will be inversions, and none of the $k-j$ pairs $(j,\ell), j+1\leq \ell \leq k$ will be inversions.  After we multiply by $C_k^-$, position $j$ will be $k$; none of the pairs $(i,j)$ will be inversions, and all of the pairs $(j,\ell)$ will be.  Thus, $\inv$ increases by $k-2j+1$.  
+We now turn to the inversions.  It is clear that the only inversions that change are those that were comparing $1$.  Before we multiply by $C_k^-$, $1$ is in position $j$, and the $j-1$ pairs $(i,j), 1\leq i \leq j-1$ are inversions, and none of the $k-j$ pairs $(j,\ell), j+1\leq \ell \leq k$ are inversions.  Multiplying by $C_k^-$, changes position $j$ to $k$.  Now none of the pairs $(i,j)$ are inversions, and all of the pairs $(j,\ell)$ are inversions.  Thus, $\inv$ increases by $k-2j+1$.  
 
-Thus, multiplying by $C_k^-$ when $1$ is in position $j<k$ will change $\siz$ by $$n-2j+2-(k-2j+1)=n-k+1$$ as desired.
+Multiplying by $C_k^-$ when $1$ is in position $j<k$ will change $\siz$ by $$n-2j+2-(k-2j+1)=n-k+1$$ as desired.
 
 
 
