@@ -58,16 +58,20 @@
 \title{Lattice points and simultaneous core partitions}
 \begin{abstract}
 We observe that for $a$ and $b$ relatively prime, the ``abacus construction'' identifies the set of simultaneous $(a,b)$-core partitions with lattice points in a rational simplex. Furthermore, many statistics on $(a,b)$-cores are piecewise polynomial functions on this simplex.
-We apply these results to rational Catalan combinatorics. Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$. Our methods also give new derivations of analagous formulas for the number and average size of self-conjugate $(a,b)$-cores.
+We apply these results to rational Catalan combinatorics. Using Ehrhart theory, we reprove Anderson's theorem \cite{anderson} that there are $(a+b-1)!/a!b!$ simultaneous $(a,b)$-cores, and using Euler-Maclaurin theory we prove Armstrong's conjecture \cite{AHJ} that the average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$. Our methods also give new derivations of analogous formulas for the number and average size of self-conjugate $(a,b)$-cores.
 We conjecture a unimodality result for $q$ rational Catalan numbers, and make preliminary investigations in applying these methods to the $(q,t)$-symmetry and specialization conjectures. We prove these conjectures for low degree terms and when $a=3$, connecting them to the Catalan hyperplane arrangement and proving an apparently new result about permutation statistics along the way.
 \end{abstract}
 \author{Paul Johnson}
-\date{}
+\address{University of Sheffield}
+\email{paul.johnson@sheffield.ac.uk}
+\date{\today}
 \maketitle
 \section{Introduction}
 This paper establishes lattice point geometry as a foundation for the study of simultaneous core partitions, and, more generally, rational Catalan combinatorics.
-Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG} and compactified Jacobians of singular curves \cite{EM1, EM2}. It is a theorem of Anderson that simultaneous core partitions are counted by rational Catalan numbers.
-Our first result is to give a new proof of Anderson's theorem by identifying simultaneous core partitions with lattice points in a rational simplex. After this identification is made, many other results follow quite naturally.
+Rational Catalan numbers, and their $q$ and $(q,t)$ analogs, are a natural generalization of Catalan numbers that, apart from their intrinsic combinatorial interest, appear in the study of Hecke algebras \cite{GG}, affine Springer varieties \cite{LS}, and compactified Jacobians of singular curves \cite{EM1, EM2}. It is a theorem of Anderson that simultaneous core partitions are counted by rational Catalan numbers.
+Our first result is to reprove Anderson's theorem by identifying simultaneous core partitions with lattice points in a rational simplex.  The connection between rational Catalan numbers and this simplex is not new; it appears for instance in \cite{LS, GMV}.    We are not aware of any previous application of Ehrhart theory using this fact, however.
+
+ After this identification is made, many other results follow quite naturally.  
 \subsection{Background: Simultaneous cores and rational Catalan numbers}
 A \emph{partition of $n$} is a nonincreasing sequence $\lambda_1\geq \lambda_2\geq
 \lambda_{k}> 0$ of positive integers so that $\sum_{i=1}^k \lambda_i=n$. We
@@ -135,7 +139,7 @@ Simultaneous cores and rational Catalan numbers are connected by:
 If $a$ and $b$ are relatively prime, the number of
 $(a,b)$-core partitions is $\Cat_{a,b}$.
 \end{theorem}
-Our main result is a new proof of Theorem \ref{thm:anderson} using the geometry of lattice points in rational polyhedra. This new viewpoint easily extends to prove other results; chief among them a proof of Armstrong's conjecture:
+Our first result is a new proof of Theorem \ref{thm:anderson} using the geometry of lattice points in rational polyhedra.  This new viewpoint easily extends to prove other results; chief among them a proof of Armstrong's conjecture:
 \begin{theorem} \label{thm:armstrong}
 The average size of an $(a,b)$-core is $(a+b+1)(a-1)(b-1)/24$.
 \end{theorem}
@@ -165,7 +169,7 @@ Other than the fact that $L(P,t)$ is a polynomial of degree $n$, the one fact fr
 The results of Ehrhart theory extend to an analogy between integrating a polynomial over a region and summing it over the lattice points in a polytope. This is an extension of the familiar ``sum of the first $n$ cubes'' type formulas.
 More specifically, if $f$ is a polynomial of degree $d$ on $V$, then we have that $\int_{tP} f$ is a polynomial of degree $d+n$. Euler-Maclaurin theory says that the discrete analog
 $$L(f, P, t)=\sum_{x\in\Lambda\cap tP} f(x)$$
-is also a polynomial of degree $d+ n$. Ehrhart reciprocity also extends: $$L(f,P,-t)=(-1)^nL(f, -P^\circ, t)$$
+is also a polynomial of degree $d+ n$. Ehrhart reciprocity also extends\footnote{Although well known to experts, apparently this was first used (without proof) in \cite{CJM}; a proof now appears in \cite{AB}}: $$L(f,P,-t)=(-1)^nL(f, -P^\circ, t)$$
 \subsubsection{Initial motivation}
 To explain the method used to prove Theorems \ref{thm:anderson} and \ref{thm:armstrong}, we begin with the following
 \begin{FalseHope}
@@ -1757,6 +1761,7 @@ the last term in Proposition \ref{prop:qt3}.
 \end{proof}
 
 
+
 \subsection{Low degree \texorpdfstring{$(q,t)$}{(q,t)}-symmetry}
 In this section we show, for all $(a,b)$, that $(q,t)$-symmetry holds when the degree of one of the monomials are small.  
 
@@ -1779,7 +1784,7 @@ Let $\cone_0=\{x_0+\Lambda_R\}\cap\cone$ be the set of points in the orbifold co
 
 From Lemma \ref{lem:table} and the values of $\ell, \sk^\prime$ on $x_0$, we have
 
-$$\sum_{p\in\cone_0} q^{\sk^\prime(p)}t^{\ell(p)}=q^{(a-1)(b-1)/2}\prod_{k=1}^{a-1} \frac{1}{(1-t^kq^{-k(a-k)})}$$.
+$$\sum_{p\in\cone_0} q^{\sk^\prime(p)}t^{\ell(p)}=q^{(a-1)(b-1)/2}\prod_{k=1}^{a-1} \frac{1}{(1-t^kq^{-k(a-k)})}$$
 
 To figure out the entire contribution to $\Cat_{a,b}(t,q)$, we must figure out the contribution from the other $(a-1)!$ orbifold cosets of $\Lambda_R$ near $x_0$.  
 
