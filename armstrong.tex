@@ -285,7 +285,7 @@ More generally, consider the set of representations with determinant isomorphic 
 
 Thus the identification of $\SC_a(b)$ and $\TD_a(b)$ reproves Anderson's theorem. With some more work, Armstrong's conjecture follows in a similar manner.
 
-The situation is illustrated in Figure \ref{fig:sublattice}. The left hand picture shows $\TD_3(10)\cong \SC_3(10)$, while the right hand picture shows the standard simplex $10\Delta_2$. The black dots are the representations with trivial determinant, while the red and green dots are those representations with determinant $L_1$ and $L_2$. Rotating about the blue circle by 120 degrees corresponds to tensoring by $L_1$ and permutes the different colored dots.
+The situation is illustrated in Figure \ref{fig:sublattice}. The left hand picture shows $\TD_3(10)\cong \SC_3(10)$, while the right hand picture shows the standard simplex $10\Delta_2$. The large black dots are the representations with trivial determinant, while the small dots and circles are those representations with determinant $L_1$ and $L_2$, respectively. Rotating about the center of the triangle by 120 degrees corresponds to tensoring by $L_1$ and permutes the different style dots.
 \begin{figure}[h!]
 \caption{$\Lambda_3$ and $\Lambda_3^\prime$ inside $\mathcal{C}_{3, 10}$}
 \label{fig:sublattice}
@@ -293,7 +293,6 @@ The situation is illustrated in Figure \ref{fig:sublattice}. The left hand pictu
 \begin{scope}
 \clip (-3.5, -4*1.7320508/2)--(-3.5, 4*1.7320508/2)--(2.5,
 4*1.7320508/2)--(2.5, -4*1.7320508/2)--cycle;
-\fill[gray!50] (-3,0)--(2, 5/3*1.7320508)--(2, -5/3*1.7320508)--cycle;
 \foreach \x in {-7,-6,...,7}{% Two indices running over each
 \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
 \node[draw,circle,inner sep=1pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
@@ -304,20 +303,20 @@ The situation is illustrated in Figure \ref{fig:sublattice}. The left hand pictu
 \begin{scope}[xshift=9cm]
 \clip (-3.5, -4*1.7320508/2)--(-3.5, 4*1.7320508/2)--(2.5,
 4*1.7320508/2)--(2.5, -4*1.7320508/2)--cycle;
-\fill[gray!50] (-3,0)--(2, 5/3*1.7320508)--(2, -5/3*1.7320508)--cycle;
-\draw[thick, blue] (.333,0) circle(.08);
+
+
 \foreach \x in {-7,-6,...,7}{% Two indices running over each
 \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
 \node[draw,circle,inner sep=1pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
-\begin{scope}[green, xshift=.5cm, yshift=.2886751cm]
+\begin{scope}[xshift=.5cm, yshift=.2886751cm]
 \foreach \x in {-7,-6,...,7}{% Two indices running over each
 \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
-\node[draw,circle,inner sep=.7pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
+\node[draw,circle,inner sep=1pt] at (\x-\y/2,1.7320508*\y/2) {};}}
 \end{scope}
-\begin{scope}[red, xshift=.5cm, yshift=-.2886751cm]
+\begin{scope}[ xshift=.5cm, yshift=-.2886751cm]
 \foreach \x in {-7,-6,...,7}{% Two indices running over each
 \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn
-\node[draw,circle,inner sep=.7pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
+\node[draw,circle,inner sep=.3pt,fill] at (\x-\y/2,1.7320508*\y/2) {};}}
 \end{scope}
 \draw[dashed] (2, 10*1.7320508/2)--(2, -5*1.7320508);
 \draw[dashed] (-15-3, 5*1.7320508)--(15-3, -5*1.7320508);
@@ -380,11 +379,11 @@ $$\Cat_{a,b}(q,t)=\sum_{\lambda\in\mathcal{C}_{a,b}} q^{\ell(\lambda)}t^{\sk^\pr
 \end{definition}
 
 \begin{example}
-We illustrate that the $(3,11)$ skew length of the partition $\lambda=9+7+5+3+2+2+1+1$ is $9$. Each cell of $\lambda$ is labeled with its hook length; if the cell is part of the $11$-boundary we have written the text in blue. Beneath each part of $\lambda$ we have written $\lambda_i-i\pmod 3$; if the parts is a $3$-part of $\lambda$ we have written it in red. The cells that contribute to the skew length have been shaded light green.
+We illustrate that the $(3,11)$ skew length of the partition $\lambda=9+7+5+3+2+2+1+1$ is $9$. Each cell of $\lambda$ is labeled with its hook length, beneath each part of $\lambda$ we have written $\lambda_i-i\pmod 3$.  The cells that contribute to the skew length have been shaded.
 \begin{center}
 \begin{tikzpicture}[scale=.5]
-\fill[green!20!white] (0,2) rectangle (1,9);
-\fill[green!20!white] (4,0) rectangle (5,2);
+\fill[gray!20!white] (0,2) rectangle (1,9);
+\fill[gray!20!white] (4,0) rectangle (5,2);
 \draw[thin, gray] (0,0) grid (1,8);
 \draw[thin, gray] (0,0) grid (2,6);
 \draw[thin, gray] (0,0) grid (3,4);
@@ -393,39 +392,39 @@ We illustrate that the $(3,11)$ skew length of the partition $\lambda=9+7+5+3+2+
 \draw[thick] (0,0)--(0,9)--(1,9)--(1,7)--(2,7)--(2,5)--(3,5)--(3,3)--(4,3)--(4,2)--(6,2)--(6,1)--(8,1)--(8,0)--cycle;
 \draw (.5, .5) node{16};
 \draw ( .5,1.5) node{13 };
-\draw[blue] ( .5,2.5) node{10};
-\draw[blue] ( .5,3.5) node{8 };
-\draw[blue] ( .5,4.5) node{7 };
-\draw[blue] ( .5,5.5) node{5 };
-\draw[blue] ( .5,6.5) node{4 };
-\draw[blue] ( .5,7.5) node{2 };
-\draw[blue] ( .5,8.5) node{1 };
+\draw ( .5,2.5) node{10};
+\draw ( .5,3.5) node{8 };
+\draw ( .5,4.5) node{7 };
+\draw ( .5,5.5) node{5 };
+\draw ( .5,6.5) node{4 };
+\draw ( .5,7.5) node{2 };
+\draw ( .5,8.5) node{1 };
 \draw (1.5, .5) node{13};
-\draw[blue] (1.5, 1.5) node{10};
-\draw[blue] (1.5, 2.5) node{ 7};
-\draw[blue] (1.5, 3.5) node{ 5};
-\draw[blue] (1.5, 4.5) node{ 4};
-\draw[blue] (1.5, 5.5) node{ 2};
-\draw[blue] (1.5, 6.5) node{ 1};
-\draw[blue] (2.5, .5) node{10};
-\draw[blue] (2.5, 1.5) node{ 7};
-\draw[blue] (2.5, 2.5) node{ 4};
-\draw[blue] (2.5, 3.5) node{ 2};
-\draw[blue] (2.5, 4.5) node{ 1};
-\draw[blue] (3.5, .5) node{7 };
-\draw[blue] (3.5, 1.5) node{4 };
-\draw[blue] (3.5, 2.5) node{1 };
-\draw[blue] (4.5, .5) node{5 };
-\draw[blue] (4.5, 1.5) node{2 };
-\draw[blue] (5.5, .5) node{4 };
-\draw[blue] (5.5, 1.5) node{1 };
-\draw[blue] (6.5, .5) node{2 };
-\draw[blue] (7.5, .5) node{1 };
-\draw[red] (.5, -.5) node{2};
+\draw (1.5, 1.5) node{10};
+\draw (1.5, 2.5) node{ 7};
+\draw (1.5, 3.5) node{ 5};
+\draw (1.5, 4.5) node{ 4};
+\draw (1.5, 5.5) node{ 2};
+\draw (1.5, 6.5) node{ 1};
+\draw (2.5, .5) node{10};
+\draw (2.5, 1.5) node{ 7};
+\draw (2.5, 2.5) node{ 4};
+\draw (2.5, 3.5) node{ 2};
+\draw (2.5, 4.5) node{ 1};
+\draw (3.5, .5) node{7 };
+\draw (3.5, 1.5) node{4 };
+\draw (3.5, 2.5) node{1 };
+\draw (4.5, .5) node{5 };
+\draw (4.5, 1.5) node{2 };
+\draw (5.5, .5) node{4 };
+\draw (5.5, 1.5) node{1 };
+\draw (6.5, .5) node{2 };
+\draw (7.5, .5) node{1 };
+\draw (.5, -.5) node{2};
 \draw (1.5, -.5) node{2};
 \draw (2.5, -.5) node{2};
 \draw (3.5, -.5) node{2};
-\draw[red] (4.5, -.5) node{0};
+\draw (4.5, -.5) node{0};
 \draw (5.5, -.5) node{2};
 \draw (6.5, -.5) node{0};
 \draw (7.5, -.5) node{2};
@@ -794,56 +793,57 @@ There is a bijection $$\core_a:\{(c_0,\dots,c_{a-1}|c_i\in\Z, \sum c_i=0\}\to \{
 
 
 \begin{example}
-We illustrate that $\core_3(0,3, -3)=7+5+3+3+2+2+1+1$.
+We illustrate that $\core_3(0,3, -3)=7+5+3+3+2+2+1+1$.  The numbers on the boundary path illustrate which runner of the abacus that step belongs to.
 
 \begin{center}
 \begin{tikzpicture}
 
 \begin{scope}[gray, very thin, scale=.4]
 \clip (-11.5, 11.5) rectangle (11.5, -10);
+\draw[rotate=45, scale=1.412, gray!20!white, fill] (0,0)--(0,7)--(1,7)--(1,5)--(2,5)--(2,3)--(4,3)--(4,2)--(6,2)--(6,1)--(8,1)--(8,0)--cycle;
 \draw[rotate=45, scale=1.412] (0,0) grid (12,12);
 \end{scope}
 
 \begin{scope}[rotate=45, ultra thick, scale=.4*1.412]
-\begin{scope}[red]
-\draw (0,11.5)--(0,11);
-\draw (0,9)--(0,8);
-\draw (1,7)--(1,6);
-\draw (2,5)--(2,4);
-\draw (3,3)--(4,3);
-\draw (5,2)--(6,2);
-\draw (7,1)--(8,1);
-\draw (9,0)--(10,0);
-\end{scope}
-\begin{scope}[blue]
-\draw (0,11)--(0,10);
-\draw (0,8)--(0,7);
-\draw (1,6)--(1,5);
-\draw (2,4)--(2,3);
-\draw (4,3)--(4,2);
-\draw (6,2)--(6,1);
-\draw (8,1)--(8,0);
-\draw (10,0)--(11,0);
-\end{scope}
-\begin{scope}[green]
-\draw (0,10)--(0,9);
-\draw (0,7)--(1,7);
-\draw (1,5)--(2,5);
-\draw (2,3)--(3,3);
-\draw (4,2)--(5,2);
-\draw (6,1) -- (7,1);
-\draw (8,0)--(9,0);
-\draw (11,0)--(11.5,0);
-\end{scope}
+\begin{scope}
 
+\draw (0,8.5) node{$1$};
+\draw (1,6.5)node{$1$};
+\draw (2,4.5)node{$1$};
+\draw (3.5,3)node{$1$};
+\draw (5.5,2)node{$1$};
+\draw (7.5,1)node{$1$};
+\draw (9.5,0)node{$1$};
+\end{scope}
+\begin{scope}
+\draw (0,10.5)node{$2$};
+\draw (0,7.5)node{$2$};
+\draw (1,5.5)node{$2$};
+\draw (2,3.5)node{$2$};
+\draw (4,2.5)node{$2$};
+\draw (6,1.5)node{$2$};
+\draw (8,.5)node{$2$};
+\draw (10.5,0)node{$2$};
+\end{scope}
+\begin{scope}
+\draw (0,9.5)node{$3$};
+\draw (0.5, 7)node{$3$};
+\draw (0.5,7)node{$3$};
+\draw (1.5,5)node{$3$};
+\draw (2.5,3)node{$3$};
+\draw (4.5,2)node{$3$};
+\draw (6.5,1)node{$3$};
+\draw (8.5,0)node{$3$};
 \end{scope}
 
+\end{scope}
 
 
 
 
 
-\begin{scope}[scale=.4, yshift=-.5cm, red]
+
+\begin{scope}[scale=.4, yshift=-.5cm]
 \draw(-11.5,0) circle(.3);
 \draw(-8.5, 0)  circle (.3);
 \draw(-5.5,0)  circle (.3);
@@ -854,7 +854,7 @@ We illustrate that $\core_3(0,3, -3)=7+5+3+3+2+2+1+1$.
 \filldraw(9.5,0)  circle (.3);
 \end{scope}
 
-\begin{scope}[scale=.4, yshift=-1.5cm, blue]
+\begin{scope}[scale=.4, yshift=-1.5cm]
 \draw(-10.5,0) circle(.3);
 \draw(-7.5, 0)  circle (.3);
 \draw(-4.5,0)  circle (.3);
@@ -865,7 +865,7 @@ We illustrate that $\core_3(0,3, -3)=7+5+3+3+2+2+1+1$.
 \filldraw(10.5,0)  circle (.3);
 \end{scope}
 
-\begin{scope}[scale=.4, yshift=-2.5cm, green]
+\begin{scope}[scale=.4, yshift=-2.5cm]
 \draw(-9.5,0) circle(.3);
 \filldraw(-6.5, 0)  circle (.3);
 \filldraw(-3.5,0)  circle (.3);
@@ -1279,7 +1279,7 @@ Recall the decomposition of a simplicial polytope $\mathcal{P}$ in a vector spac
 
 \begin{center}
   \begin{tikzpicture}
-  \draw[fill=blue!20] (0,0) node [below left] {$A$} --(1,0) node [below right] {$B$}--(2,1) node [above right] {$C$}--(0,1) node [above left] {$D$}--cycle;
+  \draw[fill=gray!20] (0,0) node [below left] {$A$} --(1,0) node [below right] {$B$}--(2,1) node [above right] {$C$}--(0,1) node [above left] {$D$}--cycle;
   \draw[->] (0,0)-- node [above] {$v$} (1.1,.7);
 
 
@@ -1350,10 +1350,10 @@ $${b+2 \brack 2}_q=\frac{1}{(1-q)(1-q^2)}\left(1-q^{b+1}-q^{b+2}+q^{2b+3}\right)
 \begin{tikzpicture}
 
 \clip (-1.5, -2.5)--(-1.5, 8.5)--(8.5, 8.5)--(8.5, -2.5)--cycle;
-\fill[blue!20] (0,0)--(3.5,0)--(3.5/2,3.5*1.7320508/2)--cycle;
-\fill[red!20] (4,0)--(2,4*1.7320508/2)--(4.25,8.5*1.7320508/2)--(8.25, 8.5*1.732508/2)--cycle;
-\fill[orange!40] (5,0)--(8.5,0)--(8.5,7*1.7320508/2)--cycle;
-\fill[green!20]  (3/2,5*1.7320508/2)-- (3/2-3.5/2,8.5*1.7320508/2) --(3/2+3.5/2,8.5*1.7320508/2) --cycle;
+\fill[gray!20] (0,0)--(3.5,0)--(3.5/2,3.5*1.7320508/2)--cycle;
+\fill[gray!20] (4,0)--(2,4*1.7320508/2)--(4.25,8.5*1.7320508/2)--(8.25, 8.5*1.732508/2)--cycle;
+\fill[gray!20] (5,0)--(8.5,0)--(8.5,7*1.7320508/2)--cycle;
+\fill[gray!20]  (3/2,5*1.7320508/2)-- (3/2-3.5/2,8.5*1.7320508/2) --(3/2+3.5/2,8.5*1.7320508/2) --cycle;
 
 \foreach \x in {-7,-6,...,10}{% Two indices running over each
     \foreach \y in {-7,-6,...,10}{% node on the grid we have drawn
@@ -1364,7 +1364,7 @@ $${b+2 \brack 2}_q=\frac{1}{(1-q)(1-q^2)}\left(1-q^{b+1}-q^{b+2}+q^{2b+3}\right)
 \draw[dashed] (0,0)--(3.5,0);
 \draw[dashed] (0,0)--(3.5/2,3.5*1.7320508/2);
 \draw (1/2, 1.7320508/6) node {$+$};
-\filldraw[blue] (0,0) circle(.05) node[below]{$1$};
+\filldraw (0,0) circle(.05) node[below]{$1$};
 \draw[-triangle 45] (0,0)--(.5,0) node[below]{$\cdot q$};
 \draw[-triangle 45] (0,0)--(.25,1.7320508/4) node[left]{$\cdot q^2$};
 
@@ -1378,7 +1378,7 @@ $${b+2 \brack 2}_q=\frac{1}{(1-q)(1-q^2)}\left(1-q^{b+1}-q^{b+2}+q^{2b+3}\right)
 
 
 \filldraw (3,0) circle(.05) node[below]{$q^{b}$};
-\filldraw[red] (4,0) circle(.05) node[below]{$q^{b+1}$};
+\filldraw (4,0) circle(.05) node[below]{$q^{b+1}$};
 
 
 \draw[dashed] (5,0)--(8.5,0);
@@ -1389,7 +1389,7 @@ $${b+2 \brack 2}_q=\frac{1}{(1-q)(1-q^2)}\left(1-q^{b+1}-q^{b+2}+q^{2b+3}\right)
 
 
 
-\filldraw[orange] (5,0) circle(.05) node[below]{$q^{b+2}$};
+\filldraw (5,0) circle(.05) node[below]{$q^{b+2}$};
 
 \draw[dashed] (3/2,5*1.7320508/2)--(3/2-3.5/2,8.5*1.7320508/2);
 \draw[dashed] (3/2,5*1.7320508/2)--(3/2+3.5/2,8.5*1.7320508/2);
@@ -1402,7 +1402,7 @@ $${b+2 \brack 2}_q=\frac{1}{(1-q)(1-q^2)}\left(1-q^{b+1}-q^{b+2}+q^{2b+3}\right)
 \filldraw (3/2,3*1.7320508/2) circle(.05) node[left]{$q^{2b}$};
 
 
-\filldraw[green] (3/2,5*1.7320508/2) circle(.05) node[below]{$q^{2b+3}$};
+\filldraw (3/2,5*1.7320508/2) circle(.05) node[below]{$q^{2b+3}$};
 
 
 \end{tikzpicture}
@@ -1779,7 +1779,7 @@ Thus, we can express $\Cat_{3,b}(q,t)$ as the sum of three indicator functions o
 
 \begin{center}
   \begin{tikzpicture}
-  \draw[fill=blue!20] (0,0) node [below left] {$A$} --(1,0) node [below right] {$B$}--(2,1) node [above right] {$C$}--(0,1) node [above left] {$D$}--cycle;
+  \draw[fill=gray!20] (0,0) node [below left] {$A$} --(1,0) node [below right] {$B$}--(2,1) node [above right] {$C$}--(0,1) node [above left] {$D$}--cycle;
 
 
 \draw (2.5,.5) node {$=$};
